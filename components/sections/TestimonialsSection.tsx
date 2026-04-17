@@ -79,10 +79,10 @@ export default function TestimonialsSection() {
                 </div>
 
                 {/* Cards */}
-                <div className="relative mt-14 flex items-start justify-center">
+                <div className="relative mt-14 flex flex-wrap items-start justify-center gap-6 sm:gap-8">
 
                     {/* LEFT CARD */}
-                    <div className="relative z-10 w-[300px] translate-x-6 translate-y-10 flex-shrink-0 xl:w-[330px]">
+                    <div className="relative z-10 w-[300px] flex-shrink-0 sm:w-[320px] md:translate-x-6 md:translate-y-10 xl:w-[330px]">
                         <article
                             className="relative flex min-h-[420px] w-full flex-col overflow-hidden rounded-[28px] px-6 py-7"
                             style={{
@@ -112,7 +112,7 @@ export default function TestimonialsSection() {
                     </div>
 
                     {/* CENTER CARD */}
-                    <div className="relative z-20 w-[320px] flex-shrink-0 xl:w-[360px]">
+                    <div className="relative z-20 w-[320px] flex-shrink-0 sm:w-[340px] xl:w-[360px]">
                         <article
                             className="relative flex min-h-[470px] w-full flex-col overflow-hidden rounded-[28px] px-7 py-8"
                             style={{
@@ -142,7 +142,7 @@ export default function TestimonialsSection() {
                     </div>
 
                     {/* RIGHT CARD */}
-                    <div className="relative z-10 w-[300px] -translate-x-6 translate-y-10 flex-shrink-0 xl:w-[330px]">
+                    <div className="relative z-10 w-[300px] flex-shrink-0 sm:w-[320px] md:-translate-x-6 md:translate-y-10 xl:w-[330px]">
                         <article
                             className="relative flex min-h-[420px] w-full flex-col overflow-hidden rounded-[28px] px-6 py-7"
                             style={{
@@ -172,18 +172,6 @@ export default function TestimonialsSection() {
                     </div>
 
                 </div>
-
-                {/* Mobile stacked layout */}
-                <style>{`
-                    @media (max-width: 767px) {
-                        .testimonials-desktop { display: none !important; }
-                        .testimonials-mobile { display: flex !important; }
-                    }
-                    @media (min-width: 768px) {
-                        .testimonials-desktop { display: flex !important; }
-                        .testimonials-mobile { display: none !important; }
-                    }
-                `}</style>
 
                 {/* Dots */}
                 <div className="mt-12 flex justify-center gap-2">

@@ -3,9 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 export default function Navbar() {
     const pathname = usePathname();
+    const [isOpen, setIsOpen] = useState(false);
     const isActive = (href: string) => pathname === href;
     const linkClass = (href: string, isPrimary = false) => {
         const base = isPrimary
@@ -85,7 +87,13 @@ export default function Navbar() {
                             </div>
                         </Link>
 
-                        <button className="md:hidden ml-4 text-slate-800 hover:text-brand">
+                        <button
+                            type="button"
+                            onClick={() => setIsOpen((prev) => !prev)}
+                            className="md:hidden ml-4 text-slate-800 hover:text-brand"
+                            aria-expanded={isOpen}
+                            aria-label="Toggle navigation"
+                        >
                             <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
@@ -93,6 +101,39 @@ export default function Navbar() {
                     </div>
                 </div>
             </div>
+
+            {isOpen ? (
+                <div className="md:hidden border-t border-slate-200 bg-[#E6F6FB]">
+                    <div className="container mx-auto max-w-7xl px-4 py-4 sm:px-6">
+                        <nav className="flex flex-col gap-3">
+                            <Link href="/" className={linkClass("/", true)}>
+                                Home
+                            </Link>
+                            <Link href="/services" className={linkClass("/services")}>
+                                Services
+                            </Link>
+                            <Link href="/PhysicianBilling" className={linkClass("/PhysicianBilling")}>
+                                Billing Solutions
+                            </Link>
+                            <Link href="/specialties" className={linkClass("/specialties")}>
+                                Specialties
+                            </Link>
+                            <Link href="/blogs" className={linkClass("/blogs")}>
+                                Blogs
+                            </Link>
+                            <Link href="/about" className={linkClass("/about")}>
+                                About Us
+                            </Link>
+                            <Link
+                                href="/sales"
+                                className="inline-flex w-fit items-center gap-3 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white"
+                            >
+                                Talk to sales
+                            </Link>
+                        </nav>
+                    </div>
+                </div>
+            ) : null}
         </header>
     );
 }
