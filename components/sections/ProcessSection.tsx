@@ -48,14 +48,14 @@ export default function ProcessSection() {
     return (
         <section className="w-full bg-[#E6F6FB] py-16 sm:py-20">
             <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-                    <div className="max-w-xl">
+                <div className="flex flex-col gap-6 text-center lg:flex-row lg:items-start lg:justify-between lg:text-left">
+                    <div className="max-w-xl lg:text-left">
                         <h2 className="text-3xl font-semibold text-slate-800 sm:text-4xl">
                             Our <span className="text-brand">Process</span>
                         </h2>
 
                     </div>
-                    <p className="max-w-lg text-sm leading-relaxed text-slate-700 sm:text-base">
+                    <p className="mx-auto max-w-lg text-sm leading-relaxed text-slate-700 sm:text-base lg:mx-0">
                         MeBilling provides cost-effective, HIPAA-compliant medical billing support for doctor offices,
                         group practices, and independent billers. Our process keeps your team aligned and your revenue
                         on track.
@@ -64,7 +64,7 @@ export default function ProcessSection() {
 
                 <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
                     {steps.map((step) => (
-                        <article key={step.title} className="flex h-full flex-col">
+                        <article key={step.title} className="flex h-full flex-col items-center text-center lg:items-start lg:text-left">
                             <div className="flex h-25 w-25 items-center justify-center rounded-2xl bg-[#09A8D4] shadow-[0_12px_24px_rgba(9,168,212,0.25)]">
                                 <Image src={step.icon} alt={step.title} width={80} height={80} />
                             </div>

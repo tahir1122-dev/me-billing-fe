@@ -13,20 +13,14 @@ export default function Hero() {
         >
             {/* DOCTOR IMAGE — smaller, contained to right side */}
             <div
-                className="absolute"
-                style={{
-                    top: "0",
-                    bottom: "0",
-                    right: "0",
-                    width: "58%",
-                }}
+                className="absolute right-0 top-0 bottom-0 w-full sm:w-[58%]"
             >
                 <Image
                     src="/images/Hero .jpg"
                     alt="Doctor holding mobile device"
                     fill
                     className="object-cover"
-                    style={{ objectPosition: "20% center" }}
+                    style={{ objectPosition: "center" }}
                     priority
                 />
 
@@ -41,10 +35,7 @@ export default function Hero() {
             </div>
 
             {/* Solid white block — clean text background */}
-            <div
-                className="absolute top-0 bottom-0 left-0 bg-white"
-
-            />
+            <div className="absolute top-0 bottom-0 left-0 hidden bg-white sm:block" />
 
             {/* TEXT CONTENT */}
             <div
@@ -113,11 +104,8 @@ export default function Hero() {
 
             {/* GLOWING PLAY BUTTON SVG — positioned on doctor's chest */}
             <button
-                className="absolute z-20 transition-transform hover:scale-110"
+                className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 transition-transform hover:scale-110 sm:left-auto sm:top-1/2 sm:-translate-x-0 sm:-translate-y-1/2 sm:right-[26%]"
                 style={{
-                    top: "50%",
-                    right: "26%",
-                    transform: "translate(-50%, -50%)",
                     background: "none",
                     border: "none",
                     padding: 0,

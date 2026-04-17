@@ -106,27 +106,28 @@ export default function Navbar() {
                 <div className="md:hidden border-t border-slate-200 bg-[#E6F6FB]">
                     <div className="container mx-auto max-w-7xl px-4 py-4 sm:px-6">
                         <nav className="flex flex-col gap-3">
-                            <Link href="/" className={linkClass("/", true)}>
+                            <Link href="/" className={linkClass("/", true)} onClick={() => setIsOpen(false)}>
                                 Home
                             </Link>
-                            <Link href="/services" className={linkClass("/services")}>
+                            <Link href="/services" className={linkClass("/services")} onClick={() => setIsOpen(false)}>
                                 Services
                             </Link>
-                            <Link href="/PhysicianBilling" className={linkClass("/PhysicianBilling")}>
+                            <Link href="/PhysicianBilling" className={linkClass("/PhysicianBilling")} onClick={() => setIsOpen(false)}>
                                 Billing Solutions
                             </Link>
-                            <Link href="/specialties" className={linkClass("/specialties")}>
+                            <Link href="/specialties" className={linkClass("/specialties")} onClick={() => setIsOpen(false)}>
                                 Specialties
                             </Link>
-                            <Link href="/blogs" className={linkClass("/blogs")}>
+                            <Link href="/blogs" className={linkClass("/blogs")} onClick={() => setIsOpen(false)}>
                                 Blogs
                             </Link>
-                            <Link href="/about" className={linkClass("/about")}>
+                            <Link href="/about" className={linkClass("/about")} onClick={() => setIsOpen(false)}>
                                 About Us
                             </Link>
                             <Link
                                 href="/sales"
                                 className="inline-flex w-fit items-center gap-3 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white"
+                                onClick={() => setIsOpen(false)}
                             >
                                 Talk to sales
                             </Link>

@@ -42,20 +42,17 @@ export default function TrustSection() {
                     </p>
                 </div>
 
-                <div className="mt-12 flex flex-wrap items-stretch justify-between gap-6 lg:flex-nowrap">
+                <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                     {stats.map((item) => (
                         <div
                             key={item.title}
-                            className="h-[250px] w-[400px] min-w-[400px] max-w-[400px] shrink-0 rounded-2xl bg-[#FFFFFF] px-6 py-6 shadow-[0_0_25px_2px_rgba(0,0,0,0.1)] mx-auto"
+                            className="w-full rounded-2xl bg-white px-6 py-6 shadow-[0_0_25px_2px_rgba(0,0,0,0.1)]"
                         >
                             <div className="flex items-center justify-between">
                                 <div className="flex h-14 w-14 items-center justify-center rounded-md bg-[#1BDCB6]/10">
                                     <Image src={item.icon} alt="" width={30} height={30} />
                                 </div>
-                                <div
-                                    className="text-brand text-right font-bold text-[60px] leading-[72px]"
-                                    style={{ fontFamily: "Segoe UI, sans-serif" }}
-                                >
+                                <div className="text-brand text-right font-bold text-4xl sm:text-5xl">
                                     {item.value}
                                 </div>
                             </div>
