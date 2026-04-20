@@ -60,17 +60,17 @@ export default function Navbar() {
                             </svg>
                         </Link>
 
-                        <Link href="/specialties" className={linkClass("/specialties")}>
+                        {/* <Link href="/specialties" className={linkClass("/specialties")}>
                             Specialties
-                        </Link>
+                        </Link> */}
 
                         {/* <Link href="/blogs" className={linkClass("/blogs")}>
                             Blogs
                         </Link> */}
 
-                        <Link href="/about" className={linkClass("/about")}>
+                        {/* <Link href="/about" className={linkClass("/about")}>
                             About Us
-                        </Link>
+                        </Link> */}
                     </nav>
 
                     <div className="flex items-center">
