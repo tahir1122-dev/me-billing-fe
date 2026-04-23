@@ -171,7 +171,7 @@ export default function PhysicianBillingPage() {
                         </p>
                     </div>
 
-                    <div className="mt-12 flex flex-col items-center gap-12 sm:flex-row sm:flex-wrap sm:justify-center lg:flex-nowrap">
+                    <div className="mt-12 flex flex-col items-center gap-12 sm:flex-row sm:flex-wrap sm:justify-center 2xl:flex-nowrap">
                         {[
                             "More time to focus on patient care",
                             "Faster reimbursements and improved cash flow",
@@ -180,11 +180,11 @@ export default function PhysicianBillingPage() {
                             "Dedicated support from billing experts",
                         ].map((item, index) => {
                             const isBlue = index === 1 || index === 3;
-                            const offsetClass = index % 2 === 0 ? "-translate-y-12" : "translate-y-10";
+                            const offsetClass = index % 2 === 0 ? "2xl:-translate-y-12" : "2xl:translate-y-10";
                             return (
                                 <div key={item} className={`flex flex-col items-center ${offsetClass}`}>
                                     <div
-                                        className={`flex h-[250px] w-[250px] items-center justify-center rounded-full p-5 text-center text-xs font-semibold text-slate-700 sm:text-sm ${isBlue ? "bg-[#E6F6FB]" : "bg-[#F9F9F9]"
+                                        className={`flex h-[220px] w-[220px] items-center justify-center rounded-full p-5 text-center text-xs font-semibold text-slate-700 sm:h-[240px] sm:w-[240px] sm:text-sm lg:h-[250px] lg:w-[250px] ${isBlue ? "bg-[#E6F6FB]" : "bg-[#F9F9F9]"
                                             }`}
                                     >
                                         {item}
