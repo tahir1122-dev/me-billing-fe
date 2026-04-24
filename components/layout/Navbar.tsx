@@ -45,9 +45,7 @@ export default function Navbar() {
                             className={`group relative flex items-center gap-1 cursor-pointer ${linkClass("/services")}`}
                         >
                             Services
-                            <svg className="w-4 h-4 text-gray-500 group-hover:text-brand transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
+
                         </Link>
 
                         <Link
@@ -55,9 +53,7 @@ export default function Navbar() {
                             className={`group relative flex items-center gap-1 cursor-pointer ${linkClass("/PhysicianBilling")}`}
                         >
                             Billing Solutions
-                            <svg className="w-4 h-4 text-gray-500 group-hover:text-brand transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                            </svg>
+
                         </Link>
 
                         {/* <Link href="/specialties" className={linkClass("/specialties")}>
