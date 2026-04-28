@@ -60,9 +60,9 @@ export default function Navbar() {
                             Specialties
                         </Link>
 
-                        <Link href="/blogs" className={linkClass("/blogs")}>
+                        {/* <Link href="/blogs" className={linkClass("/blogs")}>
                             Blogs
-                        </Link>
+                        </Link> */}
 
                         <Link href="/about" className={linkClass("/about")}>
                             About Us
@@ -114,9 +114,9 @@ export default function Navbar() {
                             <Link href="/specialties" className={linkClass("/specialties")} onClick={() => setIsOpen(false)}>
                                 Specialties
                             </Link>
-                            <Link href="/blogs" className={linkClass("/blogs")} onClick={() => setIsOpen(false)}>
+                            {/* <Link href="/blogs" className={linkClass("/blogs")} onClick={() => setIsOpen(false)}>
                                 Blogs
-                            </Link>
+                            </Link> */}
                             <Link href="/about" className={linkClass("/about")} onClick={() => setIsOpen(false)}>
                                 About Us
                             </Link>
