@@ -17,8 +17,8 @@ const pageLinks = [
     { label: "Home", href: "/" },
     { label: "Our services", href: "/services" },
     { label: "Billing Solutions", href: "/PhysicianBilling" },
-    // { label: "Blog", href: "/blogs" },
-    // { label: "About Us", href: "/about" },
+    { label: "Blog", href: "/blogs" },
+    { label: "About Us", href: "/about" },
 ];
 
 export default function FooterSection() {
