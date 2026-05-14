@@ -1,182 +1,462 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
-import FaqSection from "@/components/sections/FaqSection";
+import seoContent from "@/data/seo-content.json";
 
 export const metadata: Metadata = {
     title: "Our Specialties | Me Billing",
+    description: "Specialty Depth That Changes Everything. 24 clinical specialties and facility types.",
 };
 
-const arrowIcon = (
-    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-            d="M19.8032 17.0756L19.6175 8.00301L10.5448 8.18877M18.6076 9.0551L8.10494 19.9968"
-            stroke="white"
-            strokeWidth="2"
-            strokeLinecap="square"
-        />
+const { specialtiesPage } = seoContent;
+
+const arrowIconSVG = (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M5 12h14" />
+        <path d="m12 5 7 7-7 7" />
     </svg>
 );
-const topSpecialties = [
-    { icon: "/images/public icon .png", label: "Public Health" },
-    { icon: "/images/Oncology.png", label: "Oncology" },
-    { icon: "/images/gyne.png", label: "OB/GYN" },
-    { icon: "/images/cardio.png", label: "Cardiology" },
-];
 
-const bottomSpecialties = [
-    { icon: "/images/Dermatology.png", label: "Dermatology" },
-    { icon: "/images/Internal Medicine.png", label: "Internal Medicine" },
-    { icon: "/images/Urgent Care.png", label: "Urgent Care" },
-    { icon: "/images/General Surgery.png", label: "General Surgery" },
-];
-
-const additionalSpecialties = [
-    { icon: "/images/Hand Surgery.png", label: "Hand Surgery" },
-    { icon: "/images/Infection.png", label: "Infectious Disease" },
-    { icon: "/images/Neurology.png", label: "Neurology" },
-    { icon: "/images/Orthopedics.png", label: "Orthopedics" },
-    { icon: "/images/Otolaryngology.png", label: "Otolaryngology" },
-    { icon: "/images/Pediatrics.png", label: "Pediatrics" },
-    { icon: "/images/Pain Management.png", label: "Pain Management" },
-    { icon: "/images/Ophthalmology.png", label: "Ophthalmology" },
-];
+const playIconSVG = (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8 5v14l11-7z" />
+    </svg>
+);
 
 export default function SpecialtiesPage() {
+    const { hero, stats, groupBilling, walkthrough, institutionalBilling, labSpecialties } = specialtiesPage;
+
     return (
-        <main className="flex-1 w-full bg-white">
-            <section className="relative flex h-[460px] w-full items-center overflow-hidden bg-[#09A8D4] py-16 sm:py-20">
+        <main className="flex-1 w-full bg-white font-outfit">
+            {/* Main Hero Section */}
+            <section className="relative flex max-w-[1920px] mx-auto h-[700px] lg:h-[800px] w-full items-center overflow-hidden bg-[#162018]">
+                {/* Full-page background loaded with the correct file name */}
                 <div className="absolute inset-0">
                     <Image
-                        src="/images/sevice bg.jpg"
-                        alt=""
+                        src={hero.image}
+                        alt="Specialties Background"
                         fill
-                        className="object-cover opacity-60"
+                        className="object-cover opacity-50"
                         sizes="100vw"
                         priority
                     />
-                    <div className="absolute inset-0 bg-[#09A8D4]/40" />
+                    {/* Soft overlay applied for readability while keeping right foreground content beautiful */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#111A13]/95 via-[#111A13]/85 to-[#111A13]/40" />
                 </div>
-                <div className="relative z-10 container mx-auto max-w-5xl px-4 text-center text-white sm:px-6 lg:px-8">
-                    <h1 className="text-3xl font-semibold sm:text-4xl">Our Specialties</h1>
-                    <p className="mt-3 text-sm text-white/90 sm:text-base">
-                        Our specialty-specific billing services and platform enables you to practice seamlessly allowing
-                        you to deliver the best possible care to your patients
-                    </p>
+
+                {/* Content Container keeps text fully readable without applying opacity to content */}
+                <div className="relative z-10 container mx-auto px-6 sm:px-12 lg:px-20 text-white">
+                    <div className="max-w-4xl">
+                        {/* Tagline */}
+                        <p className="text-[#C8920A] tracking-wider text-sm md:text-base font-semibold mb-6 flex items-center gap-2 font-outfit">
+                            <span className="w-6 h-[1.5px] bg-[#C8920A]"></span>
+                            {hero.tagline.replace("—", "").trim()}
+                        </p>
+
+                        {/* Main Heading with Cormorant Garamond */}
+                        <h1 className="text-5xl md:text-7xl lg:text-[80px] font-medium leading-[1.1] text-white mb-6 font-cormorant">
+                            {hero.titlePart1} <br />
+                            <span className="text-[#C8920A] italic">{hero.titleHighlight}</span>
+                        </h1>
+
+                        {/* Description */}
+                        <p className="text-lg md:text-[19px] text-white/95 max-w-3xl leading-relaxed font-outfit font-medium mb-10">
+                            {hero.description}
+                        </p>
+
+                        {/* Buttons Block */}
+                        <div className="flex flex-wrap items-center gap-4 font-outfit">
+                            <Link
+                                href="/contact"
+                                className="inline-flex items-center gap-2 bg-[#1A6B3A] hover:bg-[#13522C] text-white px-7 py-3.5 rounded-md font-medium text-base transition-all shadow-sm"
+                            >
+                                {hero.buttonPrimary.replace("→", "").trim()}
+                                {arrowIconSVG}
+                            </Link>
+                            <Link
+                                href="/services"
+                                className="inline-flex items-center gap-2 bg-transparent border border-white/60 hover:border-white text-white px-7 py-3.5 rounded-md font-medium text-base transition-all"
+                            >
+                                {hero.buttonSecondary.replace("→", "").trim()}
+                                {arrowIconSVG}
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <section className="w-full bg-white py-16 sm:py-20">
-                <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                        {topSpecialties.map((item, index) => (
-                            <article
-                                key={item.label}
-                                className={`relative flex flex-col items-center gap-4 rounded-[16px] p-6 shadow-[0_12px_30px_rgba(15,23,42,0.08)] ${index === 0 ? "bg-[#E6F6FB]" : "bg-white"
-                                    }`}
-                            >
-                                <Image src={item.icon} alt="" width={140} height={140} />
-                                <h3 className="text-sm font-semibold text-slate-800">{item.label}</h3>
-                                <Image
-                                    src="/images/Card Icon .svg"
-                                    alt=""
-                                    width={18}
-                                    height={18}
-                                    className="absolute bottom-4 left-4"
-                                />
-                            </article>
-                        ))}
+            {/* Section 1 under main section: Physician & Specialty Group Billing */}
+            <section className="w-full bg-[#FCFBF5]">
+                {/* Top Statistics Bar exactly replicating the screenshot structure and separators */}
+                <div className="w-full border-b border-gray-200/70">
+                    <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                        <div className="grid grid-cols-2 lg:grid-cols-5 py-8 lg:py-10 gap-y-6">
+                            {stats.map((stat, idx) => (
+                                <div
+                                    key={idx}
+                                    className={`flex flex-col items-center justify-center text-center px-2 ${
+                                        idx < stats.length - 1 ? "lg:border-r lg:border-gray-200/70" : ""
+                                    } ${idx % 2 === 0 && idx < stats.length - 1 ? "border-r border-gray-200/70 lg:border-r-0" : ""}`}
+                                >
+                                    <span className="text-[#1A6B3A] text-5xl lg:text-6xl font-medium font-cormorant mb-1">
+                                        {stat.value}
+                                    </span>
+                                    <span className="text-xs font-bold text-[#162018] tracking-wide block font-outfit leading-snug">
+                                        {stat.labelPart1} <br /> {stat.labelPart2}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
+                </div>
 
-                    <div className="mt-10">
-                        <h2 className="text-lg font-semibold text-slate-900">Public Health</h2>
-                        <p className="mt-3 max-w-4xl text-sm leading-relaxed text-slate-600">
-                            Public health focuses on improving the health and well-being of entire communities rather
-                            than individual patients. It involves preventing diseases, promoting healthy lifestyles,
-                            and ensuring access to essential healthcare services. Through research, education, and
-                            policy, public health helps create safer and healthier environments for everyone.
+                {/* Main Content & Specialty Cards Grid Area */}
+                <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+                    {/* Section Header exactly replicating alignment, text styling, and hierarchy */}
+                    <div className="max-w-4xl mb-12 lg:mb-16">
+                        <p className="text-[#C8920A] tracking-wider text-xs font-bold uppercase mb-2 block font-outfit">
+                            {groupBilling.tagline}
+                        </p>
+                        <h2 className="text-4xl lg:text-5xl font-medium text-[#162018] leading-tight mb-4 font-cormorant">
+                            {groupBilling.titlePart1} <span className="text-[#C8920A] italic">{groupBilling.titleHighlight}</span>
+                        </h2>
+                        <p className="text-[15px] text-[#162018]/80 leading-relaxed font-outfit font-medium max-w-3xl">
+                            {groupBilling.description}
                         </p>
                     </div>
 
-                    <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                        {bottomSpecialties.map((item) => (
+                    {/* Pixel-perfect Grid Structure matching the reference screenshot exactly */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                        {groupBilling.cards.map((card, idx) => (
                             <article
-                                key={item.label}
-                                className="relative flex flex-col items-center gap-4 rounded-[16px] bg-white p-6 shadow-[0_12px_30px_rgba(15,23,42,0.08)]"
+                                key={idx}
+                                className="bg-white rounded-2xl border border-gray-200/70 shadow-sm flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-md transition-all duration-300"
                             >
-                                <Image src={item.icon} alt="" width={140} height={140} />
-                                <h3 className="text-sm font-semibold text-slate-800">{item.label}</h3>
-                                <Image
-                                    src="/images/Card Icon .svg"
-                                    alt=""
-                                    width={18}
-                                    height={18}
-                                    className="absolute bottom-4 left-4"
-                                />
+                                {/* Premium linear gradient banner strip from #1A6B3A to #C8920A exactly matching screenshot */}
+                                <div className="h-2.5 w-full bg-gradient-to-r from-[#1A6B3A] to-[#C8920A] shrink-0" />
+
+                                {/* Card Body */}
+                                <div className="p-6 flex flex-col flex-1">
+                                    {/* Green Italicized Category Label */}
+                                    <span className="text-[#1A6B3A] text-[11px] italic font-medium block mb-1 font-outfit">
+                                        {card.category}
+                                    </span>
+
+                                    {/* Cormorant Garamond Card Heading */}
+                                    <h3 className="text-xl lg:text-2xl font-medium text-[#162018] mb-3 font-cormorant">
+                                        {card.title}
+                                    </h3>
+
+                                    {/* Description text */}
+                                    <p className="text-[13.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium mb-4 flex-1">
+                                        {card.description}
+                                    </p>
+
+                                    {/* Subtle Horizontal Divider Line */}
+                                    <div className="w-full border-t border-gray-100 my-4" />
+
+                                    {/* Tag / Badge items arranged perfectly */}
+                                    <div className="flex flex-wrap gap-2 pt-1">
+                                        {card.badges.map((badge, bIdx) => (
+                                            <span
+                                                key={bIdx}
+                                                className="bg-[#FAF3E0] text-[#C8920A] text-[11px] font-medium px-2.5 py-1 rounded font-outfit"
+                                            >
+                                                {badge}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
                             </article>
                         ))}
                     </div>
                 </div>
             </section>
 
-            <section className="w-full bg-[#E6F6FB] py-16 sm:py-20">
-                <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                        {additionalSpecialties.map((item) => (
-                            <article
-                                key={item.label}
-                                className="relative flex flex-col items-center gap-4 rounded-[16px] bg-white p-6 shadow-[0_12px_30px_rgba(15,23,42,0.08)]"
-                            >
-                                <Image src={item.icon} alt="" width={140} height={140} />
-                                <h3 className="text-sm font-semibold text-slate-800">{item.label}</h3>
-                                <Image
-                                    src="/images/Card Icon .svg"
-                                    alt=""
-                                    width={18}
-                                    height={18}
-                                    className="absolute bottom-4 left-4"
-                                />
-                            </article>
-                        ))}
-                    </div>
-                </div>
-            </section>
-            <section className="w-full bg-[#15ABD5] py-16 sm:py-20">
-                <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-                    <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-                        <div className="order-1 text-left text-white">
-                            <p className="text-lg font-semibold">Take a quick tour of</p>
-                            <h2 className="mt-2 text-3xl font-semibold leading-tight sm:text-4xl">
-                                mebilling EHR+ platform
-                            </h2>
-                            <p className="mt-4 max-w-lg text-sm text-white/90 sm:text-base">
-                                See how our all-in-one EHR+ platform helps you save time, get paid faster, and grow your
-                                practice.
-                            </p>
-                            <button
-                                type="button"
-                                className="mt-8 inline-flex items-center gap-4 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-[0_20px_40px_rgba(0,0,0,0.18)]"
-                            >
-                                Take a quick tour
-                                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-900">
-                                    {arrowIcon}
-                                </span>
-                            </button>
-                        </div>
-
-                        <div className="order-2">
+            {/* Section 2 under previous one: Walkthrough Feature Block exactly matching Screenshot 1 */}
+            <section className="w-full bg-[#FFFDF5] py-16 lg:py-24 border-t border-b border-gray-100/60">
+                <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        {/* Video Thumbnail block perfectly modeled after Screenshot 1 */}
+                        <div className="relative rounded-2xl overflow-hidden shadow-md max-w-xl mx-auto lg:mx-0 w-full">
                             <Image
-                                src="/images/EHR.png"
-                                alt="MeBilling EHR dashboard"
-                                width={860}
-                                height={520}
-                                className="h-auto w-full max-w-[620px]"
-                                priority
+                                src={walkthrough.image}
+                                alt="Walkthrough illustration"
+                                width={640}
+                                height={380}
+                                className="w-full h-auto object-cover"
                             />
+                            {/* Centered circular play overlay */}
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="w-16 h-16 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center">
+                                    <span className="w-11 h-11 rounded-full bg-[#C8920A] flex items-center justify-center text-white pl-0.5 shadow-md">
+                                        {playIconSVG}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Right Text Block matching hierarchy and spacing exactly */}
+                        <div className="max-w-xl">
+                            <p className="text-[#C8920A] tracking-wider text-xs font-bold uppercase mb-2 block font-outfit">
+                                {walkthrough.tagline}
+                            </p>
+                            <h2 className="text-4xl lg:text-5xl font-medium text-[#162018] leading-tight mb-4 font-cormorant">
+                                {walkthrough.titlePart1}{" "}
+                                <span className="text-[#C8920A] italic">{walkthrough.titleHighlight}</span>
+                            </h2>
+                            <p className="text-[15px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
+                                {walkthrough.description}
+                            </p>
                         </div>
                     </div>
                 </div>
             </section>
-            <FaqSection />
+
+            {/* Section 3: Facility & Institutional Specialties Block with semi-transparent rgba(26, 107, 58, 0.5) cards */}
+            <section className="w-full bg-[#FCFBF5] py-16 lg:py-24">
+                <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    {/* Horizontally centered Header matching reference exactly */}
+                    <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
+                        <p className="text-[#C8920A] tracking-wider text-xs font-bold uppercase mb-2 block font-outfit">
+                            {institutionalBilling.tagline}
+                        </p>
+                        <h2 className="text-4xl lg:text-5xl font-medium text-[#162018] leading-tight mb-4 font-cormorant">
+                            {institutionalBilling.titlePart1}{" "}
+                            <span className="text-[#C8920A] italic">{institutionalBilling.titleHighlight}</span>
+                        </h2>
+                        <p className="text-[15px] text-[#162018]/80 leading-relaxed font-outfit font-medium mx-auto max-w-2xl">
+                            {institutionalBilling.description}
+                        </p>
+                    </div>
+
+                    {/* Perfectly structured dual-grid layout achieving exact centered expansion bounds shown in Screenshot 2 */}
+                    <div className="flex flex-col gap-6 lg:gap-8 max-w-7xl mx-auto">
+                        {/* Top row: 3 cards */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                            {institutionalBilling.cards.slice(0, 3).map((card, idx) => (
+                                <article
+                                    key={idx}
+                                    style={{ backgroundColor: "#0C3318" }}
+                                    className="rounded-[24px] border border-[#1A6B3A]/30 backdrop-blur-md p-6 lg:p-8 flex flex-col justify-between hover:border-[#1A6B3A]/50 transition-all duration-300 shadow-sm"
+                                >
+                                    <div>
+                                        {/* Card Header Flex with Icon mapped precisely */}
+                                        <div className="flex items-center gap-3.5 mb-4">
+                                            <div className="w-10 h-10 flex items-center justify-center shrink-0">
+                                                <Image
+                                                    src={card.icon}
+                                                    alt={card.title}
+                                                    width={40}
+                                                    height={40}
+                                                    className="object-contain"
+                                                />
+                                            </div>
+                                            <div>
+                                                <span className="text-[#C8920A] text-[10.5px] font-bold tracking-wider block font-outfit uppercase">
+                                                    {card.category}
+                                                </span>
+                                                <h3 className="text-xl lg:text-2xl font-medium text-white font-cormorant leading-tight">
+                                                    {card.title}
+                                                </h3>
+                                            </div>
+                                        </div>
+
+                                        {/* Description */}
+                                        <p className="text-[13.5px] text-white/85 leading-relaxed font-outfit font-medium mb-6">
+                                            {card.description}
+                                        </p>
+                                    </div>
+
+                                    {/* Dark green pill badges matching reference screenshot */}
+                                    <div className="flex flex-wrap gap-2 pt-1">
+                                        {card.badges.map((badge, bIdx) => (
+                                            <span
+                                                key={bIdx}
+                                                className="bg-[#113B1D]/90 text-[#C8920A] text-[11px] font-medium px-2.5 py-1 rounded font-outfit border border-white/5"
+                                            >
+                                                {badge}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
+
+                        {/* Bottom row: 2 wider cards expanding perfectly to fit matching bounds */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                            {institutionalBilling.cards.slice(3, 5).map((card, idx) => (
+                                <article
+                                    key={idx}
+                                    style={{ backgroundColor: "#0C3318" }}
+                                    className="rounded-[24px] border border-[#1A6B3A]/30 backdrop-blur-md p-6 lg:p-8 flex flex-col justify-between hover:border-[#1A6B3A]/50 transition-all duration-300 shadow-sm"
+                                >
+                                    <div>
+                                        {/* Card Header Flex with Icon mapped precisely */}
+                                        <div className="flex items-center gap-3.5 mb-4">
+                                            <div className="w-10 h-10 flex items-center justify-center shrink-0">
+                                                <Image
+                                                    src={card.icon}
+                                                    alt={card.title}
+                                                    width={40}
+                                                    height={40}
+                                                    className="object-contain"
+                                                />
+                                            </div>
+                                            <div>
+                                                <span className="text-[#C8920A] text-[10.5px] font-bold tracking-wider block font-outfit uppercase">
+                                                    {card.category}
+                                                </span>
+                                                <h3 className="text-xl lg:text-2xl font-medium text-white font-cormorant leading-tight">
+                                                    {card.title}
+                                                </h3>
+                                            </div>
+                                        </div>
+
+                                        {/* Description */}
+                                        <p className="text-[13.5px] text-white/85 leading-relaxed font-outfit font-medium mb-6">
+                                            {card.description}
+                                        </p>
+                                    </div>
+
+                                    {/* Dark green pill badges matching reference screenshot */}
+                                    <div className="flex flex-wrap gap-2 pt-1">
+                                        {card.badges.map((badge, bIdx) => (
+                                            <span
+                                                key={bIdx}
+                                                className="bg-[#113B1D]/90 text-[#C8920A] text-[11px] font-medium px-2.5 py-1 rounded font-outfit border border-white/5"
+                                            >
+                                                {badge}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Section 4: Lab Billing Specialties exactly matching the provided reference screenshot */}
+            <section className="w-full bg-[#FAF9F0] py-16 lg:py-24 border-t border-gray-100/60">
+                <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    {/* Left-aligned Header exactly replicating screenshot structure and typography */}
+                    <div className="max-w-4xl mb-12 lg:mb-16">
+                        <p className="text-[#C8920A] tracking-wider text-xs font-bold uppercase mb-2 block font-outfit">
+                            {labSpecialties.tagline}
+                        </p>
+                        <h2 className="text-4xl lg:text-5xl font-medium text-[#162018] leading-tight mb-4 font-cormorant">
+                            {labSpecialties.titlePart1}{" "}
+                            <span className="text-[#C8920A] italic">{labSpecialties.titleHighlight}</span>
+                        </h2>
+                        <p className="text-[15px] text-[#162018]/75 leading-relaxed font-outfit font-medium max-w-3xl">
+                            {labSpecialties.description}
+                        </p>
+                    </div>
+
+                    {/* 2x2 Grid exactly matching card sizing, equal spacing, and pill layout */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl">
+                        {labSpecialties.cards.map((card, idx) => {
+                            // Assign matching premium inline SVG style icons for each title based on reference style
+                            let iconSVG = null;
+                            if (idx === 0) {
+                                // Toxicology: Chemical testing/flask setup
+                                iconSVG = (
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M10 2v7.31l-6.5 10A2 2 0 0 0 5.18 22h13.64a2 2 0 0 0 1.68-3.04L14 9.31V2" />
+                                        <path d="M8.5 2h7" />
+                                        <path d="M14 16.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
+                                        <path d="M6 14h12" />
+                                    </svg>
+                                );
+                            } else if (idx === 1) {
+                                // Pathology: Microscope apparatus
+                                iconSVG = (
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M6 18h8" />
+                                        <path d="M3 22h18" />
+                                        <path d="M14 22a7 7 0 1 0 0-14h-1" />
+                                        <path d="M9 14h2" />
+                                        <path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z" />
+                                        <path d="M12 2v4" />
+                                    </svg>
+                                );
+                            } else if (idx === 2) {
+                                // Genetic Labs: DNA double-helix spiral
+                                iconSVG = (
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M15 2v20" />
+                                        <path d="M9 2v20" />
+                                        <path d="M6 6h12" />
+                                        <path d="M6 12h12" />
+                                        <path d="M6 18h12" />
+                                        <circle cx="15" cy="6" r="2" fill="currentColor" />
+                                        <circle cx="9" cy="12" r="2" fill="currentColor" />
+                                        <circle cx="15" cy="18" r="2" fill="currentColor" />
+                                    </svg>
+                                );
+                            } else {
+                                // Radiology: MRI Scanner circular tunnel ring
+                                iconSVG = (
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <circle cx="12" cy="12" r="8" />
+                                        <circle cx="12" cy="12" r="4" />
+                                        <path d="M12 2v2" />
+                                        <path d="M12 20v2" />
+                                        <path d="M2 12h2" />
+                                        <path d="M20 12h2" />
+                                        <path d="M5 19h14" />
+                                    </svg>
+                                );
+                            }
+
+                            return (
+                                <article
+                                    key={idx}
+                                    className="bg-[#FCFBF5] rounded-[24px] border border-[#1A6B3A]/20 p-6 lg:p-8 flex flex-col justify-between hover:border-[#1A6B3A]/40 hover:shadow-sm transition-all duration-300"
+                                >
+                                    <div>
+                                        {/* Header Flex */}
+                                        <div className="flex items-center gap-3.5 mb-4">
+                                            {/* Soft green rounded box holding custom matching SVG icon */}
+                                            <div className="w-12 h-12 rounded-xl bg-[#E6F0EB] border border-[#1A6B3A]/10 flex items-center justify-center shrink-0 text-[#1A6B3A]">
+                                                {iconSVG}
+                                            </div>
+                                            <div>
+                                                <span className="text-[#C8920A] text-xs font-bold tracking-wide block font-outfit">
+                                                    {card.category}
+                                                </span>
+                                                <h3 className="text-xl lg:text-2xl font-medium text-[#162018] font-cormorant leading-tight">
+                                                    {card.title}
+                                                </h3>
+                                            </div>
+                                        </div>
+
+                                        {/* Medium gray paragraph text */}
+                                        <p className="text-[13.5px] text-[#162018]/75 leading-relaxed font-outfit font-medium mb-6">
+                                            {card.description}
+                                        </p>
+                                    </div>
+
+                                    {/* Subtle internal divider line and chips container exactly replicating reference */}
+                                    <div className="pt-4 border-t border-gray-200/50 mt-auto">
+                                        <div className="flex flex-wrap gap-2">
+                                            {card.badges.map((badge, bIdx) => (
+                                                <span
+                                                    key={bIdx}
+                                                    className="bg-[#FAF3E0] text-[#C8920A] text-[11px] font-medium px-2.5 py-1 rounded-md font-outfit"
+                                                >
+                                                    {badge}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </article>
+                            );
+                        })}
+                    </div>
+                </div>
+            </section>
         </main>
     );
 }

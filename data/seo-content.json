@@ -1,0 +1,609 @@
+{
+    "about": {
+        "seo": {
+            "title": "About Us | MeBilling",
+            "description": "Learn about MeBilling, our elegant and modern experience, and the team behind your cleaner revenue.",
+            "keywords": "MeBilling, About Us, team, revenue, billing solutions",
+            "openGraph": {
+                "title": "About Us | MeBilling",
+                "description": "Learn about MeBilling, our elegant and modern experience, and the team behind your cleaner revenue.",
+                "url": "https://mebilling.com/about",
+                "type": "website",
+                "images": [
+                    {
+                        "url": "/images/about Bg .png"
+                    }
+                ]
+            },
+            "twitter": {
+                "card": "summary_large_image",
+                "title": "About Us | MeBilling",
+                "description": "Learn about MeBilling, our elegant and modern experience, and the team behind your cleaner revenue.",
+                "image": "/images/about Bg .png"
+            }
+        },
+        "content": {
+            "hero": {
+                "heading": "About MeBilling Inc.",
+                "subHeading": "The Team Behind Your Cleaner Revenue.",
+                "description": "Every claim tells a story of a clinician who deserves fair compensation and a patient who deserves financial clarity. MeBilling exists to make sure both are honoured accurately, compliantly, and without delay."
+            },
+            "mission": {
+                "tagline": "—Our Mission",
+                "headingPart1": "Revenue Clarity for",
+                "headingHighlight": "Every Provider.",
+                "p1": "We ensure healthcare providers and groups receive accurate and timely reimbursement — eliminating the need to manage denials, navigate payer complexity, or absorb the administrative weight of billing in-house. Consistently. Reliably. Without exception.",
+                "quote": "MeBilling was founded by a former practice manager who understood firsthand what it cost when billing got in the way of care. That perspective shapes every process, every hire, and every client relationship we operate today.",
+                "badge": "Houston HQ · Est · 2015",
+                "stats": [
+                    {
+                        "number": "2015",
+                        "label": "Founded in Houston, TX"
+                    },
+                    {
+                        "number": "250+",
+                        "label": "Credentialed billing professionals"
+                    },
+                    {
+                        "number": "90+",
+                        "label": "Payer networks managed"
+                    },
+                    {
+                        "number": "5,000+",
+                        "label": "Providers supported nationwide"
+                    }
+                ]
+            },
+            "story": {
+                "tagline": "—Our Story",
+                "headingPart1": "Where We Started.",
+                "headingHighlight": "Where We Stand.",
+                "milestones": [
+                    {
+                        "year": "2015",
+                        "description": "Founded in Houston, TX by a former practice manager frustrated by claim errors and payment delays. Began serving three local clinics with a founding team of certified billers."
+                    },
+                    {
+                        "year": "2019",
+                        "description": "Expanded to serve multi-specialty groups and built a dedicated denial management division — specialists focused on payer appeals, reconsiderations, and dispute escalation."
+                    },
+                    {
+                        "year": "2023",
+                        "description": "Launched real-time reporting dashboards and cloud-based billing infrastructure — giving every client 24/7 visibility into their revenue cycle performance."
+                    },
+                    {
+                        "year": "Today",
+                        "description": "250+ CPMA and CPC-certified professionals serving 5,000+ providers nationwide across 40+ states from our Houston HQ and 2 global delivery centres."
+                    }
+                ]
+            },
+            "values": {
+                "tagline": "—Our Values",
+                "headingPart1": "What We Stand By",
+                "headingHighlight": "Every Day.",
+                "items": [
+                    {
+                        "icon": "/images/aboutIcon1 .png",
+                        "title": "Accuracy First",
+                        "description": "We get it right the first time — every code, every claim, every encounter."
+                    },
+                    {
+                        "icon": "/images/aboutIcon2.png",
+                        "title": "Full Transparency",
+                        "description": "You always know where your money is, why a claim was denied, and what's being done about it."
+                    },
+                    {
+                        "icon": "/images/aboutIcon3.png",
+                        "title": "People-Centred",
+                        "description": "Behind every claim is a patient and a provider. We never lose sight of that human dimension."
+                    },
+                    {
+                        "icon": "/images/aboutIcon4.png",
+                        "title": "Accountability",
+                        "description": "If something goes wrong, we own it and fix it. Our clients don't chase us for answers."
+                    },
+                    {
+                        "icon": "/images/aboutIcon5.png",
+                        "title": "Integrity",
+                        "description": "We do the right thing — in coding, compliance, and client relationships — always."
+                    },
+                    {
+                        "icon": "/images/aboutIcon6.png",
+                        "title": "Operational Discipline",
+                        "description": "Consistency is the foundation of a reliable revenue cycle. Our workflows are built to perform at scale."
+                    }
+                ]
+            },
+            "compliance": {
+                "tagline": "—Credentials & Compliance",
+                "headingPart1": "Certified.",
+                "headingHighlight": "HIPAA Compliant.",
+                "description": "MeBilling operates under strict HIPAA guidelines, conducts regular internal audits, and maintains encrypted, secure systems. Compliance isn't a feature — it is built into every process we run.",
+                "certifications": [
+                    {
+                        "badge": "CPMA",
+                        "title": "A Certified Professional Medical Auditor",
+                        "description": "Documentation audit integrity & compliance protection"
+                    },
+                    {
+                        "badge": "CPC",
+                        "title": "Certified Professional Coder",
+                        "description": "Accurate CPT/ICD-10 coding by credentialed specialists"
+                    },
+                    {
+                        "badge": "AAPC",
+                        "title": "AAPC-Certified Auditors",
+                        "description": "Specialty-specific audit reporting with full documentation"
+                    }
+                ],
+                "features": [
+                    "CPMA & CPC Certified",
+                    "Encrypted Data Transfer",
+                    "Annual Internal Audits",
+                    "Secure Access Controls"
+                ]
+            },
+            "team": {
+                "headingPart1": "Meet",
+                "headingHighlight": "Our Team",
+                "description": "Our team of specialists can handle any digital project or challenge thrown our way, and we mean it. From high-performance websites to mobile apps and integrated marketing campaigns, our work is beautiful, functional, and always focused on meeting your goals.",
+                "members": [
+                    {
+                        "image": "/images/team 1.jpg",
+                        "name": "Ali Khan",
+                        "role": "CEO & Chairman"
+                    },
+                    {
+                        "image": "/images/team 2.jpg",
+                        "name": "Warmad Ilyas",
+                        "role": "Chief Operating Officer"
+                    },
+                    {
+                        "textOnly": true,
+                        "name": "Jnyn Hanna",
+                        "role": "Vice President - USA",
+                        "bio": "John Hanna is an experienced M&A strategist/advisor, CEO and Merchant Banker with a strong track record in building, acquiring, and scaling businesses."
+                    },
+                    {
+                        "image": "/images/team 3.jpg",
+                        "name": "Awarew Edelstein",
+                        "role": "Associate Director"
+                    },
+                    {
+                        "image": "/images/team 4.jpg",
+                        "name": "Liz Marahall",
+                        "role": "M&A Coordinator"
+                    },
+                    {
+                        "image": "/images/team 5 .jpg",
+                        "name": "Chrlotte Fahy",
+                        "role": "M&A Coordinator"
+                    },
+                    {
+                        "image": "/images/team 6.jpg",
+                        "name": "Sue Robnson",
+                        "role": "M&A Coordinator"
+                    },
+                    {
+                        "image": "/images/team 7.jpg",
+                        "name": "Saantha Baker",
+                        "role": "M&A Coordinator"
+                    }
+                ]
+            },
+            "tour": {
+                "tagline": "Take a quick tour of",
+                "heading": "mebilling EHR+ platform",
+                "description": "See how our all-in-one EHR+ platform helps you save time, get paid faster, and grow your practice."
+            }
+        }
+    },
+    "servicesPage": {
+        "hero": {
+            "tagline": "Core Service Lines",
+            "headingPart1": "Twelve Services.",
+            "headingHighlight": "One Accountable Team.",
+            "description": "Every MeBilling service is staffed by certified specialists who work within your EMR, understand your payer landscape, and are held accountable to outcomes — not just activity metrics.",
+            "buttonPrimary": "Talk to Our Team",
+            "buttonSecondary": "View Services"
+        },
+        "scope": {
+            "tagline": "— What We Do",
+            "headingPart1": "The Full Scope of",
+            "headingHighlight": "Me Billing Services",
+            "description": "From clean claim submission to formal arbitration — every service your revenue cycle depends on, handled in-house by the specialists who do it every day.",
+            "cards": [
+                {
+                    "style": "image",
+                    "image": "/images/service 1.jpg",
+                    "badge": "Full Outsourcing",
+                    "title": "We want to hand off billing entirely",
+                    "description": "One accountable partner for patient registration through final payment no vendors, no gaps."
+                },
+                {
+                    "style": "list",
+                    "badge": "Provider Lifecycle",
+                    "title": "Enrollment & Credentialing",
+                    "description": "Every day a provider waits on credentialing is a day your practice cannot bill. We manage the complete enrollment lifecycle across 90+ payer networks — from initial application through CAQH attestation, license renewals, and revalidation — with billing and credentialing handled by the same team so gaps are caught immediately.",
+                    "listItems": [
+                        "Medicare, Medicaid, PECOS, CAQH, and 90+",
+                        "NPI, TIN, EDI (claims, ERA & EFT) enrollment",
+                        "Proactive revalidation and license deadline monitoring"
+                    ]
+                },
+                {
+                    "style": "image",
+                    "image": "/images/service 2.jpg",
+                    "badge": "Compliance & Risk",
+                    "title": "We're worried about an audit or recoupment",
+                    "description": "Proactive coding audits, HCC validation, and CDI reviews — before a payer finds the gap."
+                },
+                {
+                    "style": "image",
+                    "image": "/images/service 3.jpg",
+                    "badge": "Full Outsourcing",
+                    "title": "We want to hand off billing entirely",
+                    "description": "One accountable partner for patient registration through final payment no vendors, no gaps."
+                },
+                {
+                    "style": "image",
+                    "image": "/images/service 4.jpg",
+                    "badge": "Full Outsourcing",
+                    "title": "We want to hand off billing entirely",
+                    "description": "One accountable partner for patient registration through final payment no vendors, no gaps."
+                },
+                {
+                    "style": "image",
+                    "image": "/images/doc 2.png",
+                    "badge": "Full Outsourcing",
+                    "title": "We want to hand off billing entirely",
+                    "description": "One accountable partner for patient registration through final payment no vendors, no gaps."
+                },
+                {
+                    "style": "image",
+                    "image": "/images/service 1.jpg",
+                    "badge": "Full Outsourcing",
+                    "title": "We want to hand off billing entirely",
+                    "description": "One accountable partner for patient registration through final payment no vendors, no gaps."
+                },
+                {
+                    "style": "image",
+                    "image": "/images/service 2.jpg",
+                    "badge": "Full Outsourcing",
+                    "title": "We want to hand off billing entirely",
+                    "description": "One accountable partner for patient registration through final payment no vendors, no gaps."
+                },
+                {
+                    "style": "image",
+                    "image": "/images/service 3.jpg",
+                    "badge": "Full Outsourcing",
+                    "title": "We want to hand off billing entirely",
+                    "description": "One accountable partner for patient registration through final payment no vendors, no gaps."
+                }
+            ]
+        }
+    },
+    "bundledSolutions": {
+        "hero": {
+            "tagline": "— Bundled Solutions",
+            "titlePart1": "Six Solutions Built Around",
+            "titleHighlight": "the Outcome You Need.",
+            "description": "Not every practice needs every service. Our solutions bundle our capabilities around a specific result — so you engage exactly what your revenue cycle requires, and nothing it doesn't.",
+            "image": "/images/Bundled Solutions bg .png"
+        },
+        "walkthrough": {
+            "tagline": "— Which Solution Fits?",
+            "titlePart1": "Not every practice",
+            "titleHighlight": "needs every service.",
+            "description": "Watch a 2-minute walkthrough of our six solution bundles and discover which one matches your current billing challenges.",
+            "buttonText": "Talk to a Specialist →",
+            "image": "/images/service 1.jpg"
+        },
+        "packagesSection": {
+            "tagline": "— Solution Packages",
+            "titlePart1": "Match Your Challenge",
+            "titleHighlight": "to the Right Solution.",
+            "description": "Each solution is a curated combination of MeBilling services designed to deliver a specific outcome — from full outsourcing to targeted revenue recovery to dispute resolution.",
+            "packages": [
+                {
+                    "tagline": "— Full Outsourcing",
+                    "titlePart1": "End-to-End Revenue",
+                    "titleHighlight": "Cycle Management",
+                    "description": "For practices ready to hand off the entire billing function and hold one team accountable for all of it. No vendor coordination, no handoff gaps, no finger-pointing when something goes wrong. MeBilling manages your complete revenue cycle — from the first patient touchpoint to the last dollar reconciled — with in-house specialists at every stage.",
+                    "includedPrefix": "What's Included :",
+                    "includedHighlight": "Patient access",
+                    "includedItems": [
+                        "Registration, eligibility verification, and prior authorization",
+                        "Specialty-organized medical coding: ICD-10, CPT, HCPCS",
+                        "Payment posting, reconciliation, and real-time reporting",
+                        "AR follow-up, denial management, and collections",
+                        "Claims scrubbing and submission within 48 hours"
+                    ],
+                    "image": "/images/service 2.jpg",
+                    "bestFor": "Best For: Groups eliminating in-house billing overhead entirely"
+                },
+                {
+                    "tagline": "— Get Providers Activated & Paid Faster",
+                    "titlePart1": "Provider Lifecycle",
+                    "titleHighlight": "Management",
+                    "description": "Every credentialing gap is a billing gap. When a provider isn't enrolled, every service they deliver is a claim you can't submit. This solution manages the complete provider lifecycle — from initial payer application through ongoing contract alignment and revalidation monitoring — so providers reach active billing status faster and stay there without interruption.",
+                    "includedPrefix": "What's Included :",
+                    "includedHighlight": "Enrollment across 90+ payer networks",
+                    "includedItems": [
+                        "Medicare, Medicaid, commercial",
+                        "CAQH, PECOS, NPI, TIN, and EDI enrollment maintenance",
+                        "Hospital privileging and facility credentialing support",
+                        "Payer contract alignment and rate management",
+                        "Proactive revalidation and license expiry monitoring"
+                    ],
+                    "image": "/images/service 3.jpg",
+                    "bestFor": "Best For: Expanding groups, new market entry, large credentialed provider rosters"
+                }
+            ]
+        }
+    },
+    "specialtiesPage": {
+        "hero": {
+            "tagline": "— MeBilling Specialties",
+            "titlePart1": "Specialty Depth That",
+            "titleHighlight": "Changes Everything.",
+            "description": "24 clinical specialties and facility types. Each one staffed by a dedicated billing team that works that specialty every single day — not a generalist queue that rotates between them. The difference shows in your clean claim rate.",
+            "image": "/images/specialites bg.jpg",
+            "buttonPrimary": "Talk to a Specialist →",
+            "buttonSecondary": "View Services →"
+        },
+        "stats": [
+            { "value": "15", "labelPart1": "Professional Billing", "labelPart2": "Specialties" },
+            { "value": "5", "labelPart1": "Facility & Institutional", "labelPart2": "Billing Types" },
+            { "value": "4", "labelPart1": "Laboratory Revenue", "labelPart2": "Cycle Specialties" },
+            { "value": "90+", "labelPart1": "Payer Networks", "labelPart2": "Actively Managed" },
+            { "value": "98+", "labelPart1": "First-Pass Clean", "labelPart2": "Claim Rate" }
+        ],
+        "groupBilling": {
+            "tagline": "— Professional Billing",
+            "titlePart1": "Physician & Specialty",
+            "titleHighlight": "Group Billing",
+            "description": "15 professional billing specialties — each with a dedicated team that codes exclusively within that clinical discipline. No rotations, no generalists, no shared queues.",
+            "cards": [
+                {
+                    "category": "Professional",
+                    "title": "Mental / Behavioral Health",
+                    "description": "Behavioral health billing sits at the intersection of clinical sensitivity and payer complexity. Session based CPT coding, mental health parity compliance, telehealth reimbursement rules, and prior authorization requirements all carry payer specific nuances and errors here directly delay care access for vulnerable patients.",
+                    "badges": [
+                        "Session-based CPT coding",
+                        "Mental health parity",
+                        "Collaborative care models",
+                        "Collaborative care models",
+                        "Telehealth billing"
+                    ]
+                },
+                {
+                    "category": "Professional",
+                    "title": "Orthopedic Surgery & Sports",
+                    "description": "Orthopedic revenue requires deep expertise in multi-procedure operative reports and specialized modifiers. Implant tracking, surgical staging documentation, global period rules, and workers' compensation guidelines carry critical compliance weight to prevent costly claim downcoding.",
+                    "badges": [
+                        "Surgical modifier logic",
+                        "Implant reimbursement",
+                        "Global period tracking",
+                        "Workers' comp billing",
+                        "Prior authorization"
+                    ]
+                },
+                {
+                    "category": "Professional",
+                    "title": "Cardiology & Electrophysiology",
+                    "description": "Cardiology billing demands precision across complex interventional procedures and diagnostic testing workflows. Selective catheterization sequencing, component coding rules, peripheral vascular interventions, and device monitoring require meticulous daily review.",
+                    "badges": [
+                        "Interventional coding",
+                        "Device interrogations",
+                        "Catheterization logic",
+                        "Component unbundling",
+                        "Echocardiography workflows"
+                    ]
+                },
+                {
+                    "category": "Professional",
+                    "title": "Oncology & Infusion Centers",
+                    "description": "High-cost drug administration and multi-hour chemotherapy infusions present intense audit risks and margin sensitivity. Wastage documentation via JW/JZ modifiers, precise dose unit conversions, complex regimen pre-determinations, and concurrent care rules are managed daily.",
+                    "badges": [
+                        "Drug wastage modifiers",
+                        "Infusion time mapping",
+                        "Unit conversion math",
+                        "Pre-treatment auths",
+                        "Concurrent care rules"
+                    ]
+                },
+                {
+                    "category": "Professional",
+                    "title": "OB/GYN & Women's Health",
+                    "description": "Navigating global maternity packages alongside independent gynecological procedures requires structured unbundling safeguards. Split-care agreements, high-risk maternal diagnostic billing, routine preventive coverage boundaries, and complex surgical coding demand flawless timing.",
+                    "badges": [
+                        "Global maternity tracking",
+                        "Antepartum carve-outs",
+                        "Surgical unbundling",
+                        "Preventive cross-walks",
+                        "High-risk diagnostic logic"
+                    ]
+                },
+                {
+                    "category": "Professional",
+                    "title": "Dermatology & Mohs Surgery",
+                    "description": "High-volume outpatient procedures combined with intricate multi-stage closures dictate strict documentation alignments. Multi-stage Mohs layer mapping, benign vs. malignant excision criteria, multiple surgery reduction rules, and complex pathology linkages require certified focus.",
+                    "badges": [
+                        "Mohs stage unbundling",
+                        "Excision diameter math",
+                        "Multiple surgery logic",
+                        "Pathology cross-links",
+                        "Derm-specific local rules"
+                    ]
+                }
+            ]
+        },
+        "walkthrough": {
+            "tagline": "— Specialty Expertise in Practice",
+            "titlePart1": "See how specialty-exclusive billing",
+            "titleHighlight": "changes the numbers.",
+            "description": "When oncology coders only code oncology, the difference is measurable — in claim accuracy, payer compliance, and revenue captured.",
+            "image": "/images/service 1.jpg"
+        },
+        "institutionalBilling": {
+            "tagline": "— Facility & Institutional Billing",
+            "titlePart1": "Part A &",
+            "titleHighlight": "Institutional Specialties",
+            "description": "Five facility and institutional billing types — UB-04 claims, OPPS compliance, DRG validation, and the regulatory framework that governs every Part A dollar your facility bills.",
+            "cards": [
+                {
+                    "category": "Institutional",
+                    "title": "Emergency Medicine",
+                    "description": "Emergency medicine facility billing demands coding accuracy under high-volume pressure. Acuity-based E/M level selection, observation vs. inpatient status determination, trauma activation coding, and split billing management across professional and facility components all require an institutional team that understands both the clinical.",
+                    "badges": [
+                        "Acuity-based E/M coding",
+                        "Mental health parity",
+                        "Obs vs. inpatient status",
+                        "Trauma coding",
+                        "Split billing management"
+                    ],
+                    "icon": "/images/first .png"
+                },
+                {
+                    "category": "Institutional",
+                    "title": "Micro Hospitals",
+                    "description": "Micro hospitals carry the full regulatory burden of a full-size hospital in a smaller operational footprint. Part A billing, UB-04 claim construction, OPPS compliance, Medicare and Medicaid facility billing, and cost reporting support require the same institutional coding depth as any major facility — and that is exactly what our team provides.",
+                    "badges": [
+                        "Acuity-based E/M coding",
+                        "Mental health parity",
+                        "Obs vs. inpatient status",
+                        "Trauma coding",
+                        "Split billing management"
+                    ],
+                    "icon": "/images/second.png"
+                },
+                {
+                    "category": "Institutional",
+                    "title": "Surgical Centers (ASCs)",
+                    "description": "ASC billing is governed by the CMS ASC payment schedule, covered procedure lists, and packaged payment rules that have no equivalent in professional billing. Implant billing, device reporting, and modifier precision in the ASC context require a team that monitors CMS ASC annual updates and applies them on day.",
+                    "badges": [
+                        "Acuity-based E/M coding",
+                        "Mental health parity",
+                        "Obs vs. inpatient status",
+                        "Trauma coding",
+                        "Split billing management"
+                    ],
+                    "icon": "/images/third.png"
+                },
+                {
+                    "category": "Institutional",
+                    "title": "Nursing Homes",
+                    "description": "Emergency medicine facility billing demands coding accuracy under high-volume pressure. Acuity-based E/M level selection, observation vs. inpatient status determination, trauma activation coding, and split billing management across professional and facility components all require an institutional team that understands both the clinical.",
+                    "badges": [
+                        "Acuity-based E/M coding",
+                        "Acuity-based E/M coding",
+                        "Acuity-based E/M coding",
+                        "Acuity-based E/M coding",
+                        "Acuity-based E/M coding"
+                    ],
+                    "icon": "/images/fourth.png"
+                },
+                {
+                    "category": "Institutional",
+                    "title": "Inpatient Acute Care",
+                    "description": "Emergency medicine facility billing demands coding accuracy under high-volume pressure. Acuity-based E/M level selection, observation vs. inpatient status determination, trauma activation coding, and split billing management across professional and facility components all require an institutional team that understands both the clinical.",
+                    "badges": [
+                        "Acuity-based E/M coding",
+                        "Acuity-based E/M coding",
+                        "Acuity-based E/M coding",
+                        "Acuity-based E/M coding",
+                        "Acuity-based E/M coding"
+                    ],
+                    "icon": "/images/fifth.png"
+                }
+            ]
+        },
+        "labSpecialties": {
+            "tagline": "— Laboratory Revenue Cycle",
+            "titlePart1": "Lab Billing",
+            "titleHighlight": "Specialties",
+            "description": "Four laboratory billing specialties — each one navigating a distinct coding framework, payer policy environment, and medical necessity documentation standard.",
+            "cards": [
+                {
+                    "category": "Lab Specialty",
+                    "title": "Toxicology",
+                    "description": "Toxicology is one of the most scrutinised segments in laboratory medicine. Correctly distinguishing presumptive from definitive testing, documenting medical necessity at the ordering provider level, and constructing claims that survive payer review requires a team that understands the regulatory environment around tox as well as the HCPCS codes that govern it.",
+                    "badges": [
+                        "Presumptive vs. definitive",
+                        "Medical necessity",
+                        "HCPCS coding",
+                        "Payer audit-readiness"
+                    ]
+                },
+                {
+                    "category": "Lab Specialty",
+                    "title": "Pathology",
+                    "description": "Pathology billing splits across technical and professional components, surgical pathology CPT tier selection, cytopathology, and molecular pathology — each with its own coding hierarchy and global vs. component billing decision points. Getting the TC/26 split right on every claim, across every ordering setting, is a precision task our team handles without shortcuts.",
+                    "badges": [
+                        "Presumptive vs. definitive",
+                        "Medical necessity",
+                        "HCPCS coding",
+                        "Payer audit-readiness"
+                    ]
+                },
+                {
+                    "category": "Lab Specialty",
+                    "title": "Genetic Labs",
+                    "description": "Genomic and genetic testing billing is the fastest-evolving segment in laboratory revenue cycle. CPT and MAAA code accuracy, real-time payer coverage policy tracking for specific panels, prior authorization requirements, and medical necessity appeals for high-cost genomic testing all require active policy intelligence — not a quarterly code lookup.",
+                    "badges": [
+                        "Presumptive vs. definitive",
+                        "Medical necessity",
+                        "HCPCS coding",
+                        "Payer audit-readiness"
+                    ]
+                },
+                {
+                    "category": "Lab Specialty",
+                    "title": "Radiology",
+                    "description": "Radiology billing spans diagnostic imaging and interventional procedures — each with distinct TC/PC split billing rules, contrast and guidance add-on codes, and payer-specific prior authorization requirements. Interventional radiology coding carries additional complexity with imaging guidance documentation, conscious sedation billing, and the procedure-specific.",
+                    "badges": [
+                        "Presumptive vs. definitive",
+                        "Medical necessity",
+                        "HCPCS coding",
+                        "Payer audit-readiness"
+                    ]
+                }
+            ]
+        },
+        "careersPage": {
+            "whyMeBilling": [
+                {
+                    "title": "Certified Expertise Valued",
+                    "description": "We invest in CPMA, CPC, and AAPC certifications for our team - and we structure roles to use that expertise, not bury it in administrative overhead.",
+                    "icon": "certificate"
+                },
+                {
+                    "title": "Specialty Depth",
+                    "description": "You will work within a specialty - oncology, behavioral health, cardiology - and develop deep domain knowledge that makes you genuinely better at your discipline.",
+                    "icon": "heart"
+                },
+                {
+                    "title": "Real Accountability, Real Autonomy",
+                    "description": "Our team members own their accounts. You are the point of contact, the expert, and the person who makes the difference for a real practice every day.",
+                    "icon": "network"
+                },
+                {
+                    "title": "Growth Without a Ceiling",
+                    "description": "From credentialing specialist to Director of Operations - we promote from within and build career paths around the skills our team members develop.",
+                    "icon": "growth"
+                },
+                {
+                    "title": "Collaborative Culture",
+                    "description": "Small enough to know every colleague. Structured enough to have clear rules. Growing fast enough that high performers get noticed quickly.",
+                    "icon": "users"
+                },
+                {
+                    "title": "U.S. Operations + Global Delivery",
+                    "description": "Houston HQ with two global delivery centers. Opportunities for professionals at multiple levels across our operational footprint.",
+                    "icon": "globe"
+                }
+            ]
+        }
+    }
+}

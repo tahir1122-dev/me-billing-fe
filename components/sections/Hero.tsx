@@ -1,148 +1,148 @@
-import Image from "next/image";
 import Link from "next/link";
+
+// ─── Hero data ────────────────────────────────────────────────────────────────
+const heroData = {
+    tagline1: "— U.S. Healthcare Revenue Cycle Specialists —",
+    tagline2: "Est. 2015, Houston TX",
+    headingLine1: "Your practice",
+    headingLine2: "is ",
+    headingHighlight: "leaving money",
+    headingLine3: " on the table.",
+    body: "Not because of anything your clinicians are doing wrong. Because billing complexity payer policy changes, denial cycles, underpayment patterns compounds silently and continuously without a dedicated expert team built to stop it.",
+    cta1: { label: "Let's Talk", href: "/contact" },
+    cta2: { label: "See How We Work", href: "/solutions" },
+    badges: [
+        "CPMA & CPC Certified",
+        "No Subcontracting",
+        "HIPAA Compliant",
+        "90+ Payer Networks",
+    ],
+    statCard: {
+        label: "WHAT MEBILLING CLIENTS EXPERIENCE",
+        stat: "5%",
+        description: "Average denial rate — against an industry average of 10–15%.",
+        industryLabel: "Industry: 10–15%",
+        mebillingLabel: "MeBilling: 5%",
+    },
+};
 
 export default function Hero() {
     return (
         <section
-            className="relative w-full overflow-hidden bg-white"
+            className="relative w-full overflow-hidden font-outfit"
             style={{
-                height: "936px",
-                maxWidth: "1920px",
-                margin: "0 auto",
+                backgroundImage: "url('/images/herobg.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center top",
+                backgroundRepeat: "no-repeat",
+                minHeight: "100vh",
             }}
         >
-            {/* DOCTOR IMAGE — smaller, contained to right side */}
+            {/* Deep dark overlay for text readability matching reference screenshot */}
             <div
-                className="absolute right-0 top-0 bottom-0 w-full sm:w-[58%]"
-            >
-                <Image
-                    src="/images/Hero .jpg"
-                    alt="Doctor holding mobile device"
-                    fill
-                    className="object-cover"
-                    style={{ objectPosition: "center" }}
-                    priority
-                />
+                className="absolute inset-0"
+                style={{
+                    background:
+                        "linear-gradient(to right, rgba(10,22,12,0.92) 0%, rgba(10,22,12,0.82) 42%, rgba(10,22,12,0.55) 70%, rgba(10,22,12,0.30) 100%)",
+                }}
+            />
 
-                {/* Smooth fade into white on left edge */}
-                <div
-                    className="absolute inset-0"
-                    style={{
-                        background:
-                            "linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0.75) 12%, rgba(255,255,255,0.2) 26%, transparent 42%)",
-                    }}
-                />
-            </div>
+            {/* Content */}
+            <div className="relative z-10 container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col lg:flex-row items-start gap-16 lg:gap-12">
 
-            {/* Solid white block — clean text background */}
-            <div className="absolute top-0 bottom-0 left-0 hidden bg-white sm:block" />
+                {/* ── Left column ── */}
+                <div className="w-full lg:w-[52%] flex flex-col">
+                    {/* Tagline block */}
+                    <div className="mb-8">
+                        <p className="text-[#C8920A] text-xs font-bold tracking-wider font-outfit">
+                            {heroData.tagline1}
+                        </p>
+                        <p className="text-[#C8920A] text-xs font-bold tracking-wider font-outfit">
+                            {heroData.tagline2}
+                        </p>
+                    </div>
 
-            {/* TEXT CONTENT */}
-            <div
-                className="relative z-10 flex items-center h-full"
-                style={{ paddingLeft: "clamp(2rem, 6vw, 112px)" }}
-            >
-                <div
-                    className="w-full max-w-[640px] bg-no-repeat bg-cover bg-right"
-                    style={{
-                        backgroundImage: "url('/images/backgroud%20image.png')",
-                    }}
-                >
-                    <h1 className="font-semibold text-[#1a1c21] tracking-tight text-[38px] sm:text-[46px] lg:text-[56px] leading-[1.2]">
-                        Streamline <span className="text-brand">Medical Billing</span>
+                    {/* Main heading — large Cormorant Garamond matching screenshot */}
+                    <h1 className="font-cormorant font-medium text-white leading-[1.05] text-[56px] sm:text-[68px] lg:text-[80px] mb-7">
+                        {heroData.headingLine1}
                         <br />
-                        and Maximize Your <span className="text-brand">Practice</span>
+                        {heroData.headingLine2}
+                        <span className="text-[#C8920A] italic">{heroData.headingHighlight}</span>
                         <br />
-                        <span className="text-brand">Revenue</span>
+                        {heroData.headingLine3}
                     </h1>
 
-                    <p className="mt-5 text-slate-700 font-medium leading-relaxed text-[14px] sm:text-[16px] lg:text-[18px] max-w-[480px]">
-                        Smart, secure billing solutions built for doctors, clinics, and
-                        healthcare teams.
+                    {/* Body text */}
+                    <p className="text-white/80 text-[15px] leading-relaxed max-w-[480px] mb-10 font-outfit">
+                        {heroData.body}
                     </p>
 
-                    <div className="mt-10 flex flex-col sm:flex-row items-center gap-5">
+                    {/* CTA buttons */}
+                    <div className="flex flex-wrap items-center gap-4 mb-10">
                         <Link
-                            href="/demo"
-                            className="group flex items-center justify-center gap-4 bg-brand hover:bg-[#009bc2] text-white font-semibold transition-all w-full sm:w-auto"
-                            style={{
-                                padding: "13px 28px",
-                                borderRadius: "9999px",
-                                fontSize: "16px",
-                            }}
+                            href={heroData.cta1.href}
+                            className="inline-flex items-center gap-3 bg-[#1A6B3A] hover:bg-[#155a30] text-white font-bold text-sm px-7 py-3.5 rounded-lg transition-all font-outfit"
                         >
-                            Request Demo
-                            <span className="bg-white rounded-full p-1.5 transition-transform group-hover:rotate-45">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#00AEEF" strokeWidth="3">
-                                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                                    <polyline points="7 7 17 7 17 17"></polyline>
-                                </svg>
-                            </span>
+                            {heroData.cta1.label}
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                            </svg>
                         </Link>
+                        <Link
+                            href={heroData.cta2.href}
+                            className="inline-flex items-center gap-3 bg-transparent hover:bg-white/10 text-white font-bold text-sm px-7 py-3.5 rounded-lg border border-white/40 transition-all font-outfit"
+                        >
+                            {heroData.cta2.label}
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </Link>
+                    </div>
 
-                        <Link
-                            href="/tour"
-                            className="group flex items-center justify-center gap-4 bg-white text-brand hover:bg-brand/5 font-semibold transition-all w-full sm:w-auto"
-                            style={{
-                                padding: "13px 28px",
-                                borderRadius: "9999px",
-                                fontSize: "16px",
-                                border: "2.5px solid #00AEEF",
-                            }}
-                        >
-                            Take a quick tour
-                            <span className="bg-brand rounded-full p-1.5 transition-transform group-hover:rotate-45">
-                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3">
-                                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                                    <polyline points="7 7 17 7 17 17"></polyline>
+                    {/* Trust badges */}
+                    <div className="flex flex-wrap gap-x-6 gap-y-2">
+                        {heroData.badges.map((badge) => (
+                            <div key={badge} className="flex items-center gap-2 text-white/80 text-[13px] font-outfit">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8920A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
                                 </svg>
-                            </span>
-                        </Link>
+                                {badge}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* ── Right column: Stat card matching screenshot exactly ── */}
+                <div className="w-full lg:w-[42%] lg:mt-16">
+                    <div
+                        className="rounded-2xl p-8 border border-[#C8920A]/40"
+                        style={{ backgroundColor: "rgba(12, 51, 24, 0.75)", backdropFilter: "blur(8px)" }}
+                    >
+                        <p className="text-[#C8920A] font-bold text-[11px] tracking-widest uppercase mb-6 font-outfit">
+                            {heroData.statCard.label}
+                        </p>
+
+                        <p className="font-cormorant text-[#C8920A] font-medium leading-none mb-5" style={{ fontSize: "88px" }}>
+                            {heroData.statCard.stat}
+                        </p>
+
+                        <p className="text-white/70 text-[15px] leading-relaxed mb-8 font-outfit">
+                            {heroData.statCard.description}
+                        </p>
+
+                        {/* Comparison bar */}
+                        <div className="border-t border-white/10 pt-5">
+                            <div className="flex items-center justify-between text-[13px] font-outfit">
+                                <span className="text-white/50">{heroData.statCard.industryLabel}</span>
+                                <div className="flex-1 mx-4 h-[2px] bg-[#C8920A]/40 relative">
+                                    <div className="absolute left-0 top-0 h-full bg-[#C8920A] w-[35%]" />
+                                </div>
+                                <span className="text-[#C8920A] font-bold">{heroData.statCard.mebillingLabel}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            {/* GLOWING PLAY BUTTON SVG — positioned on doctor's chest */}
-            <button
-                className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 transition-transform hover:scale-110 sm:left-auto sm:top-1/2 sm:-translate-x-0 sm:-translate-y-1/2 sm:right-[26%]"
-                style={{
-                    background: "none",
-                    border: "none",
-                    padding: 0,
-                    cursor: "pointer",
-                    /* Glow effect */
-                    filter: "drop-shadow(0 0 18px rgba(9, 168, 212, 0.7)) drop-shadow(0 0 36px rgba(9, 168, 212, 0.4))",
-                }}
-            >
-                <svg
-                    width="100"
-                    height="100"
-                    viewBox="0 0 168 168"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <circle cx="84" cy="84" r="84" fill="#09A8D4" fillOpacity="0.4" />
-                    <rect x="66" y="63" width="42" height="44" fill="white" />
-                    <mask
-                        id="mask0_153_95"
-                        style={{ maskType: "luminance" }}
-                        maskUnits="userSpaceOnUse"
-                        x="34" y="34" width="100" height="100"
-                    >
-                        <path
-                            d="M84.0013 132.333C110.696 132.333 132.335 110.695 132.335 84.0001C132.335 57.3056 110.696 35.6667 84.0013 35.6667C57.3068 35.6667 35.668 57.3056 35.668 84.0001C35.668 110.695 57.3068 132.333 84.0013 132.333Z"
-                            fill="white" stroke="white" strokeWidth="2" strokeLinejoin="round"
-                        />
-                        <path
-                            d="M74.3359 84V67.2573L88.8359 75.6287L103.336 84L88.8359 92.3713L74.3359 100.743V84Z"
-                            fill="black" stroke="black" strokeWidth="2" strokeLinejoin="round"
-                        />
-                    </mask>
-                    <g mask="url(#mask0_153_95)">
-                        <path d="M26 26H142V142H26V26Z" fill="#09A8D4" />
-                    </g>
-                </svg>
-            </button>
         </section>
     );
 }
