@@ -216,69 +216,146 @@
                 {
                     "style": "image",
                     "image": "/images/service 1.jpg",
-                    "badge": "Full Outsourcing",
-                    "title": "We want to hand off billing entirely",
-                    "description": "One accountable partner for patient registration through final payment no vendors, no gaps."
-                },
-                {
-                    "style": "list",
-                    "badge": "Provider Lifecycle",
-                    "title": "Enrollment & Credentialing",
-                    "description": "Every day a provider waits on credentialing is a day your practice cannot bill. We manage the complete enrollment lifecycle across 90+ payer networks — from initial application through CAQH attestation, license renewals, and revalidation — with billing and credentialing handled by the same team so gaps are caught immediately.",
+                    "badge": "COMPLIANCE",
+                    "title": "Audit Services",
+                    "description": "A billing audit is a revenue recovery tool, not just a compliance checkbox. Our AAPC-certified auditors examine coding accuracy, documentation quality, charge capture, and denial patterns to surface exactly where revenue is quietly leaving your practice — and how to stop it.",
                     "listItems": [
-                        "Medicare, Medicaid, PECOS, CAQH, and 90+",
-                        "NPI, TIN, EDI (claims, ERA & EFT) enrollment",
-                        "Proactive revalidation and license deadline monitoring"
+                        "E/M level, surgical coding, and modifier accuracy audits",
+                        "DRG validation, HCC/risk adjustment, and CDI gap analysis",
+                        "Compliance gap reporting with a clear remediation roadmap"
                     ]
                 },
                 {
                     "style": "image",
                     "image": "/images/service 2.jpg",
-                    "badge": "Compliance & Risk",
-                    "title": "We're worried about an audit or recoupment",
-                    "description": "Proactive coding audits, HCC validation, and CDI reviews — before a payer finds the gap."
+                    "badge": "PROVIDER LIFECYCLE",
+                    "title": "Enrollment & Credentialing",
+                    "description": "Every day a provider waits on credentialing is a day your practice cannot bill. We manage the complete enrollment lifecycle across 90+ payer networks — from initial application through CAQH attestation, license renewals, and revalidation — with billing and credentialing handled by the same team so gaps are caught immediately.",
+                    "listItems": [
+                        "Medicare, Medicaid, PECOS, CAQH, and 90+ commercial payer networks",
+                        "NPI, TIN, EDI (claims, ERA & EFT) enrollment and maintenance",
+                        "Proactive revalidation and license deadline monitoring"
+                    ]
                 },
                 {
                     "style": "image",
                     "image": "/images/service 3.jpg",
-                    "badge": "Full Outsourcing",
-                    "title": "We want to hand off billing entirely",
-                    "description": "One accountable partner for patient registration through final payment no vendors, no gaps."
+                    "badge": "CLINICAL ACCURACY",
+                    "title": "Medical Coding",
+                    "description": "One wrong modifier or missed digit can turn a billable service into a denial. Our CPC and CPMA-certified coders are organized by specialty — oncology coders code oncology — applying ICD-10, CPT, and HCPCS codes with the depth and payer-specific precision that generalist teams can't match.",
+                    "listItems": [
+                        "ICD-10, CPT, and HCPCS coding across all specialties and facility types",
+                        "Modifier precision: 25, 59, 50, TC/26, and payer-specific rules",
+                        "HCC and risk adjustment coding for Medicare Advantage populations"
+                    ]
                 },
                 {
                     "style": "image",
                     "image": "/images/service 4.jpg",
-                    "badge": "Full Outsourcing",
-                    "title": "We want to hand off billing entirely",
-                    "description": "One accountable partner for patient registration through final payment no vendors, no gaps."
+                    "badge": "END-TO-END RCM",
+                    "title": "Revenue Cycle Management",
+                    "description": "From patient registration to final payment posted — MeBilling manages the complete billing lifecycle with no subcontractors and no accountability gaps. Our 98%+ clean claim rate means fewer denials, faster cash, and a revenue cycle that performs at the level your practice earns.",
+                    "listItems": [
+                        "Registration, eligibility verification, and prior authorization management",
+                        "Claims scrubbing and submission within 48 hours of date of service",
+                        "Denial management, A/R follow-up, and real-time performance dashboards"
+                    ]
                 },
                 {
                     "style": "image",
                     "image": "/images/doc 2.png",
-                    "badge": "Full Outsourcing",
-                    "title": "We want to hand off billing entirely",
-                    "description": "One accountable partner for patient registration through final payment no vendors, no gaps."
+                    "badge": "NSA / IDR",
+                    "title": "Federal IDR (No Surprises Act)",
+                    "description": "The No Surprises Act created a formal legal pathway — Independent Dispute Resolution — for providers to challenge payer underpayments on out-of-network claims. Most practices leave this revenue uncollected simply because they lack the bandwidth to pursue it. We manage the entire IDR process in-house, from eligibility screening to payment enforcement.",
+                    "listItems": [
+                        "NSA eligibility review and QPA benchmarking analysis",
+                        "Federal IDR portal submission and timeline management",
+                        "Post-determination payment collection and enforcement"
+                    ]
                 },
                 {
                     "style": "image",
                     "image": "/images/service 1.jpg",
-                    "badge": "Full Outsourcing",
-                    "title": "We want to hand off billing entirely",
-                    "description": "One accountable partner for patient registration through final payment no vendors, no gaps."
+                    "badge": "RECOVERY",
+                    "title": "Old Claims Recovery",
+                    "description": "Claims at 90, 120, or 180 days are not automatically uncollectable — but they need a different approach than standard A/R follow-up. Our recovery team categorises outstanding claims by recoverability, rebuilds the documentation trail needed for late appeals, and collects revenue that most practices have already written off.",
+                    "listItems": [
+                        "Aged A/R stratification and recoverability assessment by payer",
+                        "Timely filing analysis and jurisdiction-specific reconsideration arguments",
+                        "Documentation reconstruction and recovery outcome reporting"
+                    ]
                 },
                 {
                     "style": "image",
                     "image": "/images/service 2.jpg",
-                    "badge": "Full Outsourcing",
-                    "title": "We want to hand off billing entirely",
-                    "description": "One accountable partner for patient registration through final payment no vendors, no gaps."
+                    "badge": "FINANCIAL OPS",
+                    "title": "Payment Posting & Reconciliation",
+                    "description": "Payment posting is the financial record of your practice — not clerical admin. Every ERA processed and every remittance reconciled establishes whether payers are actually paying what they owe. We post daily, validate against contracted rates, and pursue every variance — your books reflect reality, not assumption.",
+                    "listItems": [
+                        "ERA auto-posting and manual remittance processing completed daily",
+                        "Contractual rate reconciliation with underpayment variance follow-up",
+                        "Patient balance calculation and real-time A/R dashboards"
+                    ]
                 },
                 {
                     "style": "image",
                     "image": "/images/service 3.jpg",
-                    "badge": "Full Outsourcing",
-                    "title": "We want to hand off billing entirely",
-                    "description": "One accountable partner for patient registration through final payment no vendors, no gaps."
+                    "badge": "LIABILITY & INJURY",
+                    "title": "Injury Claims Management",
+                    "description": "Injury billing — workers' compensation, motor vehicle accidents, personal injury — operates under a completely different framework from standard insurance billing. Lien structures, letter of protection arrangements, and state-specific workers' comp regulations require dedicated expertise that most billing teams simply don't carry.",
+                    "listItems": [
+                        "Workers' comp billing under state-specific fee schedules and regulations",
+                        "MVC billing across PIP and liability, with adjuster follow-up managed in-house",
+                        "Personal injury lien filing and letter of protection management"
+                    ]
+                },
+                {
+                    "style": "image",
+                    "image": "/images/service 4.jpg",
+                    "badge": "PAYER RELATIONS",
+                    "title": "Claims Negotiation",
+                    "description": "Many payer disputes can be resolved through skilled direct negotiation — before formal appeals or IDR become necessary. Our negotiation team engages payers directly on underpayments, global claim disputes, and systematic contract rate deviations, building fact-based cases grounded in your contractual terms and market benchmarks.",
+                    "listItems": [
+                        "Single-claim and pattern-level underpayment negotiation and recovery",
+                        "Contractual rate enforcement with documented dispute history",
+                        "Escalation pathway management: negotiation → appeals → IDR → arbitration"
+                    ]
+                },
+                {
+                    "style": "image",
+                    "image": "/images/doc 2.png",
+                    "badge": "DENIAL RESOLUTION",
+                    "title": "Appeals & Reconsideration",
+                    "description": "Every denial has a case to be made — if you know how to make it. Our appeals process is built claim by claim, not template by template. We categorise each denial by root cause, identify the strongest reconsideration pathway, and construct appeals backed by clinical documentation and coding evidence tailored to the specific rejection reason.",
+                    "listItems": [
+                        "Root cause categorisation: coding, clinical, eligibility, or administrative",
+                        "Per-claim appeal letters with supporting documentation — never templated",
+                        "Peer-to-peer review coordination and denial pattern tracking"
+                    ]
+                },
+                {
+                    "style": "image",
+                    "image": "/images/service 1.jpg",
+                    "badge": "FORMAL DISPUTE",
+                    "title": "Arbitration & Mediation",
+                    "description": "When negotiation and formal appeals are exhausted, arbitration and mediation are the next escalation — and they require a different kind of preparation. We manage both in-house, assembling the evidentiary record and procedural submissions needed to pursue disputed claims through formal channels without the cost of outside counsel.",
+                    "listItems": [
+                        "Evidence package development and case preparation for arbitration",
+                        "Mediation coordination with payer representatives and third parties",
+                        "Resolution tracking and payment enforcement after decisions are rendered"
+                    ]
+                },
+                {
+                    "style": "image",
+                    "image": "/images/service 2.jpg",
+                    "badge": "COMPLIANCE",
+                    "title": "State Reporting",
+                    "description": "State-level reporting requirements vary by jurisdiction and payer type — and missing them can affect both reimbursement and licensure. We monitor reporting obligations specific to your operating states and manage all required submissions on your behalf, so regulatory deadlines never fall through the cracks of your billing operation.",
+                    "listItems": [
+                        "State-specific payer reporting obligations tracked and filed by jurisdiction",
+                        "Medicaid encounter data submissions and agency coordination",
+                        "Workers' comp state form filing and audit-ready compliance documentation"
+                    ]
                 }
             ]
         }
@@ -306,38 +383,105 @@
             "description": "Each solution is a curated combination of MeBilling services designed to deliver a specific outcome — from full outsourcing to targeted revenue recovery to dispute resolution.",
             "packages": [
                 {
-                    "tagline": "— Full Outsourcing",
-                    "titlePart1": "End-to-End Revenue",
-                    "titleHighlight": "Cycle Management",
+                    "tag": "FULL OUTSOURCING",
+                    "number": "01",
+                    "title": "End-to-End Revenue Cycle Management",
+                    "subtitle": "One partner. Every component. Full accountability from registration to final deposit.",
                     "description": "For practices ready to hand off the entire billing function and hold one team accountable for all of it. No vendor coordination, no handoff gaps, no finger-pointing when something goes wrong. MeBilling manages your complete revenue cycle — from the first patient touchpoint to the last dollar reconciled — with in-house specialists at every stage.",
-                    "includedPrefix": "What's Included :",
-                    "includedHighlight": "Patient access",
+                    "includedTitle": "WHAT'S INCLUDED",
                     "includedItems": [
-                        "Registration, eligibility verification, and prior authorization",
+                        "Patient access: registration, eligibility verification, and prior authorization",
                         "Specialty-organized medical coding: ICD-10, CPT, HCPCS",
-                        "Payment posting, reconciliation, and real-time reporting",
+                        "Claims scrubbing and submission within 48 hours",
                         "AR follow-up, denial management, and collections",
-                        "Claims scrubbing and submission within 48 hours"
+                        "Payment posting, reconciliation, and real-time reporting"
                     ],
-                    "image": "/images/service 2.jpg",
-                    "bestFor": "Best For: Groups eliminating in-house billing overhead entirely"
+                    "bestForLabel": "Best for:",
+                    "bestForText": "Groups eliminating in-house billing overhead entirely"
                 },
                 {
-                    "tagline": "— Get Providers Activated & Paid Faster",
-                    "titlePart1": "Provider Lifecycle",
-                    "titleHighlight": "Management",
-                    "description": "Every credentialing gap is a billing gap. When a provider isn't enrolled, every service they deliver is a claim you can't submit. This solution manages the complete provider lifecycle — from initial payer application through ongoing contract alignment and revalidation monitoring — so providers reach active billing status faster and stay there without interruption.",
-                    "includedPrefix": "What's Included :",
-                    "includedHighlight": "Enrollment across 90+ payer networks",
+                    "tag": "RECOVER LOST REVENUE",
+                    "number": "02",
+                    "title": "Revenue Recovery & AR Optimization",
+                    "subtitle": "For practices carrying aged A/R, chronic denials, or a backlog they've stopped believing they can collect.",
+                    "description": "Revenue doesn't disappear in a single event — it erodes claim by claim over months of inadequate follow-up. This solution deploys our recovery specialists directly against your outstanding receivables: categorising what's collectible, rebuilding documentation where needed, and converting dormant A/R into actual deposits.",
+                    "includedTitle": "WHAT'S INCLUDED",
                     "includedItems": [
-                        "Medicare, Medicaid, commercial",
+                        "Old claims recovery: late appeals and documentation reconstruction",
+                        "Structured AR follow-up by payer, age, and recoverability",
+                        "Denial management with per-claim reconsideration arguments",
+                        "Formal appeals and reconsideration — built individually, not templated"
+                    ],
+                    "bestForLabel": "Best for:",
+                    "bestForText": "Practices with aging A/R, high denial rates, or post-transition backlogs"
+                },
+                {
+                    "tag": "AVOID PENALTIES - STAY COMPLIANT",
+                    "number": "03",
+                    "title": "Compliance & Risk Management",
+                    "subtitle": "For practices that need to know — before an auditor does — whether their coding is clean.",
+                    "description": "Payer scrutiny is intensifying. RAC reviews, OIG investigations, and risk adjustment audits all target the same documentation gaps most practices don't discover until recoupment is underway. This solution puts our AAPC-certified audit team inside your billing operation before problems become penalties — and keeps you compliant across state and federal reporting obligations.",
+                    "includedTitle": "WHAT'S INCLUDED",
+                    "includedItems": [
+                        "Proactive billing and coding audit services",
+                        "Medical coding validation with specialty-specific benchmarking",
+                        "HCC/risk adjustment review for Medicare Advantage",
+                        "State reporting compliance management",
+                        "Federal IDR (NSA) compliance monitoring"
+                    ],
+                    "bestForLabel": "Best for:",
+                    "bestForText": "Medicare Advantage-heavy practices, high-audit specialties, post-OIG inquiry"
+                },
+                {
+                    "tag": "GET PROVIDERS ACTIVATED & PAID FASTER",
+                    "number": "04",
+                    "title": "Provider Lifecycle Management",
+                    "subtitle": "For growing groups where credentialing delays are creating billing gaps and unbillable claims.",
+                    "description": "Every credentialing gap is a billing gap. When a provider isn't enrolled, every service they deliver is a claim you can't submit. This solution manages the complete provider lifecycle — from initial payer application through ongoing contract alignment and revalidation monitoring — so providers reach active billing status faster and stay there without interruption.",
+                    "includedTitle": "WHAT'S INCLUDED",
+                    "includedItems": [
+                        "Enrollment across 90+ payer networks: Medicare, Medicaid, commercial",
                         "CAQH, PECOS, NPI, TIN, and EDI enrollment maintenance",
                         "Hospital privileging and facility credentialing support",
                         "Payer contract alignment and rate management",
                         "Proactive revalidation and license expiry monitoring"
                     ],
-                    "image": "/images/service 3.jpg",
-                    "bestFor": "Best For: Expanding groups, new market entry, large credentialed provider rosters"
+                    "bestForLabel": "Best for:",
+                    "bestForText": "Expanding groups, new market entry, large credentialed provider rosters"
+                },
+                {
+                    "badge": "Premium",
+                    "tag": "HIGH-MARGIN · SPECIALIST EXPERTISE",
+                    "number": "05",
+                    "title": "Complex Claims & Dispute Resolution",
+                    "subtitle": "For practices with out-of-network disputes, injury billing, or payer conflicts that standard follow-up can't resolve.",
+                    "description": "Some claims can't be resolved with a follow-up call. Workers' comp lien billing, NSA IDR proceedings, formal arbitration, and mediation all require procedural expertise that most billing operations aren't structured to provide. We manage the entire complex claims lifecycle in-house — from first assessment through final collection — without routing a single case outside our walls.",
+                    "includedTitle": "WHAT'S INCLUDED",
+                    "includedItems": [
+                        "Injury claims: workers' comp, MVC, and personal injury lien billing",
+                        "Claims negotiation: direct payer engagement on underpayments",
+                        "Federal IDR from eligibility through QPA analysis and payment collection",
+                        "Formal arbitration case preparation and submission management",
+                        "Mediation coordination and resolution enforcement"
+                    ],
+                    "bestForLabel": "Best for:",
+                    "bestForText": "Out-of-network practices, injury care providers, systematic payer disputes"
+                },
+                {
+                    "tag": "ACCURACY · FINANCIAL CONTROL",
+                    "number": "06",
+                    "title": "Financial Operations & Payment Accuracy",
+                    "subtitle": "For practices where money is arriving — but no one is confirming it's the right amount.",
+                    "description": "Most practices lose 3–5% of their contracted revenue not through denials, but through underpayments that are posted, accepted, and never questioned. This solution places a dedicated reconciliation layer between your payer payments and your financial records — so what gets posted is what you're actually owed, and every variance gets pursued, not absorbed.",
+                    "includedTitle": "WHAT'S INCLUDED",
+                    "includedItems": [
+                        "ERA auto-posting and manual remittance processing — daily, no backlogs",
+                        "Line-by-line reconciliation against contracted fee schedules",
+                        "Underpayment identification and structured payer follow-up",
+                        "Real-time financial reporting: A/R aging, collection rate, payer accuracy"
+                    ],
+                    "bestForLabel": "Best for:",
+                    "bestForText": "High-volume practices, mixed payer environments, accuracy-focused operations"
                 }
             ]
         }
@@ -353,11 +497,31 @@
             "buttonSecondary": "View Services →"
         },
         "stats": [
-            { "value": "15", "labelPart1": "Professional Billing", "labelPart2": "Specialties" },
-            { "value": "5", "labelPart1": "Facility & Institutional", "labelPart2": "Billing Types" },
-            { "value": "4", "labelPart1": "Laboratory Revenue", "labelPart2": "Cycle Specialties" },
-            { "value": "90+", "labelPart1": "Payer Networks", "labelPart2": "Actively Managed" },
-            { "value": "98+", "labelPart1": "First-Pass Clean", "labelPart2": "Claim Rate" }
+            {
+                "value": "15",
+                "labelPart1": "Professional Billing",
+                "labelPart2": "Specialties"
+            },
+            {
+                "value": "5",
+                "labelPart1": "Facility & Institutional",
+                "labelPart2": "Billing Types"
+            },
+            {
+                "value": "4",
+                "labelPart1": "Laboratory Revenue",
+                "labelPart2": "Cycle Specialties"
+            },
+            {
+                "value": "90+",
+                "labelPart1": "Payer Networks",
+                "labelPart2": "Actively Managed"
+            },
+            {
+                "value": "98+",
+                "labelPart1": "First-Pass Clean",
+                "labelPart2": "Claim Rate"
+            }
         ],
         "groupBilling": {
             "tagline": "— Professional Billing",

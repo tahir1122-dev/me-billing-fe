@@ -128,15 +128,16 @@ export default function ServicesPage() {
                                 return (
                                     <article
                                         key={idx}
-                                        className="rounded-2xl border border-[#D1D1C7]/60 bg-[#FAFAEE] p-8 shadow-sm flex flex-col hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+                                        className="group rounded-2xl border border-[#D1D1C7]/60 bg-[#FAFAEE] p-8 shadow-sm flex flex-col cursor-pointer hover:-translate-y-2 hover:shadow-xl hover:border-[#C8920A]/50 transition-all duration-500 ease-out"
                                     >
-                                        <div className="mb-6 inline-flex w-fit bg-[#C8920A] rounded-full px-3 py-1 items-center gap-2">
+                                        {/* Badge */}
+                                        <div className="mb-6 inline-flex w-fit bg-[#C8920A] rounded-full px-3 py-1 items-center gap-2 group-hover:bg-[#162018] transition-colors duration-400">
                                             <div className="w-[6px] h-[6px] rounded-full bg-white"></div>
                                             <span className="text-xs font-bold text-white tracking-wide font-outfit">
                                                 {card.badge}
                                             </span>
                                         </div>
-                                        <h3 className="text-[26px] font-medium text-[#162018] mb-4 font-cormorant leading-snug">
+                                        <h3 className="text-[26px] font-medium text-[#162018] mb-4 font-cormorant leading-snug group-hover:text-[#C8920A] transition-colors duration-300">
                                             {card.title}
                                         </h3>
                                         <p className="text-[14px] text-[#162018]/80 leading-relaxed font-outfit font-medium mb-8">
@@ -146,7 +147,7 @@ export default function ServicesPage() {
                                         <ul className="flex flex-col gap-4 mt-auto font-outfit">
                                             {card.listItems?.map((item: string, i: number) => (
                                                 <li key={i} className="flex gap-3 text-[13px] text-[#162018]/80 leading-relaxed font-semibold">
-                                                    <span className="mt-[6px] shrink-0 w-2 h-2 rounded-full bg-[#C8920A]"></span>
+                                                    <span className="mt-[6px] shrink-0 w-2 h-2 rounded-full bg-[#C8920A] group-hover:scale-125 transition-transform duration-300"></span>
                                                     {item}
                                                 </li>
                                             ))}
@@ -158,31 +159,63 @@ export default function ServicesPage() {
                             return (
                                 <article
                                     key={idx}
-                                    className="rounded-2xl border border-[#D1D1C7]/60 bg-white p-4 shadow-sm flex flex-col hover:-translate-y-1 hover:shadow-md transition-all duration-300"
+                                    className="group rounded-2xl border border-[#D1D1C7]/60 bg-white hover:bg-[#FAFAEE] p-4 hover:p-8 shadow-sm flex flex-col cursor-pointer hover:-translate-y-2 hover:shadow-2xl hover:border-[#C8920A]/40 transition-all duration-500 ease-out overflow-hidden"
                                 >
-                                    <div className="relative overflow-hidden rounded-xl h-[240px] mb-6">
-                                        <Image
-                                            src={card.image!}
-                                            alt={card.title}
-                                            fill
-                                            className="w-full h-full object-cover"
-                                        />
-                                        <div className="absolute top-0 bottom-0 left-0 right-0 bg-black/10"></div>
-                                        <div className="absolute bottom-4 left-4 bg-[#C8920A] rounded-full px-3 py-1 flex items-center gap-2">
-                                            <div className="w-[6px] h-[6px] rounded-full bg-white"></div>
-                                            <span className="text-xs font-bold text-white tracking-wide font-outfit shadow-sm">
-                                                {card.badge}
-                                            </span>
+                                    {/* Collapsing Image Section */}
+                                    <div className="transition-all duration-500 ease-in-out h-[240px] mb-6 group-hover:h-0 group-hover:mb-0 group-hover:opacity-0 overflow-hidden rounded-xl shrink-0">
+                                        <div className="relative w-full h-[240px]">
+                                            <Image
+                                                src={card.image!}
+                                                alt={card.title}
+                                                fill
+                                                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                                            />
+                                            <div className="absolute inset-0 bg-black/10 transition-opacity duration-500 group-hover:opacity-0" />
+                                            
+                                            <div className="absolute bottom-4 left-4 bg-[#C8920A] rounded-full px-3 py-1 flex items-center gap-2 transition-opacity duration-300 group-hover:opacity-0">
+                                                <div className="w-[6px] h-[6px] rounded-full bg-white"></div>
+                                                <span className="text-xs font-bold text-white tracking-wide font-outfit shadow-sm">
+                                                    {card.badge}
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div className="px-2 pb-4 flex flex-col flex-1">
-                                        <h3 className="text-[24px] font-medium text-[#162018] mb-3 font-cormorant leading-tight">
+                                    {/* Expanding Content Section */}
+                                    <div className="flex flex-col flex-1 transition-all duration-500">
+                                        {/* Hover Badge (expands and fades in) */}
+                                        <div className="transition-all duration-500 ease-in-out grid grid-rows-[0fr] group-hover:grid-rows-[1fr]">
+                                            <div className="overflow-hidden">
+                                                <div className="mb-4 inline-flex w-fit bg-[#C8920A] rounded-full px-3 py-1 items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                                    <div className="w-[6px] h-[6px] rounded-full bg-white"></div>
+                                                    <span className="text-xs font-bold text-white tracking-wide font-outfit">
+                                                        {card.badge}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <h3 className="text-[24px] group-hover:text-[26px] font-medium text-[#162018] mb-3 group-hover:mb-4 font-cormorant leading-tight group-hover:text-[#C8920A] transition-all duration-500">
                                             {card.title}
                                         </h3>
-                                        <p className="text-[14px] text-[#162018]/70 leading-relaxed font-outfit font-medium">
+                                        
+                                        <p className="text-[14px] text-[#162018]/70 group-hover:text-[#162018]/80 leading-relaxed font-outfit font-medium transition-colors duration-500">
                                             {card.description}
                                         </p>
+
+                                        {/* Hover List Items (expands and fades in) */}
+                                        <div className="transition-all duration-500 ease-in-out grid grid-rows-[0fr] group-hover:grid-rows-[1fr] mt-auto">
+                                            <div className="overflow-hidden">
+                                                <ul className="flex flex-col gap-4 pt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150 font-outfit">
+                                                    {card.listItems?.map((item: string, i: number) => (
+                                                        <li key={i} className="flex gap-3 text-[13px] text-[#162018]/80 leading-relaxed font-semibold">
+                                                            <span className="mt-[6px] shrink-0 w-2 h-2 rounded-full bg-[#C8920A] group-hover:scale-125 transition-transform duration-300 delay-200"></span>
+                                                            {item}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </article>
                             );
