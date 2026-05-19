@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Metadata } from "next";
+import SalesContactForm from "@/components/forms/SalesContactForm";
 
 export const metadata: Metadata = {
     title: "Get a Demo | Me Billing",
@@ -186,61 +187,7 @@ export default function SalesPage() {
                             <h2 className="text-3xl font-medium text-[#162018] mb-7 font-cormorant">
                                 Get in <span className="text-[#C8920A] italic">Touch</span>
                             </h2>
-                            <form className="space-y-4">
-                                <div className="grid gap-4 sm:grid-cols-2">
-                                    <label className="block text-[10px] font-bold uppercase tracking-widest text-[#1A6B3A] font-outfit">
-                                        First Name
-                                        <input
-                                            type="text"
-                                            name="firstName"
-                                            placeholder="First Name"
-                                            className="mt-2 w-full rounded-lg border border-[#082610]/15 bg-white px-4 py-2.5 text-sm text-[#162018] placeholder:text-slate-400 focus:border-[#C8920A] focus:ring-1 focus:ring-[#C8920A]/30 focus:outline-none font-outfit"
-                                        />
-                                    </label>
-                                    <label className="block text-[10px] font-bold uppercase tracking-widest text-[#1A6B3A] font-outfit">
-                                        Last Name
-                                        <input
-                                            type="text"
-                                            name="lastName"
-                                            placeholder="Last Name"
-                                            className="mt-2 w-full rounded-lg border border-[#082610]/15 bg-white px-4 py-2.5 text-sm text-[#162018] placeholder:text-slate-400 focus:border-[#C8920A] focus:ring-1 focus:ring-[#C8920A]/30 focus:outline-none font-outfit"
-                                        />
-                                    </label>
-                                </div>
-
-                                <label className="block text-[10px] font-bold uppercase tracking-widest text-[#1A6B3A] font-outfit">
-                                    Business Email
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        placeholder="Email"
-                                        className="mt-2 w-full rounded-lg border border-[#082610]/15 bg-white px-4 py-2.5 text-sm text-[#162018] placeholder:text-slate-400 focus:border-[#C8920A] focus:ring-1 focus:ring-[#C8920A]/30 focus:outline-none font-outfit"
-                                    />
-                                </label>
-
-                                <label className="block text-[10px] font-bold uppercase tracking-widest text-[#1A6B3A] font-outfit">
-                                    Your Queries
-                                    <textarea
-                                        name="message"
-                                        placeholder="Your queries"
-                                        rows={4}
-                                        className="mt-2 w-full resize-none rounded-lg border border-[#082610]/15 bg-white px-4 py-2.5 text-sm text-[#162018] placeholder:text-slate-400 focus:border-[#C8920A] focus:ring-1 focus:ring-[#C8920A]/30 focus:outline-none font-outfit"
-                                    />
-                                </label>
-
-                                <button
-                                    type="submit"
-                                    className="inline-flex items-center gap-3 rounded-full bg-[#C8920A] hover:bg-[#b58308] px-7 py-3 text-sm font-bold text-black transition-all shadow-md font-outfit"
-                                >
-                                    Submit
-                                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0C3318]">
-                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M5 12h14" />
-                                            <path d="m12 5 7 7-7 7" />
-                                        </svg>
-                                    </span>
-                                </button>
-                            </form>
+                            <SalesContactForm />
                         </div>
                     </div>
                 </div>

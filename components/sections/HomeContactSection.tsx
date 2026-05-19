@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
+
 
 const homeContactData = {
     cta: {
@@ -33,6 +35,47 @@ const homeContactData = {
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function HomeContactSection() {
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [message, setMessage] = useState("");
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setStatus("loading");
+        setMessage("");
+
+        const formData = new FormData(e.currentTarget);
+        const submitData = {
+            first_name: formData.get("firstName"),
+            last_name: formData.get("lastName"),
+            email: formData.get("email"),
+            description: formData.get("queries"),
+        };
+
+        try {
+            const res = await fetch("/api/email/send", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(submitData),
+            });
+
+            const data = await res.json();
+            console.log("Response Data:", data); // Check the raw res
+            if (res.ok) {
+                setStatus("success");
+                setMessage("Message sent successfully!");
+                const formElement = e.target as HTMLFormElement;
+                formElement.reset();
+            } else {
+                setStatus("error");
+                setMessage(data.error || "Failed to send message.");
+            }
+        } catch (error) {
+            console.error(error);
+            setStatus("error");
+            setMessage("An unexpected error occurred.");
+        }
+    };
+
     return (
         <div className="font-outfit">
             {/* ── CTA Banner ── */}
@@ -103,7 +146,13 @@ export default function HomeContactSection() {
                                 {homeContactData.form.heading}
                             </h3>
 
-                            <form className="flex flex-col gap-4 flex-1">
+                            {message && (
+                                <div className={`mb-4 p-3 rounded text-sm ${status === "success" ? "bg-green-900/50 text-green-100" : "bg-red-900/50 text-red-100"}`}>
+                                    {message}
+                                </div>
+                            )}
+
+                            <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1">
                                 {/* Name row */}
                                 <div className="grid grid-cols-2 gap-3">
                                     {homeContactData.form.fields
@@ -118,6 +167,7 @@ export default function HomeContactSection() {
                                                     id={field.id}
                                                     name={field.id}
                                                     placeholder={field.placeholder}
+                                                    required
                                                     className="w-full px-3 py-2.5 rounded-lg text-sm text-white placeholder:text-white/25 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50 font-outfit"
                                                     style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }}
                                                 />
@@ -148,6 +198,7 @@ export default function HomeContactSection() {
                                                     id={field.id}
                                                     name={field.id}
                                                     placeholder={field.placeholder}
+                                                    required
                                                     className="w-full px-3 py-2.5 rounded-lg text-sm text-white placeholder:text-white/25 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50 font-outfit"
                                                     style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }}
                                                 />
@@ -159,12 +210,25 @@ export default function HomeContactSection() {
                                 <div className="mt-auto pt-2">
                                     <button
                                         type="submit"
-                                        className="inline-flex items-center gap-3 bg-[#1A6B3A] hover:bg-[#155a30] text-white font-bold text-sm px-6 py-3 rounded-lg transition-all font-outfit"
+                                        disabled={status === "loading"}
+                                        className="inline-flex items-center gap-3 bg-[#1A6B3A] hover:bg-[#155a30] text-white font-bold text-sm px-6 py-3 rounded-lg transition-all font-outfit disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
-                                        {homeContactData.form.submitLabel}
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                            <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
-                                        </svg>
+                                        {status === "loading" ? (
+                                            <>
+                                                Submitting...
+                                                <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                </svg>
+                                            </>
+                                        ) : (
+                                            <>
+                                                {homeContactData.form.submitLabel}
+                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                                    <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                                                </svg>
+                                            </>
+                                        )}
                                     </button>
                                 </div>
                             </form>

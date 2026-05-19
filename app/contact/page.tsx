@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ContactForm from "@/components/forms/ContactForm";
 
 export const metadata: Metadata = {
     title: "Contact | Me Billing",
@@ -93,75 +94,7 @@ export default function ContactPage() {
                                 Get in Touch
                             </h3>
 
-                            <form className="flex flex-col gap-5">
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <label className="text-[10px] font-bold tracking-widest uppercase mb-2 block font-outfit" style={{ color: "rgba(255,255,255,0.6)" }}>Your Name</label>
-                                        <input type="text" placeholder="First Name" className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }} />
-                                    </div>
-                                    <div>
-                                        <label className="text-[10px] font-bold tracking-widest uppercase mb-2 block font-outfit" style={{ color: "rgba(255,255,255,0.6)" }}>Email Address</label>
-                                        <input type="email" placeholder="Last Name" className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }} />
-                                    </div>
-                                </div>
-
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <label className="text-[10px] font-bold tracking-widest uppercase mb-2 block font-outfit" style={{ color: "rgba(255,255,255,0.6)" }}>Phone</label>
-                                        <input type="tel" placeholder="First Name" className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }} />
-                                    </div>
-                                    <div>
-                                        <label className="text-[10px] font-bold tracking-widest uppercase mb-2 block font-outfit" style={{ color: "rgba(255,255,255,0.6)" }}>Organization</label>
-                                        <input type="text" placeholder="Last Name" className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }} />
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label className="text-[10px] font-bold tracking-widest uppercase mb-2 block font-outfit" style={{ color: "rgba(255,255,255,0.6)" }}>Specialty</label>
-                                    <div className="relative">
-                                        <select className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white/50 appearance-none focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }}>
-                                            <option value="" className="bg-[#0C3318]">Select your specialty...</option>
-                                            <option value="behavioral" className="bg-[#0C3318]">Behavioral Health</option>
-                                            <option value="cardiology" className="bg-[#0C3318]">Cardiology</option>
-                                            <option value="emergency" className="bg-[#0C3318]">Emergency Medicine</option>
-                                            <option value="oncology" className="bg-[#0C3318]">Oncology</option>
-                                            <option value="other" className="bg-[#0C3318]">Other</option>
-                                        </select>
-                                        <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
-                                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-40">
-                                                <path d="m6 9 6 6 6-6" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label className="text-[10px] font-bold tracking-widest uppercase mb-2 block font-outfit" style={{ color: "rgba(255,255,255,0.6)" }}>Your Queries</label>
-                                    <textarea
-                                        placeholder="Your queries"
-                                        rows={4}
-                                        className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50 resize-none"
-                                        style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }}
-                                    ></textarea>
-                                </div>
-
-                                {/* Submit button — full width, slightly lighter green with arrow */}
-                                <button
-                                    type="submit"
-                                    className="w-full py-3.5 rounded-lg font-bold text-sm font-outfit flex items-center justify-center gap-3 transition-all hover:opacity-90"
-                                    style={{ backgroundColor: "#1A6B3A", color: "white" }}
-                                >
-                                    Submit
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M5 12h14" />
-                                        <path d="m12 5 7 7-7 7" />
-                                    </svg>
-                                </button>
-
-                                <p className="text-center text-[11px] font-outfit" style={{ color: "#C8920A" }}>
-                                    Your information is protected under HIPAA. We do not share or sell your data.
-                                </p>
-                            </form>
+                            <ContactForm />
                         </div>
                     </div>
 
