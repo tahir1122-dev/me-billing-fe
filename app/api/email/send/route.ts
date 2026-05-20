@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import nodemailer from "nodemailer";
+import path from "path";
 
 // Initialize Supabase correctly for server-side insertions
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -68,6 +69,9 @@ export async function POST(req: Request) {
                     subject: "Thank You for Reaching Out!",
                     html: `
                       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
+                        <div style="text-align: center; margin-bottom: 20px;">
+                          <img src="cid:mebillinglogo" alt="Me-Billing Logo" style="max-width: 200px; height: auto;" />
+                        </div>
                         <h2 style="color: #0F5C3B;">Thank You for Reaching Out!</h2>
                         <p>Hi ${data.first_name || "there"},</p>
                         <p>We have received your query and we will get back to you soon.</p>
@@ -76,6 +80,13 @@ export async function POST(req: Request) {
                         <p><strong>The Me-Billing Team</strong></p>
                       </div>
                     `,
+                    attachments: [
+                        {
+                            filename: 'Logo2.png',
+                            path: path.join(process.cwd(), 'public', 'images', 'Logo2.png'),
+                            cid: 'mebillinglogo'
+                        }
+                    ]
                 };
 
                 await transporter.sendMail(mailOptions);

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import nodemailer from "nodemailer";
+import path from "path";
 
 // Initialize Supabase correctly for server-side insertions
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
@@ -130,6 +131,9 @@ export async function POST(req: Request) {
                 subject: "Resume Received Successfully",
                 html: `
                   <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
+                    <div style="text-align: center; margin-bottom: 20px;">
+                      <img src="cid:mebillinglogo" alt="Me-Billing Logo" style="max-width: 200px; height: auto;" />
+                    </div>
                     <h2 style="color: #0F5C3B;">Resume Received Successfully</h2>
                     <p>Hi ${firstName},</p>
                     <p>Thank you for submitting your resume to MeBilling. We have successfully received your application and our team will review it carefully. If your profile matches our requirements, we will contact you for the next steps.</p>
@@ -139,6 +143,13 @@ export async function POST(req: Request) {
                     <p><strong>The Me-Billing Team</strong></p>
                   </div>
                 `,
+                attachments: [
+                    {
+                        filename: 'Logo2.png',
+                        path: path.join(process.cwd(), 'public', 'images', 'Logo2.png'),
+                        cid: 'mebillinglogo'
+                    }
+                ]
             };
 
             await transporter.sendMail(mailOptions);
