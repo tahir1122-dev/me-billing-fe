@@ -54,10 +54,10 @@ export default function BundledSolutionsPage() {
                 </div>
             </section>
 
-            {/* Block 1: Walkthrough Section (#FFFDF5 Background) */}
-            <section className="w-full bg-[#FFFDF5] py-20 lg:py-28 border-b border-gray-100/60">
-                <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-7xl">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Block 1: Walkthrough Section */}
+            <section className="w-full bg-[#FCFBF5] py-20 lg:py-24">
+                <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-[1150px]">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
                         {/* Left Side: Video/Walkthrough Image with Play Button Overlay */}
                         <div className="relative w-full rounded-[24px] overflow-hidden shadow-xl aspect-[16/10]">
                             <Image
@@ -87,18 +87,19 @@ export default function BundledSolutionsPage() {
 
                         {/* Right Side: Content */}
                         <div className="max-w-xl">
-                            <p className="text-[#C8920A] tracking-wider text-sm font-semibold mb-3 block font-outfit">
+                            <p className="text-[#C8920A] tracking-wider text-[13px] font-semibold mb-4 block font-outfit">
                                 {walkthrough.tagline}
                             </p>
-                            <h2 className="text-4xl lg:text-5xl font-medium leading-tight text-[#162018] mb-6 font-cormorant">
-                                {walkthrough.titlePart1} <span className="text-[#C8920A] italic">{walkthrough.titleHighlight}</span>
+                            <h2 className="text-4xl lg:text-[46px] font-medium leading-[1.15] text-[#162018] mb-6 font-cormorant">
+                                {walkthrough.titlePart1} <br />
+                                <span className="text-[#C8920A] italic">{walkthrough.titleHighlight}</span>
                             </h2>
-                            <p className="text-[16px] text-[#162018]/80 leading-relaxed font-outfit font-medium mb-8">
+                            <p className="text-[15px] text-[#162018]/80 leading-relaxed font-outfit font-medium mb-8">
                                 {walkthrough.description}
                             </p>
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center gap-2 bg-[#1A6B3A] hover:bg-[#13522C] text-white px-7 py-3.5 rounded-md font-medium text-[16px] transition-colors shadow-sm"
+                                className="inline-flex items-center gap-2 bg-[#1A6B3A] hover:bg-[#13522C] text-white px-6 py-3.5 rounded-md font-medium text-[14.5px] transition-colors shadow-sm"
                             >
                                 {walkthrough.buttonText.replace("→", "").trim()}
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
@@ -108,90 +109,101 @@ export default function BundledSolutionsPage() {
                 </div>
             </section>
 
-            {/* Block 2: Solution Packages Section (#FCFBF5 lighter background variant) */}
-            <section className="w-full bg-[#FCFBF5] py-20 lg:py-28">
-                <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-7xl">
+            {/* Block 2: Solution Packages Section */}
+            <section className="w-full bg-[#F7F6EF] py-20 lg:py-28 border-t border-[#E8E6DD]/50">
+                <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-[1150px]">
                     {/* Header Section */}
-                    <div className="flex flex-col items-center text-center mb-16 lg:mb-24 max-w-3xl mx-auto">
-                        <p className="text-[#C8920A] tracking-wider text-sm font-semibold mb-3 block font-outfit">
+                    <div className="flex flex-col items-start text-left mb-16 lg:mb-20 max-w-4xl">
+                        <p className="text-[#C8920A] text-[13px] font-bold tracking-wide mb-4 block font-outfit">
                             {packagesSection.tagline}
                         </p>
-                        <h2 className="text-4xl lg:text-5xl font-medium leading-tight text-[#162018] mb-4 font-cormorant">
+                        <h2 className="text-4xl lg:text-[52px] font-medium leading-[1.1] text-[#162018] mb-5 font-cormorant">
                             {packagesSection.titlePart1} <span className="text-[#C8920A] italic">{packagesSection.titleHighlight}</span>
                         </h2>
-                        <p className="text-[16px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
+                        <p className="text-[15px] text-[#162018]/70 leading-[1.7] font-outfit font-medium max-w-3xl">
                             {packagesSection.description}
                         </p>
                     </div>
 
                     {/* Solution Packages Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-                        {packagesSection.packages.map((pkg: any, idx: number) => (
-                            <article
-                                key={idx}
-                                className="flex flex-col bg-white border border-[#E0E0D4] rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
-                            >
-                                {/* Header Section */}
-                                <div className="bg-[#1A261D] p-8 pb-10 relative overflow-hidden flex flex-col">
-                                    {/* Circle & Number */}
-                                    <div className="absolute -top-12 -right-12 w-40 h-40 bg-white/5 rounded-full flex items-center justify-center pointer-events-none">
-                                        <span className="text-6xl font-cormorant text-white/10 mt-6 mr-6 select-none">
-                                            {pkg.number}
-                                        </span>
+                    <div className="flex flex-col gap-16 lg:gap-24">
+                        {packagesSection.packages.slice(0, 2).map((pkg: any, idx: number) => {
+                            const isEven = idx % 2 === 1;
+                            const imageIndex = (idx % 4) + 1; // 1 to 4
+                            
+                            // Title split logic: split last 2 words if length > 3, else last 1 word
+                            const titleWords = pkg.title.split(' ');
+                            const splitIndex = titleWords.length > 3 ? -2 : -1;
+                            const firstPart = titleWords.slice(0, splitIndex).join(' ');
+                            const lastPart = titleWords.slice(splitIndex).join(' ');
+
+                            // Bullet point logic: split first item by ':'
+                            const firstItemSplit = pkg.includedItems[0].split(':');
+                            const highlightText = firstItemSplit[0].trim();
+                            const firstBulletRaw = firstItemSplit[1]?.trim() || '';
+                            const firstBullet = firstBulletRaw ? firstBulletRaw.charAt(0).toUpperCase() + firstBulletRaw.slice(1) : '';
+
+                            const bulletPoints = [
+                                ...(firstBullet ? [firstBullet] : []),
+                                ...pkg.includedItems.slice(1)
+                            ];
+
+                            // Tag formatting logic (Title Case)
+                            const formattedTag = pkg.tag.toLowerCase().replace(/\b\w/g, (c: string) => c.toUpperCase());
+
+                            return (
+                                <div key={idx} className={`flex flex-col ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-10 lg:gap-14 items-start`}>
+                                    {/* Image Section */}
+                                    <div className="w-full lg:w-1/2">
+                                        <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[1/1.05] group">
+                                            <Image
+                                                src={`/images/service ${imageIndex}.jpg`}
+                                                alt={pkg.title}
+                                                fill
+                                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                            />
+                                            {/* Floating Overlay Box */}
+                                            <div className="absolute bottom-4 inset-x-4 bg-[#1A6B3A]/95 backdrop-blur-sm text-white px-4 py-3 text-center rounded-lg shadow-lg border border-white/10">
+                                                <p className="text-[12.5px] font-outfit tracking-wide leading-snug">
+                                                    <span className="font-bold">{pkg.bestForLabel} </span>
+                                                    {pkg.bestForText}
+                                                </p>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div className="relative z-10">
-                                        {pkg.badge && (
-                                            <span className="text-[#1A6B3A] text-xs font-bold mb-1 block font-outfit">
-                                                {pkg.badge}
-                                            </span>
-                                        )}
-                                        <span className="text-[#C8920A] text-[11px] font-bold tracking-widest uppercase mb-4 block font-outfit">
-                                            {pkg.tag}
+                                    {/* Text Section */}
+                                    <div className="w-full lg:w-1/2 flex flex-col pt-2">
+                                        <span className="text-[#C8920A] text-[12px] font-medium tracking-wide mb-3 block font-outfit">
+                                            — {formattedTag}
                                         </span>
-                                        {/* Brighter title color for readability on dark header */}
-                                        <h3 className="text-[32px] font-medium text-[#F2E9D8] mb-4 font-cormorant leading-[1.1]">
-                                            {pkg.title}
+                                        <h3 className="text-[36px] lg:text-[40px] font-medium text-[#162018] mb-4 font-cormorant leading-[1.1]">
+                                            {firstPart} <br className="hidden lg:block" />
+                                            <span className="text-[#C8920A] italic">{lastPart}</span>
                                         </h3>
-                                        <p className="text-[15px] font-outfit font-medium italic text-white/80 leading-relaxed">
-                                            {pkg.subtitle}
+                                        <p className="text-[14px] text-[#162018]/80 leading-relaxed font-outfit font-medium mb-6">
+                                            {pkg.description}
                                         </p>
+                                        
+                                        <div className="flex flex-col">
+                                            <span className="text-[#1A6B3A] text-[13.5px] font-bold tracking-wide mb-3 block font-outfit">
+                                                What's Included : <span className="font-medium normal-case">{highlightText}</span>
+                                            </span>
+                                            <ul className="flex flex-col gap-2.5 font-outfit">
+                                                {bulletPoints.map((item: string, i: number) => (
+                                                    <li key={i} className="flex items-start gap-2.5 text-[12.5px] text-[#162018]/80 font-medium leading-snug">
+                                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A6B3A" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-[3px]">
+                                                            <polyline points="20 6 9 17 4 12"></polyline>
+                                                        </svg>
+                                                        <span>{item}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-
-                                {/* Body Section */}
-                                <div className="p-8 flex flex-col flex-1">
-                                    <p className="text-[14px] text-[#162018]/70 leading-relaxed font-outfit font-medium mb-10">
-                                        {pkg.description}
-                                    </p>
-
-                                    <div className="mt-auto">
-                                        <span className="text-[#1A6B3A] text-[11px] font-bold tracking-widest uppercase mb-5 block font-outfit">
-                                            {pkg.includedTitle}
-                                        </span>
-
-                                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 font-outfit">
-                                            {pkg.includedItems.map((item: string, i: number) => (
-                                                <li key={i} className="flex items-start gap-3 text-[13px] text-[#162018]/80 font-medium leading-snug">
-                                                    <div className="w-1 h-1 rounded-full bg-[#162018]/40 shrink-0 mt-2"></div>
-                                                    <span>{item}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                {/* Footer Section */}
-                                <div className="bg-[#FAFAEE] m-8 mt-0 p-5 rounded-xl flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center">
-                                    <span className="text-[12px] font-bold text-[#162018] shrink-0 font-outfit">
-                                        {pkg.bestForLabel}
-                                    </span>
-                                    <span className="text-[12px] italic text-[#162018]/70 font-outfit font-medium">
-                                        {pkg.bestForText}
-                                    </span>
-                                </div>
-                            </article>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             </section>

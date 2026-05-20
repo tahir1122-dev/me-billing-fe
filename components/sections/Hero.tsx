@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 // ─── Hero data ────────────────────────────────────────────────────────────────
@@ -24,14 +27,31 @@ const heroData = {
         industryLabel: "Industry: 10–15%",
         mebillingLabel: "MeBilling: 5%",
     },
+    specialties: [
+        { name: "Inpatient Acute Care", highlight: false },
+        { name: "Physical Therapy", highlight: true },
+        { name: "Surgical Centers (ASCs)", highlight: false },
+        { name: "Family Practice", highlight: false },
+        { name: "Orthopedic Surgery", highlight: true },
+        { name: "Urology", highlight: false },
+        { name: "Pain Management", highlight: false },
+        { name: "Toxicology", highlight: true },
+    ]
 };
 
 export default function Hero() {
+    const [showStatCard, setShowStatCard] = useState(false);
+
+    useEffect(() => {
+        const statTimer = setTimeout(() => setShowStatCard(true), 2000);
+        return () => clearTimeout(statTimer);
+    }, []);
+
     return (
         <section
             className="relative w-full overflow-hidden font-outfit"
             style={{
-                backgroundImage: "url('/images/herobg.png')",
+                backgroundImage: "url('/images/banner.png')",
                 backgroundSize: "cover",
                 backgroundPosition: "center top",
                 backgroundRepeat: "no-repeat",
@@ -113,7 +133,7 @@ export default function Hero() {
                 </div>
 
                 {/* ── Right column: Stat card matching screenshot exactly ── */}
-                <div className="w-full lg:w-[42%] lg:mt-16">
+                <div className={`w-full lg:w-[42%] lg:mt-16 transition-all duration-1000 ease-out transform ${showStatCard ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-6 blur-md'}`}>
                     <div
                         className="rounded-2xl p-8 border border-[#C8920A]/40"
                         style={{ backgroundColor: "rgba(12, 51, 24, 0.75)", backdropFilter: "blur(8px)" }}
@@ -141,6 +161,37 @@ export default function Hero() {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            {/* ── Bottom Infinite Scroller ── */}
+            <div className="absolute bottom-0 w-full border-t border-white/5 bg-[#101b12]/90 backdrop-blur-md py-5 overflow-hidden flex">
+                <style>{`
+                    @keyframes marquee {
+                        0% { transform: translateX(0%); }
+                        100% { transform: translateX(-100%); }
+                    }
+                    .animate-marquee {
+                        animation: marquee 30s linear infinite;
+                    }
+                `}</style>
+                <div className="flex flex-nowrap w-max">
+                    {[...Array(4)].map((_, arrayIndex) => (
+                        <div key={arrayIndex} className="animate-marquee flex items-center shrink-0">
+                            {heroData.specialties.map((spec, i) => (
+                                <div key={i} className="flex items-center">
+                                    <span
+                                        className={`whitespace-nowrap px-8 text-[13px] font-medium tracking-wide font-outfit ${spec.highlight ? 'text-[#C8920A]' : 'text-white'
+                                            }`}
+                                    >
+                                        {spec.name}
+                                    </span>
+                                    {/* Vertical Separator */}
+                                    <span className="w-[1px] h-[14px] bg-white/10 block"></span>
+                                </div>
+                            ))}
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

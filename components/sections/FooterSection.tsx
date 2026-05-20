@@ -36,17 +36,17 @@ const footerData = {
         { label: "About Us", href: "/about" },
     ],
     contactItems: [
-        { icon: "/images/call.svg", text: "0092346616008" },
-        { icon: "/images/Icons.svg", text: "info@mebilling.com" },
+        { icon: "/images/call.svg", text: "+92346616008", href: "tel:+92346616008" },
+        { icon: "/images/Icons.svg", text: "info@mebilling.com", href: "mailto:info@mebilling.com" },
         { icon: "/images/loc.svg", text: "100 Glenborough Dr, Suite 400\nHouston, TX 77067" },
     ],
     bottomBar: {
         copyright: "© 2026 MeBilling Inc. All Rights Reserved. Houston, TX 77067",
         badge: "HIPAA Compliant",
         links: [
-            { label: "Privacy Policy", href: "/privacy" },
-            { label: "Terms & Conditions", href: "/terms" },
-            { label: "Legal Disclaimer", href: "/disclaimer" }
+            { label: "Privacy Policy", href: "/privacy-policy" },
+            { label: "Terms & Conditions", href: "/privacy-policy" },
+            { label: "Legal Disclaimer", href: "/privacy-policy" }
         ]
     }
 };
@@ -161,7 +161,13 @@ export default function FooterSection() {
                                             className="brightness-0 invert opacity-70"
                                         />
                                     </span>
-                                    <span className="whitespace-pre-line leading-relaxed">{item.text}</span>
+                                    {item.href ? (
+                                        <a href={item.href} className="whitespace-pre-line leading-relaxed hover:text-[#C8920A] transition-colors duration-200">
+                                            {item.text}
+                                        </a>
+                                    ) : (
+                                        <span className="whitespace-pre-line leading-relaxed">{item.text}</span>
+                                    )}
                                 </li>
                             ))}
                         </ul>

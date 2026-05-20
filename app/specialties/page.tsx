@@ -125,50 +125,57 @@ export default function SpecialtiesPage() {
                         </p>
                     </div>
 
-                    {/* Pixel-perfect Grid Structure matching the reference screenshot exactly */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                        {groupBilling.cards.map((card, idx) => (
-                            <article
-                                key={idx}
-                                className="bg-white rounded-2xl border border-gray-200/70 shadow-sm flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-md transition-all duration-300"
-                            >
-                                {/* Premium linear gradient banner strip from #1A6B3A to #C8920A exactly matching screenshot */}
-                                <div className="h-2.5 w-full bg-gradient-to-r from-[#1A6B3A] to-[#C8920A] shrink-0" />
+                        {groupBilling.cards.map((card, idx) => {
+                            const isGoldBorder = idx % 3 === 1;
+                            const cardNumber = String(idx + 1).padStart(2, "0");
+                            return (
+                                <article
+                                    key={idx}
+                                    className={`relative bg-white rounded-[24px] shadow-[0_4px_25px_-5px_rgba(26,107,58,0.06)] flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-[0_8px_30px_-5px_rgba(26,107,58,0.12)] transition-all duration-300 ${
+                                        isGoldBorder ? "border-2 border-[#C8920A]" : "border border-[#D1D1C7]"
+                                    }`}
+                                >
+                                    {/* Gradient header strip exactly matching reference design requirements */}
+                                    <div className="absolute top-0 inset-x-0 h-[4.5px] bg-gradient-to-r from-[#1A6B3A] to-[#C8920A] shadow-[0_2px_6px_rgba(26,107,58,0.3)] z-10" />
 
-                                {/* Card Body */}
-                                <div className="p-6 flex flex-col flex-1">
-                                    {/* Green Italicized Category Label */}
-                                    <span className="text-[#1A6B3A] text-[11px] italic font-medium block mb-1 font-outfit">
-                                        {card.category}
-                                    </span>
+                                    {/* Card Body */}
+                                    <div className="p-8 flex flex-col flex-grow">
+                                        {/* Large Faint Gold Number */}
+                                        <div className="font-cormorant text-[54px] font-medium text-[#FAF3E0] leading-none mb-1 select-none">
+                                            {cardNumber}
+                                        </div>
 
-                                    {/* Cormorant Garamond Card Heading */}
-                                    <h3 className="text-xl lg:text-2xl font-medium text-[#162018] mb-3 font-cormorant">
-                                        {card.title}
-                                    </h3>
+                                        {/* Professional Category Pill */}
+                                        <span className="inline-block bg-[#FAF3E0] text-[#C8920A] text-[9.5px] font-bold tracking-widest px-3 py-1 rounded-full uppercase mb-4 w-fit font-outfit">
+                                            {card.category || "PROFESSIONAL"}
+                                        </span>
 
-                                    {/* Description text */}
-                                    <p className="text-[13.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium mb-4 flex-1">
-                                        {card.description}
-                                    </p>
+                                        {/* Card Heading */}
+                                        <h3 className="text-2xl font-semibold text-[#162018] mb-3 font-cormorant leading-snug">
+                                            {card.title}
+                                        </h3>
 
-                                    {/* Subtle Horizontal Divider Line */}
-                                    <div className="w-full border-t border-gray-100 my-4" />
+                                        {/* Description text */}
+                                        <p className="text-[13.5px] text-[#162018]/75 leading-relaxed font-outfit font-medium mb-6 flex-grow">
+                                            {card.description}
+                                        </p>
 
-                                    {/* Tag / Badge items arranged perfectly */}
-                                    <div className="flex flex-wrap gap-2 pt-1">
-                                        {card.badges.map((badge, bIdx) => (
-                                            <span
-                                                key={bIdx}
-                                                className="bg-[#FAF3E0] text-[#C8920A] text-[11px] font-medium px-2.5 py-1 rounded font-outfit"
-                                            >
-                                                {badge}
-                                            </span>
-                                        ))}
+                                        {/* Tag / Badge items arranged perfectly */}
+                                        <div className="flex flex-wrap gap-2 mt-auto">
+                                            {card.badges.map((badge, bIdx) => (
+                                                <span
+                                                    key={bIdx}
+                                                    className="bg-[#E6F0EB] text-[#1A6B3A] text-[11px] font-semibold px-2.5 py-1.5 rounded font-outfit whitespace-nowrap"
+                                                >
+                                                    {badge}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
-                                </div>
-                            </article>
-                        ))}
+                                </article>
+                            );
+                        })}
                     </div>
                 </div>
             </section>

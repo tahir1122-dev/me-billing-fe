@@ -128,7 +128,7 @@ export default function ServicesPage() {
                                 return (
                                     <article
                                         key={idx}
-                                        className="group rounded-2xl border border-[#D1D1C7]/60 bg-[#FAFAEE] p-8 shadow-sm flex flex-col cursor-pointer hover:-translate-y-2 hover:shadow-xl hover:border-[#C8920A]/50 transition-all duration-500 ease-out"
+                                        className="group rounded-2xl border border-[#D1D1C7]/60 bg-[#FAFAEE] p-6 lg:p-8 flex flex-col cursor-pointer hover:-translate-y-2 hover:border-[#C8920A]/50 transition-all duration-500 ease-out h-[480px] lg:h-[520px]"
                                     >
                                         {/* Badge */}
                                         <div className="mb-6 inline-flex w-fit bg-[#C8920A] rounded-full px-3 py-1 items-center gap-2 group-hover:bg-[#162018] transition-colors duration-400">
@@ -159,7 +159,7 @@ export default function ServicesPage() {
                             return (
                                 <article
                                     key={idx}
-                                    className="group rounded-2xl border border-[#D1D1C7]/60 bg-white hover:bg-[#FAFAEE] p-4 hover:p-8 shadow-sm flex flex-col cursor-pointer hover:-translate-y-2 hover:shadow-2xl hover:border-[#C8920A]/40 transition-all duration-500 ease-out overflow-hidden"
+                                    className="group rounded-2xl border border-[#D1D1C7]/60 bg-white hover:bg-[#FAFAEE] p-6 lg:p-8 flex flex-col cursor-pointer hover:-translate-y-2 hover:border-[#C8920A]/40 transition-all duration-500 ease-out overflow-hidden h-[480px] lg:h-[520px]"
                                 >
                                     {/* Collapsing Image Section */}
                                     <div className="transition-all duration-500 ease-in-out h-[240px] mb-6 group-hover:h-0 group-hover:mb-0 group-hover:opacity-0 overflow-hidden rounded-xl shrink-0">

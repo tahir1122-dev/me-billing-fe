@@ -532,73 +532,166 @@
                 {
                     "category": "Professional",
                     "title": "Mental / Behavioral Health",
-                    "description": "Behavioral health billing sits at the intersection of clinical sensitivity and payer complexity. Session based CPT coding, mental health parity compliance, telehealth reimbursement rules, and prior authorization requirements all carry payer specific nuances and errors here directly delay care access for vulnerable patients.",
+                    "description": "Behavioral health billing sits at the intersection of clinical sensitivity and payer complexity. Session-based CPT coding, mental health parity compliance, telehealth reimbursement rules, and prior authorization requirements all carry payer-specific nuances — and errors here directly delay care access for vulnerable patients.",
                     "badges": [
                         "Session-based CPT coding",
                         "Mental health parity",
-                        "Collaborative care models",
-                        "Collaborative care models",
-                        "Telehealth billing"
+                        "Telehealth billing",
+                        "Collaborative care models"
                     ]
                 },
                 {
                     "category": "Professional",
-                    "title": "Orthopedic Surgery & Sports",
-                    "description": "Orthopedic revenue requires deep expertise in multi-procedure operative reports and specialized modifiers. Implant tracking, surgical staging documentation, global period rules, and workers' compensation guidelines carry critical compliance weight to prevent costly claim downcoding.",
+                    "title": "Oncology",
+                    "description": "No specialty punishes coding errors more severely than oncology. J-code drug billing, infusion hierarchy sequencing, drug wastage documentation, and clinical trial billing compliance require a team that codes oncology exclusively. NCCN-aligned medical necessity documentation is built into every claim.",
                     "badges": [
-                        "Surgical modifier logic",
-                        "Implant reimbursement",
-                        "Global period tracking",
-                        "Workers' comp billing",
-                        "Prior authorization"
+                        "J-code drug billing",
+                        "Infusion hierarchies",
+                        "Drug wastage",
+                        "Clinical trial compliance"
                     ]
                 },
                 {
                     "category": "Professional",
-                    "title": "Cardiology & Electrophysiology",
-                    "description": "Cardiology billing demands precision across complex interventional procedures and diagnostic testing workflows. Selective catheterization sequencing, component coding rules, peripheral vascular interventions, and device monitoring require meticulous daily review.",
+                    "title": "Pain Management",
+                    "description": "Interventional pain billing sits at the intersection of high payer scrutiny and complex procedure hierarchies. Nerve block coding, spinal injection billing, fluoroscopy add-ons, and payer-specific interventional pain policies all require active monitoring — our team tracks policy changes across your entire payer mix.",
                     "badges": [
-                        "Interventional coding",
-                        "Device interrogations",
-                        "Catheterization logic",
-                        "Component unbundling",
-                        "Echocardiography workflows"
+                        "Nerve block coding",
+                        "Spinal injections",
+                        "Fluoroscopy add-ons",
+                        "High-risk modifiers"
                     ]
                 },
                 {
                     "category": "Professional",
-                    "title": "Oncology & Infusion Centers",
-                    "description": "High-cost drug administration and multi-hour chemotherapy infusions present intense audit risks and margin sensitivity. Wastage documentation via JW/JZ modifiers, precise dose unit conversions, complex regimen pre-determinations, and concurrent care rules are managed daily.",
+                    "title": "Nephrology",
+                    "description": "Nephrology billing runs on two parallel tracks — the ESRD monthly capitation cycle and acute care E/M services billed alongside it. Getting both right across inpatient and outpatient settings, through the dialysis billing cycle, requires specialization that comes only from working in nephrology every day.",
                     "badges": [
-                        "Drug wastage modifiers",
-                        "Infusion time mapping",
-                        "Unit conversion math",
-                        "Pre-treatment auths",
-                        "Concurrent care rules"
+                        "ESRD capitation",
+                        "Dialysis billing cycles",
+                        "Acute dialysis coding",
+                        "Inpatient E/M"
                     ]
                 },
                 {
                     "category": "Professional",
-                    "title": "OB/GYN & Women's Health",
-                    "description": "Navigating global maternity packages alongside independent gynecological procedures requires structured unbundling safeguards. Split-care agreements, high-risk maternal diagnostic billing, routine preventive coverage boundaries, and complex surgical coding demand flawless timing.",
+                    "title": "Cardiology",
+                    "description": "Cardiology claims carry high dollar values and equally high payer scrutiny. Echo and stress test coding, cardiac catheterization billing, device programming, and CMS coverage determination updates all require active monitoring. Preauthorization for high-cost cardiac procedures is built into our workflow — not treated as a step someone remembers to check.",
                     "badges": [
-                        "Global maternity tracking",
-                        "Antepartum carve-outs",
-                        "Surgical unbundling",
-                        "Preventive cross-walks",
-                        "High-risk diagnostic logic"
+                        "Echo & stress testing",
+                        "Cardiac cath billing",
+                        "Device programming",
+                        "Prior auth management"
                     ]
                 },
                 {
                     "category": "Professional",
-                    "title": "Dermatology & Mohs Surgery",
-                    "description": "High-volume outpatient procedures combined with intricate multi-stage closures dictate strict documentation alignments. Multi-stage Mohs layer mapping, benign vs. malignant excision criteria, multiple surgery reduction rules, and complex pathology linkages require certified focus.",
+                    "title": "Paediatrics",
+                    "description": "Paediatric practices operate on a Medicaid-dominant payer mix where EPSDT requirements, well-child coding, and immunization billing rules create a compliance layer most billing teams underestimate. Our team handles preventive care coding, vaccine administration billing, and the Medicaid-specific documentation standards that determine whether a claim pays or waits.",
                     "badges": [
-                        "Mohs stage unbundling",
-                        "Excision diameter math",
-                        "Multiple surgery logic",
-                        "Pathology cross-links",
-                        "Derm-specific local rules"
+                        "EPSDT compliance",
+                        "Immunization billing",
+                        "Well-child visits",
+                        "Medicaid payer mix"
+                    ]
+                },
+                {
+                    "category": "Professional",
+                    "title": "Family Practice / Primary Care",
+                    "description": "High volume, tight margins, and E/M optimization as the primary revenue lever — primary care billing demands consistent precision at scale. Annual wellness visits, chronic care management, transitional care codes, and multi-provider group A/R management across a mixed payer environment all sit within our primary care team's daily scope.",
+                    "badges": [
+                        "E/M optimization",
+                        "Chronic care mgmt",
+                        "Wellness visits",
+                        "Multi-provider A/R"
+                    ]
+                },
+                {
+                    "category": "Professional",
+                    "title": "Dermatology",
+                    "description": "Dermatology billing spans medical, surgical, and cosmetic services — each with distinct payer rules and coverage determinations. Lesion excision coding, shave biopsy billing, Mohs surgery sequencing, and the medical-vs-cosmetic determination that governs payability all require a team that knows exactly where payers draw the line.",
+                    "badges": [
+                        "Mohs surgery billing",
+                        "Lesion excision coding",
+                        "Biopsy CPT selection",
+                        "Medical vs. cosmetic"
+                    ]
+                },
+                {
+                    "category": "Professional",
+                    "title": "Obstetrics & Gynecology",
+                    "description": "OB/GYN billing navigates global obstetric packages, surgical procedure coding, and the payer-specific split-billing rules that apply when care transitions mid-pregnancy. Antepartum visits, delivery billing, postpartum management, and gynecologic surgical coding all carry distinct documentation requirements our team manages with precision.",
+                    "badges": [
+                        "Global OB packages",
+                        "Delivery billing",
+                        "Surgical GYN coding",
+                        "Split-billing rules"
+                    ]
+                },
+                {
+                    "category": "Professional",
+                    "title": "Physical / Occupational Therapy",
+                    "description": "Therapy billing is shaped by Medicare therapy cap rules, functional limitation reporting, KX modifier requirements, and timed vs. untimed code distinctions that change how every session translates to a billable unit. Our team tracks CMS and commercial payer policy updates so therapy practices are never caught billing under rules that changed last quarter.",
+                    "badges": [
+                        "Therapy cap compliance",
+                        "KX modifier rules",
+                        "Timed unit coding",
+                        "Functional limitation"
+                    ]
+                },
+                {
+                    "category": "Professional",
+                    "title": "Urology",
+                    "description": "Urology billing encompasses a wide range of E/M, diagnostic, and surgical services — each with payer-specific coverage policies and prior authorization requirements. Cystoscopy coding, urodynamics billing, surgical modifier precision, and in-office procedure billing for urology practices all require the specialty familiarity that prevents claim-level errors before submission.",
+                    "badges": [
+                        "Cystoscopy coding",
+                        "Urodynamics",
+                        "Surgical modifiers",
+                        "In-office procedures"
+                    ]
+                },
+                {
+                    "category": "Professional",
+                    "title": "Psychiatry",
+                    "description": "Psychiatric billing requires navigating the boundary between E/M and psychotherapy add-on codes, understanding parity compliance obligations, and managing prior authorization workflows for both inpatient and outpatient psychiatric care. Our team handles medication management coding, psychotherapy time-based billing, and the documentation standards that keep psychiatric claims compliant.",
+                    "badges": [
+                        "E/M + psychotherapy",
+                        "Parity compliance",
+                        "Medication management",
+                        "Inpatient psych billing"
+                    ]
+                },
+                {
+                    "category": "Professional",
+                    "title": "Ophthalmology",
+                    "description": "Ophthalmology billing spans routine vision exams, medical eye care, and surgical procedures — each with distinct coverage rules across medical and vision payers. Cataract surgery billing, intravitreal injection coding, ophthalmic E/M selection, and the medical-vs-routine determination that governs which payer receives which claim all require specialty-specific expertise.",
+                    "badges": [
+                        "Cataract surgery",
+                        "Intravitreal injections",
+                        "Ophthalmic E/M",
+                        "Medical vs. routine"
+                    ]
+                },
+                {
+                    "category": "Professional",
+                    "title": "Orthopedic Surgery",
+                    "description": "Orthopedic billing carries high claim values and equally high denial risk. Global surgery period rules, implant billing, fracture care coding, joint replacement DRG accuracy, and the 51/59 modifier framework all require a billing team that understands the clinical context behind each procedure — not just the code numbers associated with it.",
+                    "badges": [
+                        "Global surgery periods",
+                        "Implant billing",
+                        "Fracture care coding",
+                        "Modifier 51/59 logic"
+                    ]
+                },
+                {
+                    "category": "Professional",
+                    "title": "Infectious Disease",
+                    "description": "Infectious disease billing encompasses complex inpatient consultation coding, HIV/AIDS chronic care management, antimicrobial stewardship documentation, and the evolving coverage landscape for newer antiretroviral and antifungal drug regimens. Our team ensures that the clinical complexity of ID care translates into the coding specificity that maximizes reimbursement.",
+                    "badges": [
+                        "Inpatient consults",
+                        "HIV/AIDS care mgmt",
+                        "Antimicrobial stewardship",
+                        "Drug regimen billing"
                     ]
                 }
             ]
