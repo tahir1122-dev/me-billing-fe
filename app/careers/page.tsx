@@ -49,7 +49,7 @@ export default function CareersPage() {
                             <Link href="#openings" className="px-8 py-3.5 rounded-full bg-[#C8920A] hover:bg-[#b58308] text-black font-bold text-sm transition-all shadow-md shadow-[#C8920A]/10">
                                 View Open Roles
                             </Link>
-                            <Link href="mailto:careers@mebilling.com" className="px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-bold text-sm transition-all">
+                            <Link href="/resume" className="px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-bold text-sm transition-all">
                                 Send Us Your Resume
                             </Link>
                         </div>
@@ -250,9 +250,9 @@ function JobCard({ department, title, tags }: JobCardProps) {
                 </div>
             </div>
             <div className="shrink-0">
-                <button className="w-full md:w-auto px-6 py-2.5 rounded-lg border border-[#C8920A] text-[#C8920A] font-bold text-sm hover:bg-[#C8920A] hover:text-white transition-all font-outfit">
+                <Link href={`/resume?job=${encodeURIComponent(title)}`} className="w-full md:w-auto px-6 py-2.5 rounded-lg border border-[#C8920A] text-[#C8920A] font-bold text-sm hover:bg-[#C8920A] hover:text-white transition-all font-outfit inline-block text-center">
                     Apply now
-                </button>
+                </Link>
             </div>
         </div>
     );

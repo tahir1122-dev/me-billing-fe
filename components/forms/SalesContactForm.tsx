@@ -8,15 +8,33 @@ export default function SalesContactForm() {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setStatus("loading");
         setMessage("");
 
         const formData = new FormData(e.currentTarget);
+        const firstName = formData.get("firstName") as string;
+        const lastName = formData.get("lastName") as string;
+        const email = formData.get("email") as string;
+        const messageVal = formData.get("message") as string;
+
+        if (!firstName?.trim() || !lastName?.trim() || !email?.trim()) {
+            setStatus("error");
+            setMessage("Please fill in all required fields.");
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email.trim())) {
+            setStatus("error");
+            setMessage("Please enter a valid email address.");
+            return;
+        }
+
+        setStatus("loading");
         const submitData = {
-            first_name: formData.get("firstName"),
-            last_name: formData.get("lastName"),
-            email: formData.get("email"),
-            description: formData.get("message"), // Mapped to queries
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            description: messageVal, // Mapped to queries
         };
 
         try {

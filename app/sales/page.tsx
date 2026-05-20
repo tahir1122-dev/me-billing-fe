@@ -23,7 +23,7 @@ const heroData = {
     contactItems: [
         {
             type: "phone",
-            text: "0092346616008",
+            text: "+92346616008",
         },
         {
             type: "email",
