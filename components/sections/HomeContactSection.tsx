@@ -104,7 +104,7 @@ export default function HomeContactSection() {
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
-                    backgroundColor: "#0C3318",
+                    backgroundColor: "#1A6B3A",
                 }}
             >
                 {/* Dark overlay to keep text readable over photo */}
@@ -150,7 +150,7 @@ export default function HomeContactSection() {
 
             {/* ── Get in Touch Card ── */}
             <section className="w-full py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#FFFDF5" }}>
-                <div className="container mx-auto max-w-5xl">
+                <div className="container mx-auto max-w-7xl">
                     <div
                         className="rounded-3xl overflow-hidden shadow-xl flex flex-col lg:flex-row"
                         style={{ minHeight: "480px" }}
@@ -263,7 +263,7 @@ export default function HomeContactSection() {
                             />
                             {/* Revenue Gap badge — bottom right */}
                             <div className="absolute bottom-5 right-5">
-                                <span className="inline-flex items-center gap-2 bg-[#0C3318] text-white text-[12px] font-bold px-4 py-2.5 rounded-full font-outfit shadow-lg">
+                                <span className="inline-flex items-center gap-2 bg-[#1A6B3A] text-white text-[12px] font-bold px-4 py-2.5 rounded-full font-outfit shadow-lg">
                                     <span className="w-2 h-2 rounded-full bg-[#C8920A]" />
                                     {homeContactData.form.imageBadge}
                                 </span>

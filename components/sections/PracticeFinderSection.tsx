@@ -87,7 +87,7 @@ export default function PracticeFinderSection() {
                     {practiceFinderData.cards.map((card) => (
                         <div
                             key={card.id}
-                            className="bg-[#FCFBF5] border border-[#082610]/12 rounded-2xl overflow-hidden hover:shadow-md hover:border-[#082610]/25 transition-all duration-300 cursor-pointer group"
+                            className="bg-[#FCFBF5] border border-[#082610]/12 rounded-2xl overflow-hidden hover:shadow-lg hover:ring-2 hover:ring-[#1A6B3A] hover:border-transparent transition-all duration-300 cursor-pointer group"
                         >
                             {/* Image with badge */}
                             <div className="relative h-44 overflow-hidden">

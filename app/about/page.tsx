@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 import seoContent from "@/data/seo-content.json";
 
@@ -56,12 +57,12 @@ export default function AboutPage() {
                         </p>
 
                         <div className="mt-10 flex flex-wrap gap-4">
-                            <button className="flex items-center gap-2 bg-[#1A6B3A] hover:bg-[#13522C] text-white px-8 py-4 rounded-md transition-all duration-300 font-medium">
+                            <Link href="/contact" className="flex items-center gap-2 bg-[#1A6B3A] hover:bg-[#13522C] text-white px-8 py-4 rounded-md transition-all duration-300 font-medium">
                                 {aboutData.buttons.primary} {arrowIcon}
-                            </button>
-                            <button className="flex items-center gap-2 bg-transparent border border-white hover:bg-white hover:text-black text-white px-8 py-4 rounded-md transition-all duration-300 font-medium">
+                            </Link>
+                            <Link href="/services" className="flex items-center gap-2 bg-white border border-white hover:bg-gray-100 text-black px-8 py-4 rounded-md transition-all duration-300 font-medium">
                                 {aboutData.buttons.secondary} {arrowIcon}
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -95,7 +96,7 @@ export default function AboutPage() {
                             <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
                                 <Image src="/images/about us team.jpg" alt="Team collaboration" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 60vw" />
                             </div>
-                            <div className="absolute -bottom-5 right-4 lg:bottom-6 lg:-right-8 bg-[#C8920A] py-3 lg:py-4 px-6 lg:px-8 rounded-full flex items-center gap-3 shadow-xl z-10 transition-transform hover:scale-105">
+                            <div className="absolute -bottom-5 right-4 lg:bottom-6 lg:-left-1 bg-[#C8920A] py-3 lg:py-4 px-6 lg:px-8 rounded-full flex items-center gap-3 shadow-xl z-10 transition-transform hover:scale-105">
                                 <span className="w-2 h-2 rounded-full bg-[#162018]"></span>
                                 <span className="text-[#162018] font-bold text-sm lg:text-base font-outfit tracking-wide">
                                     {content.mission.badge}

@@ -40,21 +40,25 @@ const revenueLeakData = {
             stat: "65%",
             title: "Un-appealed Denials",
             description: "Up to 65% of denied claims are recoverable if worked with the right documentation.",
+            icon: "🔄",
         },
         {
             stat: "+5%",
             title: "Unreconciled Underpayments",
             description: "Payers setting below contracted rates, posted and never questioned.",
+            icon: "💰",
         },
         {
             stat: "90",
             title: "Aging A/R with No Follow-Up",
             description: "Claims past 90 days require a different recovery approach.",
+            icon: "📅",
         },
         {
             stat: "75%",
             title: "Compliance Accumulation",
             description: "Silently — Documentation gaps payers find before you do.",
+            icon: "⚠️",
         },
     ],
 };
@@ -120,7 +124,7 @@ export default function Home() {
                                 </p>
                                 <Link
                                     href={insightSection1.cta.href}
-                                    className="inline-flex items-center gap-3 bg-[#0C3318] hover:bg-[#0a2a14] text-white font-bold text-sm px-7 py-3.5 rounded-lg transition-all font-outfit"
+                                    className="inline-flex items-center gap-3 bg-[#1A6B3A] hover:bg-[#0a2a14] text-white font-bold text-sm px-7 py-3.5 rounded-lg transition-all font-outfit"
                                 >
                                     {insightSection1.cta.label}
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -194,7 +198,7 @@ export default function Home() {
                                 </p>
                                 <Link
                                     href={insightSection2.cta.href}
-                                    className="inline-flex items-center gap-3 bg-[#0C3318] hover:bg-[#0a2a14] text-white font-bold text-sm px-7 py-3.5 rounded-lg transition-all font-outfit"
+                                    className="inline-flex items-center gap-3 bg-[#1A6B3A] hover:bg-[#0a2a14] text-white font-bold text-sm px-7 py-3.5 rounded-lg transition-all font-outfit"
                                 >
                                     {insightSection2.cta.label}
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -226,7 +230,12 @@ export default function Home() {
                                     key={item.title}
                                     className="p-7 bg-[#FCFBF5] border border-[#082610]/12 rounded-2xl flex flex-col hover:shadow-md transition-all"
                                 >
-                                    <p className="text-[#C8920A] font-cormorant font-medium text-5xl mb-4 leading-none">{item.stat}</p>
+                                    <div className="flex justify-between items-start mb-4">
+                                        <div className="w-10 h-10 rounded-lg bg-[#F5EEDC] flex items-center justify-center text-xl shadow-sm">
+                                            {item.icon}
+                                        </div>
+                                        <p className="text-[#C8920A] font-cormorant font-medium text-5xl leading-none -mt-2">{item.stat}</p>
+                                    </div>
                                     <h3 className="text-[#162018] font-semibold text-[16px] mb-2 font-outfit">{item.title}</h3>
                                     <p className="text-slate-500 text-[13px] leading-relaxed font-outfit">{item.description}</p>
                                 </div>

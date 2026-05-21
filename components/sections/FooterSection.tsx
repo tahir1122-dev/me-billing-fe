@@ -10,8 +10,8 @@ const footerData = {
         line1: "Ready to Work With a Team",
         line2Highlight: "Accountable for Your Revenue?",
         description: "Let's discuss what's limiting your revenue cycle and map out a path to better performance.",
-        primaryButton: { label: "Let's Talk", href: "/contact" },
-        secondaryButton: { label: "See Our Services", href: "/services" }
+        primaryButton: { label: "Talk to a Specialist", href: "/contact" },
+        secondaryButton: { label: "View Solutions", href: "/services" }
     },
     companyInfo: {
         logo: {
@@ -32,7 +32,7 @@ const footerData = {
         { label: "Home", href: "/" },
         { label: "Our services", href: "/services" },
         { label: "Bundled Solutions", href: "/solutions" },
-        { label: "Blog", href: "/blogs" },
+        { label: "Blog", href: "/resources" },
         { label: "About Us", href: "/about" },
     ],
     contactItems: [

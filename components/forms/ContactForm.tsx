@@ -106,12 +106,12 @@ export default function ContactForm() {
                     <label className="text-[10px] font-bold tracking-widest uppercase mb-2 block font-outfit" style={{ color: "rgba(255,255,255,0.6)" }}>Specialty</label>
                     <div className="relative">
                         <select name="specialty" className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white/50 appearance-none focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }}>
-                            <option value="" className="bg-[#0C3318]">Select your specialty...</option>
-                            <option value="behavioral" className="bg-[#0C3318]">Behavioral Health</option>
-                            <option value="cardiology" className="bg-[#0C3318]">Cardiology</option>
-                            <option value="emergency" className="bg-[#0C3318]">Emergency Medicine</option>
-                            <option value="oncology" className="bg-[#0C3318]">Oncology</option>
-                            <option value="other" className="bg-[#0C3318]">Other</option>
+                            <option value="" className="bg-[#1A6B3A]">Select your specialty...</option>
+                            <option value="behavioral" className="bg-[#1A6B3A]">Behavioral Health</option>
+                            <option value="cardiology" className="bg-[#1A6B3A]">Cardiology</option>
+                            <option value="emergency" className="bg-[#1A6B3A]">Emergency Medicine</option>
+                            <option value="oncology" className="bg-[#1A6B3A]">Oncology</option>
+                            <option value="other" className="bg-[#1A6B3A]">Other</option>
                         </select>
                         <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-40">

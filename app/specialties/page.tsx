@@ -94,9 +94,8 @@ export default function SpecialtiesPage() {
                             {stats.map((stat, idx) => (
                                 <div
                                     key={idx}
-                                    className={`flex flex-col items-center justify-center text-center px-2 ${
-                                        idx < stats.length - 1 ? "lg:border-r lg:border-gray-200/70" : ""
-                                    } ${idx % 2 === 0 && idx < stats.length - 1 ? "border-r border-gray-200/70 lg:border-r-0" : ""}`}
+                                    className={`flex flex-col items-center justify-center text-center px-2 ${idx < stats.length - 1 ? "lg:border-r lg:border-gray-200/70" : ""
+                                        } ${idx % 2 === 0 && idx < stats.length - 1 ? "border-r border-gray-200/70 lg:border-r-0" : ""}`}
                                 >
                                     <span className="text-[#1A6B3A] text-5xl lg:text-6xl font-medium font-cormorant mb-1">
                                         {stat.value}
@@ -132,9 +131,8 @@ export default function SpecialtiesPage() {
                             return (
                                 <article
                                     key={idx}
-                                    className={`relative bg-white rounded-[24px] shadow-[0_4px_25px_-5px_rgba(26,107,58,0.06)] flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-[0_8px_30px_-5px_rgba(26,107,58,0.12)] transition-all duration-300 ${
-                                        isGoldBorder ? "border-2 border-[#C8920A]" : "border border-[#D1D1C7]"
-                                    }`}
+                                    className={`relative bg-white rounded-[24px] shadow-[0_4px_25px_-5px_rgba(26,107,58,0.06)] flex flex-col overflow-hidden hover:-translate-y-1 hover:shadow-[0_8px_30px_-5px_rgba(26,107,58,0.12)] transition-all duration-300 ${isGoldBorder ? "border-2 border-[#C8920A]" : "border border-[#D1D1C7]"
+                                        }`}
                                 >
                                     {/* Gradient header strip exactly matching reference design requirements */}
                                     <div className="absolute top-0 inset-x-0 h-[4.5px] bg-gradient-to-r from-[#1A6B3A] to-[#C8920A] shadow-[0_2px_6px_rgba(26,107,58,0.3)] z-10" />
@@ -244,7 +242,7 @@ export default function SpecialtiesPage() {
                             {institutionalBilling.cards.slice(0, 3).map((card, idx) => (
                                 <article
                                     key={idx}
-                                    style={{ backgroundColor: "#0C3318" }}
+                                    style={{ backgroundColor: "#1A6B3A" }}
                                     className="rounded-[24px] border border-[#1A6B3A]/30 backdrop-blur-md p-6 lg:p-8 flex flex-col justify-between hover:border-[#1A6B3A]/50 transition-all duration-300 shadow-sm"
                                 >
                                     <div>
@@ -295,7 +293,7 @@ export default function SpecialtiesPage() {
                             {institutionalBilling.cards.slice(3, 5).map((card, idx) => (
                                 <article
                                     key={idx}
-                                    style={{ backgroundColor: "#0C3318" }}
+                                    style={{ backgroundColor: "#1A6B3A" }}
                                     className="rounded-[24px] border border-[#1A6B3A]/30 backdrop-blur-md p-6 lg:p-8 flex flex-col justify-between hover:border-[#1A6B3A]/50 transition-all duration-300 shadow-sm"
                                 >
                                     <div>

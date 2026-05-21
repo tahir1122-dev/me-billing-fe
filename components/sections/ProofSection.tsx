@@ -76,7 +76,7 @@ export default function ProofSection() {
                                 backgroundColor: stat.highlighted ? "#EDE8D8" : "#FCFBF5",
                             }}
                         >
-                            <p className="text-[10px] font-bold tracking-widest uppercase text-slate-400 mb-5 font-outfit">
+                            <p className="text-[10px] font-bold tracking-widest uppercase text-[#1A6B3A] mb-5 font-outfit">
                                 {stat.label}
                             </p>
                             <p
@@ -89,8 +89,7 @@ export default function ProofSection() {
                                 {stat.value}
                             </p>
                             <p
-                                className="text-[10px] font-bold tracking-widest uppercase font-outfit mt-auto"
-                                style={{ color: stat.highlighted ? "rgba(22,32,24,0.45)" : "rgba(100,116,139,0.8)" }}
+                                className="text-[10px] font-bold tracking-widest uppercase text-[#1A6B3A] font-outfit mt-auto"
                             >
                                 {stat.note}
                             </p>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next";
 import SalesContactForm from "@/components/forms/SalesContactForm";
 
@@ -107,7 +108,7 @@ function getContactIcon(type: string) {
 
 function TrendIcon() {
     return (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#1A6B3A]">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
             <path d="M3 3v18h18" />
             <path d="M7 14l4-4 4 4 6-6" />
         </svg>
@@ -116,7 +117,7 @@ function TrendIcon() {
 
 function SearchIcon() {
     return (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#1A6B3A]">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
             <circle cx="11" cy="11" r="8" />
             <path d="m21 21-4.35-4.35" />
         </svg>
@@ -125,7 +126,7 @@ function SearchIcon() {
 
 function HandshakeIcon() {
     return (
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[#1A6B3A]">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
             <path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z" />
         </svg>
     );
@@ -265,7 +266,7 @@ export default function SalesPage() {
                         <div className="mt-12 grid gap-8 sm:grid-cols-3">
                             {ctaData.items.map((item, idx) => (
                                 <div key={item.text} className="flex flex-col items-center gap-4">
-                                    <div className="w-14 h-14 rounded-full bg-[#1A6B3A] flex items-center justify-center">
+                                    <div className="w-14 h-14 rounded-full bg-[#18532D] shadow-inner flex items-center justify-center">
                                         {ctaIcons[idx]}
                                     </div>
                                     <p className="text-sm font-semibold text-white/90 font-outfit">{item.text}</p>
@@ -273,8 +274,8 @@ export default function SalesPage() {
                             ))}
                         </div>
 
-                        <button
-                            type="button"
+                        <Link
+                            href="/about"
                             className="mt-10 inline-flex items-center gap-3 rounded-full border border-[#C8920A] bg-transparent hover:bg-[#C8920A]/10 px-7 py-3 text-sm font-bold text-[#C8920A] transition-all font-outfit"
                         >
                             {ctaData.cta}
@@ -284,7 +285,7 @@ export default function SalesPage() {
                                     <path d="m12 5 7 7-7 7" />
                                 </svg>
                             </span>
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </section>

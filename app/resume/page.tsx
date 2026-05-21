@@ -282,7 +282,7 @@ export default function ResumePage() {
                                                     </svg>
                                                 </div>
                                                 <span className="text-[#162018] font-bold text-[15px] mb-1">Click to upload or drag and drop</span>
-                                                <span className="text-[#162018]/50 text-[13px]">Supported formats: .pdf, .doc, .docx</span>
+                                                <span className="text-[#162018]/50 text-[13px]">Supported formats: .pdf, .doc</span>
                                             </div>
                                         )}
                                     </div>
