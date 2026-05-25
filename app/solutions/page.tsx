@@ -127,10 +127,18 @@ export default function BundledSolutionsPage() {
 
                     {/* Solution Packages Grid */}
                     <div className="flex flex-col gap-16 lg:gap-24">
-                        {packagesSection.packages.slice(0, 2).map((pkg: any, idx: number) => {
+                        {packagesSection.packages.slice(0, 6).map((pkg: any, idx: number) => {
                             const isEven = idx % 2 === 1;
-                            const imageIndex = (idx % 4) + 1; // 1 to 4
-                            
+                            const cardImages = [
+                                "service 1.jpg",
+                                "service 2.jpg",
+                                "service 3.jpg",
+                                "service 4.jpg",
+                                "doc 2.png",
+                                "about us team.jpg"
+                            ];
+                            const imageSrc = `/images/${cardImages[idx % cardImages.length]}`;
+
                             // Title split logic: split last 2 words if length > 3, else last 1 word
                             const titleWords = pkg.title.split(' ');
                             const splitIndex = titleWords.length > 3 ? -2 : -1;
@@ -157,7 +165,7 @@ export default function BundledSolutionsPage() {
                                     <div className="w-full lg:w-1/2">
                                         <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-[1/1.05] group">
                                             <Image
-                                                src={`/images/service ${imageIndex}.jpg`}
+                                                src={imageSrc}
                                                 alt={pkg.title}
                                                 fill
                                                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -184,7 +192,7 @@ export default function BundledSolutionsPage() {
                                         <p className="text-[14px] text-[#162018]/80 leading-relaxed font-outfit font-medium mb-6">
                                             {pkg.description}
                                         </p>
-                                        
+
                                         <div className="flex flex-col">
                                             <span className="text-[#1A6B3A] text-[13.5px] font-bold tracking-wide mb-3 block font-outfit">
                                                 What's Included : <span className="font-medium normal-case">{highlightText}</span>
