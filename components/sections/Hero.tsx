@@ -11,7 +11,7 @@ const heroData = {
     headingLine2: "is ",
     headingHighlight: "leaving money",
     headingLine3: " on the table.",
-    body: "Not because of anything your clinicians are doing wrong. Because billing complexity payer policy changes, denial cycles, underpayment patterns compounds silently and continuously without a dedicated expert team built to stop it.",
+    body: "Denied Claims,underpayments, and payer Complexity quietly reduce revenue every month . MeBilling helps Practices Recover more with expert-led medical billing solutions.",
     cta1: { label: "Let's Talk", href: "/contact" },
     cta2: { label: "See How We Work", href: "/solutions" },
     badges: [
