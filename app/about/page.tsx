@@ -60,7 +60,7 @@ export default function AboutPage() {
                             <Link href="/contact" className="flex items-center gap-2 bg-[#1A6B3A] hover:bg-[#13522C] text-white px-8 py-4 rounded-md transition-all duration-300 font-medium">
                                 {aboutData.buttons.primary} {arrowIcon}
                             </Link>
-                            <Link href="/services" className="flex items-center gap-2 bg-white border border-white hover:bg-gray-100 text-black px-8 py-4 rounded-md transition-all duration-300 font-medium">
+                            <Link href="/services" className="flex items-center gap-2 bg-none border border-white text-white px-8 py-4 rounded-md transition-all duration-300 font-medium">
                                 {aboutData.buttons.secondary} {arrowIcon}
                             </Link>
                         </div>

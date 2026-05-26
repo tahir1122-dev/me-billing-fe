@@ -97,7 +97,7 @@ export default function SpecialtiesPage() {
                                     className={`flex flex-col items-center justify-center text-center px-2 ${idx < stats.length - 1 ? "lg:border-r lg:border-gray-200/70" : ""
                                         } ${idx % 2 === 0 && idx < stats.length - 1 ? "border-r border-gray-200/70 lg:border-r-0" : ""}`}
                                 >
-                                    <span className="text-[#1A6B3A] text-5xl lg:text-6xl font-medium font-cormorant mb-1">
+                                    <span className="text-[#1A6B3A] text-5xl lg:text-6xl font-medium font-cormorant mb-5">
                                         {stat.value}
                                     </span>
                                     <span className="text-xs font-bold text-[#162018] tracking-wide block font-outfit leading-snug">
@@ -140,7 +140,7 @@ export default function SpecialtiesPage() {
                                     {/* Card Body */}
                                     <div className="p-8 flex flex-col flex-grow">
                                         {/* Large Faint Gold Number */}
-                                        <div className="font-cormorant text-[54px] font-medium text-[#FAF3E0] leading-none mb-1 select-none">
+                                        <div className="font-cormorant text-[54px] font-medium text-[#e6bc4c] leading-none mb-1 select-none">
                                             {cardNumber}
                                         </div>
 
@@ -189,7 +189,7 @@ export default function SpecialtiesPage() {
                                 alt="Walkthrough illustration"
                                 width={640}
                                 height={380}
-                                className="w-full h-auto object-cover"
+                                className="w-full h-auto object-cover specialties-tab"
                             />
                             {/* Centered circular play overlay */}
                             <div className="absolute inset-0 flex items-center justify-center">
@@ -242,7 +242,7 @@ export default function SpecialtiesPage() {
                             {institutionalBilling.cards.slice(0, 3).map((card, idx) => (
                                 <article
                                     key={idx}
-                                    style={{ backgroundColor: "#1A6B3A" }}
+                                    style={{ backgroundColor: "#0C3318" }}
                                     className="rounded-[24px] border border-[#1A6B3A]/30 backdrop-blur-md p-6 lg:p-8 flex flex-col justify-between hover:border-[#1A6B3A]/50 transition-all duration-300 shadow-sm"
                                 >
                                     <div>
@@ -293,7 +293,7 @@ export default function SpecialtiesPage() {
                             {institutionalBilling.cards.slice(3, 5).map((card, idx) => (
                                 <article
                                     key={idx}
-                                    style={{ backgroundColor: "#1A6B3A" }}
+                                    style={{ backgroundColor: "#0C3318" }}
                                     className="rounded-[24px] border border-[#1A6B3A]/30 backdrop-blur-md p-6 lg:p-8 flex flex-col justify-between hover:border-[#1A6B3A]/50 transition-all duration-300 shadow-sm"
                                 >
                                     <div>

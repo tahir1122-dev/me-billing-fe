@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import SalesContactForm from "@/components/forms/SalesContactForm";
+import SalesPillarsAccordion from "@/components/sections/SalesPillarsAccordion";
 
 export const metadata: Metadata = {
     title: "Get a Demo | Me Billing",
@@ -44,9 +45,18 @@ const pillarsData = {
     description:
         "MeBilling is purpose-built to automate work, prioritize tasks, and eliminate errors. Pervasive across the end-to-end software platform, our AI solutions drive efficiency and yield meaningful results for healthcare providers.",
     pillars: [
-        "Deliver quality care",
-        "Collect payments faster, effortlessly",
-        "Top off your quality care experience",
+        {
+            title: "Deliver quality care",
+            content: "Focus on what matters most—your patients. Our platform streamlines clinical workflows, reducing administrative burdens so you can spend more time providing exceptional care.",
+        },
+        {
+            title: "Collect payments faster, effortlessly",
+            content: "Automate your billing processes, minimize denials, and accelerate cash flow with our intelligent revenue cycle management tools designed for modern practices.",
+        },
+        {
+            title: "Top off your quality care experience",
+            content: "Enhance patient satisfaction with seamless scheduling, automated reminders, and intuitive patient portals that make managing healthcare a breeze.",
+        },
     ],
 };
 
@@ -212,17 +222,7 @@ export default function SalesPage() {
                                 {pillarsData.description}
                             </p>
 
-                            <div className="mt-8 space-y-0">
-                                {pillarsData.pillars.map((item) => (
-                                    <div
-                                        key={item}
-                                        className="flex items-center justify-between border-b border-[#082610]/10 py-4"
-                                    >
-                                        <span className="text-base font-semibold text-[#162018] font-outfit">{item}</span>
-                                        <span className="text-xl font-light text-[#C8920A]">+</span>
-                                    </div>
-                                ))}
-                            </div>
+                            <SalesPillarsAccordion pillars={pillarsData.pillars} />
                         </div>
 
                         {/* Right: image */}

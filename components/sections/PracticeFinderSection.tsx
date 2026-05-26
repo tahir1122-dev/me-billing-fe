@@ -21,7 +21,7 @@ const practiceFinderData = {
         {
             id: "aged-ar",
             badge: "Revenue Recovery",
-            badgeColor: "#1A6B3A",
+            badgeColor: "#10411f",
             image: "/images/about us team.jpg",
             title: "We have aged A/R we can't seem to move",
             description: "Old claims recovery, denial management, and formal appeals that convert dormant receivables into deposits.",

@@ -21,8 +21,8 @@ const homeContactData = {
     form: {
         heading: "Get in Touch",
         fields: [
-            { id: "firstName", label: "FIRST NAME", type: "text", placeholder: "First Name", half: true },
-            { id: "lastName", label: "LAST NAME", type: "text", placeholder: "LAST Name", half: true },
+            { id: "firstName", label: "First Name", type: "text", placeholder: "First Name", half: true },
+            { id: "lastName", label: "Last Name", type: "text", placeholder: "Last Name", half: true },
             { id: "email", label: "BUSINESS EMAIL", type: "email", placeholder: "Email", half: false },
             { id: "queries", label: "YOUR QUERIES", type: "textarea", placeholder: "Your queries", half: false },
         ],

@@ -5,14 +5,46 @@ import Image from "next/image";
 import Link from "next/link";
 
 // ─── JSON Data ────────────────────────────────────────────────────────────────
-const footerData = {
-    cta: {
-        line1: "Ready to Work With a Team",
-        line2Highlight: "Accountable for Your Revenue?",
-        description: "Let's discuss what's limiting your revenue cycle and map out a path to better performance.",
+const defaultCta = {
+    line1: "Ready to Work With a Team",
+    line2Highlight: "Accountable for Your Revenue?",
+    description: "Let's discuss what's limiting your revenue cycle and map out a path to better performance.",
+    primaryButton: { label: "Talk to a Specialist", href: "/contact" },
+    secondaryButton: { label: "View Solutions", href: "/solutions" }
+};
+
+const pageSpecificCtas: Record<string, typeof defaultCta> = {
+    "/services": {
+        line1: "Ready to build a Revenue Cycle",
+        line2Highlight: "That Actually Performs? ",
+        description: "Edit this description for the Services page.",
         primaryButton: { label: "Talk to a Specialist", href: "/contact" },
-        secondaryButton: { label: "View Solutions", href: "/services" }
+        secondaryButton: { label: "View Solutions", href: "/solutions" }
     },
+    "/solutions": {
+        line1: "Your revenue cycle should be",
+        line2Highlight: "your strongest asset",
+        description: "Edit this description for the Solutions page.",
+        primaryButton: { label: "Talk to a Specialist", href: "/contact" },
+        secondaryButton: { label: "View Solutions", href: "/solutions" }
+    },
+    "/specialties": {
+        line1: "Dont See Your Specialty? ",
+        line2Highlight: "Lets Talk.",
+        description: "Edit this description for the Specialties page.",
+        primaryButton: { label: "Talk to a Specialist", href: "/contact" },
+        secondaryButton: { label: "View Solutions", href: "/solutions" }
+    },
+    "/contact": {
+        line1: "Your revenue cycle should be",
+        line2Highlight: "your strongest asset",
+        description: "Edit this description for the Specialties page.",
+        primaryButton: { label: "Talk to a Specialist", href: "/contact" },
+        secondaryButton: { label: "View Solutions", href: "/solutions" }
+    }
+};
+
+const footerData = {
     companyInfo: {
         logo: {
             src: "/images/Logo2.png",
@@ -54,6 +86,7 @@ const footerData = {
 export default function FooterSection() {
     const pathname = usePathname();
     const isHome = pathname === "/";
+    const currentCta = pageSpecificCtas[pathname] || defaultCta;
     return (
         <footer className="w-full bg-[#112314] text-white relative overflow-hidden font-outfit">
             {/* Background Concentric Circles */}
@@ -68,23 +101,23 @@ export default function FooterSection() {
             {!isHome && (
                 <div className="relative pt-24 pb-16 px-6 sm:px-12 lg:px-20 text-center flex flex-col items-center">
                     <h2 className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white font-cormorant leading-tight mb-2">
-                        {footerData.cta.line1}
+                        {currentCta.line1}
                     </h2>
                     <h3 className="text-4xl md:text-5xl lg:text-[56px] font-medium text-[#C8920A] font-cormorant italic mb-8">
-                        {footerData.cta.line2Highlight}
+                        {currentCta.line2Highlight}
                     </h3>
                     <p className="text-[17px] text-white/90 font-outfit mb-12 max-w-2xl mx-auto font-medium">
-                        {footerData.cta.description}
+                        {currentCta.description}
                     </p>
                     <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
-                        <Link href={footerData.cta.primaryButton.href} className="bg-[#1A6B3A] hover:bg-[#13522C] text-white px-8 py-3.5 rounded-md font-medium flex items-center gap-2 transition-all">
-                            {footerData.cta.primaryButton.label}
+                        <Link href={currentCta.primaryButton.href} className="bg-[#1A6B3A] hover:bg-[#13522C] text-white px-8 py-3.5 rounded-md font-medium flex items-center gap-2 transition-all">
+                            {currentCta.primaryButton.label}
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </Link>
-                        <Link href={footerData.cta.secondaryButton.href} className="bg-transparent border border-white/30 hover:border-white/60 text-white px-8 py-3.5 rounded-md font-medium flex items-center gap-2 transition-all">
-                            {footerData.cta.secondaryButton.label}
+                        <Link href={currentCta.secondaryButton.href} className="bg-transparent border border-white/30 hover:border-white/60 text-white px-8 py-3.5 rounded-md font-medium flex items-center gap-2 transition-all">
+                            {currentCta.secondaryButton.label}
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
