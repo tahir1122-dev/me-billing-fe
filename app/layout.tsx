@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Outfit, Cormorant_Garamond } from "next/font/google";
-import Navbar from "@/components/layout/Navbar";
-import FooterSection from "@/components/sections/FooterSection";
+import MainLayoutWrapper from "@/components/layout/MainLayoutWrapper";
 import "./globals.css";
+
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -35,9 +35,9 @@ export default function RootLayout({
         className="min-h-full flex flex-col font-outfit text-slate-800 bg-white"
         suppressHydrationWarning
       >
-        <Navbar />
-        {children}
-        <FooterSection />
+        <MainLayoutWrapper>
+          {children}
+        </MainLayoutWrapper>
       </body>
     </html>
   );
