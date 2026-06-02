@@ -29,16 +29,16 @@ const pageSpecificCtas: Record<string, typeof defaultCta> = {
         secondaryButton: { label: "View Solutions", href: "/solutions" }
     },
     "/specialties": {
-        line1: "Dont See Your Specialty? ",
-        line2Highlight: "Lets Talk.",
-        description: "Edit this description for the Specialties page.",
+        line1: "Don't See Your Specialty? ",
+        line2Highlight: "Let's Talk.",
+        description: "",
         primaryButton: { label: "Talk to a Specialist", href: "/contact" },
         secondaryButton: { label: "View Solutions", href: "/solutions" }
     },
     "/contact": {
         line1: "Your revenue cycle should be",
         line2Highlight: "your strongest asset",
-        description: "Edit this description for the Specialties page.",
+        description: "",
         primaryButton: { label: "Talk to a Specialist", href: "/contact" },
         secondaryButton: { label: "View Solutions", href: "/solutions" }
     }

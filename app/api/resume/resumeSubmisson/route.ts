@@ -140,7 +140,7 @@ export async function POST(req: Request) {
                     ${jobTitle ? `<p><strong>Position Applied For:</strong> ${jobTitle}</p>` : ""}
                     <br/>
                     <p>Best Regards,</p>
-                    <p><strong>The Me-Billing Team</strong></p>
+                    <p><strong>The MeBilling Team</strong></p>
                   </div>
                 `,
                 attachments: [

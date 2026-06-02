@@ -77,7 +77,7 @@ export async function POST(req: Request) {
                         <p>We have received your query and we will get back to you soon.</p>
                         <br/>
                         <p>Best Regards,</p>
-                        <p><strong>The Me-Billing Team</strong></p>
+                        <p><strong>The MeBilling Team</strong></p>
                       </div>
                     `,
                     attachments: [

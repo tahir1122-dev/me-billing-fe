@@ -783,7 +783,7 @@
             "description": "Four laboratory billing specialties — each one navigating a distinct coding framework, payer policy environment, and medical necessity documentation standard.",
             "cards": [
                 {
-                    "category": "Lab Specialty",
+                    "category": "Medical necessity",
                     "title": "Toxicology",
                     "description": "Toxicology is one of the most scrutinised segments in laboratory medicine. Correctly distinguishing presumptive from definitive testing, documenting medical necessity at the ordering provider level, and constructing claims that survive payer review requires a team that understands the regulatory environment around tox as well as the HCPCS codes that govern it.",
                     "badges": [
@@ -794,7 +794,7 @@
                     ]
                 },
                 {
-                    "category": "Lab Specialty",
+                    "category": "HCPCS coding",
                     "title": "Pathology",
                     "description": "Pathology billing splits across technical and professional components, surgical pathology CPT tier selection, cytopathology, and molecular pathology — each with its own coding hierarchy and global vs. component billing decision points. Getting the TC/26 split right on every claim, across every ordering setting, is a precision task our team handles without shortcuts.",
                     "badges": [
@@ -805,7 +805,7 @@
                     ]
                 },
                 {
-                    "category": "Lab Specialty",
+                    "category": "Payer audit-readiness",
                     "title": "Genetic Labs",
                     "description": "Genomic and genetic testing billing is the fastest-evolving segment in laboratory revenue cycle. CPT and MAAA code accuracy, real-time payer coverage policy tracking for specific panels, prior authorization requirements, and medical necessity appeals for high-cost genomic testing all require active policy intelligence — not a quarterly code lookup.",
                     "badges": [
@@ -816,7 +816,7 @@
                     ]
                 },
                 {
-                    "category": "Lab Specialty",
+                    "category": "Medical Radiology",
                     "title": "Radiology",
                     "description": "Radiology billing spans diagnostic imaging and interventional procedures — each with distinct TC/PC split billing rules, contrast and guidance add-on codes, and payer-specific prior authorization requirements. Interventional radiology coding carries additional complexity with imaging guidance documentation, conscious sedation billing, and the procedure-specific.",
                     "badges": [

@@ -42,8 +42,8 @@ export default function AdminPageManagement({
                     <input
                         type="text"
                         className="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500"
-                        placeholder={`${title} | Me-Billing`}
-                        defaultValue={`${title} | Me-Billing`}
+                        placeholder={`${title} | MeBilling`}
+                        defaultValue={`${title} | MeBilling`}
                     />
                 </div>
                 <div>
@@ -54,7 +54,7 @@ export default function AdminPageManagement({
                         className="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500"
                         rows={3}
                         placeholder={`Description for ${title}`}
-                        defaultValue={`View details for ${title} on Me-Billing.`}
+                        defaultValue={`View details for ${title} on MeBilling.`}
                     ></textarea>
                 </div>
                 <div>
