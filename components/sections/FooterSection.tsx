@@ -68,7 +68,7 @@ const footerData = {
         { label: "About Us", href: "/about" },
     ],
     contactItems: [
-        { icon: "/images/call.svg", text: "346-616-0008", href: "tel:+92346616008" },
+        { icon: "/images/call.svg", text: "346-616-0008", href: "tel:+13466160008" },
         { icon: "/images/Icons.svg", text: "info@mebilling.com", href: "mailto:info@mebilling.com" },
         { icon: "/images/loc.svg", text: "100 Glenborough Dr, Suite 400\nHouston, TX 77067" },
     ],
@@ -77,8 +77,8 @@ const footerData = {
         badge: "HIPAA Compliant",
         links: [
             { label: "Privacy Policy", href: "/privacy-policy" },
-            { label: "Terms & Conditions", href: "/privacy-policy" },
-            { label: "Legal Disclaimer", href: "/privacy-policy" }
+            { label: "Terms & Conditions", href: "/terms-&-condition" },
+            { label: "Legal Disclaimer", href: "/legal-disclaimer" }
         ]
     }
 };
