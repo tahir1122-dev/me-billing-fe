@@ -186,7 +186,7 @@ export default function ServicesPage() {
                                         {/* Hover Badge (expands and fades in) */}
                                         <div className="transition-all duration-500 ease-in-out grid grid-rows-[0fr] group-hover:grid-rows-[1fr]">
                                             <div className="overflow-hidden">
-                                                <div className="mb-4 inline-flex w-fit bg-[#C8920A] rounded-full px-3 py-1 items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                                <div className="mb-4 hidden group-hover:inline-flex w-fit bg-[#C8920A] rounded-full px-3 py-1 items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                                                     <div className="w-[6px] h-[6px] rounded-full bg-white"></div>
                                                     <span className="text-xs font-bold text-white tracking-wide font-outfit">
                                                         {card.badge}

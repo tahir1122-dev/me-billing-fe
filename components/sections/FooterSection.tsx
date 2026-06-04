@@ -55,9 +55,9 @@ const footerData = {
         description: "We are an organization that focuses on delivering full solutions tailored to our client's various Revenue Cycle operations. We currently service clients located in Texas, Louisiana, Arkansas, Oklahoma, Alabama, and New Jersey."
     },
     socialLinks: [
-        { href: "#", label: "Facebook", icon: "/images/facebook logo.svg" },
-        { href: "#", label: "Twitter", icon: "/images/Twitter logo.svg" },
-        { href: "#", label: "LinkedIn", icon: "/images/linkedin logo.svg" },
+        { href: "https://www.facebook.com/mebilling/", label: "Facebook", icon: "/images/facebook logo.svg" },
+        { href: "https://twitter.com/MeBillingSol", label: "Twitter", icon: "/images/Twitter logo.svg" },
+        { href: "https://www.linkedin.com/in/me-billing-b37783115", label: "LinkedIn", icon: "/images/linkedin logo.svg" },
         { href: "#", label: "Instagram", icon: "/images/instagram logo.svg" },
     ],
     pageLinks: [
@@ -68,7 +68,7 @@ const footerData = {
         { label: "About Us", href: "/about" },
     ],
     contactItems: [
-        { icon: "/images/call.svg", text: "+92346616008", href: "tel:+92346616008" },
+        { icon: "/images/call.svg", text: "346-616-0008", href: "tel:+92346616008" },
         { icon: "/images/Icons.svg", text: "info@mebilling.com", href: "mailto:info@mebilling.com" },
         { icon: "/images/loc.svg", text: "100 Glenborough Dr, Suite 400\nHouston, TX 77067" },
     ],
@@ -153,6 +153,7 @@ export default function FooterSection() {
                                     key={item.label}
                                     href={item.href}
                                     aria-label={item.label}
+                                    target="_blank"
                                     className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white hover:bg-white/10 transition-colors"
                                 >
                                     <Image
