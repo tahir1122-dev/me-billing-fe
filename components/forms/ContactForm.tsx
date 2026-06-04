@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function ContactForm() {
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
     const [message, setMessage] = useState("");
+    const [errorMsgFor, setErrorMsgFor] = useState<string | null>(null);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -22,6 +23,7 @@ export default function ContactForm() {
         if (!firstName?.trim() || !lastName?.trim() || !phone?.trim() || !email?.trim()) {
             setStatus("error");
             setMessage("Please fill in all required fields.");
+            setErrorMsgFor(!firstName?.trim() ? 'firstName' : !lastName?.trim() ? 'lastName' : !phone?.trim() ? 'phone' : 'email');
             return;
         }
 
@@ -29,6 +31,7 @@ export default function ContactForm() {
         if (!emailRegex.test(email.trim())) {
             setStatus("error");
             setMessage("Please enter a valid email address.");
+            setErrorMsgFor("emailFormat");
             return;
         }
 
@@ -69,27 +72,37 @@ export default function ContactForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+        <form onSubmit={handleSubmit} onChange={(e) => {
+            if(e.target.name === 'firstName' && e.target.value != '' && errorMsgFor === 'firstName') setErrorMsgFor(null);
+            if(e.target.name === 'lastName' && e.target.value != '' && errorMsgFor === 'lastName') setErrorMsgFor(null);
+            if(e.target.name === 'phone' && e.target.value != '' && errorMsgFor === 'phone') setErrorMsgFor(null);
+            if(e.target.name === 'email' && e.target.value != '' && (errorMsgFor === 'email' || errorMsgFor === 'emailFormat')) setErrorMsgFor(null);   
+        }} className="flex flex-col gap-5">
             
             <div className="grid grid-cols-2 gap-4">
                 <div>
                     <label className="text-[10px] font-bold tracking-widest uppercase mb-2 block font-outfit" style={{ color: "rgba(255,255,255,0.6)" }}>Your Name</label>
-                    <input name="firstName" type="text" placeholder="First Name" required className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }} />
+                    <input name="firstName" type="text" placeholder="First Name"  className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }} />
+                    {errorMsgFor === "firstName" && <p className="text-red-500 text-xs mt-1">First name is required.</p>}
                 </div>
                 <div>
                     <label className="text-[10px] font-bold tracking-widest uppercase mb-2 block font-outfit" style={{ color: "rgba(255,255,255,0.6)" }}>Last Name</label>
-                    <input name="lastName" type="text" placeholder="Last Name" required className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }} />
+                    <input name="lastName" type="text" placeholder="Last Name"  className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }} />
+                    {errorMsgFor === "lastName" && <p className="text-red-500 text-xs mt-1">Last name is required.</p>}
                 </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
                 <div>
                     <label className="text-[10px] font-bold tracking-widest uppercase mb-2 block font-outfit" style={{ color: "rgba(255,255,255,0.6)" }}>Phone</label>
-                    <input name="phone" type="tel" placeholder="Phone Number" required className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }} />
+                    <input name="phone" type="tel" placeholder="Phone Number"  className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }} />
+                    {errorMsgFor === "phone" && <p className="text-red-500 text-xs mt-1">Phone number is required.</p>}
                 </div>
                 <div>
                     <label className="text-[10px] font-bold tracking-widest uppercase mb-2 block font-outfit" style={{ color: "rgba(255,255,255,0.6)" }}>Email Address</label>
-                    <input name="email" type="email" placeholder="Email" required className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }} />
+                    <input name="email" type="text" placeholder="Email"  className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }} />
+                    {errorMsgFor === "email" && <p className="text-red-500 text-xs mt-1">Email address is required.</p>}
+                    {errorMsgFor === "emailFormat" && <p className="text-red-500 text-xs mt-1">Please enter a valid email address.</p>}
                 </div>
             </div>
 
