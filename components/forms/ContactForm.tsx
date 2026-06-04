@@ -70,11 +70,7 @@ export default function ContactForm() {
 
     return (
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-            {message && (
-                <div className={`p-3 rounded text-sm ${status === "success" ? "bg-green-900/50 text-green-100" : "bg-red-900/50 text-red-100"}`}>
-                    {message}
-                </div>
-            )}
+            
             <div className="grid grid-cols-2 gap-4">
                 <div>
                     <label className="text-[10px] font-bold tracking-widest uppercase mb-2 block font-outfit" style={{ color: "rgba(255,255,255,0.6)" }}>Your Name</label>
@@ -161,6 +157,11 @@ export default function ContactForm() {
             <p className="text-center text-[11px] font-outfit" style={{ color: "#C8920A" }}>
                 Your information is protected under HIPAA. We do not share or sell your data.
             </p>
+            {message && (
+                <div className={`p-3 mt-2 rounded text-sm ${status === "success" ? "bg-green-900/50 text-green-100" : "bg-red-900/50 text-red-100"}`}>
+                    {message}
+                </div>
+            )}
         </form>
     );
 }

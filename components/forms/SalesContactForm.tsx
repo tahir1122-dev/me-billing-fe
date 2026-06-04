@@ -63,11 +63,7 @@ export default function SalesContactForm() {
 
     return (
         <form onSubmit={handleSubmit} className="space-y-4">
-            {message && (
-                <div className={`p-3 rounded text-sm ${status === "success" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}>
-                    {message}
-                </div>
-            )}
+
             <div className="grid gap-4 sm:grid-cols-2">
                 <label className="block text-[10px] font-bold uppercase tracking-widest text-[#1A6B3A] font-outfit">
                     First Name
@@ -139,6 +135,11 @@ export default function SalesContactForm() {
                     </>
                 )}
             </button>
+            {message && (
+                <div className={`p-3 mt-2 rounded text-sm ${status === "success" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}>
+                    {message}
+                </div>
+            )}
         </form>
     );
 }

@@ -4,7 +4,84 @@
   --background: #ffffff;
   --foreground: #171717;
   --color-brand: #00B5E2;
+  --forest: #0C3318;
+  --green: #1A6B3A;
+  --gold: #C8920A;
+  /* Primary accent — use on eyebrows, rules, outlines */
+  --gold-br: #E8C030;
+  /* Logo/wordmark on dark BG */
+  --gold-lt: #FBF2DC;
+  /* Section tint background */
+  --smoke: #F7F9F3;
+  /* Base page background — NOT plain white */
+  --ivory: #FFFDF5;
+  /* Alternate content section background */
+  --ink: #162018;
+  --border: #E4EAE0;
 
+}
+
+body {
+  background: var(--smoke);
+}
+
+.section-white {
+  background: #FFFFFF;
+}
+
+.section-ivory {
+  background: var(--ivory);
+}
+
+.section-smoke {
+  background: var(--smoke);
+}
+
+.section-gold {
+  background: var(--gold-lt);
+}
+
+.section-dark {
+  background: var(--forest);
+}
+
+h1,
+h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  letter-spacing: -0.3px;
+  line-height: 1.08;
+}
+
+h1 {
+  font-size: clamp(36px, 4.5vw, 64px);
+}
+
+h2 {
+  font-size: clamp(28px, 3vw, 46px);
+}
+
+/* Eyebrow label */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #A87500;
+  /* gold-d */
+  margin-bottom: 0.75rem;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 22px;
+  height: 1.5px;
+  background: #C8920A;
+  display: inline-block;
+  flex-shrink: 0;
 }
 
 @theme inline {
