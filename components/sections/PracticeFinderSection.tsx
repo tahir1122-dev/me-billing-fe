@@ -101,10 +101,10 @@ export default function PracticeFinderSection() {
                                 {/* Badge */}
                                 <div className="absolute bottom-3 left-3">
                                     <span
-                                        className="inline-flex items-center gap-1.5 text-white text-[11px] font-bold px-3 py-1.5 rounded-full font-outfit"
+                                        className="inline-flex items-center gap-1.5 text-[#162018] text-[11px] font-bold px-3 py-1.5 rounded-full font-outfit"
                                         style={{ backgroundColor: card.badgeColor }}
                                     >
-                                        <span className="w-1.5 h-1.5 rounded-full bg-white opacity-80" />
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#162018] opacity-80" />
                                         {card.badge}
                                     </span>
                                 </div>

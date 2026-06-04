@@ -264,7 +264,7 @@ export default function HomeContactSection() {
                             {/* Revenue Gap badge — bottom right */}
                             <div className="absolute bottom-5 right-5">
                                 <span className="inline-flex items-center gap-2 bg-[#1A6B3A] text-white text-[12px] font-bold px-4 py-2.5 rounded-full font-outfit shadow-lg">
-                                    <span className="w-2 h-2 rounded-full bg-[#C8920A]" />
+                                    <span className="w-2 h-2 rounded-full bg-[#162018]" />
                                     {homeContactData.form.imageBadge}
                                 </span>
                             </div>
