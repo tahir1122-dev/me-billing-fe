@@ -26,6 +26,8 @@ export default function FormSubmissionsPage({
     const [submissions, setSubmissions] = useState<Submission[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 15;
 
     // Formatting title
     const title = type.charAt(0).toUpperCase() + type.slice(1) + " Submissions";
@@ -36,9 +38,10 @@ export default function FormSubmissionsPage({
                 setLoading(true);
                 const res = await fetch(`/api/admin/forms/${type}`, { cache: "no-store" });
                 const result = await res.json();
-                
+
                 if (result.success) {
                     setSubmissions(result.data || []);
+                    setCurrentPage(1);
                 } else {
                     setError(result.message || "Failed to fetch submissions");
                 }
@@ -51,6 +54,12 @@ export default function FormSubmissionsPage({
 
         fetchSubmissions();
     }, [type]);
+
+    const totalPages = Math.ceil(submissions.length / itemsPerPage);
+    const currentSubmissions = submissions.slice(
+        (currentPage - 1) * itemsPerPage,
+        currentPage * itemsPerPage
+    );
 
     return (
         <div className="bg-white rounded-lg shadow p-6">
@@ -98,7 +107,7 @@ export default function FormSubmissionsPage({
                                 </td>
                             </tr>
                         ) : (
-                            submissions.map((sub) => (
+                            currentSubmissions.map((sub) => (
                                 <tr key={sub.id} className="hover:bg-gray-50">
                                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                         {new Date(sub.created_at).toLocaleDateString()}
@@ -138,6 +147,28 @@ export default function FormSubmissionsPage({
                     </tbody>
                 </table>
             </div>
+
+            {totalPages > 1 && (
+                <div className="flex justify-between items-center mt-6">
+                    <button
+                        onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+                        disabled={currentPage === 1}
+                        className="px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    >
+                        Previous
+                    </button>
+                    <div className="text-sm text-gray-700">
+                        Showing <span className="font-medium">{(currentPage - 1) * itemsPerPage + 1}</span> to <span className="font-medium">{Math.min(currentPage * itemsPerPage, submissions.length)}</span> of <span className="font-medium">{submissions.length}</span> results
+                    </div>
+                    <button
+                        onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+                        disabled={currentPage === totalPages}
+                        className="px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    >
+                        Next
+                    </button>
+                </div>
+            )}
         </div>
     );
 }
