@@ -29,7 +29,7 @@ export default function SpecialtiesPage() {
     return (
         <main className="flex-1 w-full bg-white font-outfit">
             {/* Main Hero Section */}
-            <section className="relative flex max-w-[1920px] mx-auto h-[700px] lg:h-[800px] w-full items-center overflow-hidden bg-[#162018]">
+            <section className="relative flex max-w-[1920px] mx-auto h-[500px] md:h-[600px] lg:h-[800px] w-full items-center overflow-hidden bg-[#162018]">
                 {/* Full-page background loaded with the correct file name */}
                 <div className="absolute inset-0">
                     <Image
@@ -54,7 +54,7 @@ export default function SpecialtiesPage() {
                         </p>
 
                         {/* Main Heading with Cormorant Garamond */}
-                        <h1 className="text-5xl md:text-7xl lg:text-[80px] font-medium leading-[1.1] text-white mb-6 font-cormorant">
+                        <h1 className="text-4xl md:text-6xl lg:text-[80px] font-medium leading-[1.1] text-white mb-6 font-cormorant">
                             {hero.titlePart1} <br />
                             <span className="text-[#C8920A] italic">{hero.titleHighlight}</span>
                         </h1>
@@ -110,13 +110,13 @@ export default function SpecialtiesPage() {
                 </div>
 
                 {/* Main Content & Specialty Cards Grid Area */}
-                <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+                <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-24">
                     {/* Section Header exactly replicating alignment, text styling, and hierarchy */}
                     <div className="max-w-4xl mb-12 lg:mb-16">
                         <p className="text-[#C8920A] tracking-wider text-xs font-bold uppercase mb-2 block font-outfit">
                             {groupBilling.tagline}
                         </p>
-                        <h2 className="text-4xl lg:text-5xl font-medium text-[#162018] leading-tight mb-4 font-cormorant">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#162018] leading-tight mb-4 font-cormorant">
                             {groupBilling.titlePart1} <span className="text-[#C8920A] italic">{groupBilling.titleHighlight}</span>
                         </h2>
                         <p className="text-[15px] text-[#162018]/80 leading-relaxed font-outfit font-medium max-w-3xl">
@@ -140,7 +140,7 @@ export default function SpecialtiesPage() {
                                     {/* Card Body */}
                                     <div className="p-8 flex flex-col flex-grow">
                                         {/* Large Faint Gold Number */}
-                                        <div className="font-cormorant text-[54px] font-medium text-[#e6bc4c] leading-none mb-1 select-none">
+                                        <div className="font-cormorant text-4xl md:text-[54px] font-medium text-[#e6bc4c] leading-none mb-1 select-none">
                                             {cardNumber}
                                         </div>
 
@@ -179,26 +179,17 @@ export default function SpecialtiesPage() {
             </section>
 
             {/* Section 2 under previous one: Walkthrough Feature Block exactly matching Screenshot 1 */}
-            <section className="w-full bg-[#FFFDF5] py-16 lg:py-24 border-t border-b border-gray-100/60">
+            <section className="w-full bg-[#FFFDF5] py-12 md:py-16 lg:py-24 border-t border-b border-gray-100/60">
                 <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         {/* Video Thumbnail block perfectly modeled after Screenshot 1 */}
-                        <div className="relative rounded-2xl overflow-hidden shadow-md max-w-xl mx-auto lg:mx-0 w-full">
-                            <Image
-                                src={walkthrough.image}
-                                alt="Walkthrough illustration"
-                                width={640}
-                                height={380}
-                                className="w-full h-auto object-cover specialties-tab"
+                        <div className="relative rounded-2xl overflow-hidden shadow-md max-w-xl mx-auto lg:mx-0 w-full aspect-[640/380] bg-[#162018]">
+                            <video
+                                src="/vedios/video 04.mp4"
+                                poster={walkthrough.image}
+                                controls
+                                className="w-full h-full object-cover specialties-tab"
                             />
-                            {/* Centered circular play overlay */}
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="w-16 h-16 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center">
-                                    <span className="w-11 h-11 rounded-full bg-[#C8920A] flex items-center justify-center text-white pl-0.5 shadow-md">
-                                        {playIconSVG}
-                                    </span>
-                                </div>
-                            </div>
                         </div>
 
                         {/* Right Text Block matching hierarchy and spacing exactly */}
@@ -206,7 +197,7 @@ export default function SpecialtiesPage() {
                             <p className="text-[#C8920A] tracking-wider text-xs font-bold uppercase mb-2 block font-outfit">
                                 {walkthrough.tagline}
                             </p>
-                            <h2 className="text-4xl lg:text-5xl font-medium text-[#162018] leading-tight mb-4 font-cormorant">
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#162018] leading-tight mb-4 font-cormorant">
                                 {walkthrough.titlePart1}{" "}
                                 <span className="text-[#C8920A] italic">{walkthrough.titleHighlight}</span>
                             </h2>
@@ -219,14 +210,14 @@ export default function SpecialtiesPage() {
             </section>
 
             {/* Section 3: Facility & Institutional Specialties Block with semi-transparent rgba(26, 107, 58, 0.5) cards */}
-            <section className="w-full bg-[#FCFBF5] py-16 lg:py-24">
+            <section className="w-full bg-[#FCFBF5] py-12 md:py-16 lg:py-24">
                 <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     {/* Horizontally centered Header matching reference exactly */}
                     <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
                         <p className="text-[#C8920A] tracking-wider text-xs font-bold uppercase mb-2 block font-outfit">
                             {institutionalBilling.tagline}
                         </p>
-                        <h2 className="text-4xl lg:text-5xl font-medium text-[#162018] leading-tight mb-4 font-cormorant">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#162018] leading-tight mb-4 font-cormorant">
                             {institutionalBilling.titlePart1}{" "}
                             <span className="text-[#C8920A] italic">{institutionalBilling.titleHighlight}</span>
                         </h2>
@@ -343,14 +334,14 @@ export default function SpecialtiesPage() {
             </section>
 
             {/* Section 4: Lab Billing Specialties exactly matching the provided reference screenshot */}
-            <section className="w-full bg-[#FAF9F0] py-16 lg:py-24 border-t border-gray-100/60">
+            <section className="w-full bg-[#FAF9F0] py-12 md:py-16 lg:py-24 border-t border-gray-100/60">
                 <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     {/* Left-aligned Header exactly replicating screenshot structure and typography */}
                     <div className="max-w-4xl mb-12 lg:mb-16">
                         <p className="text-[#C8920A] tracking-wider text-xs font-bold uppercase mb-2 block font-outfit">
                             {labSpecialties.tagline}
                         </p>
-                        <h2 className="text-4xl lg:text-5xl font-medium text-[#162018] leading-tight mb-4 font-cormorant">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#162018] leading-tight mb-4 font-cormorant">
                             {labSpecialties.titlePart1}{" "}
                             <span className="text-[#C8920A] italic">{labSpecialties.titleHighlight}</span>
                         </h2>

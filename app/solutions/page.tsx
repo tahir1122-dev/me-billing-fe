@@ -16,7 +16,7 @@ export default function BundledSolutionsPage() {
     return (
         <main className="flex-1 w-full bg-white font-outfit">
             {/* Hero Section matching Reference Image 2 exactly */}
-            <section className="relative flex max-w-[1920px] mx-auto h-[700px] lg:h-[800px] w-full items-center overflow-hidden bg-[#162018]">
+            <section className="relative flex max-w-[1920px] mx-auto h-[500px] md:h-[600px] lg:h-[800px] w-full items-center overflow-hidden bg-[#162018]">
                 {/* Background Image with soft overlay applied ONLY to background */}
                 <div className="absolute inset-0">
                     <Image
@@ -41,7 +41,7 @@ export default function BundledSolutionsPage() {
                         </p>
 
                         {/* Main Heading with Cormorant Garamond */}
-                        <h1 className="text-5xl md:text-7xl lg:text-[80px] font-medium leading-[1.1] text-white mb-8 font-cormorant">
+                        <h1 className="text-4xl md:text-6xl lg:text-[80px] font-medium leading-[1.1] text-white mb-8 font-cormorant">
                             {hero.titlePart1} <br />
                             <span className="text-[#C8920A] italic">{hero.titleHighlight}</span>
                         </h1>
@@ -55,34 +55,17 @@ export default function BundledSolutionsPage() {
             </section>
 
             {/* Block 1: Walkthrough Section */}
-            <section className="w-full bg-[#FCFBF5] py-20 lg:py-24">
+            <section className="w-full bg-[#FCFBF5] py-12 md:py-20 lg:py-24">
                 <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-[1150px]">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-                        {/* Left Side: Video/Walkthrough Image with Play Button Overlay */}
-                        <div className="relative w-full rounded-[24px] overflow-hidden shadow-xl aspect-[16/10]">
-                            <Image
-                                src={walkthrough.image}
-                                alt="Walkthrough demo"
-                                fill
-                                className="object-cover"
-                                sizes="(max-width: 1024px) 100vw, 50vw"
+                        {/* Left Side: Video */}
+                        <div className="relative w-full rounded-[24px] overflow-hidden shadow-xl aspect-[16/10] bg-[#162018]">
+                            <video
+                                src="/vedios/video 03.mp4"
+                                poster={walkthrough.image}
+                                controls
+                                className="w-full h-full object-cover"
                             />
-                            <div className="absolute inset-0 bg-[#162018]/10 hover:bg-[#162018]/20 transition-colors duration-300"></div>
-
-                            {/* Centered Play Button wrapper mimicking reference screenshot exactly */}
-                            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                <div className="w-[100px] h-[100px] bg-black/30 rounded-full flex items-center justify-center backdrop-blur-xs relative z-10">
-                                    <button
-                                        type="button"
-                                        className="w-[64px] h-[64px] bg-[#C8920A] hover:bg-[#E0A800] transition-colors duration-300 rounded-full flex items-center justify-center shadow-lg pointer-events-auto"
-                                        aria-label="Play walkthrough"
-                                    >
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" className="ml-1">
-                                            <path d="M5 3l14 9-14 9V3z" />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
                         </div>
 
                         {/* Right Side: Content */}
@@ -90,7 +73,7 @@ export default function BundledSolutionsPage() {
                             <p className="text-[#C8920A] tracking-wider text-[13px] font-semibold mb-4 block font-outfit">
                                 {walkthrough.tagline}
                             </p>
-                            <h2 className="text-4xl lg:text-[46px] font-medium leading-[1.15] text-[#162018] mb-6 font-cormorant">
+                            <h2 className="text-3xl md:text-4xl lg:text-[46px] font-medium leading-[1.15] text-[#162018] mb-6 font-cormorant">
                                 {walkthrough.titlePart1} <br />
                                 <span className="text-[#C8920A] italic">{walkthrough.titleHighlight}</span>
                             </h2>
@@ -110,14 +93,14 @@ export default function BundledSolutionsPage() {
             </section>
 
             {/* Block 2: Solution Packages Section */}
-            <section className="w-full bg-[#F7F6EF] py-20 lg:py-28 border-t border-[#E8E6DD]/50">
+            <section className="w-full bg-[#F7F6EF] py-12 md:py-20 lg:py-28 border-t border-[#E8E6DD]/50">
                 <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-[1150px]">
                     {/* Header Section */}
                     <div className="flex flex-col items-start text-left mb-16 lg:mb-20 max-w-4xl">
                         <p className="text-[#C8920A] text-[13px] font-bold tracking-wide mb-4 block font-outfit">
                             {packagesSection.tagline}
                         </p>
-                        <h2 className="text-4xl lg:text-[52px] font-medium leading-[1.1] text-[#162018] mb-5 font-cormorant">
+                        <h2 className="text-3xl md:text-4xl lg:text-[52px] font-medium leading-[1.1] text-[#162018] mb-5 font-cormorant">
                             {packagesSection.titlePart1} <span className="text-[#C8920A] italic">{packagesSection.titleHighlight}</span>
                         </h2>
                         <p className="text-[15px] text-[#162018]/70 leading-[1.7] font-outfit font-medium max-w-3xl">
@@ -185,7 +168,7 @@ export default function BundledSolutionsPage() {
                                         <span className="text-[#C8920A] text-[12px] font-medium tracking-wide mb-3 block font-outfit">
                                             — {formattedTag}
                                         </span>
-                                        <h3 className="text-[36px] lg:text-[40px] font-medium text-[#162018] mb-4 font-cormorant leading-[1.1]">
+                                        <h3 className="text-[28px] md:text-[36px] lg:text-[40px] font-medium text-[#162018] mb-4 font-cormorant leading-[1.1]">
                                             {firstPart} <br className="hidden lg:block" />
                                             <span className="text-[#C8920A] italic">{lastPart}</span>
                                         </h3>

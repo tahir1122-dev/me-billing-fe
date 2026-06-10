@@ -48,7 +48,7 @@ export default function AboutPage() {
                             <span className="w-8 h-[1px] bg-[#D4AF37]"></span>
                             {content.hero.heading}
                         </p>
-                        <h1 className="text-5xl md:text-7xl font-medium leading-tight text-white mb-2">
+                        <h1 className="text-4xl md:text-6xl font-medium leading-tight text-white mb-2 font-cormorant">
                             The Team Behind <br />
                             <span className="text-[#D4AF37] italic">Your Cleaner Revenue.</span>
                         </h1>
@@ -75,7 +75,7 @@ export default function AboutPage() {
                         <p className="text-[#1A6B3A] font-semibold text-sm tracking-wider mb-6 font-outfit">
                             {content.mission.tagline}
                         </p>
-                        <h2 className="text-4xl md:text-5xl lg:text-[64px] font-medium text-[#162018] leading-tight font-cormorant">
+                        <h2 className="text-3xl md:text-4xl lg:text-[64px] font-medium text-[#162018] leading-tight font-cormorant mb-6">
                             {content.mission.headingPart1} <span className="text-[#C8920A] italic">{content.mission.headingHighlight}</span>
                         </h2>
                     </div>
@@ -108,7 +108,7 @@ export default function AboutPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {content.mission.stats.map((stat: { number: string; label: string }, idx: number) => (
                             <div key={idx} className="bg-white/40 rounded-[20px] border border-slate-300/80 px-8 py-12 flex flex-col items-center justify-center text-center shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:bg-white transition-colors duration-300">
-                                <h3 className="text-5xl lg:text-[64px] font-medium text-[#1A6B3A] font-cormorant mb-6 tracking-tight">
+                                <h3 className="text-4xl md:text-5xl lg:text-[64px] font-medium text-[#1A6B3A] font-cormorant mb-6 tracking-tight">
                                     {stat.number}
                                 </h3>
                                 <p className="text-sm font-bold text-[#162018] font-outfit whitespace-pre-line">
@@ -127,7 +127,7 @@ export default function AboutPage() {
                         <p className="text-[#1A6B3A] font-semibold text-sm tracking-wider mb-6 font-outfit">
                             {content.story.tagline}
                         </p>
-                        <h2 className="text-4xl md:text-5xl lg:text-[64px] font-medium text-[#162018] leading-tight font-cormorant">
+                        <h2 className="text-3xl md:text-4xl lg:text-[64px] font-medium text-[#162018] leading-tight font-cormorant mb-6">
                             {content.story.headingPart1} <span className="text-[#C8920A] italic">{content.story.headingHighlight}</span>
                         </h2>
                     </div>
@@ -136,7 +136,7 @@ export default function AboutPage() {
                         <div className="flex flex-col gap-6 text-left">
                             {content.story.milestones.slice(0, 2).map((milestone: { year: string; description: string }, idx: number) => (
                                 <div key={idx} className="bg-white rounded-xl border border-slate-200/80 p-10 lg:p-12 shadow-sm hover:shadow-md transition-shadow">
-                                    <h3 className="text-5xl font-medium text-[#C8920A] font-cormorant mb-6">
+                                    <h3 className="text-4xl md:text-5xl font-medium text-[#C8920A] font-cormorant mb-6">
                                         {milestone.year}
                                     </h3>
                                     <p className="text-[15px] leading-relaxed text-[#162018]/80 font-outfit">
@@ -153,7 +153,7 @@ export default function AboutPage() {
                         <div className="flex flex-col gap-6 text-left">
                             {content.story.milestones.slice(2, 4).map((milestone: { year: string; description: string }, idx: number) => (
                                 <div key={idx} className="bg-white rounded-xl border border-slate-200/80 p-10 lg:p-12 shadow-sm hover:shadow-md transition-shadow">
-                                    <h3 className="text-5xl font-medium text-[#C8920A] font-cormorant mb-6">
+                                    <h3 className="text-4xl md:text-5xl font-medium text-[#C8920A] font-cormorant mb-6">
                                         {milestone.year}
                                     </h3>
                                     <p className="text-[15px] leading-relaxed text-[#162018]/80 font-outfit">
@@ -173,7 +173,7 @@ export default function AboutPage() {
                         <p className="text-[#1A6B3A] font-semibold text-sm tracking-wider mb-6 font-outfit">
                             {content.values.tagline}
                         </p>
-                        <h2 className="text-4xl md:text-5xl lg:text-[64px] font-medium text-[#162018] leading-tight font-cormorant">
+                        <h2 className="text-3xl md:text-4xl lg:text-[64px] font-medium text-[#162018] leading-tight font-cormorant mb-6">
                             {content.values.headingPart1} <span className="text-[#C8920A] italic">{content.values.headingHighlight}</span>
                         </h2>
                     </div>
@@ -207,7 +207,7 @@ export default function AboutPage() {
                                 <p className="text-[#1A6B3A] font-semibold text-sm tracking-wider mb-6 font-outfit">
                                     {content.compliance.tagline}
                                 </p>
-                                <h2 className="text-4xl md:text-5xl lg:text-[64px] font-medium text-[#162018] leading-tight font-cormorant mb-6">
+                                <h2 className="text-3xl md:text-4xl lg:text-[64px] font-medium text-[#162018] leading-tight font-cormorant mb-6">
                                     {content.compliance.headingPart1} <span className="text-[#C8920A] italic">{content.compliance.headingHighlight}</span>
                                 </h2>
                                 <p className="text-[#162018]/80 text-[17px] font-outfit leading-relaxed font-medium max-w-2xl">

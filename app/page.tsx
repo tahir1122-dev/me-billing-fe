@@ -105,16 +105,16 @@ export default function Home() {
                 <Hero />
 
                 {/* ── Insight Section 1: Video + CTA ── */}
-                <section className="w-full py-20 lg:py-28 px-4 sm:px-6 lg:px-8 font-outfit">
+                <section className="w-full py-12 md:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 font-outfit">
                     <div className="container mx-auto max-w-7xl">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
 
                             {/* Left: copy */}
                             <div>
                                 <span className="text-[#C8920A] font-bold tracking-wide text-xs block mb-5 font-outfit">
                                     {insightSection1.tagline}
                                 </span>
-                                <h2 className="text-4xl sm:text-5xl font-medium text-[#162018] leading-tight mb-5 font-cormorant">
+                                <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#162018] leading-tight mb-5 font-cormorant">
                                     {insightSection1.heading1} <br />
                                     <span className="text-[#C8920A] italic">{insightSection1.headingHighlight}</span>{" "}
                                     {insightSection1.heading2}
@@ -133,34 +133,21 @@ export default function Home() {
                                 </Link>
                             </div>
 
-                            {/* Right: video thumbnail */}
+                            {/* Right: video */}
                             <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-video">
-                                <Image
-                                    src={insightSection1.image}
-                                    alt="MeBilling overview video"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 1024px) 100vw, 50vw"
+                                <video
+                                    src="/vedios/video 01.mp4"
+                                    poster={insightSection1.image}
+                                    controls
+                                    className="w-full h-full object-cover"
                                 />
-                                {/* Play button overlay */}
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <button
-                                        type="button"
-                                        aria-label="Play video"
-                                        className="w-16 h-16 rounded-full bg-[#C8920A]/90 hover:bg-[#C8920A] flex items-center justify-center shadow-xl transition-all hover:scale-110"
-                                    >
-                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="white">
-                                            <path d="M5 3l14 9-14 9V3z" />
-                                        </svg>
-                                    </button>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </section>
 
                 {/* ── Insight Section 2: Image left, copy right ── */}
-                <section className="w-full py-20 lg:py-28 px-4 sm:px-6 lg:px-8 font-outfit">
+                <section className="w-full py-12 md:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 font-outfit">
                     <div className="container mx-auto max-w-7xl">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
@@ -187,7 +174,7 @@ export default function Home() {
                                 <span className="text-[#C8920A] font-bold tracking-wide text-xs block mb-5 font-outfit">
                                     {insightSection2.tagline}
                                 </span>
-                                <h2 className="text-4xl sm:text-5xl font-medium text-[#162018] leading-tight mb-5 font-cormorant">
+                                <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#162018] leading-tight mb-5 font-cormorant">
                                     {insightSection2.heading1} <br />
                                     {insightSection2.heading2}
                                     <span className="text-[#C8920A] italic">{insightSection2.headingHighlight}</span>
@@ -211,10 +198,10 @@ export default function Home() {
                 </section>
 
                 {/* ── Revenue Leak Section ── */}
-                <section className="w-full py-20 lg:py-24 px-4 sm:px-6 lg:px-8 font-outfit bg-white/60">
+                <section className="w-full py-12 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 font-outfit bg-white/60">
                     <div className="container mx-auto max-w-7xl">
-                        <div className="text-center mb-14">
-                            <h2 className="text-4xl sm:text-5xl font-medium text-[#162018] leading-tight font-cormorant mb-4">
+                        <div className="text-center mb-10 md:mb-14">
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#162018] leading-tight font-cormorant mb-4">
                                 {revenueLeakData.heading}
                                 <span className="text-[#C8920A] italic">{revenueLeakData.headingHighlight}</span>
                                 {revenueLeakData.heading2}
@@ -234,7 +221,7 @@ export default function Home() {
                                         <div className="w-10 h-10 rounded-lg bg-[#F5EEDC] flex items-center justify-center text-xl shadow-sm">
                                             {item.icon}
                                         </div>
-                                        <p className="text-[#C8920A] font-cormorant font-medium text-5xl leading-none -mt-2">{item.stat}</p>
+                                        <p className="text-[#C8920A] font-cormorant font-medium text-4xl md:text-5xl leading-none -mt-2">{item.stat}</p>
                                     </div>
                                     <h3 className="text-[#162018] font-semibold text-[16px] mb-2 font-outfit">{item.title}</h3>
                                     <p className="text-slate-500 text-[13px] leading-relaxed font-outfit">{item.description}</p>
@@ -245,14 +232,14 @@ export default function Home() {
                 </section>
 
                 {/* ── Approach Section ── */}
-                <section className="w-full py-20 lg:py-28 px-4 sm:px-6 lg:px-8 font-outfit bg-[#0C3318]">
+                <section className="w-full py-12 md:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 font-outfit bg-[#0C3318]">
                     <div className="container mx-auto max-w-7xl">
                         {/* Header */}
-                        <div className="text-center mb-16">
+                        <div className="text-center mb-10 md:mb-16">
                             <span className="text-[#C8920A] font-bold tracking-wide text-xs block mb-4 font-outfit">
                                 {approachData.tagline}
                             </span>
-                            <h2 className="text-4xl sm:text-5xl font-medium text-white leading-tight font-cormorant mb-5">
+                            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-tight font-cormorant mb-5">
                                 {approachData.heading}
                                 <span className="text-[#C8920A] italic">{approachData.headingHighlight}</span>
                                 {approachData.heading2}
@@ -263,10 +250,10 @@ export default function Home() {
                         </div>
 
                         {/* 3 pillar columns */}
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-14">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-10 md:mb-14">
                             {approachData.pillars.map((pillar) => (
-                                <div key={pillar.number} className="flex flex-col p-8 rounded-xl" style={{ border: "1px solid rgba(255,255,255,0.12)" }}>
-                                    <p className="text-white/20 font-cormorant font-medium text-7xl leading-none mb-6">{pillar.number}</p>
+                                <div key={pillar.number} className="flex flex-col p-6 md:p-8 rounded-xl" style={{ border: "1px solid rgba(255,255,255,0.12)" }}>
+                                    <p className="text-white/20 font-cormorant font-medium text-5xl md:text-7xl leading-none mb-4 md:mb-6">{pillar.number}</p>
                                     <h3 className="text-white text-xl font-medium leading-snug mb-4 font-cormorant">{pillar.title}</h3>
                                     <p className="text-white/65 text-[14px] leading-relaxed mb-6 font-outfit flex-1">{pillar.body}</p>
                                     <p className="text-[#C8920A] text-[12.5px] leading-relaxed font-outfit border-t pt-4" style={{ borderColor: "rgba(200,146,10,0.25)" }}>{pillar.note}</p>

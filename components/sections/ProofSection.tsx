@@ -53,7 +53,7 @@ export default function ProofSection() {
                         <span className="text-[#C8920A] font-bold tracking-wide text-xs block mb-5 font-outfit">
                             {proofData.tagline}
                         </span>
-                        <h2 className="text-4xl sm:text-[48px] lg:text-[52px] font-medium text-[#162018] leading-[1.1] font-cormorant">
+                        <h2 className="text-3xl sm:text-[48px] lg:text-[52px] font-medium text-[#162018] leading-[1.1] font-cormorant">
                             {proofData.heading1} <br />
                             {proofData.heading2}
                             <span className="text-[#C8920A] italic">{proofData.headingHighlight}</span>

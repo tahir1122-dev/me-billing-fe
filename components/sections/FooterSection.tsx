@@ -100,10 +100,10 @@ export default function FooterSection() {
             {/* Top CTA Block — hidden on home page */}
             {!isHome && (
                 <div className="relative pt-24 pb-16 px-6 sm:px-12 lg:px-20 text-center flex flex-col items-center">
-                    <h2 className="text-4xl md:text-5xl lg:text-[56px] font-medium text-white font-cormorant leading-tight mb-2">
+                    <h2 className="text-3xl md:text-5xl lg:text-[56px] font-medium text-white font-cormorant leading-tight mb-2">
                         {currentCta.line1}
                     </h2>
-                    <h3 className="text-4xl md:text-5xl lg:text-[56px] font-medium text-[#C8920A] font-cormorant italic mb-8">
+                    <h3 className="text-3xl md:text-5xl lg:text-[56px] font-medium text-[#C8920A] font-cormorant italic mb-8">
                         {currentCta.line2Highlight}
                     </h3>
                     <p className="text-[17px] text-white/90 font-outfit mb-12 max-w-2xl mx-auto font-medium">

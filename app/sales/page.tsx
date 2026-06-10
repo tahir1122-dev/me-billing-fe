@@ -160,7 +160,7 @@ export default function SalesPage() {
                             <span className="text-[#C8920A] font-bold tracking-wide text-xs block mb-4 uppercase font-outfit">
                                 {heroData.tagline}
                             </span>
-                            <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-medium leading-tight font-cormorant mb-4">
+                            <h1 className="text-3xl md:text-5xl lg:text-[56px] font-medium leading-tight font-cormorant mb-4">
                                 {heroData.heading} <br />
                                 <span className="text-[#C8920A] italic">{heroData.headingHighlight}</span>
                             </h1>
@@ -214,7 +214,7 @@ export default function SalesPage() {
                             <span className="text-[#C8920A] font-bold tracking-wide text-xs block mb-4 uppercase font-outfit">
                                 {pillarsData.tagline}
                             </span>
-                            <h2 className="text-4xl sm:text-5xl text-[#162018] font-medium leading-tight font-cormorant mb-2">
+                            <h2 className="text-3xl md:text-5xl text-[#162018] font-medium leading-tight font-cormorant mb-2">
                                 {pillarsData.heading} <br />
                                 <span className="text-[#C8920A] italic font-medium">{pillarsData.headingHighlight}</span>
                             </h2>
@@ -225,25 +225,15 @@ export default function SalesPage() {
                             <SalesPillarsAccordion pillars={pillarsData.pillars} />
                         </div>
 
-                        {/* Right: image */}
+                        {/* Right: video */}
                         <div className="w-full lg:w-1/2">
-                            <div className="relative mx-auto h-[440px] w-full max-w-[700px] overflow-hidden rounded-2xl shadow-lg">
-                                <Image
-                                    src="/images/sales.png"
-                                    alt="Sales preview"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 1024px) 100vw, 700px"
+                            <div className="relative mx-auto h-[440px] w-full max-w-[700px] overflow-hidden rounded-2xl shadow-lg bg-[#FCFBF5]">
+                                <video
+                                    src="/vedios/video 08.mp4"
+                                    controls
+                                    className="object-cover w-full h-full"
+                                    poster="/images/sales.png"
                                 />
-                                <button
-                                    type="button"
-                                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#C8920A]/90 p-4 text-white shadow-xl hover:bg-[#C8920A] transition-all"
-                                    aria-label="Play video"
-                                >
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M5 3l14 9-14 9V3z" />
-                                    </svg>
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -254,7 +244,7 @@ export default function SalesPage() {
             <section className="w-full py-16 sm:py-20 font-outfit">
                 <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
                     <div className="rounded-2xl bg-[#0C3318] px-6 py-14 text-center sm:px-10">
-                        <h2 className="text-3xl sm:text-4xl font-medium text-white font-cormorant leading-tight">
+                        <h2 className="text-2xl md:text-4xl font-medium text-white font-cormorant leading-tight">
                             {ctaData.heading}{" "}
                             <span className="text-[#C8920A] italic">{ctaData.headingHighlight}</span>{" "}
                             {ctaData.headingContinued}

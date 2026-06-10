@@ -35,6 +35,7 @@ export default function SalesContactForm() {
             last_name: lastName,
             email: email,
             description: messageVal, // Mapped to queries
+            type: "sales", // Explicitly setting type to sales
         };
 
         try {
