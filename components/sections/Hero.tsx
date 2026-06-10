@@ -6,13 +6,13 @@ import Link from "next/link";
 // ─── Hero data ────────────────────────────────────────────────────────────────
 const heroData = {
     tagline1: "— U.S. Healthcare Revenue Cycle Specialists —",
-    tagline2: "Est. 2015, Houston TX",
+    tagline2: "Established in 2015 · Houston, TX",
     headingLine1: "Your practice",
     headingLine2: "is ",
     headingHighlight: "leaving money",
     headingLine3: " on the table.",
-    body: "Denied Claims,underpayments, and payer Complexity quietly reduce revenue every month . MeBilling helps Practices Recover more with expert-led medical billing solutions.",
-    cta1: { label: "Let's Talk", href: "/contact" },
+    body: "Denied claims, underpayments, and payer complexity quietly reduce revenue every month. MeBilling helps practices recover more with expert-led medical billing solutions.",
+    cta1: { label: "Schedule a Consultation", href: "/contact" },
     cta2: { label: "See How We Work", href: "/solutions" },
     badges: [
         "CPMA & CPC Certified",
@@ -23,24 +23,23 @@ const heroData = {
     statCard: {
         label: "WHAT MEBILLING CLIENTS EXPERIENCE",
         stat: "5%",
-        description: "Average denial rate — against an industry average of 10–15%.",
+        description: "Denial rate vs. industry average of 10–15%.",
         industryLabel: "Industry: 10–15%",
         mebillingLabel: "MeBilling: 5%",
     },
-    specialties: [
-        { name: "Inpatient Acute Care", highlight: false },
-        { name: "Physical Therapy", highlight: true },
-        { name: "Surgical Centers (ASCs)", highlight: false },
-        { name: "Family Practice", highlight: false },
-        { name: "Orthopedic Surgery", highlight: true },
-        { name: "Urology", highlight: false },
-        { name: "Pain Management", highlight: false },
-        { name: "Toxicology", highlight: true },
+    specialtyGroups: [
+        { name: "Surgical Care", icon: "⚕️" },
+        { name: "Primary Care", icon: "👨‍⚕️" },
+        { name: "Therapy", icon: "🏃" },
+        { name: "Laboratory", icon: "🔬" }
     ]
 };
 
-export default function Hero() {
+export default function Hero({ data = {} }: { data?: any }) {
     const [showStatCard, setShowStatCard] = useState(false);
+
+    // Merge data from props with the local default heroData
+    const content = { ...heroData, ...data };
 
     useEffect(() => {
         const statTimer = setTimeout(() => setShowStatCard(true), 2000);
@@ -75,53 +74,53 @@ export default function Hero() {
                     {/* Tagline block */}
                     <div className="mb-8">
                         <p className="text-[#C8920A] text-xs font-bold tracking-wider font-outfit">
-                            {heroData.tagline1}
+                            {content.tagline1}
                         </p>
                         <p className="text-[#C8920A] text-xs font-bold tracking-wider font-outfit">
-                            {heroData.tagline2}
+                            {content.tagline2}
                         </p>
                     </div>
 
                     {/* Main heading — large Cormorant Garamond matching screenshot */}
                     <h1 className="font-cormorant font-medium text-white leading-[1.05] text-[56px] sm:text-[68px] lg:text-[80px] mb-7">
-                        {heroData.headingLine1}
+                        {content.headingLine1}
                         <br />
-                        {heroData.headingLine2}
-                        <span className="text-[#C8920A] italic">{heroData.headingHighlight}</span>
+                        {content.headingLine2}
+                        <span className="text-[#C8920A] italic">{content.headingHighlight}</span>
                         <br />
-                        {heroData.headingLine3}
+                        {content.headingLine3}
                     </h1>
 
                     {/* Body text */}
                     <p className="text-white/80 text-[15px] leading-relaxed max-w-[480px] mb-10 font-outfit">
-                        {heroData.body}
+                        {content.body}
                     </p>
 
                     {/* CTA buttons */}
-                    <div className="flex flex-wrap items-center gap-4 mb-10">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10 max-w-sm sm:max-w-none">
                         <Link
-                            href={heroData.cta1.href}
-                            className="inline-flex items-center gap-3 bg-[#1A6B3A] hover:bg-[#155a30] text-white font-bold text-sm px-7 py-3.5 rounded-lg transition-all font-outfit"
+                            href={content.cta1.href}
+                            className="inline-flex items-center justify-center gap-3 bg-[#1A6B3A] hover:bg-[#155a30] text-white font-bold text-sm px-7 py-3.5 rounded-lg transition-all font-outfit w-full sm:w-auto"
                         >
-                            {heroData.cta1.label}
+                            {content.cta1.label}
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" />
                             </svg>
                         </Link>
                         <Link
-                            href={heroData.cta2.href}
-                            className="inline-flex items-center gap-3 bg-transparent hover:bg-white/10 text-white font-bold text-sm px-7 py-3.5 rounded-lg border border-white/40 transition-all font-outfit"
+                            href={content.cta2.href}
+                            className="inline-flex items-center justify-center gap-3 bg-transparent hover:bg-white/10 text-white font-bold text-sm px-7 py-3.5 rounded-lg border border-white/40 transition-all font-outfit w-full sm:w-auto"
                         >
-                            {heroData.cta2.label}
+                            {content.cta2.label}
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" />
                             </svg>
                         </Link>
                     </div>
 
                     {/* Trust badges */}
                     <div className="flex flex-wrap gap-x-6 gap-y-2">
-                        {heroData.badges.map((badge) => (
+                        {content.badges.map((badge: any) => (
                             <div key={badge} className="flex items-center gap-2 text-white/80 text-[13px] font-outfit">
                                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C8920A" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                                     <polyline points="20 6 9 17 4 12" />
@@ -139,59 +138,44 @@ export default function Hero() {
                         style={{ backgroundColor: "rgba(12, 51, 24, 0.75)", backdropFilter: "blur(8px)" }}
                     >
                         <p className="text-[#C8920A] font-bold text-[11px] tracking-widest uppercase mb-6 font-outfit">
-                            {heroData.statCard.label}
+                            {content.statCard.label}
                         </p>
 
                         <p className="font-cormorant text-[#C8920A] font-medium leading-none mb-5" style={{ fontSize: "88px" }}>
-                            {heroData.statCard.stat}
+                            {content.statCard.stat}
                         </p>
 
                         <p className="text-white/70 text-[15px] leading-relaxed mb-8 font-outfit">
-                            {heroData.statCard.description}
+                            {content.statCard.description}
                         </p>
 
                         {/* Comparison bar */}
                         <div className="border-t border-white/10 pt-5">
                             <div className="flex items-center justify-between text-[13px] font-outfit">
-                                <span className="text-white/50">{heroData.statCard.industryLabel}</span>
+                                <span className="text-white/50">{content.statCard.industryLabel}</span>
                                 <div className="flex-1 mx-4 h-[2px] bg-[#C8920A]/40 relative">
                                     <div className="absolute left-0 top-0 h-full bg-[#C8920A] w-[35%]" />
                                 </div>
-                                <span className="text-[#C8920A] font-bold">{heroData.statCard.mebillingLabel}</span>
+                                <span className="text-[#C8920A] font-bold">{content.statCard.mebillingLabel}</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* ── Bottom Infinite Scroller ── */}
-            <div className="absolute bottom-0 w-full border-t border-white/5 bg-[#101b12]/90 backdrop-blur-md py-5 overflow-hidden flex">
-                <style>{`
-                    @keyframes marquee {
-                        0% { transform: translateX(0%); }
-                        100% { transform: translateX(-100%); }
-                    }
-                    .animate-marquee {
-                        animation: marquee 30s linear infinite;
-                    }
-                `}</style>
-                <div className="flex flex-nowrap w-max">
-                    {[...Array(4)].map((_, arrayIndex) => (
-                        <div key={arrayIndex} className="animate-marquee flex items-center shrink-0">
-                            {heroData.specialties.map((spec, i) => (
-                                <div key={i} className="flex items-center">
-                                    <span
-                                        className={`whitespace-nowrap px-8 text-[13px] font-medium tracking-wide font-outfit ${spec.highlight ? 'text-[#C8920A]' : 'text-white'
-                                            }`}
-                                    >
-                                        {spec.name}
-                                    </span>
-                                    {/* Vertical Separator */}
-                                    <span className="w-[1px] h-[14px] bg-white/10 block"></span>
-                                </div>
-                            ))}
-                        </div>
-                    ))}
+            {/* ── Bottom Static Specialty Groups ── */}
+            <div className="absolute bottom-0 w-full border-t border-white/5 bg-[#101b12]/90 backdrop-blur-md py-5 overflow-hidden">
+                <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 justify-items-center opacity-80 hover:opacity-100 transition-opacity">
+                        {content.specialtyGroups?.map((group: any, i: number) => (
+                            <div key={i} className="flex items-center gap-3">
+                                <span className="text-xl">{group.icon}</span>
+                                <span className="text-white hover:text-[#C8920A] transition-colors text-[13px] sm:text-[14px] font-medium tracking-wider font-outfit uppercase">
+                                    {group.name}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

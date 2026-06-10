@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
 import ResourcesTabs from "@/components/sections/ResourcesTabs";
 import Image from "next/image";
+import { PageContentService } from "@/services/pageContent.service";
 
 export const metadata: Metadata = {
     title: "Resources | Me Billing",
     description: "Insights, Research & Real-World Results. Case studies, industry articles, events, and press releases."
 };
 
-export default function ResourcesPage() {
+export default async function ResourcesPage() {
+    const pageData = await PageContentService.getPage("resources");
+    const resourcesTabsData = pageData?.sections?.ResourcesTabs || {};
+
     return (
         <main className="flex-1 w-full bg-gradient-to-b from-[#FFFDF5] via-[#FFFDF5]/95 to-[#FFFDF5] font-outfit">
             {/* Top Hero Section */}
@@ -68,7 +72,7 @@ export default function ResourcesPage() {
                             >
                                 <video
                                     src={`/vedios/video 0${index + 5}.mp4`}
-                                    poster="/images/service 1.jpg"
+                                    poster="/images/bussines women.jpg"
                                     controls
                                     className="w-full h-full object-cover"
                                 />
@@ -108,7 +112,7 @@ export default function ResourcesPage() {
             {/* Content Section (Tabs and Grid) */}
             <section className="w-full py-12 md:py-20 px-4 sm:px-6 lg:px-8">
                 <div className="container mx-auto max-w-7xl">
-                    <ResourcesTabs />
+                    <ResourcesTabs data={resourcesTabsData} />
                 </div>
             </section>
         </main>

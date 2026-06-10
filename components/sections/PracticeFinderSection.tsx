@@ -16,7 +16,7 @@ const practiceFinderData = {
             badgeColor: "#C8920A",
             image: "/images/service 2.jpg",
             title: "We want to hand off billing entirely",
-            description: "One accountable partner for patient registration through final payment no vendors, no gaps.",
+            description: "One accountable partner from patient registration through final payment, no vendor gaps.",
         },
         {
             id: "aged-ar",
@@ -63,7 +63,10 @@ const practiceFinderData = {
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-export default function PracticeFinderSection() {
+export default function PracticeFinderSection({ data = {} }: { data?: any }) {
+    // Merge data from props with the local default practiceFinderData
+    const content = { ...practiceFinderData, ...data };
+
     return (
         <section className="w-full py-20 lg:py-28 px-4 sm:px-6 lg:px-8 font-outfit" style={{ backgroundColor: "#FFFDF5" }}>
             <div className="container mx-auto max-w-7xl">
@@ -71,20 +74,20 @@ export default function PracticeFinderSection() {
                 {/* Header */}
                 <div className="text-center mb-14">
                     <span className="text-[#C8920A] font-bold tracking-wide text-xs block mb-4 font-outfit">
-                        {practiceFinderData.tagline}
+                        {content.tagline}
                     </span>
                     <h2 className="text-3xl md:text-5xl font-medium text-[#162018] leading-tight font-cormorant mb-4">
-                        {practiceFinderData.heading1} <br />
-                        <span className="text-[#C8920A] italic">{practiceFinderData.headingHighlight}</span>
+                        {content.heading1} <br />
+                        <span className="text-[#C8920A] italic">{content.headingHighlight}</span>
                     </h2>
                     <p className="text-slate-500 text-[15px] max-w-xl mx-auto font-outfit">
-                        {practiceFinderData.subtext}
+                        {content.subtext}
                     </p>
                 </div>
 
                 {/* 3×2 card grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {practiceFinderData.cards.map((card) => (
+                    {content.cards.map((card: any) => (
                         <div
                             key={card.id}
                             className="bg-[#FCFBF5] border border-[#082610]/12 rounded-2xl overflow-hidden hover:shadow-lg hover:ring-2 hover:ring-[#1A6B3A] hover:border-transparent transition-all duration-300 cursor-pointer group"

@@ -1,5 +1,6 @@
 import Hero from "@/components/sections/Hero";
 import HomeContactSection from "@/components/sections/HomeContactSection";
+import SecurityComplianceSection from "@/components/sections/SecurityComplianceSection";
 import ProofSection from "@/components/sections/ProofSection";
 import PracticeFinderSection from "@/components/sections/PracticeFinderSection";
 import Link from "next/link";
@@ -20,11 +21,11 @@ const insightSection1 = {
 const insightSection2 = {
     tagline: "— The Insight",
     badgeLabel: "The Revenue Gap",
-    heading1: "The average practice",
-    heading2: "loses ",
-    headingHighlight: "8–12%",
-    heading3: " of earned revenue annually.",
-    body: "Not from bad clinical outcomes from billing complexity that compounds silently. Payer policy changes, denial cycles, underpayment patterns. MeBilling was built specifically to stop this.",
+    heading1: "Many practices lose revenue through",
+    heading2: " ",
+    headingHighlight: "denials, underpayments,",
+    heading3: " missed follow-up, and documentation gaps.",
+    body: "MeBilling helps identify and recover that revenue. Not from poor clinical outcomes, but from billing complexity that compounds silently. Payer policy changes, denial cycles, underpayment patterns.",
     cta: { label: "See How We Fix It", href: "/solutions" },
     image: "/images/bussines women.jpg",
 };
@@ -38,14 +39,14 @@ const revenueLeakData = {
     items: [
         {
             stat: "65%",
-            title: "Un-appealed Denials",
+            title: "Unappealed Denials",
             description: "Up to 65% of denied claims are recoverable if worked with the right documentation.",
             icon: "🔄",
         },
         {
             stat: "+5%",
             title: "Unreconciled Underpayments",
-            description: "Payers setting below contracted rates, posted and never questioned.",
+            description: "Payments posted below contracted rates and never questioned.",
             icon: "💰",
         },
         {
@@ -56,8 +57,8 @@ const revenueLeakData = {
         },
         {
             stat: "75%",
-            title: "Compliance Accumulation",
-            description: "Silently — Documentation gaps payers find before you do.",
+            title: "Accumulated Compliance Risk",
+            description: "Documentation gaps can silently accumulate until payers find them first.",
             icon: "⚠️",
         },
     ],
@@ -68,19 +69,19 @@ const approachData = {
     heading: "Built differently. Accountable to ",
     headingHighlight: "outcomes,",
     heading2: " not activity.",
-    body: "MeBilling is not a billing clearinghouse. It is a managed revenue cycle practice organized by clinical specialty, structured to manage every stage of the dispute pathway, and held accountable to the metrics your practice actually tracks.",
+    body: "MeBilling is not a billing clearinghouse. It is a managed revenue cycle practice organized by clinical specialty, end-to-end dispute resolution pathway, and held accountable to the metrics your practice actually tracks.",
     pillars: [
         {
             number: "01",
             title: "Specialty-organized teams. Not shared queues.",
-            body: "Every account staffed by specialists who work that clinical discipline every day — oncology coders code oncology, interventional pain coders code pain management. No rotation, no generalists, no knowledge spread thin.",
+            body: "Every account is staffed by specialists who work within that clinical discipline every day — oncology coders code oncology, interventional pain coders code pain management. No rotation, no generalists, no knowledge spread thin.",
             note: "Applied across 15 professional billing specialties, 5 institutional types, and 4 laboratory billing tracks — 24 disciplines total.",
         },
         {
             number: "02",
             title: "In-house only. No subcontracting, ever.",
             body: "Every claim, every appeal, every IDR proceeding, every arbitration filing managed by our own CPMA and CPC-certified staff. No third-party handoffs, no accountability gaps. One team, one number to call.",
-            note: "250+ certified billing specialists. 90+ payer networks. Houston HQ with two global delivery centres — all in-house.",
+            note: "250+ certified billing specialists. 90+ payer networks. Houston HQ with two global delivery centers — all in-house.",
         },
         {
             number: "03",
@@ -98,11 +99,23 @@ const approachData = {
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-export default function Home() {
+import { PageContentService } from "@/services/pageContent.service";
+
+export default async function Home() {
+    // Fetch dynamic content
+    const pageData = await PageContentService.getPage("home");
+    const sections = pageData?.sections || {};
+
+    const heroData = sections["Hero"] || {};
+    const practiceFinderData = sections["PracticeFinderSection"] || {};
+    const homeContactData = sections["HomeContactSection"] || {};
+    const proofData = sections["ProofSection"] || {};
+    const securityData = sections["SecurityComplianceSection"] || {};
+
     return (
         <>
             <main className="flex-1 w-full relative" style={{ backgroundColor: "#FFFDF5" }}>
-                <Hero />
+                <Hero data={heroData} />
 
                 {/* ── Insight Section 1: Video + CTA ── */}
                 <section className="w-full py-12 md:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 font-outfit">
@@ -276,9 +289,10 @@ export default function Home() {
                     </div>
                 </section>
 
-                <ProofSection />
-                <PracticeFinderSection />
-                <HomeContactSection />
+                <ProofSection data={proofData} />
+                <SecurityComplianceSection data={securityData} />
+                <PracticeFinderSection data={practiceFinderData} />
+                <HomeContactSection data={homeContactData} />
             </main>
         </>
     );

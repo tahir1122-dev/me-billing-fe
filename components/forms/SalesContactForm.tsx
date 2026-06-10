@@ -100,10 +100,10 @@ export default function SalesContactForm() {
             </label>
 
             <label className="block text-[10px] font-bold uppercase tracking-widest text-[#1A6B3A] font-outfit">
-                Your Queries
+                Message
                 <textarea
                     name="message"
-                    placeholder="Your queries"
+                    placeholder="How can we help?"
                     rows={4}
                     className="mt-2 w-full resize-none rounded-lg border border-[#082610]/15 bg-white px-4 py-2.5 text-sm text-[#162018] placeholder:text-slate-400 focus:border-[#C8920A] focus:ring-1 focus:ring-[#C8920A]/30 focus:outline-none font-outfit"
                 />

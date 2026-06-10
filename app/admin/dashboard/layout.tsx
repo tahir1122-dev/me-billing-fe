@@ -17,9 +17,6 @@ const sidebarLinks = [
             { name: "Services", href: "/admin/dashboard/pages/services" },
             { name: "Solutions", href: "/admin/dashboard/pages/solutions" },
             { name: "Resources", href: "/admin/dashboard/pages/resources" },
-            { name: "Contact", href: "/admin/dashboard/pages/contact" },
-            { name: "Sales", href: "/admin/dashboard/pages/sales" },
-            { name: "Privacy Policy", href: "/admin/dashboard/pages/privacy-policy" },
         ],
     },
     {
@@ -44,6 +41,7 @@ export default function DashboardLayout({
         Pages: true,
         "Form Submissions": true,
     });
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
     const toggleDropdown = (name: string) => {
         setOpenDropdowns((prev) => ({ ...prev, [name]: !prev[name] }));
@@ -56,11 +54,20 @@ export default function DashboardLayout({
     };
 
     return (
-        <div className="flex h-screen bg-gray-100">
+        <div className="flex h-screen bg-gray-100 overflow-hidden">
+            {/* Sidebar Overlay (Mobile) */}
+            {isSidebarOpen && (
+                <div 
+                    className="fixed inset-0 bg-black/50 z-40 md:hidden"
+                    onClick={() => setIsSidebarOpen(false)}
+                />
+            )}
+
             {/* Sidebar */}
-            <aside className="w-64 bg-gray-900 text-white flex flex-col h-full overflow-y-auto">
-                <div className="p-4 border-b border-gray-800">
+            <aside className={`fixed md:static inset-y-0 left-0 w-64 bg-gray-900 text-white flex flex-col h-full overflow-y-auto transform transition-transform duration-200 ease-in-out z-50 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}>
+                <div className="p-4 border-b border-gray-800 flex items-center justify-between">
                     <h1 className="text-xl font-bold tracking-wider">Admin Panel</h1>
+                    <button className="md:hidden text-gray-400 hover:text-white" onClick={() => setIsSidebarOpen(false)}>✕</button>
                 </div>
                 <nav className="flex-1 p-4 space-y-2">
                     {sidebarLinks.map((link) => (
@@ -85,6 +92,7 @@ export default function DashboardLayout({
                                                     <Link
                                                         key={sub.name}
                                                         href={sub.href}
+                                                        onClick={() => setIsSidebarOpen(false)}
                                                         className={`block p-2 rounded text-sm transition-colors ${isActive
                                                                 ? "bg-blue-600 text-white"
                                                                 : "text-gray-400 hover:text-white hover:bg-gray-800"
@@ -100,6 +108,7 @@ export default function DashboardLayout({
                             ) : (
                                 <Link
                                     href={link.href}
+                                    onClick={() => setIsSidebarOpen(false)}
                                     className={`flex items-center gap-3 p-2 rounded transition-colors ${pathname === link.href
                                             ? "bg-blue-600"
                                             : "hover:bg-gray-800"
@@ -123,11 +132,19 @@ export default function DashboardLayout({
             </aside>
 
             {/* Main Content Area */}
-            <main className="flex-1 flex flex-col overflow-hidden">
-                <header className="bg-white shadow-sm p-4 flex items-center justify-between h-16">
-                    <h2 className="text-xl font-semibold text-gray-800 capitalize">
-                        {pathname.split("/").pop()?.replace(/-/g, " ") || "Dashboard"}
-                    </h2>
+            <main className="flex-1 flex flex-col overflow-hidden w-full">
+                <header className="bg-white shadow-sm p-4 flex items-center justify-between h-16 shrink-0">
+                    <div className="flex items-center gap-4">
+                        <button 
+                            onClick={() => setIsSidebarOpen(true)}
+                            className="md:hidden p-2 text-gray-600 hover:bg-gray-100 rounded focus:outline-none"
+                        >
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                        </button>
+                        <h2 className="text-xl font-semibold text-gray-800 capitalize truncate">
+                            {pathname.split("/").pop()?.replace(/-/g, " ") || "Dashboard"}
+                        </h2>
+                    </div>
                 </header>
                 <div className="flex-1 overflow-auto p-6">{children}</div>
             </main>
