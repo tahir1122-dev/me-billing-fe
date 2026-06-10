@@ -29,7 +29,7 @@ export default function ContactPage() {
                         <span className="text-[#C8920A] font-bold tracking-wide text-xs block mb-4 uppercase font-outfit">
                             — Contact MeBilling
                         </span>
-                        <h1 className="text-5xl sm:text-6xl lg:text-[76px] font-medium text-white leading-[1.08] mb-6 font-cormorant">
+                        <h1 className="text-4xl sm:text-5xl lg:text-[76px] font-medium text-white leading-[1.08] mb-6 font-cormorant">
                             Let's Talk About What <br />
                             Your Revenue Cycle <br />
                             <span className="text-[#C8920A] italic">Should Be Doing.</span>
@@ -51,10 +51,10 @@ export default function ContactPage() {
                             <div className="flex items-center gap-3 mb-5">
                                 <span className="text-[#C8920A] font-bold tracking-wide text-xs font-outfit">— What to Expect</span>
                             </div>
-                            <h2 className="text-4xl sm:text-[44px] text-[#162018] font-medium leading-tight mb-2 font-cormorant">
+                            <h2 className="text-3xl sm:text-4xl md:text-[44px] text-[#162018] font-medium leading-tight mb-2 font-cormorant">
                                 A Structured Process.
                             </h2>
-                            <p className="text-4xl sm:text-[44px] text-[#C8920A] italic font-medium leading-tight mb-10 font-cormorant">
+                            <p className="text-3xl sm:text-4xl md:text-[44px] text-[#C8920A] italic font-medium leading-tight mb-10 font-cormorant">
                                 No Pressure.
                             </p>
 

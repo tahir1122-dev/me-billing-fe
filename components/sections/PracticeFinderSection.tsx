@@ -73,7 +73,7 @@ export default function PracticeFinderSection() {
                     <span className="text-[#C8920A] font-bold tracking-wide text-xs block mb-4 font-outfit">
                         {practiceFinderData.tagline}
                     </span>
-                    <h2 className="text-4xl sm:text-5xl font-medium text-[#162018] leading-tight font-cormorant mb-4">
+                    <h2 className="text-3xl md:text-5xl font-medium text-[#162018] leading-tight font-cormorant mb-4">
                         {practiceFinderData.heading1} <br />
                         <span className="text-[#C8920A] italic">{practiceFinderData.headingHighlight}</span>
                     </h2>

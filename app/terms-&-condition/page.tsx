@@ -38,7 +38,7 @@ export default function TermsAndConditionsPage() {
                     <p className="text-[#C8920A] tracking-wider text-[13px] font-bold uppercase mb-4 font-outfit">
                         Legal · Contract
                     </p>
-                    <h1 className="text-5xl lg:text-[72px] font-medium text-white mb-8 font-cormorant leading-[1.1]">
+                    <h1 className="text-4xl md:text-5xl lg:text-[72px] font-medium text-white mb-8 font-cormorant leading-[1.1]">
                         Terms &amp; Conditions
                     </h1>
                     <div className="flex flex-col gap-2 text-[15px] text-white/70 font-medium font-outfit border-l-2 border-[#C8920A] pl-4">
@@ -81,7 +81,7 @@ export default function TermsAndConditionsPage() {
                             {/* Section 01 */}
                             <div id="section-1" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 01</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Parties &amp; Acceptance</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Parties &amp; Acceptance</h2>
                                 <div className="space-y-5 text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
                                     <p>These Terms constitute a binding legal agreement between <strong>MeBilling Inc.</strong>, a Texas corporation ("MeBilling," "we," "us"), and the healthcare provider, physician group, facility, or organisation ("Client," "you") that engages MeBilling's services. By signing a Service Agreement, submitting a request for services, or transmitting data to MeBilling, the Client accepts these Terms in full.</p>
                                     <p>These Terms apply to all services provided by MeBilling, including but not limited to Revenue Cycle Management, medical coding, billing and coding audits, enrollment and credentialing, Federal IDR proceedings under the No Surprises Act, old claims recovery, payment posting and reconciliation, injury claims management, claims negotiation, appeals and reconsideration, arbitration support, and state reporting services.</p>
@@ -93,7 +93,7 @@ export default function TermsAndConditionsPage() {
                             {/* Section 02 */}
                             <div id="section-2" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 02</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Definitions</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Definitions</h2>
                                 <div className="rounded-xl border border-[#E8E6DD] overflow-hidden">
                                     {[
                                         { term: "Service Agreement", def: "The written contract executed between MeBilling and the Client specifying the particular services, fees, performance standards, and term of engagement." },
@@ -116,7 +116,7 @@ export default function TermsAndConditionsPage() {
                             {/* Section 03 */}
                             <div id="section-3" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 03</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Services &amp; Scope</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Services &amp; Scope</h2>
                                 <div className="space-y-8 text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
                                     <div>
                                         <h3 className="text-xl font-cormorant font-bold text-[#162018] mb-3">3.1 Covered Service Lines</h3>
@@ -157,7 +157,7 @@ export default function TermsAndConditionsPage() {
                             {/* Section 04 */}
                             <div id="section-4" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 04</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Client Obligations</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Client Obligations</h2>
                                 <div className="space-y-5 text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
                                     <p>The Client's timely performance of its own obligations is a prerequisite for MeBilling's ability to perform the services. Client agrees to:</p>
                                     <ul className="list-none space-y-3">
@@ -184,7 +184,7 @@ export default function TermsAndConditionsPage() {
                             {/* Section 05 */}
                             <div id="section-5" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 05</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">HIPAA, HITECH &amp; Texas Privacy Compliance</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">HIPAA, HITECH &amp; Texas Privacy Compliance</h2>
                                 <div className="space-y-8 text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
                                     <div>
                                         <h3 className="text-xl font-cormorant font-bold text-[#162018] mb-3">5.1 Business Associate Agreement</h3>
@@ -210,7 +210,7 @@ export default function TermsAndConditionsPage() {
                             {/* Section 06 */}
                             <div id="section-6" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 06</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Healthcare Fraud &amp; Abuse Laws</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Healthcare Fraud &amp; Abuse Laws</h2>
                                 <div className="space-y-8 text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
                                     <div>
                                         <h3 className="text-xl font-cormorant font-bold text-[#162018] mb-3">6.1 False Claims Act</h3>
@@ -240,7 +240,7 @@ export default function TermsAndConditionsPage() {
                             {/* Section 07 */}
                             <div id="section-7" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 07</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">No Surprises Act &amp; Federal IDR Services</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">No Surprises Act &amp; Federal IDR Services</h2>
                                 <div className="space-y-5 text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
                                     <p>Where MeBilling provides Federal Independent Dispute Resolution (IDR) services under the <strong>No Surprises Act</strong> (42 U.S.C. § 300gg-111), the following terms apply:</p>
                                     <ul className="list-none space-y-3">
@@ -265,7 +265,7 @@ export default function TermsAndConditionsPage() {
                             {/* Section 08 */}
                             <div id="section-8" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 08</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Fees &amp; Payment</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Fees &amp; Payment</h2>
                                 <div className="space-y-8 text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
                                     <div>
                                         <h3 className="text-xl font-cormorant font-bold text-[#162018] mb-3">8.1 Fee Structure</h3>
@@ -295,7 +295,7 @@ export default function TermsAndConditionsPage() {
                             {/* Section 09 */}
                             <div id="section-9" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 09</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Confidentiality</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Confidentiality</h2>
                                 <div className="space-y-8 text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
                                     <div>
                                         <h3 className="text-xl font-cormorant font-bold text-[#162018] mb-3">9.1 Mutual Confidentiality</h3>
@@ -321,7 +321,7 @@ export default function TermsAndConditionsPage() {
                             {/* Section 10 */}
                             <div id="section-10" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 10</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Intellectual Property</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Intellectual Property</h2>
                                 <div className="space-y-8 text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
                                     <div>
                                         <h3 className="text-xl font-cormorant font-bold text-[#162018] mb-3">10.1 MeBilling's IP</h3>
@@ -343,7 +343,7 @@ export default function TermsAndConditionsPage() {
                             {/* Section 11 */}
                             <div id="section-11" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 11</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Representations &amp; Warranties</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Representations &amp; Warranties</h2>
                                 <div className="space-y-8 text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
                                     <div>
                                         <h3 className="text-xl font-cormorant font-bold text-[#162018] mb-3">11.1 MeBilling Represents and Warrants That:</h3>
@@ -386,7 +386,7 @@ export default function TermsAndConditionsPage() {
                             {/* Section 12 */}
                             <div id="section-12" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 12</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Limitation of Liability</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Limitation of Liability</h2>
                                 <div className="space-y-8 text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
                                     <div>
                                         <h3 className="text-xl font-cormorant font-bold text-[#162018] mb-3">12.1 Liability Cap</h3>
@@ -411,7 +411,7 @@ export default function TermsAndConditionsPage() {
                             {/* Section 13 */}
                             <div id="section-13" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 13</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Indemnification</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Indemnification</h2>
                                 <div className="space-y-8 text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
                                     <div>
                                         <h3 className="text-xl font-cormorant font-bold text-[#162018] mb-3">13.1 Indemnification by MeBilling</h3>
@@ -433,7 +433,7 @@ export default function TermsAndConditionsPage() {
                             {/* Section 14 */}
                             <div id="section-14" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 14</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Term &amp; Termination</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Term &amp; Termination</h2>
                                 <div className="space-y-8 text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
                                     <div>
                                         <h3 className="text-xl font-cormorant font-bold text-[#162018] mb-3">14.1 Initial Term</h3>
@@ -459,7 +459,7 @@ export default function TermsAndConditionsPage() {
                             {/* Section 15 */}
                             <div id="section-15" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 15</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Dispute Resolution</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Dispute Resolution</h2>
                                 <div className="space-y-8 text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
                                     <div>
                                         <h3 className="text-xl font-cormorant font-bold text-[#162018] mb-3">15.1 Good-Faith Negotiation</h3>
@@ -485,7 +485,7 @@ export default function TermsAndConditionsPage() {
                             {/* Section 16 */}
                             <div id="section-16" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 16</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Governing Law</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Governing Law</h2>
                                 <div className="space-y-5 text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
                                     <p>These Terms are governed by and construed in accordance with the laws of the <strong>State of Texas</strong>, without regard to its conflict of laws rules. Where these Terms or the services are subject to mandatory federal law (including HIPAA, the False Claims Act, the Anti-Kickback Statute, the No Surprises Act, or other federal healthcare statutes), federal law governs the applicable subject matter, and Texas law governs all other aspects of this agreement.</p>
                                     <p>The courts of Harris County, Texas, shall have non-exclusive jurisdiction for any proceedings to enforce an arbitration award or to seek emergency injunctive relief under Section 15.3.</p>
@@ -497,7 +497,7 @@ export default function TermsAndConditionsPage() {
                             {/* Section 17 */}
                             <div id="section-17" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 17</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">General Provisions</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">General Provisions</h2>
                                 <div className="space-y-5 text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
                                     <ul className="list-none space-y-4">
                                         {[
@@ -527,7 +527,7 @@ export default function TermsAndConditionsPage() {
                             {/* Section 18 */}
                             <div id="section-18" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 18</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Contact Information</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Contact Information</h2>
 
                                 <div className="grid sm:grid-cols-2 gap-4">
                                     {[

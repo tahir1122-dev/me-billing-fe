@@ -29,7 +29,7 @@ const servicesPageConfig = {
 export default function ServicesPage() {
     return (
         <main className="flex-1 w-full bg-white font-cormorant">
-            <section className="relative flex max-w-[1920px] mx-auto h-[700px] lg:h-[800px] w-full items-center overflow-hidden bg-[#1D2B24]">
+            <section className="relative flex max-w-[1920px] mx-auto h-[500px] md:h-[600px] lg:h-[800px] w-full items-center overflow-hidden bg-[#1D2B24]">
                 <div className="absolute inset-0">
                     <Image
                         src="/images/Service Section Bg.png"
@@ -47,7 +47,7 @@ export default function ServicesPage() {
                             <span className="w-6 h-[1px] bg-[#D4AF37]"></span>
                             {servicesPageConfig.hero.tagline}
                         </p>
-                        <h1 className="text-5xl md:text-7xl lg:text-[80px] font-medium leading-[1.1] text-white mb-2">
+                        <h1 className="text-4xl md:text-6xl lg:text-[80px] font-medium leading-[1.1] text-white mb-2 font-cormorant">
                             {servicesPageConfig.hero.headingLine1} <br />
                             <span className="text-[#D4AF37] italic">{servicesPageConfig.hero.headingLine2Highlight}</span>
                         </h1>
@@ -68,7 +68,7 @@ export default function ServicesPage() {
             </section>
 
             {/* Intro Video Section */}
-            <section className="w-full bg-[#FFFDF5] py-24 lg:py-32">
+            <section className="w-full bg-[#FFFDF5] py-12 md:py-20 lg:py-32">
                 <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-7xl">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                         <div className="max-w-xl">
@@ -76,7 +76,7 @@ export default function ServicesPage() {
                                 <span className="w-6 h-[1.5px] bg-[#C8920A]"></span>
                                 How Our Services Work
                             </p>
-                            <h2 className="text-5xl lg:text-[64px] font-medium leading-[1.1] text-[#162018] mb-8 font-cormorant">
+                            <h2 className="text-3xl md:text-5xl lg:text-[64px] font-medium leading-[1.1] text-[#162018] mb-6 md:mb-8 font-cormorant">
                                 12 services. <br />
                                 <span className="text-[#C8920A] italic">One accountable team.</span>
                             </h2>
@@ -84,37 +84,29 @@ export default function ServicesPage() {
                                 See how our specialty-organized billing teams manage the complete revenue cycle — from coding and claims through denial management, IDR, and arbitration — all in-house.
                             </p>
                         </div>
-                        <div className="relative w-full rounded-[24px] overflow-hidden shadow-xl">
-                            <Image
-                                src="/images/service 1.jpg"
-                                alt="Services Breakdown"
-                                width={800}
-                                height={500}
-                                className="w-full h-auto object-cover aspect-[16/10] opacity-90"
+                        <div className="relative w-full rounded-[24px] overflow-hidden shadow-xl aspect-[16/10] bg-[#162018]">
+                            <video
+                                src="/vedios/video 02.mp4"
+                                poster="/images/service 1.jpg"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className="w-full h-full object-cover opacity-90"
                             />
-                            <button className="absolute inset-0 flex items-center justify-center group" aria-label="Play video">
-                                <div className="absolute inset-0 bg-[#162018]/10 group-hover:bg-[#162018]/20 transition-colors duration-300"></div>
-                                <div className="w-[100px] h-[100px] bg-black/20 rounded-full flex items-center justify-center backdrop-blur-md relative z-10">
-                                    <div className="w-[64px] h-[64px] bg-[#C8920A] group-hover:bg-[#E0A800] transition-colors duration-300 rounded-full flex items-center justify-center shadow-lg">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" className="ml-1">
-                                            <path d="M5 3l14 9-14 9V3z" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </button>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="services-list" className="w-full bg-[#fcfbf5] py-20 sm:py-28">
+            <section id="services-list" className="w-full bg-[#fcfbf5] py-12 sm:py-20 lg:py-28">
                 <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-[1400px]">
                     <div className="flex flex-col items-center text-center mb-16 max-w-4xl mx-auto">
                         <p className="text-[#C8920A] tracking-wider text-sm font-semibold mb-6 flex items-center justify-center gap-2 font-outfit">
                             <span className="w-6 h-[1.5px] bg-[#C8920A]"></span>
                             {servicesPage.scope.tagline}
                         </p>
-                        <h2 className="text-4xl md:text-5xl lg:text-[64px] font-medium leading-[1.1] text-[#162018] mb-6 font-cormorant">
+                        <h2 className="text-3xl md:text-5xl lg:text-[64px] font-medium leading-[1.1] text-[#162018] mb-6 font-cormorant">
                             {servicesPage.scope.headingPart1} <span className="text-[#C8920A] italic">{servicesPage.scope.headingHighlight}</span>
                         </h2>
                         <p className="text-[17px] text-[#162018]/80 leading-relaxed font-outfit font-medium">

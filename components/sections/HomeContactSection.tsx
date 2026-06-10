@@ -110,7 +110,7 @@ export default function HomeContactSection() {
                 {/* Dark overlay to keep text readable over photo */}
                 <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,30,14,0.82)" }} />
                 <div className="relative z-10 container mx-auto max-w-3xl flex flex-col items-center">
-                    <h2 className="font-cormorant text-5xl sm:text-6xl lg:text-[72px] font-medium text-white leading-[1.08] mb-6">
+                    <h2 className="font-cormorant text-4xl sm:text-5xl lg:text-[72px] font-medium text-white leading-[1.08] mb-6">
                         {homeContactData.cta.line1} <br />
                         <span className="text-[#C8920A] italic">{homeContactData.cta.line2Highlight}</span> <br />
                         {homeContactData.cta.line3}

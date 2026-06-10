@@ -134,7 +134,7 @@ export default function ResumePage() {
                     <span className="text-[#C8920A] font-bold tracking-widest text-xs block mb-4 uppercase font-outfit">
                         — Build Your Career
                     </span>
-                    <h1 className="text-5xl sm:text-6xl lg:text-[72px] font-medium text-white leading-[1.1] mb-6 font-cormorant">
+                    <h1 className="text-4xl sm:text-5xl lg:text-[72px] font-medium text-white leading-[1.1] mb-6 font-cormorant">
                         Join Our <span className="text-[#C8920A] italic">Professional Team</span>
                     </h1>
                     <p className="text-white/80 text-lg sm:text-[19px] leading-relaxed max-w-2xl mx-auto font-medium font-outfit">

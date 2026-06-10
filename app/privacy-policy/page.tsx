@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
                     <p className="text-[#C8920A] tracking-wider text-[13px] font-bold uppercase mb-4 font-outfit">
                         Legal · Privacy
                     </p>
-                    <h1 className="text-5xl lg:text-[72px] font-medium text-white mb-8 font-cormorant leading-[1.1]">
+                    <h1 className="text-4xl md:text-5xl lg:text-[72px] font-medium text-white mb-8 font-cormorant leading-[1.1]">
                         Privacy Policy
                     </h1>
                     <div className="flex flex-col gap-2 text-[15px] text-white/70 font-medium font-outfit border-l-2 border-[#C8920A] pl-4">
@@ -81,7 +81,7 @@ export default function PrivacyPolicyPage() {
                             {/* Section 01 */}
                             <div id="section-1" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 01</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Who We Are</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Who We Are</h2>
                                 <div className="space-y-5 text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
                                     <p>MeBilling Inc. is a healthcare Revenue Cycle Management company incorporated under the laws of the State of Texas, with its principal office at 100 Glenborough Dr, Houston, TX 77067. We provide medical billing, coding, credentialing, denial management, payment posting, audit services, and related administrative services to healthcare providers, physician groups, hospitals, ambulatory surgical centers, laboratories, and other covered entities throughout the United States.</p>
                                     <p>In the course of providing these services, MeBilling functions as a Business Associate as defined under 45 CFR § 160.103 of the Health Insurance Portability and Accountability Act of 1996 (HIPAA), as amended by the Health Information Technology for Economic and Clinical Health (HITECH) Act. This means we access, use, and disclose Protected Health Information (PHI) solely on behalf of, and as permitted by, our covered entity clients.</p>
@@ -91,7 +91,7 @@ export default function PrivacyPolicyPage() {
                             {/* Section 02 */}
                             <div id="section-2" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 02</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Definitions</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Definitions</h2>
                                 <div className="bg-white rounded-2xl border border-[#E8E6DD] shadow-sm overflow-hidden">
                                     <ul className="flex flex-col divide-y divide-[#E8E6DD]">
                                         {[
@@ -119,7 +119,7 @@ export default function PrivacyPolicyPage() {
                             {/* Section 03 */}
                             <div id="section-3" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 03</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-8">Information We Collect</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-8">Information We Collect</h2>
 
                                 <div className="space-y-10">
                                     <div>
@@ -159,7 +159,7 @@ export default function PrivacyPolicyPage() {
                             {/* Section 04 */}
                             <div id="section-4" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 04</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-8">How We Use Information</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-8">How We Use Information</h2>
 
                                 <div className="space-y-10">
                                     <div>
@@ -199,7 +199,7 @@ export default function PrivacyPolicyPage() {
                             {/* Section 05 */}
                             <div id="section-5" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 05</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-8">HIPAA & HITECH Compliance</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-8">HIPAA & HITECH Compliance</h2>
 
                                 <div className="space-y-10">
                                     <div>
@@ -241,7 +241,7 @@ export default function PrivacyPolicyPage() {
                             {/* Section 06 */}
                             <div id="section-6" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 06</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-8">Texas Privacy Laws</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-8">Texas Privacy Laws</h2>
 
                                 <div className="space-y-10">
                                     <div>
@@ -275,7 +275,7 @@ export default function PrivacyPolicyPage() {
                             {/* Section 07 */}
                             <div id="section-7" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 07</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Business Associate Agreement (BAA)</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Business Associate Agreement (BAA)</h2>
                                 <div className="space-y-6 text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
                                     <p>MeBilling executes a written Business Associate Agreement (BAA) with every covered entity client before performing any services that involve access to PHI. The BAA is a legally required contract under 45 CFR § 164.308(b)(3) and 45 CFR § 164.504(e) that specifies:</p>
                                     <ul className="list-disc pl-6 space-y-2 text-[#162018]/70">
@@ -299,7 +299,7 @@ export default function PrivacyPolicyPage() {
                             {/* Section 08 */}
                             <div id="section-8" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 08</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Data Security Safeguards</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Data Security Safeguards</h2>
                                 <p className="text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium mb-8">MeBilling maintains a comprehensive information security programme designed to satisfy the requirements of the HIPAA Security Rule 45 CFR Part 164, Subparts A & C. Our safeguards operate across three required domains:</p>
 
                                 <div className="space-y-10">
@@ -341,7 +341,7 @@ export default function PrivacyPolicyPage() {
                             {/* Section 09 */}
                             <div id="section-9" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 09</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Breach Notification</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Breach Notification</h2>
                                 <p className="text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium mb-8">MeBilling maintains documented breach response procedures consistent with the HIPAA Breach Notification Rule 45 CFR Part 164, Subpart D and applicable Texas law.</p>
 
                                 <div className="space-y-10">
@@ -377,7 +377,7 @@ export default function PrivacyPolicyPage() {
                             {/* Section 10 */}
                             <div id="section-10" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 10</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-8">Disclosure & Third-Party Sharing</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-8">Disclosure & Third-Party Sharing</h2>
 
                                 <div className="space-y-8">
                                     <div>
@@ -405,7 +405,7 @@ export default function PrivacyPolicyPage() {
                             {/* Section 11 */}
                             <div id="section-11" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 11</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Data Retention & Destruction</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-6">Data Retention & Destruction</h2>
                                 <p className="text-[15.5px] text-[#162018]/80 leading-relaxed font-outfit font-medium mb-6">MeBilling retains PHI and related billing records for the period specified in the applicable BAA and as required by law. As a general standard:</p>
 
                                 <ul className="space-y-4 mb-6">
@@ -427,7 +427,7 @@ export default function PrivacyPolicyPage() {
                             {/* Section 12 */}
                             <div id="section-12" className="scroll-mt-32">
                                 <span className="text-[#C8920A] text-[12px] font-bold tracking-widest uppercase block mb-3">Section 12</span>
-                                <h2 className="text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-8">Individual Rights</h2>
+                                <h2 className="text-2xl md:text-3xl lg:text-4xl font-cormorant font-medium text-[#162018] mb-8">Individual Rights</h2>
 
                                 <div className="space-y-8">
                                     <div>

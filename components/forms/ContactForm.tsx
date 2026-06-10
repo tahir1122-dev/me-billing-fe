@@ -79,7 +79,7 @@ export default function ContactForm() {
             if(e.target.name === 'email' && e.target.value != '' && (errorMsgFor === 'email' || errorMsgFor === 'emailFormat')) setErrorMsgFor(null);   
         }} className="flex flex-col gap-5">
             
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                     <label className="text-[10px] font-bold tracking-widest uppercase mb-2 block font-outfit" style={{ color: "rgba(255,255,255,0.6)" }}>Your Name</label>
                     <input name="firstName" type="text" placeholder="First Name"  className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }} />
@@ -92,7 +92,7 @@ export default function ContactForm() {
                 </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                     <label className="text-[10px] font-bold tracking-widest uppercase mb-2 block font-outfit" style={{ color: "rgba(255,255,255,0.6)" }}>Phone</label>
                     <input name="phone" type="tel" placeholder="Phone Number"  className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }} />
@@ -106,7 +106,7 @@ export default function ContactForm() {
                 </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                     <label className="text-[10px] font-bold tracking-widest uppercase mb-2 block font-outfit" style={{ color: "rgba(255,255,255,0.6)" }}>Organization</label>
                     <input name="organization" type="text" placeholder="Organization" className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50" style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }} />
