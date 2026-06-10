@@ -275,7 +275,7 @@
                 },
                 {
                     "style": "image",
-                    "image": "/images/service 1.jpg",
+                    "image": "/images/about Bg .png",
                     "badge": "RECOVERY",
                     "title": "Old Claims Recovery",
                     "description": "Claims at 90, 120, or 180 days are not automatically uncollectable — but they need a different approach than standard A/R follow-up. Our recovery team categorises outstanding claims by recoverability, rebuilds the documentation trail needed for late appeals, and collects revenue that most practices have already written off.",
@@ -287,7 +287,7 @@
                 },
                 {
                     "style": "image",
-                    "image": "/images/service 2.jpg",
+                    "image": "/images/carrersbg.png",
                     "badge": "FINANCIAL OPS",
                     "title": "Payment Posting & Reconciliation",
                     "description": "Payment posting is the financial record of your practice — not clerical admin. Every ERA processed and every remittance reconciled establishes whether payers are actually paying what they owe. We post daily, validate against contracted rates, and pursue every variance — your books reflect reality, not assumption.",
@@ -299,7 +299,7 @@
                 },
                 {
                     "style": "image",
-                    "image": "/images/service 3.jpg",
+                    "image": "/images/specialites bg.jpg",
                     "badge": "LIABILITY & INJURY",
                     "title": "Injury Claims Management",
                     "description": "Injury billing — workers' compensation, motor vehicle accidents, personal injury — operates under a completely different framework from standard insurance billing. Lien structures, letter of protection arrangements, and state-specific workers' comp regulations require dedicated expertise that most billing teams simply don't carry.",
@@ -311,7 +311,7 @@
                 },
                 {
                     "style": "image",
-                    "image": "/images/service 4.jpg",
+                    "image": "/images/bussines women.jpg",
                     "badge": "PAYER RELATIONS",
                     "title": "Claims Negotiation",
                     "description": "Many payer disputes can be resolved through skilled direct negotiation — before formal appeals or IDR become necessary. Our negotiation team engages payers directly on underpayments, global claim disputes, and systematic contract rate deviations, building fact-based cases grounded in your contractual terms and market benchmarks.",
@@ -323,7 +323,7 @@
                 },
                 {
                     "style": "image",
-                    "image": "/images/doc 2.png",
+                    "image": "/images/resources  bg.jpg",
                     "badge": "DENIAL RESOLUTION",
                     "title": "Appeals & Reconsideration",
                     "description": "Every denial has a case to be made — if you know how to make it. Our appeals process is built claim by claim, not template by template. We categorise each denial by root cause, identify the strongest reconsideration pathway, and construct appeals backed by clinical documentation and coding evidence tailored to the specific rejection reason.",
@@ -335,7 +335,7 @@
                 },
                 {
                     "style": "image",
-                    "image": "/images/service 1.jpg",
+                    "image": "/images/Bundled Solutions bg .png",
                     "badge": "FORMAL DISPUTE",
                     "title": "Arbitration & Mediation",
                     "description": "When negotiation and formal appeals are exhausted, arbitration and mediation are the next escalation — and they require a different kind of preparation. We manage both in-house, assembling the evidentiary record and procedural submissions needed to pursue disputed claims through formal channels without the cost of outside counsel.",
@@ -347,7 +347,7 @@
                 },
                 {
                     "style": "image",
-                    "image": "/images/service 2.jpg",
+                    "image": "/images/herobg.png",
                     "badge": "COMPLIANCE",
                     "title": "State Reporting",
                     "description": "State-level reporting requirements vary by jurisdiction and payer type — and missing them can affect both reimbursement and licensure. We monitor reporting obligations specific to your operating states and manage all required submissions on your behalf, so regulatory deadlines never fall through the cracks of your billing operation.",
@@ -374,7 +374,7 @@
             "titleHighlight": "needs every service.",
             "description": "Watch a 2-minute walkthrough of our six solution bundles and discover which one matches your current billing challenges.",
             "buttonText": "Talk to a Specialist →",
-            "image": "/images/service 1.jpg"
+            "image": "/images/sales.png"
         },
         "packagesSection": {
             "tagline": "— Solution Packages",
@@ -701,7 +701,7 @@
             "titlePart1": "See how specialty-exclusive billing",
             "titleHighlight": "changes the numbers.",
             "description": "When oncology coders only code oncology, the difference is measurable — in claim accuracy, payer compliance, and revenue captured.",
-            "image": "/images/service 1.jpg"
+            "image": "/images/testnomial.png"
         },
         "institutionalBilling": {
             "tagline": "— Facility & Institutional Billing",
