@@ -230,10 +230,7 @@ export default function SalesPage() {
                             <div className="relative mx-auto h-[440px] w-full max-w-[700px] overflow-hidden rounded-2xl shadow-lg bg-[#FCFBF5]">
                                 <video
                                     src="/vedios/video 08.mp4"
-                                    autoPlay
-                                    loop
-                                    muted
-                                    playsInline
+                                    controls
                                     className="object-cover w-full h-full"
                                     poster="/images/sales.png"
                                 />

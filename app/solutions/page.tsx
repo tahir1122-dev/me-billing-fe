@@ -63,10 +63,7 @@ export default function BundledSolutionsPage() {
                             <video
                                 src="/vedios/video 03.mp4"
                                 poster={walkthrough.image}
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
+                                controls
                                 className="w-full h-full object-cover"
                             />
                         </div>

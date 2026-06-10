@@ -88,10 +88,7 @@ export default function ServicesPage() {
                             <video
                                 src="/vedios/video 02.mp4"
                                 poster="/images/service 1.jpg"
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
+                                controls
                                 className="w-full h-full object-cover opacity-90"
                             />
                         </div>

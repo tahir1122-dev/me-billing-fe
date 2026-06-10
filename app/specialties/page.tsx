@@ -187,10 +187,7 @@ export default function SpecialtiesPage() {
                             <video
                                 src="/vedios/video 04.mp4"
                                 poster={walkthrough.image}
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
+                                controls
                                 className="w-full h-full object-cover specialties-tab"
                             />
                         </div>

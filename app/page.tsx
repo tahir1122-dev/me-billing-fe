@@ -138,10 +138,7 @@ export default function Home() {
                                 <video
                                     src="/vedios/video 01.mp4"
                                     poster={insightSection1.image}
-                                    autoPlay
-                                    loop
-                                    muted
-                                    playsInline
+                                    controls
                                     className="w-full h-full object-cover"
                                 />
                             </div>

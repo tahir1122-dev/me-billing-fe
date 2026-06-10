@@ -69,11 +69,8 @@ export default function ResourcesPage() {
                                 <video
                                     src={`/vedios/video 0${index + 5}.mp4`}
                                     poster="/images/service 1.jpg"
-                                    autoPlay
-                                    loop
-                                    muted
-                                    playsInline
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    controls
+                                    className="w-full h-full object-cover"
                                 />
                             </div>
                         ))}
