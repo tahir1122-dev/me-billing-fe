@@ -65,17 +65,17 @@ export default function SpecialtiesPage() {
                         </p>
 
                         {/* Buttons Block */}
-                        <div className="flex flex-wrap items-center gap-4 font-outfit">
+                        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 max-w-sm sm:max-w-none font-outfit">
                             <Link
                                 href="/contact"
-                                className="inline-flex items-center gap-2 bg-[#1A6B3A] hover:bg-[#13522C] text-white px-7 py-3.5 rounded-md font-medium text-base transition-all shadow-sm"
+                                className="inline-flex justify-center items-center gap-2 bg-[#1A6B3A] hover:bg-[#13522C] text-white px-7 py-3.5 rounded-md font-medium text-base transition-all shadow-sm w-full sm:w-[220px]"
                             >
                                 {hero.buttonPrimary.replace("→", "").trim()}
                                 {arrowIconSVG}
                             </Link>
                             <Link
                                 href="/services"
-                                className="inline-flex items-center gap-2 bg-transparent border border-white/60 hover:border-white text-white px-7 py-3.5 rounded-md font-medium text-base transition-all"
+                                className="inline-flex justify-center items-center gap-2 bg-transparent border border-white/60 hover:border-white text-white px-7 py-3.5 rounded-md font-medium text-base transition-all w-full sm:w-[220px]"
                             >
                                 {hero.buttonSecondary.replace("→", "").trim()}
                                 {arrowIconSVG}
@@ -185,8 +185,8 @@ export default function SpecialtiesPage() {
                         {/* Video Thumbnail block perfectly modeled after Screenshot 1 */}
                         <div className="relative rounded-2xl overflow-hidden shadow-md max-w-xl mx-auto lg:mx-0 w-full aspect-[640/380] bg-[#162018]">
                             <video
-                                src="/vedios/video 04.mp4"
-                                poster={walkthrough.image}
+                                src="/vedios/video 01.mp4"
+                                poster="/images/service 3.jpg"
                                 controls
                                 className="w-full h-full object-cover specialties-tab"
                             />

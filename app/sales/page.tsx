@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import SalesContactForm from "@/components/forms/SalesContactForm";
 import SalesPillarsAccordion from "@/components/sections/SalesPillarsAccordion";
+import { PageContentService } from "@/services/pageContent.service";
 
 export const metadata: Metadata = {
     title: "Get a Demo | Me Billing",
@@ -146,7 +147,10 @@ const ctaIcons = [<TrendIcon key="trend" />, <SearchIcon key="search" />, <Hands
 
 // ─── Page Component ───────────────────────────────────────────────────────────
 
-export default function SalesPage() {
+export default async function SalesPage() {
+    const pageData = await PageContentService.getPage("sales");
+    const salesPillarsDataCMS = pageData?.sections?.SalesPillarsAccordion || pillarsData;
+
     return (
         <main className="flex-1 w-full bg-gradient-to-b from-[#FFFDF5] via-[#FFFDF5]/95 to-[#FFFDF5] font-outfit">
 
@@ -212,17 +216,17 @@ export default function SalesPage() {
                         {/* Left: copy */}
                         <div className="w-full lg:w-1/2">
                             <span className="text-[#C8920A] font-bold tracking-wide text-xs block mb-4 uppercase font-outfit">
-                                {pillarsData.tagline}
+                                {salesPillarsDataCMS.tagline}
                             </span>
                             <h2 className="text-3xl md:text-5xl text-[#162018] font-medium leading-tight font-cormorant mb-2">
-                                {pillarsData.heading} <br />
-                                <span className="text-[#C8920A] italic font-medium">{pillarsData.headingHighlight}</span>
+                                {salesPillarsDataCMS.heading} <br />
+                                <span className="text-[#C8920A] italic font-medium">{salesPillarsDataCMS.headingHighlight}</span>
                             </h2>
                             <p className="mt-4 max-w-lg text-[15px] leading-relaxed text-slate-600 font-outfit">
-                                {pillarsData.description}
+                                {salesPillarsDataCMS.description}
                             </p>
 
-                            <SalesPillarsAccordion pillars={pillarsData.pillars} />
+                            <SalesPillarsAccordion pillars={salesPillarsDataCMS.pillars} />
                         </div>
 
                         {/* Right: video */}
@@ -232,7 +236,7 @@ export default function SalesPage() {
                                     src="/vedios/video 08.mp4"
                                     controls
                                     className="object-cover w-full h-full"
-                                    poster="/images/sales.png"
+                                    poster="/images/contact.jpg"
                                 />
                             </div>
                         </div>

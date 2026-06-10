@@ -132,10 +132,10 @@ export default function ContactForm() {
             </div>
 
             <div>
-                <label className="text-[10px] font-bold tracking-widest uppercase mb-2 block font-outfit" style={{ color: "rgba(255,255,255,0.6)" }}>Your Queries</label>
+                <label className="text-[10px] font-bold tracking-widest uppercase mb-2 block font-outfit" style={{ color: "rgba(255,255,255,0.6)" }}>Message</label>
                 <textarea
                     name="queries"
-                    placeholder="Your queries"
+                    placeholder="How can we help?"
                     rows={4}
                     className="w-full px-4 py-2.5 rounded-lg text-sm font-outfit text-white placeholder:text-white/30 focus:outline-none focus:ring-1 focus:ring-[#C8920A]/50 resize-none"
                     style={{ backgroundColor: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.12)" }}
@@ -167,8 +167,8 @@ export default function ContactForm() {
                 )}
             </button>
 
-            <p className="text-center text-[11px] font-outfit" style={{ color: "#C8920A" }}>
-                Your information is protected under HIPAA. We do not share or sell your data.
+            <p className="text-center text-[11px] font-outfit text-white/50">
+                <strong className="text-[#C8920A]">Security Notice:</strong> Please do not submit Protected Health Information (PHI) through this form. Your contact details are secure and will never be shared or sold.
             </p>
             {message && (
                 <div className={`p-3 mt-2 rounded text-sm ${status === "success" ? "bg-green-900/50 text-green-100" : "bg-red-900/50 text-red-100"}`}>

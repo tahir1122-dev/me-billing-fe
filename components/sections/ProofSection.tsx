@@ -7,7 +7,7 @@ const proofData = {
     heading1: "Numbers our clients see",
     heading2: "on their dashboards ",
     headingHighlight: "every day.",
-    body: "Not benchmarks. Not industry averages projected onto our model. These are the actual performance metrics MeBilling clients track in real time updated daily, visible always.",
+    body: "Not benchmarks. Not industry averages projected onto our model. These are the actual performance metrics MeBilling clients track in real time updated daily and always visible.",
     stats: [
         {
             id: "clean-claim",
@@ -34,7 +34,7 @@ const proofData = {
             id: "processed",
             label: "PROCESSED",
             value: "$1.7B",
-            note: "ACROSS 1.5M TRANSACTIONS — 2025",
+            note: "Across 1.5M+ Transactions (2025 YTD)",
             highlighted: false,
         },
     ],
@@ -42,7 +42,10 @@ const proofData = {
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-export default function ProofSection() {
+export default function ProofSection({ data = {} }: { data?: any }) {
+    // Merge data from props with the local default proofData
+    const content = { ...proofData, ...data };
+
     return (
         <section className="w-full py-20 lg:py-28 px-4 sm:px-6 lg:px-8 font-outfit" style={{ backgroundColor: "#FFFDF5" }}>
             <div className="container mx-auto max-w-7xl">
@@ -51,24 +54,24 @@ export default function ProofSection() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-start mb-14">
                     <div>
                         <span className="text-[#C8920A] font-bold tracking-wide text-xs block mb-5 font-outfit">
-                            {proofData.tagline}
+                            {content.tagline}
                         </span>
                         <h2 className="text-3xl sm:text-[48px] lg:text-[52px] font-medium text-[#162018] leading-[1.1] font-cormorant">
-                            {proofData.heading1} <br />
-                            {proofData.heading2}
-                            <span className="text-[#C8920A] italic">{proofData.headingHighlight}</span>
+                            {content.heading1} <br />
+                            {content.heading2}
+                            <span className="text-[#C8920A] italic">{content.headingHighlight}</span>
                         </h2>
                     </div>
                     <div className="flex items-start lg:pt-16">
                         <p className="text-slate-500 text-[15px] leading-relaxed font-outfit">
-                            {proofData.body}
+                            {content.body}
                         </p>
                     </div>
                 </div>
 
                 {/* Stats row — 4 columns, matching screenshot exactly */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-[#082610]/10 border border-[#082610]/10 rounded-2xl overflow-hidden">
-                    {proofData.stats.map((stat) => (
+                    {content.stats.map((stat: any) => (
                         <div
                             key={stat.id}
                             className="flex flex-col p-8 lg:p-10"

@@ -55,11 +55,11 @@ export default function ServicesPage() {
                             {servicesPageConfig.hero.description}
                         </p>
 
-                        <div className="mt-10 flex flex-wrap gap-4 font-outfit">
-                            <Link href="/contact" className="flex items-center gap-2 bg-[#1A6B3A] hover:bg-[#13522C] text-white px-8 py-3.5 rounded-md transition-all duration-300 font-medium">
+                        <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 max-w-sm sm:max-w-none font-outfit">
+                            <Link href="/contact" className="flex justify-center items-center gap-2 bg-[#1A6B3A] hover:bg-[#13522C] text-white px-8 py-3.5 rounded-md transition-all duration-300 font-medium w-full sm:w-[220px]">
                                 {servicesPageConfig.hero.primaryButton} {arrowIcon}
                             </Link>
-                            <Link href="#services-list" className="flex items-center gap-2 bg-transparent border border-white/60 hover:border-white hover:bg-white/5 text-white px-8 py-3.5 rounded-md transition-all duration-300 font-medium">
+                            <Link href="#services-list" className="flex justify-center items-center gap-2 bg-transparent border border-white/60 hover:border-white hover:bg-white/5 text-white px-8 py-3.5 rounded-md transition-all duration-300 font-medium w-full sm:w-[220px]">
                                 {servicesPageConfig.hero.secondaryButton} {arrowIcon}
                             </Link>
                         </div>
@@ -87,7 +87,7 @@ export default function ServicesPage() {
                         <div className="relative w-full rounded-[24px] overflow-hidden shadow-xl aspect-[16/10] bg-[#162018]">
                             <video
                                 src="/vedios/video 02.mp4"
-                                poster="/images/service 1.jpg"
+                                poster="/images/service 2.jpg"
                                 controls
                                 className="w-full h-full object-cover opacity-90"
                             />
@@ -148,20 +148,21 @@ export default function ServicesPage() {
                             return (
                                 <article
                                     key={idx}
-                                    className="group rounded-2xl border border-[#D1D1C7]/60 bg-white hover:bg-[#FAFAEE] p-6 lg:p-8 flex flex-col cursor-pointer hover:-translate-y-2 hover:border-[#C8920A]/40 transition-all duration-500 ease-out overflow-hidden h-[480px] lg:h-[520px]"
+                                    tabIndex={0}
+                                    className="group rounded-2xl border border-[#D1D1C7]/60 bg-white hover:bg-[#FAFAEE] focus:bg-[#FAFAEE] focus:outline-none p-6 lg:p-8 flex flex-col cursor-pointer hover:-translate-y-2 focus:-translate-y-2 hover:border-[#C8920A]/40 focus:border-[#C8920A]/40 transition-all duration-500 ease-out overflow-hidden h-[500px] lg:h-[520px]"
                                 >
                                     {/* Collapsing Image Section */}
-                                    <div className="transition-all duration-500 ease-in-out h-[240px] mb-6 group-hover:h-0 group-hover:mb-0 group-hover:opacity-0 overflow-hidden rounded-xl shrink-0">
-                                        <div className="relative w-full h-[240px]">
+                                    <div className="transition-all duration-500 ease-in-out h-[200px] sm:h-[240px] mb-6 group-hover:h-0 group-hover:mb-0 group-hover:opacity-0 group-focus:h-0 group-focus:mb-0 group-focus:opacity-0 overflow-hidden rounded-xl shrink-0">
+                                        <div className="relative w-full h-full">
                                             <Image
                                                 src={card.image!}
                                                 alt={card.title}
                                                 fill
-                                                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                                                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 group-focus:scale-110"
                                             />
-                                            <div className="absolute inset-0 bg-black/10 transition-opacity duration-500 group-hover:opacity-0" />
+                                            <div className="absolute inset-0 bg-black/10 transition-opacity duration-500 group-hover:opacity-0 group-focus:opacity-0" />
                                             
-                                            <div className="absolute bottom-4 left-4 bg-[#C8920A] rounded-full px-3 py-1 flex items-center gap-2 transition-opacity duration-300 group-hover:opacity-0">
+                                            <div className="absolute bottom-4 left-4 bg-[#C8920A] rounded-full px-3 py-1 flex items-center gap-2 transition-opacity duration-300 group-hover:opacity-0 group-focus:opacity-0">
                                                 <div className="w-[6px] h-[6px] rounded-full bg-[#162018]"></div>
                                                 <span className="text-xs font-bold text-[#162018] tracking-wide font-outfit shadow-sm">
                                                     {card.badge}
@@ -173,9 +174,9 @@ export default function ServicesPage() {
                                     {/* Expanding Content Section */}
                                     <div className="flex flex-col flex-1 transition-all duration-500">
                                         {/* Hover Badge (expands and fades in) */}
-                                        <div className="transition-all duration-500 ease-in-out grid grid-rows-[0fr] group-hover:grid-rows-[1fr]">
+                                        <div className="transition-all duration-500 ease-in-out grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus:grid-rows-[1fr]">
                                             <div className="overflow-hidden">
-                                                <div className="mb-4 hidden group-hover:inline-flex w-fit bg-[#C8920A] rounded-full px-3 py-1 items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                                <div className="mb-4 hidden group-hover:inline-flex group-focus:inline-flex w-fit bg-[#C8920A] rounded-full px-3 py-1 items-center gap-2 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-500 delay-100">
                                                     <div className="w-[6px] h-[6px] rounded-full bg-[#162018]"></div>
                                                     <span className="text-xs font-bold text-[#162018] tracking-wide font-outfit">
                                                         {card.badge}
@@ -184,21 +185,21 @@ export default function ServicesPage() {
                                             </div>
                                         </div>
 
-                                        <h3 className="text-[24px] group-hover:text-[26px] font-medium text-[#162018] mb-3 group-hover:mb-4 font-cormorant leading-tight group-hover:text-[#C8920A] transition-all duration-500">
+                                        <h3 className="text-[24px] group-hover:text-[26px] group-focus:text-[26px] font-medium text-[#162018] mb-3 group-hover:mb-4 group-focus:mb-4 font-cormorant leading-tight group-hover:text-[#C8920A] group-focus:text-[#C8920A] transition-all duration-500">
                                             {card.title}
                                         </h3>
                                         
-                                        <p className="text-[14px] text-[#162018]/70 group-hover:text-[#162018]/80 leading-relaxed font-outfit font-medium transition-colors duration-500">
+                                        <p className="text-[14px] text-[#162018]/70 group-hover:text-[#162018]/80 group-focus:text-[#162018]/80 leading-relaxed font-outfit font-medium transition-colors duration-500">
                                             {card.description}
                                         </p>
 
                                         {/* Hover List Items (expands and fades in) */}
-                                        <div className="transition-all duration-500 ease-in-out grid grid-rows-[0fr] group-hover:grid-rows-[1fr] mt-auto">
+                                        <div className="transition-all duration-500 ease-in-out grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus:grid-rows-[1fr] mt-auto">
                                             <div className="overflow-hidden">
-                                                <ul className="flex flex-col gap-4 pt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150 font-outfit">
+                                                <ul className="flex flex-col gap-4 pt-6 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-500 delay-150 font-outfit">
                                                     {card.listItems?.map((item: string, i: number) => (
                                                         <li key={i} className="flex gap-3 text-[13px] text-[#162018]/80 leading-relaxed font-semibold">
-                                                            <span className="mt-[6px] shrink-0 w-2 h-2 rounded-full bg-[#C8920A] group-hover:scale-125 transition-transform duration-300 delay-200"></span>
+                                                            <span className="mt-[6px] shrink-0 w-2 h-2 rounded-full bg-[#C8920A] group-hover:scale-125 group-focus:scale-125 transition-transform duration-300 delay-200"></span>
                                                             {item}
                                                         </li>
                                                     ))}

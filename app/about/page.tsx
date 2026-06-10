@@ -56,11 +56,11 @@ export default function AboutPage() {
                             {content.hero.description}
                         </p>
 
-                        <div className="mt-10 flex flex-wrap gap-4">
-                            <Link href="/contact" className="flex items-center gap-2 bg-[#1A6B3A] hover:bg-[#13522C] text-white px-8 py-4 rounded-md transition-all duration-300 font-medium">
+                        <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 max-w-sm sm:max-w-none">
+                            <Link href="/contact" className="flex items-center justify-center gap-2 bg-[#1A6B3A] hover:bg-[#13522C] text-white px-8 py-4 rounded-md transition-all duration-300 font-medium w-full sm:w-[220px]">
                                 {aboutData.buttons.primary} {arrowIcon}
                             </Link>
-                            <Link href="/services" className="flex items-center gap-2 bg-none border border-white text-white px-8 py-4 rounded-md transition-all duration-300 font-medium">
+                            <Link href="/services" className="flex items-center justify-center gap-2 bg-none border border-white hover:bg-white/10 text-white px-8 py-4 rounded-md transition-all duration-300 font-medium w-full sm:w-[220px]">
                                 {aboutData.buttons.secondary} {arrowIcon}
                             </Link>
                         </div>
@@ -97,7 +97,7 @@ export default function AboutPage() {
                                 <Image src="/images/about us team.jpg" alt="Team collaboration" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 60vw" />
                             </div>
                             <div className="absolute -bottom-5 right-4 lg:bottom-6 lg:right-6 bg-[#C8920A] py-3 lg:py-4 px-6 lg:px-8 rounded-full inline-flex items-center gap-3 shadow-xl z-10 transition-transform hover:scale-105 w-max">
-                                <span className="w-2 h-2 rounded-full bg-[#162018]"></span>
+                                <span className="w-2 h-2 rounded-full bg-[#FFFFFF]"></span>
                                 <span className="text-[#162018] font-bold text-sm lg:text-base font-outfit tracking-wide">
                                     {content.mission.badge}
                                 </span >

@@ -12,7 +12,7 @@ const homeContactData = {
         line1: "Every dollar you've earned",
         line2Highlight: "deserves to be collected.",
         line3: "Let's make sure it is.",
-        body: "Tell us about your practice — your specialty, your volume, your current billing situation. We'll tell you exactly where revenue is leaving and what it takes to stop it.",
+        body: "Tell us about your practice — your specialty, your volume, your current billing situation. We'll tell you exactly where revenue is leaking and what it takes to stop it.",
         buttons: [
             { label: "Schedule a Free Assessment", href: "/contact", primary: true },
             { label: "Explore Services & Solutions", href: "/solutions", primary: false },
@@ -24,7 +24,7 @@ const homeContactData = {
             { id: "firstName", label: "First Name", type: "text", placeholder: "First Name", half: true },
             { id: "lastName", label: "Last Name", type: "text", placeholder: "Last Name", half: true },
             { id: "email", label: "BUSINESS EMAIL", type: "email", placeholder: "Email", half: false },
-            { id: "queries", label: "YOUR QUERIES", type: "textarea", placeholder: "Your queries", half: false },
+            { id: "queries", label: "MESSAGE", type: "textarea", placeholder: "How can we help?", half: false },
         ],
         submitLabel: "Submit",
         image: "/images/service 4.jpg",
@@ -34,7 +34,10 @@ const homeContactData = {
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-export default function HomeContactSection() {
+export default function HomeContactSection({ data = {} }: { data?: any }) {
+    // Merge data from props with the local default homeContactData
+    const content = { ...homeContactData, ...data };
+
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
     const [message, setMessage] = useState("");
 
@@ -111,15 +114,15 @@ export default function HomeContactSection() {
                 <div className="absolute inset-0" style={{ backgroundColor: "rgba(10,30,14,0.82)" }} />
                 <div className="relative z-10 container mx-auto max-w-3xl flex flex-col items-center">
                     <h2 className="font-cormorant text-4xl sm:text-5xl lg:text-[72px] font-medium text-white leading-[1.08] mb-6">
-                        {homeContactData.cta.line1} <br />
-                        <span className="text-[#C8920A] italic">{homeContactData.cta.line2Highlight}</span> <br />
-                        {homeContactData.cta.line3}
+                        {content.cta.line1} <br />
+                        <span className="text-[#C8920A] italic">{content.cta.line2Highlight}</span> <br />
+                        {content.cta.line3}
                     </h2>
                     <p className="text-white/65 text-[15px] leading-relaxed max-w-xl mb-10 font-outfit">
-                        {homeContactData.cta.body}
+                        {content.cta.body}
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
-                        {homeContactData.cta.buttons.map((btn) =>
+                        {content.cta.buttons.map((btn: any) =>
                             btn.primary ? (
                                 <Link
                                     key={btn.label}
@@ -161,7 +164,7 @@ export default function HomeContactSection() {
                             style={{ backgroundColor: "#0C3318" }}
                         >
                             <h3 className="font-cormorant text-[38px] font-medium mb-8" style={{ color: "#C8920A" }}>
-                                {homeContactData.form.heading}
+                                {content.form.heading}
                             </h3>
 
                             {message && (
@@ -173,9 +176,9 @@ export default function HomeContactSection() {
                             <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1">
                                 {/* Name row */}
                                 <div className="grid grid-cols-2 gap-3">
-                                    {homeContactData.form.fields
-                                        .filter((f) => f.half)
-                                        .map((field) => (
+                                    {content.form.fields
+                                        .filter((f: any) => f.half)
+                                        .map((field: any) => (
                                             <div key={field.id}>
                                                 <label className="block text-[9px] font-bold tracking-widest mb-1.5 font-outfit" style={{ color: "rgba(255,255,255,0.5)" }}>
                                                     {field.label}
@@ -194,9 +197,9 @@ export default function HomeContactSection() {
                                 </div>
 
                                 {/* Full-width fields */}
-                                {homeContactData.form.fields
-                                    .filter((f) => !f.half)
-                                    .map((field) => (
+                                {content.form.fields
+                                    .filter((f: any) => !f.half)
+                                    .map((field: any) => (
                                         <div key={field.id}>
                                             <label className="block text-[9px] font-bold tracking-widest mb-1.5 font-outfit" style={{ color: "rgba(255,255,255,0.5)" }}>
                                                 {field.label}
@@ -241,7 +244,7 @@ export default function HomeContactSection() {
                                             </>
                                         ) : (
                                             <>
-                                                {homeContactData.form.submitLabel}
+                                                {content.form.submitLabel}
                                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                                     <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
                                                 </svg>
@@ -255,7 +258,7 @@ export default function HomeContactSection() {
                         {/* Right: image with badge */}
                         <div className="w-full lg:w-[56%] relative min-h-[320px] lg:min-h-0">
                             <Image
-                                src={homeContactData.form.image}
+                                src={content.form.image}
                                 alt="Get in touch with MeBilling"
                                 fill
                                 className="object-cover"
@@ -264,8 +267,8 @@ export default function HomeContactSection() {
                             {/* Revenue Gap badge — bottom right */}
                             <div className="absolute bottom-5 right-5">
                                 <span className="inline-flex items-center gap-2 bg-[#1A6B3A] text-white text-[12px] font-bold px-4 py-2.5 rounded-full font-outfit shadow-lg">
-                                    <span className="w-2 h-2 rounded-full bg-[#162018]" />
-                                    {homeContactData.form.imageBadge}
+                                    <span className="w-2 h-2 rounded-full bg-[#FFFFFF]" />
+                                    {content.form.imageBadge}
                                 </span>
                             </div>
                         </div>

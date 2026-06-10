@@ -52,12 +52,12 @@ const footerData = {
             width: 160,
             height: 50
         },
-        description: "We are an organization that focuses on delivering full solutions tailored to our client's various Revenue Cycle operations. We currently service clients located in Texas, Louisiana, Arkansas, Oklahoma, Alabama, and New Jersey."
+        description: "MeBilling provides end-to-end Revenue Cycle Management solutions for U.S. healthcare providers, including medical billing, coding, denial management, payment posting, A/R follow-up, credentialing, and compliance support. We currently serve clients in Texas, Louisiana, Arkansas, Oklahoma, Alabama, and New Jersey."
     },
     socialLinks: [
+        { href: "https://www.linkedin.com/company/mebilling/", label: "LinkedIn", icon: "/images/linkedin logo.svg" },
         { href: "https://www.facebook.com/mebilling/", label: "Facebook", icon: "/images/facebook logo.svg" },
         { href: "https://twitter.com/MeBillingSol", label: "Twitter", icon: "/images/Twitter logo.svg" },
-        { href: "https://www.linkedin.com/in/me-billing-b37783115", label: "LinkedIn", icon: "/images/linkedin logo.svg" },
         { href: "#", label: "Instagram", icon: "/images/instagram logo.svg" },
     ],
     pageLinks: [
@@ -68,25 +68,32 @@ const footerData = {
         { label: "About Us", href: "/about" },
     ],
     contactItems: [
-        { icon: "/images/call.svg", text: "346-616-0008", href: "tel:+13466160008" },
+        { icon: "/images/call.svg", text: "US: (346) 616-0008", href: "tel:+13466160008" },
+        { icon: "/images/call.svg", text: "Global: +92 316 433 3497", href: "tel:+923164333497" },
         { icon: "/images/Icons.svg", text: "info@mebilling.com", href: "mailto:info@mebilling.com" },
-        { icon: "/images/loc.svg", text: "100 Glenborough Dr, Suite 400\nHouston, TX 77067" },
+        { icon: "/images/loc.svg", text: "100 Glenborough Dr, Suite 400\nHouston, TX 77067, USA" },
     ],
     bottomBar: {
-        copyright: "© 2026 MeBilling Inc. All Rights Reserved. Houston, TX 77067",
+        copyright: "© 2026 MeBilling Inc. All rights reserved.",
         badge: "HIPAA Compliant",
         links: [
             { label: "Privacy Policy", href: "/privacy-policy" },
-            { label: "Terms & Conditions", href: "/terms-&-condition" },
-            { label: "Legal Disclaimer", href: "/legal-disclaimer" }
+            { label: "Terms of Use", href: "/terms-of-use" },
+            { label: "Legal Disclaimer", href: "/legal-disclaimer" },
+            { label: "HIPAA Notice", href: "/hipaa-notice" },
+            { label: "Cookie Policy", href: "/cookie-policy" }
         ]
     }
 };
 
-export default function FooterSection() {
+export default function FooterSection({ data = {} }: { data?: any }) {
     const pathname = usePathname();
     const isHome = pathname === "/";
     const currentCta = pageSpecificCtas[pathname] || defaultCta;
+
+    // Merge data from props with the local default footerData
+    const content = { ...footerData, ...data };
+
     return (
         <footer className="w-full bg-[#112314] text-white relative overflow-hidden font-outfit">
             {/* Background Concentric Circles */}
@@ -109,14 +116,14 @@ export default function FooterSection() {
                     <p className="text-[17px] text-white/90 font-outfit mb-12 max-w-2xl mx-auto font-medium">
                         {currentCta.description}
                     </p>
-                    <div className="flex flex-col sm:flex-row items-center gap-4 justify-center">
-                        <Link href={currentCta.primaryButton.href} className="bg-[#1A6B3A] hover:bg-[#13522C] text-white px-8 py-3.5 rounded-md font-medium flex items-center gap-2 transition-all">
+                    <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 justify-center w-full max-w-sm sm:max-w-none mx-auto">
+                        <Link href={currentCta.primaryButton.href} className="bg-[#1A6B3A] hover:bg-[#13522C] text-white px-8 py-3.5 rounded-md font-medium flex items-center justify-center gap-2 transition-all w-full sm:w-auto">
                             {currentCta.primaryButton.label}
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </Link>
-                        <Link href={currentCta.secondaryButton.href} className="bg-transparent border border-white/30 hover:border-white/60 text-white px-8 py-3.5 rounded-md font-medium flex items-center gap-2 transition-all">
+                        <Link href={currentCta.secondaryButton.href} className="bg-transparent border border-white/30 hover:border-white/60 text-white px-8 py-3.5 rounded-md font-medium flex items-center justify-center gap-2 transition-all w-full sm:w-auto">
                             {currentCta.secondaryButton.label}
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -137,18 +144,18 @@ export default function FooterSection() {
                     <div className="space-y-6">
                         <Link href="/" className="inline-block relative">
                             <Image
-                                src={footerData.companyInfo.logo.src}
-                                alt={footerData.companyInfo.logo.alt}
-                                width={footerData.companyInfo.logo.width}
-                                height={footerData.companyInfo.logo.height}
+                                src={content.companyInfo.logo.src}
+                                alt={content.companyInfo.logo.alt}
+                                width={content.companyInfo.logo.width}
+                                height={content.companyInfo.logo.height}
                                 className="h-auto w-auto object-contain object-left mb-2"
                             />
                         </Link>
                         <p className="max-w-[380px] text-[15px] leading-relaxed text-[#819E8C] font-medium pr-4">
-                            {footerData.companyInfo.description}
+                            {content.companyInfo.description}
                         </p>
                         <div className="flex items-center gap-5 pt-2">
-                            {footerData.socialLinks.map((item) => (
+                            {content.socialLinks.map((item: any) => (
                                 <a
                                     key={item.label}
                                     href={item.href}
@@ -171,7 +178,7 @@ export default function FooterSection() {
                     <div>
                         <h3 className="text-[17px] font-bold text-[#C8920A] tracking-wide mb-6">Pages</h3>
                         <ul className="space-y-4 text-[15px] text-[#819E8C] font-medium">
-                            {footerData.pageLinks.map((item) => (
+                            {content.pageLinks.map((item: any) => (
                                 <li key={item.label}>
                                     <Link href={item.href} className="transition hover:text-white">
                                         {item.label}
@@ -184,7 +191,7 @@ export default function FooterSection() {
                     <div>
                         <h3 className="text-[17px] font-bold text-[#C8920A] tracking-wide mb-6">Contact Us</h3>
                         <ul className="space-y-5 text-[15px] text-[#819E8C] font-medium">
-                            {footerData.contactItems.map((item, idx) => (
+                            {content.contactItems.map((item: any, idx: number) => (
                                 <li key={idx} className="flex items-center gap-4">
                                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#163620] border border-white/5">
                                         <Image
@@ -213,17 +220,17 @@ export default function FooterSection() {
             <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
                 <div className="border-t border-white/10 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
                     <p className="text-[14px] text-[#819E8C] font-medium">
-                        {footerData.bottomBar.copyright}
+                        {content.bottomBar.copyright}
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center gap-6 text-[14px] font-medium">
-                        {footerData.bottomBar.links.map((lnk) => (
+                        {content.bottomBar.links.map((lnk: any) => (
                             <Link key={lnk.label} href={lnk.href} className="text-[#819E8C] hover:text-white transition-colors">
                                 {lnk.label}
                             </Link>
                         ))}
                         <div className="ml-2 bg-[#1B3A1C] border border-[#2B4B27] px-4 py-2 rounded-full hidden sm:block">
-                            <span className="text-[#C8920A] font-bold text-[13px] tracking-wide">{footerData.bottomBar.badge}</span>
+                            <span className="text-[#C8920A] font-bold text-[13px] tracking-wide">{content.bottomBar.badge}</span>
                         </div>
                     </div>
                 </div>

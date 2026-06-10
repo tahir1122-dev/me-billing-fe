@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import FaqSection from "@/components/sections/FaqSection";
+import { PageContentService } from "@/services/pageContent.service";
 
 export const metadata: Metadata = {
     title: "Physician Billing | Me Billing",
@@ -17,7 +18,10 @@ const arrowIcon = (
     </svg>
 );
 
-export default function PhysicianBillingPage() {
+export default async function PhysicianBillingPage() {
+    const pageData = await PageContentService.getPage("physician-billing");
+    const faqData = pageData?.sections?.FaqSection || {};
+
     return (
         <main className="flex-1 w-full ">
             <section className="relative flex min-h-[460px] w-full items-center overflow-hidden bg-[#09A8D4] py-16 sm:py-20">
@@ -232,7 +236,7 @@ export default function PhysicianBillingPage() {
                     </div>
                 </div>
             </section>
-            <FaqSection />
+            <FaqSection data={faqData} />
         </main>
     );
 }
