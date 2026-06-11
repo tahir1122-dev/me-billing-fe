@@ -69,7 +69,25 @@ export class PageContentService {
                     }
                 }
             } else {
-                return null; // No page and no default content
+                // If there's no default content, create a blank page
+                const { data: newBlankPage, error: blankInsertError } = await supabaseAdmin
+                    .from('pages')
+                    .insert({
+                        slug: slug,
+                        name: slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' '),
+                        seo_title: `${slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' ')} | MeBilling`,
+                        seo_description: '',
+                        seo_meta_tags: {}
+                    })
+                    .select()
+                    .single();
+
+                if (blankInsertError || !newBlankPage) {
+                    console.error("Error creating blank page:", blankInsertError);
+                    return null;
+                }
+                
+                page = newBlankPage;
             }
         }
 

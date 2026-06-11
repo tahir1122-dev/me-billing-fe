@@ -17,9 +17,9 @@ export default function CookiePolicyPage() {
                 </div>
 
                 <div className="bg-white rounded-2xl p-8 md:p-12 border border-[#082610]/10 shadow-sm prose prose-slate max-w-none">
-                    <p className="text-slate-500 mb-6">
+                    {/* <p className="text-slate-500 mb-6">
                         <em>Last Updated: [Date]</em>
-                    </p>
+                    </p> */}
                     <p>
                         This is a placeholder for your official Cookie Policy. You must have your legal counsel provide the exact wording for this page, especially regarding HIPAA-compliant tracking for healthcare entities.
                     </p>

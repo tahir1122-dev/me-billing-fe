@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { PageContentService } from "@/services/pageContent.service";
 import seoContent from "@/data/seo-content.json";
 
 export const metadata: Metadata = {
@@ -26,7 +27,16 @@ const servicesPageConfig = {
     }
 };
 
-export default function ServicesPage() {
+export const dynamic = 'force-dynamic';
+
+export default async function ServicesPage() {
+    const pageData = await PageContentService.getPage("services");
+    const sections = pageData?.sections || {};
+    const hero = sections["Hero"] || {};
+    const scope = sections["Scope"] || {};
+    const process = sections["Process"] || {};
+    if (!pageData) return null;
+
     return (
         <main className="flex-1 w-full bg-white font-cormorant">
             <section className="relative flex max-w-[1920px] mx-auto h-[500px] md:h-[600px] lg:h-[800px] w-full items-center overflow-hidden bg-[#1D2B24]">
@@ -45,22 +55,22 @@ export default function ServicesPage() {
                     <div className="max-w-3xl">
                         <p className="text-[#D4AF37] tracking-wider uppercase text-sm md:text-base font-semibold mb-6 flex items-center gap-2 font-outfit">
                             <span className="w-6 h-[1px] bg-[#D4AF37]"></span>
-                            {servicesPageConfig.hero.tagline}
+                            {hero.tagline}
                         </p>
                         <h1 className="text-4xl md:text-6xl lg:text-[80px] font-medium leading-[1.1] text-white mb-2 font-cormorant">
-                            {servicesPageConfig.hero.headingLine1} <br />
-                            <span className="text-[#D4AF37] italic">{servicesPageConfig.hero.headingLine2Highlight}</span>
+                            {hero.headingPart1} <br />
+                            <span className="text-[#D4AF37] italic">{hero.headingHighlight}</span>
                         </h1>
                         <p className="mt-6 md:mt-8 text-lg md:text-[19px] text-white/90 max-w-2xl leading-relaxed font-outfit font-medium">
-                            {servicesPageConfig.hero.description}
+                            {hero.description}
                         </p>
 
                         <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 max-w-sm sm:max-w-none font-outfit">
                             <Link href="/contact" className="flex justify-center items-center gap-2 bg-[#1A6B3A] hover:bg-[#13522C] text-white px-8 py-3.5 rounded-md transition-all duration-300 font-medium w-full sm:w-[220px]">
-                                {servicesPageConfig.hero.primaryButton} {arrowIcon}
+                                {hero.buttonPrimary} {arrowIcon}
                             </Link>
                             <Link href="#services-list" className="flex justify-center items-center gap-2 bg-transparent border border-white/60 hover:border-white hover:bg-white/5 text-white px-8 py-3.5 rounded-md transition-all duration-300 font-medium w-full sm:w-[220px]">
-                                {servicesPageConfig.hero.secondaryButton} {arrowIcon}
+                                {hero.buttonSecondary} {arrowIcon}
                             </Link>
                         </div>
                     </div>
@@ -101,18 +111,18 @@ export default function ServicesPage() {
                     <div className="flex flex-col items-center text-center mb-16 max-w-4xl mx-auto">
                         <p className="text-[#C8920A] tracking-wider text-sm font-semibold mb-6 flex items-center justify-center gap-2 font-outfit">
                             <span className="w-6 h-[1.5px] bg-[#C8920A]"></span>
-                            {servicesPage.scope.tagline}
+                            {scope.tagline}
                         </p>
                         <h2 className="text-3xl md:text-5xl lg:text-[64px] font-medium leading-[1.1] text-[#162018] mb-6 font-cormorant">
-                            {servicesPage.scope.headingPart1} <span className="text-[#C8920A] italic">{servicesPage.scope.headingHighlight}</span>
+                            {scope.headingPart1} <span className="text-[#C8920A] italic">{scope.headingHighlight}</span>
                         </h2>
                         <p className="text-[17px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
-                            {servicesPage.scope.description}
+                            {scope.description}
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
-                        {servicesPage.scope.cards.map((card, idx) => {
+                        {scope.cards?.map((card: any, idx: number) => {
                             if (card.style === "list") {
                                 return (
                                     <article

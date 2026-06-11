@@ -1,17 +1,36 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
-import seoContent from "@/data/seo-content.json";
 
-export const metadata: Metadata = {
+import { PageContentService } from "@/services/pageContent.service";
+import { Metadata, ResolvingMetadata } from "next";
+
+
+export async function generateMetadata(
+    { params }: any,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    const pageData = await PageContentService.getPage("solutions");
+    return {
+        title: pageData?.seo_title || "Solutions | Me Billing",
+        description: pageData?.seo_description || "Intelligent Billing Solutions for Healthcare Providers.",
+    };
+}
+export const oldMetadata = {
     title: "Bundled Solutions | Me Billing",
     description: "Six Solutions Built Around the Outcome You Need. Engage exactly what your revenue cycle requires.",
 };
 
-const { bundledSolutions } = seoContent;
 
-export default function BundledSolutionsPage() {
-    const { hero, walkthrough, packagesSection } = bundledSolutions;
+
+export default async function SolutionsPage() {
+    const pageData = await PageContentService.getPage("solutions");
+    const sections = pageData?.sections || {};
+    const hero = sections["Hero"] || {};
+    const walkthrough = sections["Walkthrough"] || {};
+    const packagesSection = sections["PackagesSection"] || {};
+    if (!pageData) return null;
+
+    
 
     return (
         <main className="flex-1 w-full bg-white font-outfit">
@@ -110,7 +129,7 @@ export default function BundledSolutionsPage() {
 
                     {/* Solution Packages Grid */}
                     <div className="flex flex-col gap-16 lg:gap-24">
-                        {packagesSection.packages.slice(0, 6).map((pkg: any, idx: number) => {
+                        {packagesSection.packages.slice(0, 6)?.map((pkg: any, idx: number) => {
                             const isEven = idx % 2 === 1;
                             const cardImages = [
                                 "service 1.jpg",
@@ -181,7 +200,7 @@ export default function BundledSolutionsPage() {
                                                 What's Included : <span className="font-medium normal-case">{highlightText}</span>
                                             </span>
                                             <ul className="flex flex-col gap-2.5 font-outfit">
-                                                {bulletPoints.map((item: string, i: number) => (
+                                                {bulletPoints?.map((item: string, i: number) => (
                                                     <li key={i} className="flex items-start gap-2.5 text-[12.5px] text-[#162018]/80 font-medium leading-snug">
                                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1A6B3A" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-[3px]">
                                                             <polyline points="20 6 9 17 4 12"></polyline>
