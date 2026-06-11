@@ -80,8 +80,8 @@ export default async function SolutionsPage() {
                         {/* Left Side: Video */}
                         <div className="relative w-full rounded-[24px] overflow-hidden shadow-xl aspect-[16/10] bg-[#162018]">
                             <video
-                                src="/vedios/video 03.mp4"
-                                poster="/images/service 4.jpg"
+                                src={walkthrough.image}
+                                poster=""
                                 controls
                                 className="w-full h-full object-cover"
                             />
@@ -132,14 +132,14 @@ export default async function SolutionsPage() {
                         {packagesSection.packages.slice(0, 6)?.map((pkg: any, idx: number) => {
                             const isEven = idx % 2 === 1;
                             const cardImages = [
-                                "service 1.jpg",
-                                "service 2.jpg",
-                                "service 3.jpg",
-                                "service 4.jpg",
-                                "doc 2.png",
-                                "about us team.jpg"
+                                "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/solution_1.png",
+                                "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/solution_2.jpg",
+                                "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/solution_3.jpg",
+                                "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/solution_4.jpg",
+                                "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/solution_5.jpg",
+                                "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/solution_6.png"
                             ];
-                            const imageSrc = `/images/${cardImages[idx % cardImages.length]}`;
+                            const imageSrc = `${cardImages[idx % cardImages.length]}`;
 
                             // Title split logic: split last 2 words if length > 3, else last 1 word
                             const titleWords = pkg.title.split(' ');

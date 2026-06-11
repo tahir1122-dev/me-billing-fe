@@ -104,10 +104,10 @@ export default async function AboutPage() {
 
                         <div className="w-full lg:w-7/12 relative h-[400px] lg:h-[480px]">
                             <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl">
-                                <Image src="/images/about us team.jpg" alt="Team collaboration" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 60vw" />
+                                <Image src="https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/revenue-recovery.avif" alt="Team collaboration" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 60vw" />
                             </div>
                             <div className="absolute -bottom-5 right-4 lg:bottom-6 lg:right-6 bg-[#C8920A] py-3 lg:py-4 px-6 lg:px-8 rounded-full inline-flex items-center gap-3 shadow-xl z-10 transition-transform hover:scale-105 w-max">
-                                <span className="w-2 h-2 rounded-full bg-[#FFFFFF]"></span>
+                                <span className="w-2 h-2 rounded-full bg-[#162018]"></span>
                                 <span className="text-[#162018] font-bold text-sm lg:text-base font-outfit tracking-wide">
                                     {mission.badge}
                                 </span >
@@ -157,7 +157,7 @@ export default async function AboutPage() {
                         </div>
 
                         <div className="relative w-full lg:w-[380px] h-[500px] lg:h-[700px] rounded-3xl overflow-hidden shadow-2xl order-first lg:order-none">
-                            <Image src="/images/about us team.jpg" alt="Team connection" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 400px" />
+                            <Image src="https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/ourstory.avif" alt="Team connection" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 400px" />
                         </div>
 
                         <div className="flex flex-col gap-6 text-left">

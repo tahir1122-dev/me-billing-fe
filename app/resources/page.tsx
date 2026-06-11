@@ -71,8 +71,8 @@ export default async function ResourcesPage() {
                                 className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 aspect-[16/10] cursor-pointer group bg-[#162018]"
                             >
                                 <video
-                                    src={`/vedios/video 0${index + 5}.mp4`}
-                                    poster="/images/bussines women.jpg"
+                                    src={`https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video 0${4 + index}.mp4`}
+                                    poster=""
                                     controls
                                     className="w-full h-full object-cover"
                                 />
@@ -88,7 +88,7 @@ export default async function ResourcesPage() {
                     <div className="relative w-full h-[260px] sm:h-[320px] lg:h-[380px] rounded-[24px] overflow-hidden shadow-md group">
                         {/* High-resolution image covering banner full bleed */}
                         <Image
-                            src="/images/service 3.jpg"
+                            src="https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/resource_insight.webp"
                             alt="Practice Leaders Insight Banner"
                             fill
                             className="object-cover group-hover:scale-102 transition-transform duration-700"
