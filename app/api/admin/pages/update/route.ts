@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { revalidatePath } from 'next/cache';
 import { PageContentService } from '@/services/pageContent.service';
 
 export async function POST(request: Request) {
@@ -20,6 +21,9 @@ export async function POST(request: Request) {
         if (!result.success) {
             return NextResponse.json({ error: result.error }, { status: 500 });
         }
+
+        // Clear Next.js cache so changes reflect on live immediately
+        revalidatePath('/', 'layout');
 
         return NextResponse.json({ success: true, message: 'Page updated successfully' });
     } catch (error: any) {
