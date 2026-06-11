@@ -1,17 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
-import seoContent from "@/data/seo-content.json";
+import { Metadata, ResolvingMetadata } from "next";
+import { PageContentService } from "@/services/pageContent.service";
 
-const { seo, content } = seoContent.about;
-
-export const metadata: Metadata = {
-    title: seo.title,
-    description: seo.description,
-    keywords: seo.keywords,
-    openGraph: seo.openGraph,
-    twitter: seo.twitter as Metadata["twitter"]
-};
+export async function generateMetadata(
+    { params }: any,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    const pageData = await PageContentService.getPage("about");
+    return {
+        title: pageData?.seo_title || "About Us | MeBilling",
+        description: pageData?.seo_description || "Learn about MeBilling, our elegant and modern experience, and the team behind your cleaner revenue.",
+        // @ts-ignore
+        ...(pageData?.seo_meta_tags || {}),
+    };
+}
 
 const arrowIcon = (
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,14 +22,21 @@ const arrowIcon = (
     </svg>
 );
 
-const aboutData = {
-    buttons: {
-        primary: "Talk to Our Team",
-        secondary: "View Services"
-    }
-};
+export const dynamic = 'force-dynamic';
 
-export default function AboutPage() {
+export default async function AboutPage() {
+    const pageData = await PageContentService.getPage("about");
+    const sections = pageData?.sections || {};
+
+    const hero = sections["Hero"] || {};
+    const mission = sections["Mission"] || {};
+    const story = sections["Story"] || {};
+    const values = sections["Values"] || {};
+    const compliance = sections["Compliance"] || {};
+    const team = sections["Team"] || {};
+    const tour = sections["Tour"] || {};
+
+    if (!pageData) return null;
     return (
         <main className="flex-1 w-full bg-white font-cormorant">
             {/* Hero Section */}
@@ -46,22 +56,22 @@ export default function AboutPage() {
                     <div className="max-w-3xl">
                         <p className="text-[#D4AF37] tracking-wider uppercase text-sm md:text-base font-semibold mb-6 flex items-center gap-2">
                             <span className="w-8 h-[1px] bg-[#D4AF37]"></span>
-                            {content.hero.heading}
+                            {hero.heading}
                         </p>
                         <h1 className="text-4xl md:text-6xl font-medium leading-tight text-white mb-2 font-cormorant">
-                            The Team Behind <br />
-                            <span className="text-[#D4AF37] italic">Your Cleaner Revenue.</span>
+                            {hero.subHeadingPart1} <br />
+                            <span className="text-[#D4AF37] italic">{hero.subHeadingHighlight}</span>
                         </h1>
                         <p className="mt-8 text-lg text-white/90 max-w-2xl leading-relaxed">
-                            {content.hero.description}
+                            {hero.description}
                         </p>
 
                         <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 max-w-sm sm:max-w-none">
                             <Link href="/contact" className="flex items-center justify-center gap-2 bg-[#1A6B3A] hover:bg-[#13522C] text-white px-8 py-4 rounded-md transition-all duration-300 font-medium w-full sm:w-[220px]">
-                                {aboutData.buttons.primary} {arrowIcon}
+                                {hero.buttonPrimary} {arrowIcon}
                             </Link>
                             <Link href="/services" className="flex items-center justify-center gap-2 bg-none border border-white hover:bg-white/10 text-white px-8 py-4 rounded-md transition-all duration-300 font-medium w-full sm:w-[220px]">
-                                {aboutData.buttons.secondary} {arrowIcon}
+                                {hero.buttonSecondary} {arrowIcon}
                             </Link>
                         </div>
                     </div>
@@ -73,21 +83,21 @@ export default function AboutPage() {
                 <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-7xl">
                     <div className="mb-14">
                         <p className="text-[#1A6B3A] font-semibold text-sm tracking-wider mb-6 font-outfit">
-                            {content.mission.tagline}
+                            {mission.tagline}
                         </p>
                         <h2 className="text-3xl md:text-4xl lg:text-[64px] font-medium text-[#162018] leading-tight font-cormorant mb-6">
-                            {content.mission.headingPart1} <span className="text-[#C8920A] italic">{content.mission.headingHighlight}</span>
+                            {mission.headingPart1} <span className="text-[#C8920A] italic">{mission.headingHighlight}</span>
                         </h2>
                     </div>
 
                     <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 mb-24 items-center">
                         <div className="w-full lg:w-5/12 flex flex-col gap-10">
                             <p className="text-[17px] text-[#162018]/80 font-outfit leading-relaxed font-medium">
-                                {content.mission.p1}
+                                {mission.p1}
                             </p>
                             <div className="bg-[#EFEFE3]/50 p-8 border-l-[4px] border-[#C8920A]">
                                 <p className="text-[#162018]/90 font-outfit leading-relaxed font-medium">
-                                    {content.mission.quote}
+                                    {mission.quote}
                                 </p>
                             </div>
                         </div>
@@ -99,14 +109,14 @@ export default function AboutPage() {
                             <div className="absolute -bottom-5 right-4 lg:bottom-6 lg:right-6 bg-[#C8920A] py-3 lg:py-4 px-6 lg:px-8 rounded-full inline-flex items-center gap-3 shadow-xl z-10 transition-transform hover:scale-105 w-max">
                                 <span className="w-2 h-2 rounded-full bg-[#FFFFFF]"></span>
                                 <span className="text-[#162018] font-bold text-sm lg:text-base font-outfit tracking-wide">
-                                    {content.mission.badge}
+                                    {mission.badge}
                                 </span >
                             </div>
                         </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                        {content.mission.stats.map((stat: { number: string; label: string }, idx: number) => (
+                        {mission.stats?.map((stat: { number: string; label: string }, idx: number) => (
                             <div key={idx} className="bg-white/40 rounded-[20px] border border-slate-300/80 px-8 py-12 flex flex-col items-center justify-center text-center shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:bg-white transition-colors duration-300">
                                 <h3 className="text-4xl md:text-5xl lg:text-[64px] font-medium text-[#1A6B3A] font-cormorant mb-6 tracking-tight">
                                     {stat.number}
@@ -125,16 +135,16 @@ export default function AboutPage() {
                 <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-7xl text-center">
                     <div className="mb-20">
                         <p className="text-[#1A6B3A] font-semibold text-sm tracking-wider mb-6 font-outfit">
-                            {content.story.tagline}
+                            {story.tagline}
                         </p>
                         <h2 className="text-3xl md:text-4xl lg:text-[64px] font-medium text-[#162018] leading-tight font-cormorant mb-6">
-                            {content.story.headingPart1} <span className="text-[#C8920A] italic">{content.story.headingHighlight}</span>
+                            {story.headingPart1} <span className="text-[#C8920A] italic">{story.headingHighlight}</span>
                         </h2>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-12 items-center">
                         <div className="flex flex-col gap-6 text-left">
-                            {content.story.milestones.slice(0, 2).map((milestone: { year: string; description: string }, idx: number) => (
+                            {story.milestones.slice(0, 2)?.map((milestone: { year: string; description: string }, idx: number) => (
                                 <div key={idx} className="bg-white rounded-xl border border-slate-200/80 p-10 lg:p-12 shadow-sm hover:shadow-md transition-shadow">
                                     <h3 className="text-4xl md:text-5xl font-medium text-[#C8920A] font-cormorant mb-6">
                                         {milestone.year}
@@ -151,7 +161,7 @@ export default function AboutPage() {
                         </div>
 
                         <div className="flex flex-col gap-6 text-left">
-                            {content.story.milestones.slice(2, 4).map((milestone: { year: string; description: string }, idx: number) => (
+                            {story.milestones.slice(2, 4)?.map((milestone: { year: string; description: string }, idx: number) => (
                                 <div key={idx} className="bg-white rounded-xl border border-slate-200/80 p-10 lg:p-12 shadow-sm hover:shadow-md transition-shadow">
                                     <h3 className="text-4xl md:text-5xl font-medium text-[#C8920A] font-cormorant mb-6">
                                         {milestone.year}
@@ -171,15 +181,15 @@ export default function AboutPage() {
                 <div className="container mx-auto px-6 sm:px-12 lg:px-20 max-w-7xl">
                     <div className="mb-16 md:mb-24">
                         <p className="text-[#1A6B3A] font-semibold text-sm tracking-wider mb-6 font-outfit">
-                            {content.values.tagline}
+                            {values.tagline}
                         </p>
                         <h2 className="text-3xl md:text-4xl lg:text-[64px] font-medium text-[#162018] leading-tight font-cormorant mb-6">
-                            {content.values.headingPart1} <span className="text-[#C8920A] italic">{content.values.headingHighlight}</span>
+                            {values.headingPart1} <span className="text-[#C8920A] italic">{values.headingHighlight}</span>
                         </h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                        {content.values.items.map((item: { icon: string; title: string; description: string }, idx: number) => (
+                        {values.items?.map((item: { icon: string; title: string; description: string }, idx: number) => (
                             <div key={idx} className="bg-transparent rounded-2xl border border-[#D1D1C7]/60 p-8 lg:p-10 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-400 group">
                                 <div className="flex items-center gap-5 mb-6">
                                     <div className="w-14 h-14 rounded-[14px] bg-[#1A6B3A] flex items-center justify-center shrink-0 shadow-md group-hover:scale-110 transition-transform duration-300">
@@ -205,18 +215,18 @@ export default function AboutPage() {
                         <div>
                             <div className="mb-12">
                                 <p className="text-[#1A6B3A] font-semibold text-sm tracking-wider mb-6 font-outfit">
-                                    {content.compliance.tagline}
+                                    {compliance.tagline}
                                 </p>
                                 <h2 className="text-3xl md:text-4xl lg:text-[64px] font-medium text-[#162018] leading-tight font-cormorant mb-6">
-                                    {content.compliance.headingPart1} <span className="text-[#C8920A] italic">{content.compliance.headingHighlight}</span>
+                                    {compliance.headingPart1} <span className="text-[#C8920A] italic">{compliance.headingHighlight}</span>
                                 </h2>
                                 <p className="text-[#162018]/80 text-[17px] font-outfit leading-relaxed font-medium max-w-2xl">
-                                    {content.compliance.description}
+                                    {compliance.description}
                                 </p>
                             </div>
 
                             <div className="flex flex-col gap-6 mb-12">
-                                {content.compliance.certifications.map((cert: { badge: string; title: string; description: string }, idx: number) => (
+                                {compliance.certifications?.map((cert: { badge: string; title: string; description: string }, idx: number) => (
                                     <div key={idx} className="bg-transparent rounded-2xl border border-[#D1D1C7]/60 p-6 lg:p-8 flex items-center gap-6 hover:bg-white hover:shadow-md transition-all duration-300">
                                         <div className="w-[72px] h-[72px] rounded-full bg-[#1A6B3A] flex items-center justify-center shrink-0 shadow-inner">
                                             <span className="text-white font-bold text-sm tracking-wider font-outfit">
@@ -236,7 +246,7 @@ export default function AboutPage() {
                             </div>
 
                             <div className="flex flex-wrap xl:flex-nowrap gap-3 lg:gap-4 w-full mt-auto">
-                                {content.compliance.features.map((feature: string, idx: number) => (
+                                {compliance.features?.map((feature: string, idx: number) => (
                                     <div key={idx} className="bg-[#EFEFE3]/70 px-3 xl:px-4 py-3 rounded-md flex items-center justify-center gap-2 w-full sm:w-[calc(50%-0.375rem)] xl:w-auto xl:flex-1 whitespace-nowrap">
                                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0 xl:w-[18px] xl:h-[18px]">
                                             <path d="M5 13L9 17L19 7" stroke="#C8920A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />

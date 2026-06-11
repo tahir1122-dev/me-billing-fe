@@ -12,11 +12,11 @@ const sidebarLinks = [
         subLinks: [
             { name: "Home", href: "/admin/dashboard/pages/home" },
             { name: "About", href: "/admin/dashboard/pages/about" },
-            { name: "Physician Billing", href: "/admin/dashboard/pages/physician-billing" },
             { name: "Specialties", href: "/admin/dashboard/pages/specialties" },
             { name: "Services", href: "/admin/dashboard/pages/services" },
             { name: "Solutions", href: "/admin/dashboard/pages/solutions" },
             { name: "Resources", href: "/admin/dashboard/pages/resources" },
+            { name: "Careers", href: "/admin/dashboard/pages/careers" },
         ],
     },
     {

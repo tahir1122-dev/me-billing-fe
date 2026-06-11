@@ -1,16 +1,36 @@
-import type { Metadata } from "next";
+
 import Link from "next/link";
 import Image from "next/image";
-import seoContent from "@/data/seo-content.json";
+import { PageContentService } from "@/services/pageContent.service";
+import { Metadata, ResolvingMetadata } from "next";
 
-export const metadata: Metadata = {
+
+export async function generateMetadata(
+    { params }: any,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    const pageData = await PageContentService.getPage("careers");
+    return {
+        title: pageData?.seo_title || "Careers | Me Billing",
+        description: pageData?.seo_description || "Join a Team That Treats Revenue Like It's Theirs.",
+    };
+}
+export const dynamic = 'force-dynamic';
+export const oldMetadata = {
     title: "Careers | Me Billing",
-    description: "Join a Team That Treats Revenue Like It's Theirs. MeBilling is hiring credentialed professionals."
+    description: "{hero.headingPart1} {hero.headingHighlight} MeBilling is hiring credentialed professionals."
 };
 
-export default function CareersPage() {
-    // Safely extract the dynamically mapped items from central JSON store nested scope
-    const whyItems = (seoContent as any).about?.careersPage?.whyMeBilling || (seoContent as any).careersPage?.whyMeBilling || [];
+
+export default async function CareersPage() {
+    const pageData = await PageContentService.getPage("careers");
+    const sections = pageData?.sections || {};
+    const hero = sections["Hero"] || {};
+    const whyMeBilling = sections["WhyMeBilling"] || {};
+    const openings = sections["Openings"] || {};
+
+
+    if (!pageData) return null;
 
     return (
         <main className="flex-1 w-full bg-gradient-to-b from-[#FFFDF5] via-[#FFFDF5]/95 to-[#FFFDF5] font-outfit">
@@ -34,23 +54,23 @@ export default function CareersPage() {
                 <section className="relative z-10 w-full py-20 lg:py-32 px-4 sm:px-6 lg:px-8 container mx-auto max-w-7xl text-white">
                     <div className="max-w-3xl font-outfit">
                         <span className="text-[#C8920A] font-bold tracking-wide text-xs block mb-3 uppercase font-outfit">
-                            — Careers at MeBilling
+                            {hero.tagline}
                         </span>
                         <h1 className="text-5xl sm:text-6xl lg:text-[76px] font-medium text-white leading-[1.08] mb-6 font-cormorant">
-                            Join a Team That <br />
-                            <span className="text-[#C8920A] italic">Treats Revenue Like It's Theirs.</span>
+                            {hero.headingPart1} <br />
+                            <span className="text-[#C8920A] italic">{hero.headingHighlight}</span>
                         </h1>
                         <p className="text-white/95 text-lg sm:text-[19px] leading-relaxed max-w-3xl font-medium mb-10 font-outfit">
-                            MeBilling is a growing, U.S.-based healthcare RCM firm where certified billing specialists, coders, and account managers do meaningful, high-impact work – and where their expertise is genuinely valued.
+                            {hero.description}
                         </p>
 
                         {/* Action buttons styled with premium tokens preserved cleanly in document flow */}
                         <div className="flex flex-wrap items-center gap-4 font-outfit">
                             <Link href="#openings" className="px-8 py-3.5 rounded-full bg-[#C8920A] hover:bg-[#b58308] text-black font-bold text-sm transition-all shadow-md shadow-[#C8920A]/10">
-                                View Open Roles
+                                {hero.primaryButton}
                             </Link>
                             <Link href="/resume" className="px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-bold text-sm transition-all">
-                                Send Us Your Resume
+                                {hero.secondaryButton}
                             </Link>
                         </div>
                     </div>
@@ -60,16 +80,16 @@ export default function CareersPage() {
             {/* WHY MEBILLING Section - matching reference screenshot layout exactly */}
             <section className="w-full py-24 px-4 sm:px-6 lg:px-8">
                 <div className="container mx-auto max-w-7xl">
-                    {/* Header matching reference: "— Professional Billing" style tagline */}
+                    {/* Header matching reference: "{whyMeBilling.tagline}" style tagline */}
                     <div className="mb-12">
                         <span className="text-[#C8920A] font-bold tracking-wide text-xs block mb-3 font-outfit">
-                            — Professional Billing
+                            {whyMeBilling.tagline}
                         </span>
                         <h2 className="text-4xl sm:text-[48px] text-[#162018] font-medium leading-tight font-cormorant mb-4">
-                            Physician &amp; Specialty <span className="text-[#C8920A] italic font-medium">Group Billing</span>
+                            {whyMeBilling.headingPart1} <span className="text-[#C8920A] italic font-medium">{whyMeBilling.headingHighlight}</span>
                         </h2>
                         <p className="text-slate-600 text-[15px] leading-relaxed max-w-2xl font-outfit">
-                            15 professional billing specialties — each with a dedicated team that codes exclusively within that clinical discipline. No rotations, no generalists, no shared queues.
+                            {whyMeBilling.description}
                         </p>
                     </div>
 
@@ -86,8 +106,8 @@ export default function CareersPage() {
                                     <path d="M24 21L26 28" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                                 </svg>
                             </div>
-                            <h3 className="text-[19px] font-semibold text-[#162018] mb-3 font-cormorant leading-tight">Certified Expertise Valued</h3>
-                            <p className="text-slate-500 text-[14px] leading-relaxed font-outfit">We invest in CPMA, CPC, and AAPC certifications for our team – and we structure roles to use that expertise, not bury it in administrative overhead</p>
+                            <h3 className="text-[19px] font-semibold text-[#162018] mb-3 font-cormorant leading-tight">{whyMeBilling.cards?.[0]?.title}</h3>
+                            <p className="text-slate-500 text-[14px] leading-relaxed font-outfit">{whyMeBilling.cards?.[0]?.description}</p>
                         </div>
 
                         {/* Card 2 */}
@@ -102,8 +122,8 @@ export default function CareersPage() {
                                     <path d="M16 24H24" stroke="currentColor" strokeWidth="1.5" strokeDasharray="1.5 1.5"/>
                                 </svg>
                             </div>
-                            <h3 className="text-[19px] font-semibold text-[#162018] mb-3 font-cormorant leading-tight">Specialty Depth</h3>
-                            <p className="text-slate-500 text-[14px] leading-relaxed font-outfit">You will work within a specialty – oncology, behavioural health, cardiology – and develop deep domain knowledge that makes you genuinely better at your discipline.</p>
+                            <h3 className="text-[19px] font-semibold text-[#162018] mb-3 font-cormorant leading-tight">{whyMeBilling.cards?.[1]?.title}</h3>
+                            <p className="text-slate-500 text-[14px] leading-relaxed font-outfit">{whyMeBilling.cards?.[1]?.description}</p>
                         </div>
 
                         {/* Card 3 */}
@@ -116,8 +136,8 @@ export default function CareersPage() {
                                     <path d="M20 16V22M20 22L10 24M20 22L30 24" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
                             </div>
-                            <h3 className="text-[19px] font-semibold text-[#162018] mb-3 font-cormorant leading-tight">Real Accountability, Real Autonomy</h3>
-                            <p className="text-slate-500 text-[14px] leading-relaxed font-outfit">Our team members own their accounts. You are the point of contact, the expert, and the person who makes the difference for a real practice every day.</p>
+                            <h3 className="text-[19px] font-semibold text-[#162018] mb-3 font-cormorant leading-tight">{whyMeBilling.cards?.[2]?.title}</h3>
+                            <p className="text-slate-500 text-[14px] leading-relaxed font-outfit">{whyMeBilling.cards?.[2]?.description}</p>
                         </div>
 
                         {/* Card 4 */}
@@ -132,8 +152,8 @@ export default function CareersPage() {
                                     <path d="M8 36C8 34 13 32 20 32C27 32 32 34 32 36" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                                 </svg>
                             </div>
-                            <h3 className="text-[19px] font-semibold text-[#162018] mb-3 font-cormorant leading-tight">Growth Without a Ceiling</h3>
-                            <p className="text-slate-500 text-[14px] leading-relaxed font-outfit">From credentialing specialist to director of operations – we promote from within and build career paths around the skills our team members develop.</p>
+                            <h3 className="text-[19px] font-semibold text-[#162018] mb-3 font-cormorant leading-tight">{whyMeBilling.cards?.[3]?.title}</h3>
+                            <p className="text-slate-500 text-[14px] leading-relaxed font-outfit">{whyMeBilling.cards?.[3]?.description}</p>
                         </div>
 
                         {/* Card 5 */}
@@ -146,8 +166,8 @@ export default function CareersPage() {
                                     <path d="M22 28C22 26 24 24 26 24C30.5 24 34 27 34 32" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                                 </svg>
                             </div>
-                            <h3 className="text-[19px] font-semibold text-[#162018] mb-3 font-cormorant leading-tight">Collaborative Culture</h3>
-                            <p className="text-slate-500 text-[14px] leading-relaxed font-outfit">Small enough to know every colleague. Structured enough to have clear roles. Growing fast enough that high performers get noticed quickly.</p>
+                            <h3 className="text-[19px] font-semibold text-[#162018] mb-3 font-cormorant leading-tight">{whyMeBilling.cards?.[4]?.title}</h3>
+                            <p className="text-slate-500 text-[14px] leading-relaxed font-outfit">{whyMeBilling.cards?.[4]?.description}</p>
                         </div>
 
                         {/* Card 6 */}
@@ -162,61 +182,34 @@ export default function CareersPage() {
                                     <path d="M9.5 27H30.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                                 </svg>
                             </div>
-                            <h3 className="text-[19px] font-semibold text-[#162018] mb-3 font-cormorant leading-tight">U.S. Operations + Global Delivery</h3>
-                            <p className="text-slate-500 text-[14px] leading-relaxed font-outfit">Houston HQ with two global delivery centers. Opportunities for professionals at multiple levels across our operational footprint.</p>
+                            <h3 className="text-[19px] font-semibold text-[#162018] mb-3 font-cormorant leading-tight">{whyMeBilling.cards?.[5]?.title}</h3>
+                            <p className="text-slate-500 text-[14px] leading-relaxed font-outfit">{whyMeBilling.cards?.[5]?.description}</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Current Openings Section */}
+            {/* {openings.headingPart1} {openings.headingHighlight} Section */}
             <section id="openings" className="w-full py-20 px-4 sm:px-6 lg:px-8 border-t border-gray-200/50">
                 <div className="container mx-auto max-w-5xl">
                     <div className="mb-12 font-outfit">
                         <span className="text-[#1A6B3A] font-bold tracking-wide text-xs block mb-3 font-outfit">
-                            — Open Positions
+                            {openings.tagline}
                         </span>
                         <h2 className="text-4xl sm:text-5xl text-[#162018] font-medium leading-tight font-cormorant">
-                            Current <span className="text-[#C8920A] italic font-medium">Openings</span>
+                            {openings.headingPart1} <span className="text-[#C8920A] italic font-medium">{openings.headingHighlight}</span>
                         </h2>
                     </div>
 
                     <div className="mt-12 flex flex-col gap-5">
-                        <JobCard
-                            department="Billing & Coding"
-                            title="Certified Professional Coder (CPC)"
-                            tags={["Full-Time", "Houston, TX / Remote", "Multi-Specialty"]}
-                        />
-                        <JobCard
-                            department="Billing & Coding"
-                            title="Medical Coding Auditor (CPMA)"
-                            tags={["Full-Time", "Houston, TX", "Compliance"]}
-                        />
-                        <JobCard
-                            department="Revenue Operations"
-                            title="A/R Follow-Up Specialist"
-                            tags={["Full-Time", "Remote Available", "Denial Management"]}
-                        />
-                        <JobCard
-                            department="Account Management"
-                            title="Client Account Manager - RCM"
-                            tags={["Full-Time", "Houston, TX", "Client Facing"]}
-                        />
-                        <JobCard
-                            department="Credentialing"
-                            title="Provider Credentialing Specialist"
-                            tags={["Full-Time", "Houston, TX / Remote", "Multi-Payer"]}
-                        />
-                        <JobCard
-                            department="Dispute Resolution"
-                            title="IDR & Appeals Specialist"
-                            tags={["Full-Time", "Houston, TX", "NSA / Payer Disputes"]}
-                        />
-                        <JobCard
-                            department="Operations"
-                            title="Payment Posting & Reconciliation Associate"
-                            tags={["Full-Time", "Remote Available", "ERA Processing"]}
-                        />
+                        {openings.jobs?.map((job: any, idx: number) => (
+                            <JobCard
+                                key={idx}
+                                department={job.department}
+                                title={job.title}
+                                tags={job.tags}
+                            />
+                        ))}
                     </div>
 
                 </div>

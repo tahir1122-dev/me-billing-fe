@@ -1,14 +1,26 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
-import seoContent from "@/data/seo-content.json";
 
-export const metadata: Metadata = {
+import { PageContentService } from "@/services/pageContent.service";
+import { Metadata, ResolvingMetadata } from "next";
+
+
+export async function generateMetadata(
+    { params }: any,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    const pageData = await PageContentService.getPage("specialties");
+    return {
+        title: pageData?.seo_title || "Our Specialties | Me Billing",
+        description: pageData?.seo_description || "Specialty Depth That Changes Everything.",
+    };
+}
+export const oldMetadata = {
     title: "Our Specialties | Me Billing",
     description: "Specialty Depth That Changes Everything. 24 clinical specialties and facility types.",
 };
 
-const { specialtiesPage } = seoContent;
+
 
 const arrowIconSVG = (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -23,8 +35,18 @@ const playIconSVG = (
     </svg>
 );
 
-export default function SpecialtiesPage() {
-    const { hero, stats, groupBilling, walkthrough, institutionalBilling, labSpecialties } = specialtiesPage;
+export default async function SpecialtiesPage() {
+    const pageData = await PageContentService.getPage("specialties");
+    const sections = pageData?.sections || {};
+    const hero = sections["Hero"] || {};
+    const stats = sections["Stats"] || {};
+    const groupBilling = sections["GroupBilling"] || {};
+    const walkthrough = sections["Walkthrough"] || {};
+    const institutionalBilling = sections["InstitutionalBilling"] || {};
+    const labSpecialties = sections["LabSpecialties"] || {};
+    if (!pageData) return null;
+
+    
 
     return (
         <main className="flex-1 w-full bg-white font-outfit">
@@ -91,7 +113,7 @@ export default function SpecialtiesPage() {
                 <div className="w-full border-b border-gray-200/70">
                     <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="grid grid-cols-2 lg:grid-cols-5 py-8 lg:py-10 gap-y-6">
-                            {stats.map((stat, idx) => (
+                            {stats?.map((stat: any, idx: number) => (
                                 <div
                                     key={idx}
                                     className={`flex flex-col items-center justify-center text-center px-2 ${idx < stats.length - 1 ? "lg:border-r lg:border-gray-200/70" : ""
@@ -125,7 +147,7 @@ export default function SpecialtiesPage() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                        {groupBilling.cards.map((card, idx) => {
+                        {groupBilling.cards?.map((card: any, idx: number) => {
                             const isGoldBorder = idx % 3 === 1;
                             const cardNumber = String(idx + 1).padStart(2, "0");
                             return (
@@ -161,7 +183,7 @@ export default function SpecialtiesPage() {
 
                                         {/* Tag / Badge items arranged perfectly */}
                                         <div className="flex flex-wrap gap-2 mt-auto">
-                                            {card.badges.map((badge, bIdx) => (
+                                            {card.badges?.map((badge: any, bIdx: number) => (
                                                 <span
                                                     key={bIdx}
                                                     className="bg-[#E6F0EB] text-[#1A6B3A] text-[11px] font-semibold px-2.5 py-1.5 rounded font-outfit whitespace-nowrap"
@@ -230,7 +252,7 @@ export default function SpecialtiesPage() {
                     <div className="flex flex-col gap-6 lg:gap-8 max-w-7xl mx-auto">
                         {/* Top row: 3 cards */}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                            {institutionalBilling.cards.slice(0, 3).map((card, idx) => (
+                            {institutionalBilling.cards.slice(0, 3)?.map((card: any, idx: number) => (
                                 <article
                                     key={idx}
                                     style={{ backgroundColor: "#0C3318" }}
@@ -266,7 +288,7 @@ export default function SpecialtiesPage() {
 
                                     {/* Dark green pill badges matching reference screenshot */}
                                     <div className="flex flex-wrap gap-2 pt-1">
-                                        {card.badges.map((badge, bIdx) => (
+                                        {card.badges?.map((badge: any, bIdx: number) => (
                                             <span
                                                 key={bIdx}
                                                 className="bg-[#113B1D]/90 text-[#C8920A] text-[11px] font-medium px-2.5 py-1 rounded font-outfit border border-white/5"
@@ -281,7 +303,7 @@ export default function SpecialtiesPage() {
 
                         {/* Bottom row: 2 wider cards expanding perfectly to fit matching bounds */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                            {institutionalBilling.cards.slice(3, 5).map((card, idx) => (
+                            {institutionalBilling.cards.slice(3, 5)?.map((card: any, idx: number) => (
                                 <article
                                     key={idx}
                                     style={{ backgroundColor: "#0C3318" }}
@@ -317,7 +339,7 @@ export default function SpecialtiesPage() {
 
                                     {/* Dark green pill badges matching reference screenshot */}
                                     <div className="flex flex-wrap gap-2 pt-1">
-                                        {card.badges.map((badge, bIdx) => (
+                                        {card.badges?.map((badge: any, bIdx: number) => (
                                             <span
                                                 key={bIdx}
                                                 className="bg-[#113B1D]/90 text-[#C8920A] text-[11px] font-medium px-2.5 py-1 rounded font-outfit border border-white/5"
@@ -352,7 +374,7 @@ export default function SpecialtiesPage() {
 
                     {/* 2x2 Grid exactly matching card sizing, equal spacing, and pill layout */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl">
-                        {labSpecialties.cards.map((card, idx) => {
+                        {labSpecialties.cards?.map((card: any, idx: number) => {
                             // Assign matching premium inline SVG style icons for each title based on reference style
                             let iconSVG = null;
                             if (idx === 0) {
@@ -437,7 +459,7 @@ export default function SpecialtiesPage() {
                                     {/* Subtle internal divider line and chips container exactly replicating reference */}
                                     <div className="pt-4 border-t border-gray-200/50 mt-auto">
                                         <div className="flex flex-wrap gap-2">
-                                            {card.badges.map((badge, bIdx) => (
+                                            {card.badges?.map((badge: any, bIdx: number) => (
                                                 <span
                                                     key={bIdx}
                                                     className="bg-[#FAF3E0] text-[#C8920A] text-[11px] font-medium px-2.5 py-1 rounded-md font-outfit"

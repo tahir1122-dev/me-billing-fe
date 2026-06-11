@@ -14,6 +14,9 @@ function DynamicFieldRenderer({
     onChange: (path: string[], value: any) => void 
 }) {
     if (typeof data === "string") {
+        const isImageUrl = data.match(/\.(jpeg|jpg|gif|png|svg|webp)$/i) || (path.length > 0 && path[path.length - 1].toLowerCase().includes('image')) || (path.length > 0 && path[path.length - 1].toLowerCase().includes('poster'));
+        const isVideoUrl = data.match(/\.(mp4|webm|ogg)$/i) || (path.length > 0 && path[path.length - 1].toLowerCase().includes('video'));
+
         // If it's a long string, use a textarea, else an input
         if (data.length > 80 || path.includes("description") || path.includes("content") || path.includes("body")) {
             return (
@@ -26,12 +29,24 @@ function DynamicFieldRenderer({
             );
         }
         return (
-            <input
-                type="text"
-                className="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500 font-outfit text-sm"
-                value={data}
-                onChange={(e) => onChange(path, e.target.value)}
-            />
+            <div className="space-y-2">
+                <input
+                    type="text"
+                    className="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500 font-outfit text-sm"
+                    value={data}
+                    onChange={(e) => onChange(path, e.target.value)}
+                />
+                {isImageUrl && data && (
+                    <div className="mt-2 rounded overflow-hidden border border-gray-200 inline-block bg-gray-100 p-1 max-w-sm">
+                        <img src={data} alt="Preview" className="h-24 w-auto object-contain" onError={(e) => e.currentTarget.style.display = 'none'} />
+                    </div>
+                )}
+                {isVideoUrl && data && (
+                    <div className="mt-2 rounded overflow-hidden border border-gray-200 inline-block bg-gray-100 p-1 max-w-sm">
+                        <video src={data} className="h-24 w-auto object-contain" controls preload="metadata" />
+                    </div>
+                )}
+            </div>
         );
     }
     
