@@ -47,7 +47,7 @@ const homePracticeFinder = {
             id: "hand-off-billing-1",
             badge: "Full Outsourcing",
             badgeColor: "#C8920A",
-            image: "/images/service 2.jpg",
+            image: "https://me-billing-fe.vercel.app/images/service 2.jpg",
             title: "We want to hand off billing entirely",
             description: "One accountable partner from patient registration through final payment, no vendor gaps.",
         },
@@ -55,7 +55,7 @@ const homePracticeFinder = {
             id: "aged-ar",
             badge: "Revenue Recovery",
             badgeColor: "#C8920A",
-            image: "/images/about us team.jpg",
+            image: "https://me-billing-fe.vercel.app/images/about us team.jpg",
             title: "We have aged A/R we can't seem to move",
             description: "Old claims recovery, denial management, and formal appeals that convert dormant receivables into deposits.",
         },
@@ -63,7 +63,7 @@ const homePracticeFinder = {
             id: "audit-risk",
             badge: "Compliance & Risk",
             badgeColor: "#C8920A",
-            image: "/images/service 3.jpg",
+            image: "https://me-billing-fe.vercel.app/images/service 3.jpg",
             title: "We're worried about an audit or recoupment",
             description: "Proactive coding audits, HCC validation, and CDI reviews — before a payer finds the gap.",
         },
@@ -71,7 +71,7 @@ const homePracticeFinder = {
             id: "hand-off-billing-2",
             badge: "Provider Lifecycle",
             badgeColor: "#C8920A",
-            image: "/images/bussines women.jpg",
+            image: "https://me-billing-fe.vercel.app/images/bussines women.jpg",
             title: "We're onboarding providers and billing is stalling",
             description: "Enrollment across 90+ payer networks so credentialing gaps never become billing gaps.",
         },
@@ -79,7 +79,7 @@ const homePracticeFinder = {
             id: "hand-off-billing-3",
             badge: "Complex Claims · Premium",
             badgeColor: "#C8920A",
-            image: "/images/sales.png",
+            image: "https://me-billing-fe.vercel.app/images/sales.png",
             title: "We have out-of-network or injury claim disputes",
             description: "Workers' comp, NSA IDR, claims negotiation, arbitration, and mediation — all in-house.",
         },
@@ -87,7 +87,7 @@ const homePracticeFinder = {
             id: "hand-off-billing-4",
             badge: "Financial Accuracy",
             badgeColor: "#C8920A",
-            image: "/images/doc 2.png",
+            image: "https://me-billing-fe.vercel.app/images/doc 2.png",
             title: "We think payers are underpaying us",
             description: "Daily payment reconciliation against contracted rates — every variance identified and pursued.",
         },
@@ -115,7 +115,7 @@ const homeContact = {
             { id: "queries", label: "MESSAGE", type: "textarea", placeholder: "How can we help?", half: false },
         ],
         submitLabel: "Submit",
-        image: "/images/service 4.jpg",
+        image: "https://me-billing-fe.vercel.app/images/service 4.jpg",
         imageBadge: "The Revenue Gap",
     },
 };
@@ -163,7 +163,7 @@ const homeProof = {
 const footerData = {
     companyInfo: {
         logo: {
-            src: "/images/Logo2.png",
+            src: "https://me-billing-fe.vercel.app/images/Logo2.png",
             alt: "MeBilling Logo",
             width: 160,
             height: 50
@@ -171,10 +171,10 @@ const footerData = {
         description: "MeBilling provides end-to-end Revenue Cycle Management solutions for U.S. healthcare providers, including medical billing, coding, denial management, payment posting, A/R follow-up, credentialing, and compliance support. We currently serve clients in Texas, Louisiana, Arkansas, Oklahoma, Alabama, and New Jersey."
     },
     socialLinks: [
-        { href: "https://www.linkedin.com/company/mebilling/", label: "LinkedIn", icon: "/images/linkedin logo.svg" },
-        { href: "https://www.facebook.com/mebilling/", label: "Facebook", icon: "/images/facebook logo.svg" },
-        { href: "https://twitter.com/MeBillingSol", label: "Twitter", icon: "/images/Twitter logo.svg" },
-        { href: "#", label: "Instagram", icon: "/images/instagram logo.svg" },
+        { href: "https://www.linkedin.com/company/mebilling/", label: "LinkedIn", icon: "https://me-billing-fe.vercel.app/images/linkedin logo.svg" },
+        { href: "https://www.facebook.com/mebilling/", label: "Facebook", icon: "https://me-billing-fe.vercel.app/images/facebook logo.svg" },
+        { href: "https://twitter.com/MeBillingSol", label: "Twitter", icon: "https://me-billing-fe.vercel.app/images/Twitter logo.svg" },
+        { href: "#", label: "Instagram", icon: "https://me-billing-fe.vercel.app/images/instagram logo.svg" },
     ],
     pageLinks: [
         { label: "Home", href: "/" },
@@ -184,10 +184,10 @@ const footerData = {
         { label: "About Us", href: "/about" },
     ],
     contactItems: [
-        { icon: "/images/call.svg", text: "US: (346) 616-0008", href: "tel:+13466160008" },
-        { icon: "/images/call.svg", text: "Global: +92 316 433 3497", href: "tel:+923164333497" },
-        { icon: "/images/Icons.svg", text: "info@mebilling.com", href: "mailto:info@mebilling.com" },
-        { icon: "/images/loc.svg", text: "100 Glenborough Dr, Suite 400\nHouston, TX 77067, USA" },
+        { icon: "https://me-billing-fe.vercel.app/images/call.svg", text: "US: (346) 616-0008", href: "tel:+13466160008" },
+        { icon: "https://me-billing-fe.vercel.app/images/call.svg", text: "Global: +92 316 433 3497", href: "tel:+923164333497" },
+        { icon: "https://me-billing-fe.vercel.app/images/Icons.svg", text: "info@mebilling.com", href: "mailto:info@mebilling.com" },
+        { icon: "https://me-billing-fe.vercel.app/images/loc.svg", text: "100 Glenborough Dr, Suite 400\nHouston, TX 77067, USA" },
     ],
     bottomBar: {
         copyright: "© 2026 MeBilling Inc. All rights reserved.",
@@ -516,32 +516,32 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                 "headingHighlight": "Every Day.",
                 "items": [
                         {
-                                "icon": "/images/aboutIcon1 .png",
+                                "icon": "https://me-billing-fe.vercel.app/images/aboutIcon1 .png",
                                 "title": "Accuracy First",
                                 "description": "We get it right the first time — every code, every claim, every encounter."
                             },
                         {
-                                "icon": "/images/aboutIcon2.png",
+                                "icon": "https://me-billing-fe.vercel.app/images/aboutIcon2.png",
                                 "title": "Full Transparency",
                                 "description": "You always know where your money is, why a claim was denied, and what's being done about it."
                             },
                         {
-                                "icon": "/images/aboutIcon3.png",
+                                "icon": "https://me-billing-fe.vercel.app/images/aboutIcon3.png",
                                 "title": "People-Centred",
                                 "description": "Behind every claim is a patient and a provider. We never lose sight of that human dimension."
                             },
                         {
-                                "icon": "/images/aboutIcon4.png",
+                                "icon": "https://me-billing-fe.vercel.app/images/aboutIcon4.png",
                                 "title": "Accountability",
                                 "description": "If something goes wrong, we own it and fix it. Our clients don't chase us for answers."
                             },
                         {
-                                "icon": "/images/aboutIcon5.png",
+                                "icon": "https://me-billing-fe.vercel.app/images/aboutIcon5.png",
                                 "title": "Integrity",
                                 "description": "We do the right thing — in coding, compliance, and client relationships — always."
                             },
                         {
-                                "icon": "/images/aboutIcon6.png",
+                                "icon": "https://me-billing-fe.vercel.app/images/aboutIcon6.png",
                                 "title": "Operational Discipline",
                                 "description": "Consistency is the foundation of a reliable revenue cycle. Our workflows are built to perform at scale."
                             }
@@ -576,60 +576,8 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                         "Secure Access Controls"
                 ]
             },
-        "Team": {
-                "headingPart1": "Meet",
-                "headingHighlight": "Our Team",
-                "description": "Our team of specialists can handle any digital project or challenge thrown our way, and we mean it. From high-performance websites to mobile apps and integrated marketing campaigns, our work is beautiful, functional, and always focused on meeting your goals.",
-                "members": [
-                        {
-                                "image": "/images/team 1.jpg",
-                                "name": "Ali Khan",
-                                "role": "CEO & Chairman"
-                            },
-                        {
-                                "image": "/images/team 2.jpg",
-                                "name": "Warmad Ilyas",
-                                "role": "Chief Operating Officer"
-                            },
-                        {
-                                "textOnly": true,
-                                "name": "Jnyn Hanna",
-                                "role": "Vice President - USA",
-                                "bio": "John Hanna is an experienced M&A strategist/advisor, CEO and Merchant Banker with a strong track record in building, acquiring, and scaling businesses."
-                            },
-                        {
-                                "image": "/images/team 3.jpg",
-                                "name": "Awarew Edelstein",
-                                "role": "Associate Director"
-                            },
-                        {
-                                "image": "/images/team 4.jpg",
-                                "name": "Liz Marahall",
-                                "role": "M&A Coordinator"
-                            },
-                        {
-                                "image": "/images/team 5 .jpg",
-                                "name": "Chrlotte Fahy",
-                                "role": "M&A Coordinator"
-                            },
-                        {
-                                "image": "/images/team 6.jpg",
-                                "name": "Sue Robnson",
-                                "role": "M&A Coordinator"
-                            },
-                        {
-                                "image": "/images/team 7.jpg",
-                                "name": "Saantha Baker",
-                                "role": "M&A Coordinator"
-                            }
-                ]
-            },
-        "Tour": {
-                "tagline": "Take a quick tour of",
-                "heading": "mebilling EHR+ platform",
-                "description": "See how our all-in-one EHR+ platform helps you save time, get paid faster, and grow your practice."
-            }
-    }
+            FooterSection: footerData
+        }
     },
     specialties: {
         slug: 'specialties',
@@ -642,7 +590,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                 "titlePart1": "Specialty Depth That",
                 "titleHighlight": "Changes Everything.",
                 "description": "24 clinical specialties and facility types. Each one staffed by a dedicated billing team that works that specialty every single day — not a generalist queue that rotates between them. The difference shows in your clean claim rate.",
-                "image": "/images/specialites bg.jpg",
+                "image": "https://me-billing-fe.vercel.app/images/specialites bg.jpg",
                 "buttonPrimary": "Talk to a Specialist →",
                 "buttonSecondary": "View Services →"
             },
@@ -851,7 +799,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                 "titlePart1": "See how specialty-exclusive billing",
                 "titleHighlight": "changes the numbers.",
                 "description": "When oncology coders only code oncology, the difference is measurable — in claim accuracy, payer compliance, and revenue captured.",
-                "image": "/images/testnomial.png"
+                "image": "https://me-billing-fe.vercel.app/images/testnomial.png"
             },
         "InstitutionalBilling": {
                 "tagline": "— Facility & Institutional Billing",
@@ -870,7 +818,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                                         "Trauma coding",
                                         "Split billing management"
                                 ],
-                                "icon": "/images/first .png"
+                                "icon": "https://me-billing-fe.vercel.app/images/first .png"
                             },
                         {
                                 "category": "Institutional",
@@ -883,7 +831,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                                         "Trauma coding",
                                         "Split billing management"
                                 ],
-                                "icon": "/images/second.png"
+                                "icon": "https://me-billing-fe.vercel.app/images/second.png"
                             },
                         {
                                 "category": "Institutional",
@@ -896,7 +844,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                                         "Trauma coding",
                                         "Split billing management"
                                 ],
-                                "icon": "/images/third.png"
+                                "icon": "https://me-billing-fe.vercel.app/images/third.png"
                             },
                         {
                                 "category": "Institutional",
@@ -909,7 +857,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                                         "Acuity-based E/M coding",
                                         "Acuity-based E/M coding"
                                 ],
-                                "icon": "/images/fourth.png"
+                                "icon": "https://me-billing-fe.vercel.app/images/fourth.png"
                             },
                         {
                                 "category": "Institutional",
@@ -922,7 +870,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                                         "Acuity-based E/M coding",
                                         "Acuity-based E/M coding"
                                 ],
-                                "icon": "/images/fifth.png"
+                                "icon": "https://me-billing-fe.vercel.app/images/fifth.png"
                             }
                 ]
             },
@@ -977,8 +925,9 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                                 ]
                             }
                 ]
-            }
-    }
+            },
+            FooterSection: footerData
+        }
     },
     services: {
         slug: 'services',
@@ -1002,7 +951,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                 "cards": [
                         {
                                 "style": "image",
-                                "image": "/images/service 1.jpg",
+                                "image": "https://me-billing-fe.vercel.app/images/service 1.jpg",
                                 "badge": "COMPLIANCE",
                                 "title": "Audit Services",
                                 "description": "A billing audit is a revenue recovery tool, not just a compliance checkbox. Our AAPC-certified auditors examine coding accuracy, documentation quality, charge capture, and denial patterns to surface exactly where revenue is quietly leaving your practice — and how to stop it.",
@@ -1014,7 +963,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                             },
                         {
                                 "style": "image",
-                                "image": "/images/service 2.jpg",
+                                "image": "https://me-billing-fe.vercel.app/images/service 2.jpg",
                                 "badge": "PROVIDER LIFECYCLE",
                                 "title": "Enrollment & Credentialing",
                                 "description": "Every day a provider waits on credentialing is a day your practice cannot bill. We manage the complete enrollment lifecycle across 90+ payer networks — from initial application through CAQH attestation, license renewals, and revalidation — with billing and credentialing handled by the same team so gaps are caught immediately.",
@@ -1026,7 +975,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                             },
                         {
                                 "style": "image",
-                                "image": "/images/service 3.jpg",
+                                "image": "https://me-billing-fe.vercel.app/images/service 3.jpg",
                                 "badge": "CLINICAL ACCURACY",
                                 "title": "Medical Coding",
                                 "description": "One wrong modifier or aa missed digit can turn a billable service into a denial. Our CPC and CPMA-certified coders are organized by specialty — oncology coders code oncology — applying ICD-10, CPT, and HCPCS codes with the depth and payer-specific precision that generalist teams can't match.",
@@ -1038,7 +987,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                             },
                         {
                                 "style": "image",
-                                "image": "/images/service 4.jpg",
+                                "image": "https://me-billing-fe.vercel.app/images/service 4.jpg",
                                 "badge": "END-TO-END RCM",
                                 "title": "Revenue Cycle Management",
                                 "description": "From patient registration to final payment posted — MeBilling manages the complete billing lifecycle with no subcontractors and no accountability gaps. Our 98%+ clean claim rate means fewer denials, faster cash, and a revenue cycle that performs at the level your practice earns.",
@@ -1050,7 +999,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                             },
                         {
                                 "style": "image",
-                                "image": "/images/doc 2.png",
+                                "image": "https://me-billing-fe.vercel.app/images/doc 2.png",
                                 "badge": "NSA / IDR",
                                 "title": "Federal IDR (No Surprises Act)",
                                 "description": "The No Surprises Act created a formal legal pathway — Independent Dispute Resolution — for providers to challenge payer underpayments on out-of-network claims. Most practices leave this revenue uncollected simply because they lack the bandwidth to pursue it. We manage the entire IDR process in-house, from eligibility screening to payment enforcement.",
@@ -1062,7 +1011,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                             },
                         {
                                 "style": "image",
-                                "image": "/images/about Bg .png",
+                                "image": "https://me-billing-fe.vercel.app/images/about Bg .png",
                                 "badge": "RECOVERY",
                                 "title": "Old Claims Recovery",
                                 "description": "Claims at 90, 120, or 180 days are not automatically uncollectable — but they need a different approach than standard A/R follow-up. Our recovery team categorises outstanding claims by recoverability, rebuilds the documentation trail needed for late appeals, and collects revenue that most practices have already written off.",
@@ -1074,7 +1023,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                             },
                         {
                                 "style": "image",
-                                "image": "/images/carrersbg.png",
+                                "image": "https://me-billing-fe.vercel.app/images/carrersbg.png",
                                 "badge": "FINANCIAL OPS",
                                 "title": "Payment Posting & Reconciliation",
                                 "description": "Payment posting is the financial record of your practice — not clerical admin. Every ERA processed and every remittance reconciled establishes whether payers are actually paying what they owe. We post daily, validate against contracted rates, and pursue every variance — your books reflect reality, not assumption.",
@@ -1086,7 +1035,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                             },
                         {
                                 "style": "image",
-                                "image": "/images/specialites bg.jpg",
+                                "image": "https://me-billing-fe.vercel.app/images/specialites bg.jpg",
                                 "badge": "LIABILITY & INJURY",
                                 "title": "Injury Claims Management",
                                 "description": "Injury billing — workers' compensation, motor vehicle accidents, personal injury — operates under a completely different framework from standard insurance billing. Lien structures, letter of protection arrangements, and state-specific workers' comp regulations require dedicated expertise that most billing teams simply don't carry.",
@@ -1098,7 +1047,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                             },
                         {
                                 "style": "image",
-                                "image": "/images/bussines women.jpg",
+                                "image": "https://me-billing-fe.vercel.app/images/bussines women.jpg",
                                 "badge": "PAYER RELATIONS",
                                 "title": "Claims Negotiation",
                                 "description": "Many payer disputes can be resolved through skilled direct negotiation — before formal appeals or IDR become necessary. Our negotiation team engages payers directly on underpayments, global claim disputes, and systematic contract rate deviations, building fact-based cases grounded in your contractual terms and market benchmarks.",
@@ -1110,7 +1059,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                             },
                         {
                                 "style": "image",
-                                "image": "/images/resources  bg.jpg",
+                                "image": "https://me-billing-fe.vercel.app/images/resources  bg.jpg",
                                 "badge": "DENIAL RESOLUTION",
                                 "title": "Appeals & Reconsideration",
                                 "description": "Every denial has a case to be made — if you know how to make it. Our appeals process is built claim by claim, not template by template. We categorise each denial by root cause, identify the strongest reconsideration pathway, and construct appeals backed by clinical documentation and coding evidence tailored to the specific rejection reason.",
@@ -1122,7 +1071,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                             },
                         {
                                 "style": "image",
-                                "image": "/images/Bundled Solutions bg .png",
+                                "image": "https://me-billing-fe.vercel.app/images/Bundled Solutions bg .png",
                                 "badge": "FORMAL DISPUTE",
                                 "title": "Arbitration & Mediation",
                                 "description": "When negotiation and formal appeals are exhausted, arbitration and mediation are the next escalation — and they require a different kind of preparation. We manage both in-house, assembling the evidentiary record and procedural submissions needed to pursue disputed claims through formal channels without the cost of outside counsel.",
@@ -1134,7 +1083,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                             },
                         {
                                 "style": "image",
-                                "image": "/images/herobg.png",
+                                "image": "https://me-billing-fe.vercel.app/images/herobg.png",
                                 "badge": "COMPLIANCE",
                                 "title": "State Reporting",
                                 "description": "State-level reporting requirements vary by jurisdiction and payer type — and missing them can affect both reimbursement and licensure. We monitor reporting obligations specific to your operating states and manage all required submissions on your behalf, so regulatory deadlines never fall through the cracks of your billing operation.",
@@ -1145,8 +1094,9 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                                 ]
                             }
                 ]
-            }
-    }
+            },
+            FooterSection: footerData
+        }
     },
     solutions: {
         slug: 'solutions',
@@ -1159,7 +1109,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                 "titlePart1": "Six Solutions Built Around",
                 "titleHighlight": "the Outcome You Need.",
                 "description": "Not every practice needs every service. Our solutions bundle our capabilities around a specific result — so you engage exactly what your revenue cycle requires, and nothing it doesn't.",
-                "image": "/images/Bundled Solutions bg .png"
+                "image": "https://me-billing-fe.vercel.app/images/Bundled Solutions bg .png"
             },
         "Walkthrough": {
                 "tagline": "— Which Solution Fits?",
@@ -1167,7 +1117,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                 "titleHighlight": "needs every service.",
                 "description": "Watch a 2-minute walkthrough of our six solution bundles and discover which one matches your current billing challenges.",
                 "buttonText": "Talk to a Specialist →",
-                "image": "/images/sales.png"
+                "image": "https://me-billing-fe.vercel.app/images/sales.png"
             },
         "PackagesSection": {
                 "tagline": "— Solution Packages",
@@ -1277,8 +1227,9 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                                 "bestForText": "High-volume practices, mixed payer environments, accuracy-focused operations"
                             }
                 ]
-            }
-    }
+            },
+            FooterSection: footerData
+        }
     },
     careers: {
         slug: 'careers',
@@ -1367,7 +1318,8 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                         "tags": ["Full-Time", "Remote Available", "ERA Processing"]
                     }
                 ]
-            }
+            },
+            FooterSection: footerData
         }
     },
 
@@ -1376,7 +1328,107 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
         seo_title: "Home | MeBilling",
         seo_description: "U.S. Healthcare Revenue Cycle Specialists. MeBilling helps practices recover more with expert-led medical billing solutions.",
         sections: {
-            Hero: homeHero,
+                        Hero: homeHero,
+            InsightSection1: {
+          "tagline": "— The Insight",
+          "heading1": "Watch how MeBilling turns",
+          "headingHighlight": "billing complexity",
+          "heading2": "into clean cash flow.",
+          "body": "A 2-minute overview of how our specialty-organized teams, in-house dispute pathway, and real-time dashboards work together to protect every dollar your practice earns.",
+          "cta": {
+                    "label": "Schedule a Free Assessment",
+                    "href": "/contact"
+          },
+          "image": "https://me-billing-fe.vercel.app/images/service 1.jpg"
+},
+            InsightSection2: {
+          "tagline": "— The Insight",
+          "badgeLabel": "The Revenue Gap",
+          "heading1": "Many practices lose revenue through",
+          "heading2": " ",
+          "headingHighlight": "denials, underpayments,",
+          "heading3": " missed follow-up, and documentation gaps.",
+          "body": "MeBilling helps identify and recover that revenue. Not from poor clinical outcomes, but from billing complexity that compounds silently. Payer policy changes, denial cycles, underpayment patterns.",
+          "cta": {
+                    "label": "See How We Fix It",
+                    "href": "/solutions"
+          },
+          "image": "https://me-billing-fe.vercel.app/images/bussines women.jpg"
+},
+            RevenueLeakSection: {
+          "tagline": "— Revenue Pressure Points",
+          "heading": "Four places ",
+          "headingHighlight": "revenue",
+          "heading2": " usually slips away.",
+          "subtext": "These are the pressure points we prioritize first because they create the fastest path from insight to cash recovery.",
+          "items": [
+                    {
+                              "stat": "65%",
+                              "title": "Unappealed Denials",
+                              "description": "Up to 65% of denied claims are recoverable if worked with the right documentation.",
+                              "icon": "🔄"
+                    },
+                    {
+                              "stat": "+5%",
+                              "title": "Unreconciled Underpayments",
+                              "description": "Payments posted below contracted rates and never questioned.",
+                              "icon": "💰"
+                    },
+                    {
+                              "stat": "90",
+                              "title": "Aging A/R with No Follow-Up",
+                              "description": "Claims past 90 days require a different recovery approach.",
+                              "icon": "📅"
+                    },
+                    {
+                              "stat": "75%",
+                              "title": "Accumulated Compliance Risk",
+                              "description": "Documentation gaps can silently accumulate until payers find them first.",
+                              "icon": "⚠️"
+                    }
+          ]
+},
+            ApproachSection: {
+          "tagline": "— The Approach",
+          "heading": "Built differently. Accountable to ",
+          "headingHighlight": "outcomes,",
+          "heading2": " not activity.",
+          "body": "MeBilling is not a billing clearinghouse. It is a managed revenue cycle practice organized by clinical specialty, end-to-end dispute resolution pathway, and held accountable to the metrics your practice actually tracks.",
+          "pillars": [
+                    {
+                              "number": "01",
+                              "title": "Specialty-organized teams. Not shared queues.",
+                              "body": "Every account is staffed by specialists who work within that clinical discipline every day — oncology coders code oncology, interventional pain coders code pain management. No rotation, no generalists, no knowledge spread thin.",
+                              "note": "Applied across 15 professional billing specialties, 5 institutional types, and 4 laboratory billing tracks — 24 disciplines total."
+                    },
+                    {
+                              "number": "02",
+                              "title": "In-house only. No subcontracting, ever.",
+                              "body": "Every claim, every appeal, every IDR proceeding, every arbitration filing managed by our own CPMA and CPC-certified staff. No third-party handoffs, no accountability gaps. One team, one number to call.",
+                              "note": "250+ certified billing specialists. 90+ payer networks. Houston HQ with two global delivery centers — all in-house."
+                    },
+                    {
+                              "number": "03",
+                              "title": "The full dispute pathway, internally.",
+                              "body": "Most billing companies stop at the appeal. MeBilling manages every stage: direct negotiation, formal appeals, Federal IDR (NSA), arbitration, and mediation — all in-house, without routing a single dispute to outside counsel.",
+                              "note": "12 service lines covering the complete billing lifecycle — from pre-registration through formal dispute resolution."
+                    }
+          ],
+          "ctas": [
+                    {
+                              "label": "View all services →",
+                              "href": "/services"
+                    },
+                    {
+                              "label": "View all solutions →",
+                              "href": "/solutions"
+                    },
+                    {
+                              "label": "View all resources →",
+                              "href": "/resources"
+                    }
+          ]
+},
             PracticeFinderSection: homePracticeFinder,
             HomeContactSection: homeContact,
             ProofSection: homeProof,
@@ -1397,7 +1449,14 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
         seo_title: "Resources | Me Billing",
         seo_description: "Insights, Research & Real-World Results. Case studies, industry articles, events, and press releases.",
         sections: {
-            ResourcesTabs: resourcesTabsData
+            Hero: {
+                tagline: "RESOURCES",
+                headingPart1: "Insights, Research &",
+                headingHighlight: "Real-World Results.",
+                description: "Case studies, industry articles, events, and press releases – everything MeBilling publishes to help healthcare providers understand and improve their revenue cycle."
+            },
+            ResourcesTabs: resourcesTabsData,
+            FooterSection: footerData
         }
     },
     sales: {
@@ -1405,7 +1464,27 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
         seo_title: "Get a Demo | Me Billing",
         seo_description: "Get a personalized demo of MeBilling. Streamline practice operations, enhance patient care, and boost your bottom line.",
         sections: {
-            SalesPillarsAccordion: salesPillarsData
+            SalesPillarsAccordion: salesPillarsData,
+            FooterSection: footerData
+        }
+    },
+
+
+
+    contact: {
+        slug: "contact",
+        seo_title: "Contact Us | Me Billing",
+        seo_description: "Get in touch with our team.",
+        sections: {
+            FooterSection: footerData
+        }
+    },
+    "privacy-policy": {
+        slug: "privacy-policy",
+        seo_title: "Privacy Policy | Me Billing",
+        seo_description: "MeBilling Privacy Policy.",
+        sections: {
+            FooterSection: footerData
         }
     }
 };

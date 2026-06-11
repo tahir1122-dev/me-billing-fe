@@ -341,7 +341,7 @@ export default function AdminPageManagement({
                                                 {sectionName}
                                             </span>
                                             <span className="font-semibold text-gray-800">
-                                                {sectionName.replace(/([A-Z])/g, ' $1').trim()} Section
+                                                {sectionName.endsWith('Section') ? sectionName.replace(/([A-Z])/g, ' $1').trim() : sectionName.replace(/([A-Z])/g, ' $1').trim() + ' Section'}
                                             </span>
                                         </div>
                                         <svg 

@@ -101,9 +101,23 @@ export class PageContentService {
             console.error("Error fetching sections:", sectionsError);
         }
 
-        // 4. Convert sections into dictionary mapping
+        // 4. Convert sections into dictionary mapping and enforce order
         const sections: Record<string, any> = {};
-        if (sectionsData) {
+        const expectedSections = pageComponents[slug] || [];
+
+        if (expectedSections.length > 0) {
+            expectedSections.forEach(sectionName => {
+                const dbSection = sectionsData?.find(s => s.section_name === sectionName);
+                if (dbSection) {
+                    sections[sectionName] = dbSection.content;
+                } else if (defaultPageContent[slug]?.sections?.[sectionName]) {
+                    // Fallback to default if not in DB
+                    sections[sectionName] = defaultPageContent[slug].sections[sectionName];
+                } else {
+                    sections[sectionName] = {};
+                }
+            });
+        } else if (sectionsData) {
             sectionsData.forEach(section => {
                 sections[section.section_name] = section.content;
             });

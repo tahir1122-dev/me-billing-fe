@@ -6,8 +6,10 @@ import FooterSection from "@/components/sections/FooterSection";
 
 export default function MainLayoutWrapper({
     children,
+    footerData,
 }: {
     children: React.ReactNode;
+    footerData?: any;
 }) {
     const pathname = usePathname();
     const isAdminRoute = pathname?.startsWith("/admin");
@@ -20,7 +22,7 @@ export default function MainLayoutWrapper({
         <>
             <Navbar />
             {children}
-            <FooterSection />
+            <FooterSection data={footerData} />
         </>
     );
 }
