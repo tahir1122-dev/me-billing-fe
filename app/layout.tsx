@@ -20,11 +20,17 @@ export const metadata: Metadata = {
   description: "Smart, secure billing solutions built for doctors, clinics, and healthcare teams.",
 };
 
-export default function RootLayout({
+import { PageContentService } from "@/services/pageContent.service";
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Fetch home page data for the global footer
+  const homeData = await PageContentService.getPage("home");
+  const footerData = homeData?.sections?.["FooterSection"] || {};
+
   return (
     <html
       lang="en"
@@ -35,7 +41,7 @@ export default function RootLayout({
         className="min-h-full flex flex-col font-outfit text-slate-800 bg-white"
         suppressHydrationWarning
       >
-        <MainLayoutWrapper>
+        <MainLayoutWrapper footerData={footerData}>
           {children}
         </MainLayoutWrapper>
       </body>
