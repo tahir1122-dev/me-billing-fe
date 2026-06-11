@@ -69,7 +69,7 @@ const footerData = {
     ],
     contactItems: [
         { icon: "/images/call.svg", text: "US: (346) 616-0008", href: "tel:+13466160008" },
-        { icon: "/images/call.svg", text: "Global: +92 316 433 3497", href: "tel:+923164333497" },
+        // { icon: "/images/call.svg", text: "Global: +92 316 433 3497", href: "tel:+923164333497" },
         { icon: "/images/Icons.svg", text: "info@mebilling.com", href: "mailto:info@mebilling.com" },
         { icon: "/images/loc.svg", text: "100 Glenborough Dr, Suite 400\nHouston, TX 77067, USA" },
     ],
@@ -191,7 +191,9 @@ export default function FooterSection({ data = {} }: { data?: any }) {
                     <div>
                         <h3 className="text-[17px] font-bold text-[#C8920A] tracking-wide mb-6">Contact Us</h3>
                         <ul className="space-y-5 text-[15px] text-[#819E8C] font-medium">
-                            {content.contactItems.map((item: any, idx: number) => (
+                            {content.contactItems.map((item: any, idx: number) => {
+                                if(idx === 1) return
+                                return (
                                 <li key={idx} className="flex items-center gap-4">
                                     <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#163620] border border-white/5">
                                         <Image
@@ -210,7 +212,7 @@ export default function FooterSection({ data = {} }: { data?: any }) {
                                         <span className="whitespace-pre-line leading-relaxed">{item.text}</span>
                                     )}
                                 </li>
-                            ))}
+                            )})}
                         </ul>
                     </div>
                 </div>

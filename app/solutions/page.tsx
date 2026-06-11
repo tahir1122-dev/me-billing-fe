@@ -197,7 +197,7 @@ export default async function SolutionsPage() {
 
                                         <div className="flex flex-col">
                                             <span className="text-[#1A6B3A] text-[13.5px] font-bold tracking-wide mb-3 block font-outfit">
-                                                What's Included : <span className="font-medium normal-case">{highlightText}</span>
+                                                What's Included: <span className="font-medium normal-case">{highlightText}</span>
                                             </span>
                                             <ul className="flex flex-col gap-2.5 font-outfit">
                                                 {bulletPoints?.map((item: string, i: number) => (
