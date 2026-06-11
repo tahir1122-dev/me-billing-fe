@@ -96,7 +96,7 @@ export default async function ServicesPage() {
                         </div>
                         <div className="relative w-full rounded-[24px] overflow-hidden shadow-xl aspect-[16/10] bg-[#162018]">
                             <video
-                                src="/vedios/video 02.mp4"
+                                src="https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2002.mp4"
                                 poster="/images/service 2.jpg"
                                 controls
                                 className="w-full h-full object-cover opacity-90"
