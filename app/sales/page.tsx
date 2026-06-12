@@ -150,6 +150,7 @@ const ctaIcons = [<TrendIcon key="trend" />, <SearchIcon key="search" />, <Hands
 export default async function SalesPage() {
     const pageData = await PageContentService.getPage("sales");
     const salesPillarsDataCMS = pageData?.sections?.SalesPillarsAccordion || pillarsData;
+    const heroDataCMS = pageData?.sections?.Hero || heroData;
 
     return (
         <main className="flex-1 w-full bg-gradient-to-b from-[#FFFDF5] via-[#FFFDF5]/95 to-[#FFFDF5] font-outfit">
@@ -162,19 +163,19 @@ export default async function SalesPage() {
                         {/* Left: copy */}
                         <div className="text-white">
                             <span className="text-[#C8920A] font-bold tracking-wide text-xs block mb-4 uppercase font-outfit">
-                                {heroData.tagline}
+                                {heroDataCMS.tagline}
                             </span>
                             <h1 className="text-3xl md:text-5xl lg:text-[56px] font-medium leading-tight font-cormorant mb-4">
-                                {heroData.heading} <br />
-                                <span className="text-[#C8920A] italic">{heroData.headingHighlight}</span>
+                                {heroDataCMS.heading} <br />
+                                <span className="text-[#C8920A] italic">{heroDataCMS.headingHighlight}</span>
                             </h1>
                             <p className="mt-2 max-w-lg text-white/80 text-[15px] leading-relaxed font-outfit">
-                                {heroData.subtext}
+                                {heroDataCMS.subtext}
                             </p>
 
                             {/* Feature checklist */}
                             <ul className="mt-7 space-y-3">
-                                {heroData.features.map((item) => (
+                                {heroDataCMS.features.map((item: string) => (
                                     <li key={item} className="flex items-start gap-3 text-[15px] text-white/90 font-outfit">
                                         <span className="mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-[#C8920A] text-black flex-shrink-0">
                                             <CheckIcon />
@@ -186,7 +187,7 @@ export default async function SalesPage() {
 
                             {/* Contact info */}
                             <div className="mt-8 space-y-3 text-[14px] text-white/80">
-                                {heroData.contactItems.map((item) => (
+                                {heroDataCMS.contactItems.map((item: any) => (
                                     <div key={item.text} className="flex items-center gap-3">
                                         <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#1A6B3A] text-white flex-shrink-0">
                                             {getContactIcon(item.type)}
@@ -233,10 +234,10 @@ export default async function SalesPage() {
                         <div className="w-full lg:w-1/2">
                             <div className="relative mx-auto h-[440px] w-full max-w-[700px] overflow-hidden rounded-2xl shadow-lg bg-[#FCFBF5]">
                                 <video
-                                    src="/vedios/video 08.mp4"
+                                    src={salesPillarsDataCMS.video || "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2008.mp4"}
                                     controls
                                     className="object-cover w-full h-full"
-                                    poster="/images/contact.jpg"
+                                    poster={salesPillarsDataCMS.poster || "/images/contact.jpg"}
                                 />
                             </div>
                         </div>

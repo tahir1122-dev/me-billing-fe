@@ -11,15 +11,24 @@ export default function InsightSection2({ data }: { data: any }) {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                     {/* Left: image with badge */}
                     <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-video">
-                        <Image
-                            src={data.image}
-                            alt="The Revenue Gap"
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 1024px) 100vw, 50vw"
-                        />
+                        {data.video ? (
+                            <video
+                                src={data.video}
+                                poster={data.image}
+                                controls
+                                className="w-full h-full object-cover"
+                            />
+                        ) : (
+                            <Image
+                                src={data.image}
+                                alt="The Revenue Gap"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                            />
+                        )}
                         {/* Badge overlay */}
-                        <div className="absolute top-4 left-4">
+                        <div className="absolute top-4 left-4 z-10">
                             <div className="inline-flex items-center gap-2 bg-[#C8920A] text-black text-xs font-bold px-4 py-2 rounded-full font-outfit">
                                 <span className="w-2 h-2 rounded-full bg-black" />
                                 {data.badgeLabel}

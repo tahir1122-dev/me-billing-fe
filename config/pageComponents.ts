@@ -15,7 +15,7 @@ export const pageComponents: Record<string, string[]> = {
     specialties: ["Hero", "Stats", "GroupBilling", "Walkthrough", "InstitutionalBilling", "LabSpecialties", "FooterSection"],
     services: ["Hero", "Scope", "Process", "FooterSection"],
     solutions: ["Hero", "Walkthrough", "PackagesSection", "FooterSection"],
-    resources: ["Hero", "ResourcesTabs", "FooterSection"],
+    resources: ["Hero", "FeaturedVideos", "ResourcesTabs", "FooterSection"],
     careers: ["Hero", "WhyMeBilling", "Openings", "FooterSection"],
     contact: ["Hero", "HomeContactSection", "FooterSection"],
     sales: ["Hero", "SalesPillarsAccordion", "FooterSection"],

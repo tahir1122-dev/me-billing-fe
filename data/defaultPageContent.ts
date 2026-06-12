@@ -799,7 +799,8 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                 "titlePart1": "See how specialty-exclusive billing",
                 "titleHighlight": "changes the numbers.",
                 "description": "When oncology coders only code oncology, the difference is measurable — in claim accuracy, payer compliance, and revenue captured.",
-                "image": "https://me-billing-fe.vercel.app/images/testnomial.png"
+                "image": "https://me-billing-fe.vercel.app/images/testnomial.png",
+                "video": "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2015.mp4"
             },
         "InstitutionalBilling": {
                 "tagline": "— Facility & Institutional Billing",
@@ -1095,6 +1096,14 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                             }
                 ]
             },
+        "Process": {
+            "tagline": "How Our Services Work",
+            "headingPart1": "12 services.",
+            "headingHighlight": "One accountable team.",
+            "description": "See how our specialty-organized billing teams manage the complete revenue cycle — from coding and claims through denial management, IDR, and arbitration — all in-house.",
+            "poster": "/images/service 2.jpg",
+            "video": "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2002.mp4"
+        },
             FooterSection: footerData
         }
     },
@@ -1328,23 +1337,20 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
         seo_title: "Home | MeBilling",
         seo_description: "U.S. Healthcare Revenue Cycle Specialists. MeBilling helps practices recover more with expert-led medical billing solutions.",
         sections: {
-                        Hero: homeHero,
+            Hero: homeHero,
             InsightSection1: {
-          "tagline": "— The Insight",
-          "heading1": "Watch how MeBilling turns",
-          "headingHighlight": "billing complexity",
-          "heading2": "into clean cash flow.",
-          "body": "A 2-minute overview of how our specialty-organized teams, in-house dispute pathway, and real-time dashboards work together to protect every dollar your practice earns.",
-          "cta": {
+                "tagline": "— The Insight",
+                "heading1": "Watch how MeBilling turns",
+                "headingHighlight": "billing complexity",
+                "heading2": "into clean cash flow.",
+                "body": "A 2-minute overview of how our specialty-organized teams, in-house dispute pathway, and real-time dashboards work together to protect every dollar your practice earns.",
+                "cta": {
                     "label": "Schedule a Free Assessment",
                     "href": "/contact"
-          },
-          "image": "https://me-billing-fe.vercel.app/images/service 1.jpg"
-},
+                },
+                "image": "https://me-billing-fe.vercel.app/images/service 1.jpg"
+            },
             InsightSection2: {
-          "tagline": "— The Insight",
-          "badgeLabel": "The Revenue Gap",
-          "heading1": "Many practices lose revenue through",
           "heading2": " ",
           "headingHighlight": "denials, underpayments,",
           "heading3": " missed follow-up, and documentation gaps.",
@@ -1444,6 +1450,52 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
             FaqSection: faqData
         }
     },
+    sales: {
+        slug: "sales",
+        seo_title: "Get a Demo | Me Billing",
+        seo_description: "Get a personalized demo of MeBilling. Streamline practice operations, enhance patient care, and boost your bottom line.",
+        sections: {
+            Hero: {
+                tagline: "— Book Your Demo",
+                heading: "Get a Personalized",
+                headingHighlight: "Demo of MeBilling",
+                subtext: "Streamline practice operations, enhance patient care, and boost your bottom line.",
+                features: [
+                    "Get tailored pricing information",
+                    "Explore our intuitive EHR and practice management software",
+                    "Discover how 42K+ practices have simplified their workflows",
+                ],
+                contactItems: [
+                    { type: "phone", text: "346-616-0008" },
+                    { type: "email", text: "info@mebilling.com" },
+                    { type: "address", text: "100 Glenborough Dr, Suite 400 Houston, TX 77067" },
+                ],
+            },
+            SalesPillarsAccordion: {
+                tagline: "— Core Platform",
+                heading: "The 3 essential pillars of",
+                headingHighlight: "healthcare software",
+                description: "MeBilling is purpose-built to automate work, prioritize tasks, and eliminate errors. Pervasive across the end-to-end software platform, our AI solutions drive efficiency and yield meaningful results for healthcare providers.",
+                pillars: [
+                    {
+                        title: "Deliver quality care",
+                        content: "Focus on what matters most—your patients. Our platform streamlines clinical workflows, reducing administrative burdens so you can spend more time providing exceptional care.",
+                    },
+                    {
+                        title: "Collect payments faster, effortlessly",
+                        content: "Automate your billing processes, minimize denials, and accelerate cash flow with our intelligent revenue cycle management tools designed for modern practices.",
+                    },
+                    {
+                        title: "Top off your quality care experience",
+                        content: "Enhance patient satisfaction with seamless scheduling, automated reminders, and intuitive patient portals that make managing healthcare a breeze.",
+                    },
+                ],
+                video: "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2008.mp4",
+                poster: "/images/contact.jpg"
+            },
+            FooterSection: footerData
+        }
+    },
     resources: {
         slug: "resources",
         seo_title: "Resources | Me Billing",
@@ -1455,19 +1507,21 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                 headingHighlight: "Real-World Results.",
                 description: "Case studies, industry articles, events, and press releases – everything MeBilling publishes to help healthcare providers understand and improve their revenue cycle."
             },
+            FeaturedVideos: {
+                tagline: "— Featured Videos",
+                titlePart1: "Insights from our",
+                titleHighlight: "RCM specialists.",
+                videos: [
+                    { video: "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2004.mp4" },
+                    { video: "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2005.mp4" },
+                    { video: "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2006.mp4" }
+                ]
+            },
             ResourcesTabs: resourcesTabsData,
             FooterSection: footerData
         }
     },
-    sales: {
-        slug: "sales",
-        seo_title: "Get a Demo | Me Billing",
-        seo_description: "Get a personalized demo of MeBilling. Streamline practice operations, enhance patient care, and boost your bottom line.",
-        sections: {
-            SalesPillarsAccordion: salesPillarsData,
-            FooterSection: footerData
-        }
-    },
+
 
 
 

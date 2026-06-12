@@ -207,7 +207,7 @@ export default async function SpecialtiesPage() {
                         {/* Video Thumbnail block perfectly modeled after Screenshot 1 */}
                         <div className="relative rounded-2xl overflow-hidden shadow-md max-w-xl mx-auto lg:mx-0 w-full aspect-[640/380] bg-[#162018]">
                             <video
-                                src="https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2015.mp4"
+                                src={walkthrough.video || "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2015.mp4"}
                                 poster=""
                                 controls
                                 className="!w-full !h-full object-cover specialties-tab"

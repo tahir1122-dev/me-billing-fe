@@ -84,20 +84,20 @@ export default async function ServicesPage() {
                         <div className="max-w-xl">
                             <p className="text-[#C8920A] tracking-wider text-sm font-semibold mb-6 flex items-center gap-2 font-outfit">
                                 <span className="w-6 h-[1.5px] bg-[#C8920A]"></span>
-                                How Our Services Work
+                                {process.tagline || "How Our Services Work"}
                             </p>
                             <h2 className="text-3xl md:text-5xl lg:text-[64px] font-medium leading-[1.1] text-[#162018] mb-6 md:mb-8 font-cormorant">
-                                12 services. <br />
-                                <span className="text-[#C8920A] italic">One accountable team.</span>
+                                {process.headingPart1 || "12 services."} <br />
+                                <span className="text-[#C8920A] italic">{process.headingHighlight || "One accountable team."}</span>
                             </h2>
                             <p className="text-[17px] text-[#162018]/80 leading-relaxed font-outfit font-medium">
-                                See how our specialty-organized billing teams manage the complete revenue cycle — from coding and claims through denial management, IDR, and arbitration — all in-house.
+                                {process.description || "See how our specialty-organized billing teams manage the complete revenue cycle — from coding and claims through denial management, IDR, and arbitration — all in-house."}
                             </p>
                         </div>
                         <div className="relative w-full rounded-[24px] overflow-hidden shadow-xl aspect-[16/10] bg-[#162018]">
                             <video
-                                src="https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2002.mp4"
-                                poster="/images/service 2.jpg"
+                                src={process.video || "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2002.mp4"}
+                                poster={process.poster || "/images/service 2.jpg"}
                                 controls
                                 className="w-full h-full object-cover opacity-90"
                             />

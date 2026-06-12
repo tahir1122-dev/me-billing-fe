@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default async function ResourcesPage() {
     const pageData = await PageContentService.getPage("resources");
     const resourcesTabsData = pageData?.sections?.ResourcesTabs || {};
+    const featuredVideos = pageData?.sections?.FeaturedVideos || {};
 
     return (
         <main className="flex-1 w-full bg-gradient-to-b from-[#FFFDF5] via-[#FFFDF5]/95 to-[#FFFDF5] font-outfit">
@@ -56,16 +57,28 @@ export default async function ResourcesPage() {
                     {/* Header */}
                     <div className="mb-10 lg:mb-12">
                         <span className="text-[#C8920A] font-bold tracking-wide text-xs block mb-2 font-outfit">
-                            — Featured Videos
+                            {featuredVideos.tagline || "— Featured Videos"}
                         </span>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#162018] font-cormorant leading-tight">
-                            Insights from our <span className="text-[#C8920A] italic">RCM specialists.</span>
+                            {featuredVideos.titlePart1 || "Insights from our"} <span className="text-[#C8920A] italic">{featuredVideos.titleHighlight || "RCM specialists."}</span>
                         </h2>
                     </div>
 
                     {/* 3 Video Thumbnail Cards Grid exactly matching screenshot 1 */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                        {[1, 2, 3].map((item, index) => (
+                        {featuredVideos.videos ? featuredVideos.videos.map((item: any, index: number) => (
+                            <div 
+                                key={index}
+                                className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 aspect-[16/10] cursor-pointer group bg-[#162018]"
+                            >
+                                <video
+                                    src={item.video}
+                                    poster=""
+                                    controls
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        )) : [1, 2, 3].map((item, index) => (
                             <div 
                                 key={item}
                                 className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 aspect-[16/10] cursor-pointer group bg-[#162018]"
