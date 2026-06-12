@@ -142,7 +142,7 @@ export default function Hero({ data = {} }: { data?: any }) {
                         </p>
 
                         <p className="font-cormorant text-[#C8920A] font-medium leading-none mb-5" style={{ fontSize: "88px" }}>
-                            {content.statCard.stat}
+                            <span className="text-sm">Less then</span>{content.statCard.stat}
                         </p>
 
                         <p className="text-white/70 text-[15px] leading-relaxed mb-8 font-outfit">

@@ -78,9 +78,8 @@ export default async function CareersPage() {
             </div>
 
             {/* WHY MEBILLING Section - matching reference screenshot layout exactly */}
-            <section className="w-full py-24 px-4 sm:px-6 lg:px-8">
+            {/* <section className="w-full py-24 px-4 sm:px-6 lg:px-8">
                 <div className="container mx-auto max-w-7xl">
-                    {/* Header matching reference: "{whyMeBilling.tagline}" style tagline */}
                     <div className="mb-12">
                         <span className="text-[#C8920A] font-bold tracking-wide text-xs block mb-3 font-outfit">
                             {whyMeBilling.tagline}
@@ -93,9 +92,7 @@ export default async function CareersPage() {
                         </p>
                     </div>
 
-                    {/* 3×2 grid exactly replicating screenshot cards */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {/* Card 1 */}
                         <div className="p-8 bg-[#FCFBF5] border border-[#1A6B3A]/20 rounded-2xl flex flex-col hover:shadow-md transition-all duration-300 font-outfit">
                             <div className="mb-5">
                                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#1A6B3A]">
@@ -110,7 +107,6 @@ export default async function CareersPage() {
                             <p className="text-slate-500 text-[14px] leading-relaxed font-outfit">{whyMeBilling.cards?.[0]?.description}</p>
                         </div>
 
-                        {/* Card 2 */}
                         <div className="p-8 bg-[#FCFBF5] border border-[#1A6B3A]/20 rounded-2xl flex flex-col hover:shadow-md transition-all duration-300 font-outfit">
                             <div className="mb-5">
                                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#1A6B3A]">
@@ -126,7 +122,6 @@ export default async function CareersPage() {
                             <p className="text-slate-500 text-[14px] leading-relaxed font-outfit">{whyMeBilling.cards?.[1]?.description}</p>
                         </div>
 
-                        {/* Card 3 */}
                         <div className="p-8 bg-[#FCFBF5] border border-[#1A6B3A]/20 rounded-2xl flex flex-col hover:shadow-md transition-all duration-300 font-outfit">
                             <div className="mb-5">
                                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#1A6B3A]">
@@ -140,7 +135,6 @@ export default async function CareersPage() {
                             <p className="text-slate-500 text-[14px] leading-relaxed font-outfit">{whyMeBilling.cards?.[2]?.description}</p>
                         </div>
 
-                        {/* Card 4 */}
                         <div className="p-8 bg-[#FCFBF5] border border-[#1A6B3A]/20 rounded-2xl flex flex-col hover:shadow-md transition-all duration-300 font-outfit">
                             <div className="mb-5">
                                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#1A6B3A]">
@@ -156,7 +150,6 @@ export default async function CareersPage() {
                             <p className="text-slate-500 text-[14px] leading-relaxed font-outfit">{whyMeBilling.cards?.[3]?.description}</p>
                         </div>
 
-                        {/* Card 5 */}
                         <div className="p-8 bg-[#FCFBF5] border border-[#1A6B3A]/20 rounded-2xl flex flex-col hover:shadow-md transition-all duration-300 font-outfit">
                             <div className="mb-5">
                                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#1A6B3A]">
@@ -170,7 +163,6 @@ export default async function CareersPage() {
                             <p className="text-slate-500 text-[14px] leading-relaxed font-outfit">{whyMeBilling.cards?.[4]?.description}</p>
                         </div>
 
-                        {/* Card 6 */}
                         <div className="p-8 bg-[#FCFBF5] border border-[#1A6B3A]/20 rounded-2xl flex flex-col hover:shadow-md transition-all duration-300 font-outfit">
                             <div className="mb-5">
                                 <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-[#1A6B3A]">
@@ -187,7 +179,7 @@ export default async function CareersPage() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* {openings.headingPart1} {openings.headingHighlight} Section */}
             <section id="openings" className="w-full py-20 px-4 sm:px-6 lg:px-8 border-t border-gray-200/50">

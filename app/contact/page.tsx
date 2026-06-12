@@ -129,7 +129,7 @@ export default function ContactPage() {
                                 </svg>
                             </div>
                             <span className="text-[#162018] font-semibold text-[15px] font-outfit leading-snug">
-                                100 Glenborough Dr, Suite<br />400 Houston, TX 77067
+                                100 Glenborough Dr, Suite 400,<br /> Houston, TX 77067
                             </span>
                         </div>
                     </div>
