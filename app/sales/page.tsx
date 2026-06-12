@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import SalesContactForm from "@/components/forms/SalesContactForm";
 import SalesPillarsAccordion from "@/components/sections/SalesPillarsAccordion";
 import { PageContentService } from "@/services/pageContent.service";
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
     title: "Get a Demo | Me Billing",

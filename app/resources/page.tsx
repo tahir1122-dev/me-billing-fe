@@ -3,6 +3,7 @@ import ResourcesTabs from "@/components/sections/ResourcesTabs";
 import Image from "next/image";
 import { PageContentService } from "@/services/pageContent.service";
 import Link from "next/link";
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
     title: "Resources | Me Billing",
