@@ -2,6 +2,7 @@ export const metadata = {
     title: "Cookie Policy | MeBilling",
     description: "Information about how we use cookies and tracking technologies.",
 };
+export const dynamic = 'force-dynamic';
 
 export default function CookiePolicyPage() {
     return (

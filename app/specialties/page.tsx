@@ -4,7 +4,7 @@ import Link from "next/link";
 import { PageContentService } from "@/services/pageContent.service";
 import { Metadata, ResolvingMetadata } from "next";
 
-
+export const dynamic = 'force-dynamic';
 export async function generateMetadata(
     { params }: any,
     parent: ResolvingMetadata

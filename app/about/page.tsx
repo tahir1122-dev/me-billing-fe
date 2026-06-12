@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Metadata, ResolvingMetadata } from "next";
 import { PageContentService } from "@/services/pageContent.service";
-
+export const dynamic = 'force-dynamic';
 export async function generateMetadata(
     { params }: any,
     parent: ResolvingMetadata
@@ -22,7 +22,6 @@ const arrowIcon = (
     </svg>
 );
 
-export const dynamic = 'force-dynamic';
 
 export default async function AboutPage() {
     const pageData = await PageContentService.getPage("about");
