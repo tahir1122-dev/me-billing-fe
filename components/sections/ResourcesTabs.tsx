@@ -194,13 +194,13 @@ export default function ResourcesTabs({ data = {} }: { data?: any }) {
                                 {study.description}
                             </p>
                             
-                            <Link href="#" className="inline-flex items-center gap-2 text-[#1A6B3A] font-semibold text-sm hover:underline mt-auto font-outfit">
+                            {/* <Link href="#" className="inline-flex items-center gap-2 text-[#1A6B3A] font-semibold text-sm hover:underline mt-auto font-outfit">
                                 Read Case Study 
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M5 12h14"></path>
                                     <path d="m12 5 7 7-7 7"></path>
                                 </svg>
-                            </Link>
+                            </Link> */}
                         </div>
                     ))}
                 </div>
@@ -231,13 +231,13 @@ export default function ResourcesTabs({ data = {} }: { data?: any }) {
                                 {release.description}
                             </p>
                             
-                            <Link href="#" className="inline-flex items-center gap-2 text-[#1A6B3A] font-semibold text-sm hover:underline mt-auto font-outfit">
+                            {/* <Link href="#" className="inline-flex items-center gap-2 text-[#1A6B3A] font-semibold text-sm hover:underline mt-auto font-outfit">
                                 Read Release
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M5 12h14"></path>
                                     <path d="m12 5 7 7-7 7"></path>
                                 </svg>
-                            </Link>
+                            </Link> */}
                         </div>
                     ))}
                 </div>
@@ -301,13 +301,13 @@ export default function ResourcesTabs({ data = {} }: { data?: any }) {
                                 {blog.description}
                             </p>
                             
-                            <Link href="#" className="inline-flex items-center gap-2 text-[#1A6B3A] font-semibold text-sm hover:underline mt-auto font-outfit">
+                            {/* <Link href="#" className="inline-flex items-center gap-2 text-[#1A6B3A] font-semibold text-sm hover:underline mt-auto font-outfit">
                                 Read Article
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                     <path d="M5 12h14"></path>
                                     <path d="m12 5 7 7-7 7"></path>
                                 </svg>
-                            </Link>
+                            </Link> */}
                         </div>
                     ))}
                 </div>

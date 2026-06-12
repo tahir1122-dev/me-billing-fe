@@ -155,7 +155,9 @@ export default function FooterSection({ data = {} }: { data?: any }) {
                             {content.companyInfo.description}
                         </p>
                         <div className="flex items-center gap-5 pt-2">
-                            {content.socialLinks.map((item: any) => (
+                            {content.socialLinks.map((item: any) => {
+                                if(item.label === 'Instagram') return 
+                                return (
                                 <a
                                     key={item.label}
                                     href={item.href}
@@ -171,7 +173,7 @@ export default function FooterSection({ data = {} }: { data?: any }) {
                                         className="h-4 w-4 brightness-0 invert opacity-70 hover:opacity-100 transition-opacity"
                                     />
                                 </a>
-                            ))}
+                            )})}
                         </div>
                     </div>
 
