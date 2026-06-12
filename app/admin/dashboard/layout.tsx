@@ -17,6 +17,7 @@ const sidebarLinks = [
             { name: "Solutions", href: "/admin/dashboard/pages/solutions" },
             { name: "Resources", href: "/admin/dashboard/pages/resources" },
             { name: "Careers", href: "/admin/dashboard/pages/careers" },
+            { name: "Sales", href: "/admin/dashboard/pages/sales" },
         ],
     },
     {

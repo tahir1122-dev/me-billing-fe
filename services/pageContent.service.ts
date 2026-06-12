@@ -109,7 +109,13 @@ export class PageContentService {
             expectedSections.forEach(sectionName => {
                 const dbSection = sectionsData?.find(s => s.section_name === sectionName);
                 if (dbSection) {
-                    sections[sectionName] = dbSection.content;
+                    // Deep merge db content over default content so new keys from default show up
+                    const defaultSectionContent = defaultPageContent[slug]?.sections?.[sectionName] || {};
+                    if (Array.isArray(defaultSectionContent) || Array.isArray(dbSection.content)) {
+                        sections[sectionName] = (Array.isArray(dbSection.content) && dbSection.content.length > 0) ? dbSection.content : defaultSectionContent;
+                    } else {
+                        sections[sectionName] = { ...defaultSectionContent, ...dbSection.content };
+                    }
                 } else if (defaultPageContent[slug]?.sections?.[sectionName]) {
                     // Fallback to default if not in DB
                     sections[sectionName] = defaultPageContent[slug].sections[sectionName];

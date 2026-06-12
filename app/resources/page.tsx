@@ -2,15 +2,23 @@ import type { Metadata } from "next";
 import ResourcesTabs from "@/components/sections/ResourcesTabs";
 import Image from "next/image";
 import { PageContentService } from "@/services/pageContent.service";
+import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "Resources | Me Billing",
     description: "Insights, Research & Real-World Results. Case studies, industry articles, events, and press releases."
 };
 
+const arrowIcon = (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+);
+
 export default async function ResourcesPage() {
     const pageData = await PageContentService.getPage("resources");
     const resourcesTabsData = pageData?.sections?.ResourcesTabs || {};
+    const featuredVideos = pageData?.sections?.FeaturedVideos || {};
 
     return (
         <main className="flex-1 w-full bg-gradient-to-b from-[#FFFDF5] via-[#FFFDF5]/95 to-[#FFFDF5] font-outfit">
@@ -46,6 +54,12 @@ export default async function ResourcesPage() {
                         <p className="text-white/90 text-lg sm:text-[20px] leading-relaxed max-w-2xl font-medium font-cormorant">
                             Case studies, industry articles, events, and press releases – everything MeBilling publishes to help healthcare providers understand and improve their revenue cycle.
                         </p>
+                        <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 max-w-sm sm:max-w-none">
+
+                            <Link href="/contact" className="flex items-center justify-center gap-2 bg-[#1A6B3A] hover:bg-[#13522C] text-white px-8 py-4 rounded-md transition-all duration-300 font-medium w-full sm:w-[285px]">
+                                Schedule a Free Consultation {arrowIcon}
+                            </Link>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -56,17 +70,29 @@ export default async function ResourcesPage() {
                     {/* Header */}
                     <div className="mb-10 lg:mb-12">
                         <span className="text-[#C8920A] font-bold tracking-wide text-xs block mb-2 font-outfit">
-                            — Featured Videos
+                            {featuredVideos.tagline || "— Featured Videos"}
                         </span>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium text-[#162018] font-cormorant leading-tight">
-                            Insights from our <span className="text-[#C8920A] italic">RCM specialists.</span>
+                            {featuredVideos.titlePart1 || "Insights from our"} <span className="text-[#C8920A] italic">{featuredVideos.titleHighlight || "RCM specialists."}</span>
                         </h2>
                     </div>
 
                     {/* 3 Video Thumbnail Cards Grid exactly matching screenshot 1 */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                        {[1, 2, 3].map((item, index) => (
-                            <div 
+                        {featuredVideos.videos ? featuredVideos.videos.map((item: any, index: number) => (
+                            <div
+                                key={index}
+                                className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 aspect-[16/10] cursor-pointer group bg-[#162018]"
+                            >
+                                <video
+                                    src={item.video}
+                                    poster=""
+                                    controls
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        )) : [1, 2, 3].map((item, index) => (
+                            <div
                                 key={item}
                                 className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 aspect-[16/10] cursor-pointer group bg-[#162018]"
                             >

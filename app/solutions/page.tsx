@@ -80,7 +80,7 @@ export default async function SolutionsPage() {
                         {/* Left Side: Video */}
                         <div className="relative w-full rounded-[24px] overflow-hidden shadow-xl aspect-[16/10] bg-[#162018]">
                             <video
-                                src={walkthrough.image}
+                                src={walkthrough.video || walkthrough.image}
                                 poster=""
                                 controls
                                 className="w-full h-full object-cover"

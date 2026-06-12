@@ -35,7 +35,7 @@ export default function InsightSection1({ data }: { data: any }) {
                     {/* Right: video */}
                     <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-video">
                         <video
-                            src={data.image}
+                            src={data.video || data.image}
                             poster={data.image}
                             controls
                             className="w-full h-full object-cover"
