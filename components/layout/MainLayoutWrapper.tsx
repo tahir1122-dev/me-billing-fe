@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
 import FooterSection from "@/components/sections/FooterSection";
+import ChatbotWidget from "@/components/layout/ChatbotWidget";
 
 export default function MainLayoutWrapper({
     children,
@@ -23,6 +24,7 @@ export default function MainLayoutWrapper({
             <Navbar />
             {children}
             <FooterSection data={footerData} />
+            <ChatbotWidget />
         </>
     );
 }
