@@ -33,7 +33,7 @@ export async function GET() {
         });
 
         // Sort by created_at descending
-        fileList.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+        fileList.sort((a, b) => new Date(b.created_at ?? '').getTime() - new Date(a.created_at ?? '').getTime());
 
         return NextResponse.json({ success: true, data: fileList });
     } catch (error: any) {
