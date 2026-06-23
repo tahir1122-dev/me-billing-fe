@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const sidebarLinks = [
     { name: "Dashboard", href: "/admin/dashboard", icon: "📊" },
+    { name: "Media Library", href: "/admin/dashboard/media", icon: "🖼️" },
     {
         name: "Pages",
         icon: "📄",

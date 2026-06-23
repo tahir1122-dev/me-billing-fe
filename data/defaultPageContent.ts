@@ -800,7 +800,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                 "titleHighlight": "changes the numbers.",
                 "description": "When oncology coders only code oncology, the difference is measurable — in claim accuracy, payer compliance, and revenue captured.",
                 "image": "https://me-billing-fe.vercel.app/images/testnomial.png",
-                "video": "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2015.mp4"
+                "video": "/vedios/video 15.mp4"
             },
         "InstitutionalBilling": {
                 "tagline": "— Facility & Institutional Billing",
@@ -1102,7 +1102,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
             "headingHighlight": "One accountable team.",
             "description": "See how our specialty-organized billing teams manage the complete revenue cycle — from coding and claims through denial management, IDR, and arbitration — all in-house.",
             "poster": "/images/service 2.jpg",
-            "video": "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2002.mp4"
+            "video": "/vedios/video 3.mp4"
         },
             FooterSection: footerData
         }
@@ -1490,7 +1490,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                         content: "Enhance patient satisfaction with seamless scheduling, automated reminders, and intuitive patient portals that make managing healthcare a breeze.",
                     },
                 ],
-                video: "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2008.mp4",
+                video: "/vedios/video 08.mp4",
                 poster: "/images/contact.jpg"
             },
             FooterSection: footerData
@@ -1512,9 +1512,9 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                 titlePart1: "Insights from our",
                 titleHighlight: "RCM specialists.",
                 videos: [
-                    { video: "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2004.mp4" },
-                    { video: "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2005.mp4" },
-                    { video: "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2006.mp4" }
+                    { video: "/vedios/video 4.mp4" },
+                    { video: "/vedios/video 5.mp4" },
+                    { video: "/vedios/video 7.mp4" }
                 ]
             },
             ResourcesTabs: resourcesTabsData,
