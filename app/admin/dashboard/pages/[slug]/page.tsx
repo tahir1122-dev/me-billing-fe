@@ -3,22 +3,70 @@
 import { use, useEffect, useState } from "react";
 import { PageData, SectionData } from "@/types/page-content";
 
+import MediaPickerModal from "@/components/admin/MediaPickerModal";
+
 // A recursive component to render JSON fields dynamically
 function DynamicFieldRenderer({ 
     data, 
     path, 
-    onChange 
+    onChange,
+    onOpenMediaPicker
 }: { 
     data: any; 
     path: string[]; 
-    onChange: (path: string[], value: any) => void 
+    onChange: (path: string[], value: any) => void;
+    onOpenMediaPicker: (path: string[]) => void;
 }) {
     if (typeof data === "string") {
         const hasVideoExt = typeof data === 'string' && !!data.match(/\.(mp4|webm|ogg)(\?.*)?\s*$/i);
         const hasImageExt = typeof data === 'string' && !!data.match(/\.(jpeg|jpg|gif|png|svg|webp)(\?.*)?\s*$/i);
         
         const isVideoUrl = hasVideoExt || (!hasImageExt && path.length > 0 && path[path.length - 1].toLowerCase().includes('video'));
-        const isImageUrl = hasImageExt || (!hasVideoExt && path.length > 0 && (path[path.length - 1].toLowerCase().includes('image') || path[path.length - 1].toLowerCase().includes('poster')));
+        const isImageUrl = hasImageExt || (!hasVideoExt && path.length > 0 && (path[path.length - 1].toLowerCase().includes('image') || path[path.length - 1].toLowerCase().includes('poster') || path[path.length - 1].toLowerCase().includes('icon')));
+
+        if (isImageUrl || isVideoUrl) {
+            return (
+                <div className="flex gap-4 items-start bg-gray-50 p-3 rounded-lg border border-gray-100">
+                    <div className="w-24 h-24 bg-white rounded-md border border-gray-200 overflow-hidden flex items-center justify-center shrink-0 relative group">
+                        {data ? (
+                            isVideoUrl || hasVideoExt ? (
+                                <video src={data} className="w-full h-full object-cover" />
+                            ) : (
+                                <img src={data} className="w-full h-full object-cover" alt="Preview" />
+                            )
+                        ) : (
+                            <span className="text-xs text-gray-400 font-medium">No Media</span>
+                        )}
+                    </div>
+                    <div className="flex-1 flex flex-col justify-center items-start space-y-3">
+                        <div className="flex items-center gap-3 w-full">
+                            <button
+                                type="button"
+                                onClick={() => onOpenMediaPicker(path)}
+                                className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-colors flex items-center gap-2 shadow-sm"
+                            >
+                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                                Browse Media
+                            </button>
+                            {data && (
+                                <button
+                                    type="button"
+                                    onClick={() => onChange(path, "")}
+                                    className="text-red-600 hover:text-red-700 hover:bg-red-50 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                                >
+                                    Remove
+                                </button>
+                            )}
+                        </div>
+                        {data && (
+                            <p className="text-xs text-gray-500 break-all bg-white p-2 rounded border border-gray-200 w-full">
+                                {data}
+                            </p>
+                        )}
+                    </div>
+                </div>
+            );
+        }
 
         // If it's a long string, use a textarea, else an input
         if (!isImageUrl && !isVideoUrl && (data.length > 80 || path.includes("description") || path.includes("content") || path.includes("body"))) {
@@ -77,6 +125,7 @@ function DynamicFieldRenderer({
                             data={item} 
                             path={[...path, index.toString()]} 
                             onChange={onChange} 
+                            onOpenMediaPicker={onOpenMediaPicker}
                         />
                     </div>
                 ))}
@@ -108,6 +157,7 @@ function DynamicFieldRenderer({
                                 data={data[key]} 
                                 path={[...path, key]} 
                                 onChange={onChange} 
+                                onOpenMediaPicker={onOpenMediaPicker}
                             />
                         </div>
                     );
@@ -132,6 +182,10 @@ export default function AdminPageManagement({
     const [error, setError] = useState<string | null>(null);
     const [successMessage, setSuccessMessage] = useState<string | null>(null);
     
+    // Media Picker State
+    const [mediaPickerOpen, setMediaPickerOpen] = useState(false);
+    const [mediaPickerPath, setMediaPickerPath] = useState<string[] | null>(null);
+
     // UI state for accordions
     const [openSection, setOpenSection] = useState<string | null>(null);
 
@@ -242,6 +296,19 @@ export default function AdminPageManagement({
         };
         
         setPageData({ ...pageData, sections: newSections });
+    };
+
+    const handleOpenMediaPicker = (path: string[]) => {
+        setMediaPickerPath(path);
+        setMediaPickerOpen(true);
+    };
+
+    const handleMediaSelect = (url: string) => {
+        if (mediaPickerPath && pageData && pageData.sections && openSection) {
+            handleSectionChange(openSection, mediaPickerPath, url);
+        }
+        setMediaPickerOpen(false);
+        setMediaPickerPath(null);
     };
 
     if (loading) {
@@ -360,6 +427,7 @@ export default function AdminPageManagement({
                                                 data={content} 
                                                 path={[]} 
                                                 onChange={(path, value) => handleSectionChange(sectionName, path, value)} 
+                                                onOpenMediaPicker={handleOpenMediaPicker}
                                             />
                                         </div>
                                     )}
@@ -375,6 +443,15 @@ export default function AdminPageManagement({
                     </div>
                 </div>
             </div>
+
+            <MediaPickerModal 
+                isOpen={mediaPickerOpen} 
+                onClose={() => {
+                    setMediaPickerOpen(false);
+                    setMediaPickerPath(null);
+                }} 
+                onSelect={handleMediaSelect} 
+            />
         </div>
     );
 }
