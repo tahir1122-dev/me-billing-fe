@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function SalesContactForm() {
+    const router = useRouter();
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
     const [message, setMessage] = useState("");
 
@@ -51,6 +53,7 @@ export default function SalesContactForm() {
                 setMessage("Message sent successfully!");
                 const formElement = e.target as HTMLFormElement;
                 formElement.reset();
+                router.push("/thank-you");
             } else {
                 setStatus("error");
                 setMessage(data.error || "Failed to send message.");

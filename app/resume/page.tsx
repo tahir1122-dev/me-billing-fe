@@ -2,8 +2,10 @@
 
 import React, { useState, useRef } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function ResumePage() {
+    const router = useRouter();
     const [fileName, setFileName] = useState("");
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -103,6 +105,7 @@ export default function ResumePage() {
                 if (fileInputRef.current) {
                     fileInputRef.current.value = "";
                 }
+                router.push("/thank-you");
             } else {
                 setStatus("error");
                 setErrorMsg(data.message || "Something went wrong. Please try again.");
@@ -282,7 +285,7 @@ export default function ResumePage() {
                                                     </svg>
                                                 </div>
                                                 <span className="text-[#162018] font-bold text-[15px] mb-1">Click to upload or drag and drop</span>
-                                                <span className="text-[#162018]/50 text-[13px]">Supported formats: .pdf, .doc</span>
+                                                <span className="text-[#162018]/50 text-[13px]">Supported formats: .pdf, .doc, .docx</span>
                                             </div>
                                         )}
                                     </div>

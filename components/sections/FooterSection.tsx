@@ -55,10 +55,9 @@ const footerData = {
         description: "MeBilling provides end-to-end Revenue Cycle Management solutions for U.S. healthcare providers, including medical billing, coding, denial management, payment posting, A/R follow-up, credentialing, and compliance support. We currently serve clients in Texas, Louisiana, Arkansas, Oklahoma, Alabama, and New Jersey."
     },
     socialLinks: [
-        { href: "https://www.linkedin.com/company/mebilling/", label: "LinkedIn", icon: "/images/linkedin logo.svg" },
-        { href: "https://www.facebook.com/mebilling/", label: "Facebook", icon: "/images/facebook logo.svg" },
-        { href: "https://twitter.com/MeBillingSol", label: "Twitter", icon: "/images/Twitter logo.svg" },
-        { href: "#", label: "Instagram", icon: "/images/instagram logo.svg" },
+        { href: "https://www.linkedin.com/company/mebilling", label: "LinkedIn", icon: "/images/linkedin logo.svg" },
+        { href: "https://www.facebook.com/MeBillingInc/", label: "Facebook", icon: "/images/facebook logo.svg" },
+        { href: "https://www.instagram.com/mebillinginc/", label: "Instagram", icon: "/images/instagram logo.svg" },
     ],
     pageLinks: [
         { label: "Home", href: "/" },
@@ -93,6 +92,7 @@ export default function FooterSection({ data = {} }: { data?: any }) {
 
     // Merge data from props with the local default footerData
     const content = { ...footerData, ...data };
+    content.socialLinks = footerData.socialLinks;
 
     return (
         <footer className="w-full bg-[#112314] text-white relative overflow-hidden font-outfit">
@@ -156,7 +156,6 @@ export default function FooterSection({ data = {} }: { data?: any }) {
                         </p>
                         <div className="flex items-center gap-5 pt-2">
                             {content.socialLinks.map((item: any) => {
-                                if(item.label === 'Instagram') return 
                                 return (
                                 <a
                                     key={item.label}

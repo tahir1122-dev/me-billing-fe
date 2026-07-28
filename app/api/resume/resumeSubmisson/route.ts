@@ -9,7 +9,11 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-const ALLOWED_TYPES = ["application/pdf", "application/msword"];
+const ALLOWED_TYPES = [
+    "application/pdf", 
+    "application/msword", 
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+];
 const MAX_FILE_SIZE_MB = 10;
 const MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024;
 
@@ -40,7 +44,7 @@ export async function POST(req: Request) {
         // 2. Validate file type
         if (!ALLOWED_TYPES.includes(file.type)) {
             return NextResponse.json(
-                { success: false, message: "Invalid file type. Only .pdf and .doc files are allowed." },
+                { success: false, message: "Invalid file type. Only .pdf, .doc, and .docx files are allowed." },
                 { status: 400 }
             );
         }
@@ -155,6 +159,25 @@ export async function POST(req: Request) {
 
             await transporter.sendMail(mailOptions);
             console.log("Resume confirmation email sent successfully!");
+
+            const adminMailOptions = {
+                from: `"Me-Billing Website" <${process.env.SMTP_USER}>`,
+                to: "rabia@freemindmarketing.com, jacqueline@freemindmarketing.com, ahmedsami@freemindmarketing.com, ahmed@freemindmarketing.com",
+                subject: `New Job Application: ${jobTitle || 'Resume Submission'}`,
+                html: `
+                    <h2>New Resume Submission</h2>
+                    <p><strong>First Name:</strong> ${firstName || 'N/A'}</p>
+                    <p><strong>Last Name:</strong> ${lastName || 'N/A'}</p>
+                    <p><strong>Email:</strong> ${email || 'N/A'}</p>
+                    <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
+                    <p><strong>Position:</strong> ${jobTitle || 'N/A'}</p>
+                    <p><strong>Description:</strong> ${description || 'N/A'}</p>
+                    <p><strong>Resume URL:</strong> <a href="${resumeUrl}">${resumeUrl}</a></p>
+                `
+            };
+
+            await transporter.sendMail(adminMailOptions);
+            console.log("Admin resume notification email sent successfully!");
         } catch (emailError: any) {
             // Email fail hone par api crash na ho, kyunke data database mein save ho chuka hai
             console.error("Nodemailer Error (Ignored):", emailError.message);

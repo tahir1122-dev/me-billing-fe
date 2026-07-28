@@ -171,10 +171,9 @@ const footerData = {
         description: "MeBilling provides end-to-end Revenue Cycle Management solutions for U.S. healthcare providers, including medical billing, coding, denial management, payment posting, A/R follow-up, credentialing, and compliance support. We currently serve clients in Texas, Louisiana, Arkansas, Oklahoma, Alabama, and New Jersey."
     },
     socialLinks: [
-        { href: "https://www.linkedin.com/company/mebilling/", label: "LinkedIn", icon: "https://me-billing-fe.vercel.app/images/linkedin logo.svg" },
-        { href: "https://www.facebook.com/mebilling/", label: "Facebook", icon: "https://me-billing-fe.vercel.app/images/facebook logo.svg" },
-        { href: "https://twitter.com/MeBillingSol", label: "Twitter", icon: "https://me-billing-fe.vercel.app/images/Twitter logo.svg" },
-        { href: "#", label: "Instagram", icon: "https://me-billing-fe.vercel.app/images/instagram logo.svg" },
+        { href: "https://www.linkedin.com/company/mebilling", label: "LinkedIn", icon: "https://me-billing-fe.vercel.app/images/linkedin logo.svg" },
+        { href: "https://www.facebook.com/MeBillingInc/", label: "Facebook", icon: "https://me-billing-fe.vercel.app/images/facebook logo.svg" },
+        { href: "https://www.instagram.com/mebillinginc/", label: "Instagram", icon: "https://me-billing-fe.vercel.app/images/instagram logo.svg" },
     ],
     pageLinks: [
         { label: "Home", href: "/" },

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -35,6 +36,7 @@ const homeContactData = {
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function HomeContactSection({ data = {} }: { data?: any }) {
+    const router = useRouter();
     // Merge data from props with the local default homeContactData
     const content = { ...homeContactData, ...data };
 
@@ -86,6 +88,7 @@ export default function HomeContactSection({ data = {} }: { data?: any }) {
                 setMessage("Message sent successfully!");
                 const formElement = e.target as HTMLFormElement;
                 formElement.reset();
+                router.push("/thank-you");
             } else {
                 setStatus("error");
                 setMessage(data.error || "Failed to send message.");
