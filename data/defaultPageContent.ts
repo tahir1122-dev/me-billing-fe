@@ -183,7 +183,7 @@ const footerData = {
         { label: "About Us", href: "/about" },
     ],
     contactItems: [
-        { icon: "https://me-billing-fe.vercel.app/images/call.svg", text: "US: (346) 616-0008", href: "tel:+13466160008" },
+        { icon: "https://me-billing-fe.vercel.app/images/call.svg", text: "US: +1 (346) 616-0008", href: "tel:+13466160008" },
         { icon: "https://me-billing-fe.vercel.app/images/call.svg", text: "Global: +92 316 433 3497", href: "tel:+923164333497" },
         { icon: "https://me-billing-fe.vercel.app/images/Icons.svg", text: "info@mebilling.com", href: "mailto:info@mebilling.com" },
         { icon: "https://me-billing-fe.vercel.app/images/loc.svg", text: "100 Glenborough Dr, Suite 400\nHouston, TX 77067, USA" },
@@ -1465,7 +1465,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                     "Discover how 42K+ practices have simplified their workflows",
                 ],
                 contactItems: [
-                    { type: "phone", text: "346-616-0008" },
+                    { type: "phone", text: "+1 (346) 616-0008" },
                     { type: "email", text: "info@mebilling.com" },
                     { type: "address", text: "100 Glenborough Dr, Suite 400 Houston, TX 77067" },
                 ],

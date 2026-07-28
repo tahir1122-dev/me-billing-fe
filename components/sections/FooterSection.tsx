@@ -67,7 +67,7 @@ const footerData = {
         { label: "About Us", href: "/about" },
     ],
     contactItems: [
-        { icon: "/images/call.svg", text: "US: (346) 616-0008", href: "tel:+13466160008" },
+        { icon: "/images/call.svg", text: "US: +1 (346) 616-0008", href: "tel:+13466160008" },
         // { icon: "/images/call.svg", text: "Global: +92 316 433 3497", href: "tel:+923164333497" },
         { icon: "/images/Icons.svg", text: "info@mebilling.com", href: "mailto:info@mebilling.com" },
         { icon: "/images/loc.svg", text: "100 Glenborough Dr, Suite 400\nHouston, TX 77067, USA" },
@@ -93,6 +93,7 @@ export default function FooterSection({ data = {} }: { data?: any }) {
     // Merge data from props with the local default footerData
     const content = { ...footerData, ...data };
     content.socialLinks = footerData.socialLinks;
+    content.contactItems = footerData.contactItems;
 
     return (
         <footer className="w-full bg-[#112314] text-white relative overflow-hidden font-outfit">
