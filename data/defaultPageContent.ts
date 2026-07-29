@@ -171,10 +171,9 @@ const footerData = {
         description: "MeBilling provides end-to-end Revenue Cycle Management solutions for U.S. healthcare providers, including medical billing, coding, denial management, payment posting, A/R follow-up, credentialing, and compliance support. We currently serve clients in Texas, Louisiana, Arkansas, Oklahoma, Alabama, and New Jersey."
     },
     socialLinks: [
-        { href: "https://www.linkedin.com/company/mebilling/", label: "LinkedIn", icon: "https://me-billing-fe.vercel.app/images/linkedin logo.svg" },
-        { href: "https://www.facebook.com/mebilling/", label: "Facebook", icon: "https://me-billing-fe.vercel.app/images/facebook logo.svg" },
-        { href: "https://twitter.com/MeBillingSol", label: "Twitter", icon: "https://me-billing-fe.vercel.app/images/Twitter logo.svg" },
-        { href: "#", label: "Instagram", icon: "https://me-billing-fe.vercel.app/images/instagram logo.svg" },
+        { href: "https://www.linkedin.com/company/mebilling", label: "LinkedIn", icon: "https://me-billing-fe.vercel.app/images/linkedin logo.svg" },
+        { href: "https://www.facebook.com/MeBillingInc/", label: "Facebook", icon: "https://me-billing-fe.vercel.app/images/facebook logo.svg" },
+        { href: "https://www.instagram.com/mebillinginc/", label: "Instagram", icon: "https://me-billing-fe.vercel.app/images/instagram logo.svg" },
     ],
     pageLinks: [
         { label: "Home", href: "/" },
@@ -184,7 +183,7 @@ const footerData = {
         { label: "About Us", href: "/about" },
     ],
     contactItems: [
-        { icon: "https://me-billing-fe.vercel.app/images/call.svg", text: "US: (346) 616-0008", href: "tel:+13466160008" },
+        { icon: "https://me-billing-fe.vercel.app/images/call.svg", text: "US: +1 (346) 616-0008", href: "tel:+13466160008" },
         { icon: "https://me-billing-fe.vercel.app/images/call.svg", text: "Global: +92 316 433 3497", href: "tel:+923164333497" },
         { icon: "https://me-billing-fe.vercel.app/images/Icons.svg", text: "info@mebilling.com", href: "mailto:info@mebilling.com" },
         { icon: "https://me-billing-fe.vercel.app/images/loc.svg", text: "100 Glenborough Dr, Suite 400\nHouston, TX 77067, USA" },
@@ -1466,7 +1465,7 @@ export const defaultPageContent: Record<string, Partial<PageData>> = {
                     "Discover how 42K+ practices have simplified their workflows",
                 ],
                 contactItems: [
-                    { type: "phone", text: "346-616-0008" },
+                    { type: "phone", text: "+1 (346) 616-0008" },
                     { type: "email", text: "info@mebilling.com" },
                     { type: "address", text: "100 Glenborough Dr, Suite 400 Houston, TX 77067" },
                 ],

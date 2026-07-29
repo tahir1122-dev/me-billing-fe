@@ -92,6 +92,26 @@ export async function POST(req: Request) {
 
                 await transporter.sendMail(mailOptions);
                 console.log("Confirmation email sent successfully!");
+
+                const adminMailOptions = {
+                    from: `"Me-Billing Website" <${process.env.SMTP_USER}>`,
+                    to: "rabia@freemindmarketing.com, jacqueline@freemindmarketing.com, ahmedsami@freemindmarketing.com, ahmed@freemindmarketing.com",
+                    subject: `New Form Submission: ${data.type || 'Contact Form'}`,
+                    html: `
+                        <h2>New Form Submission</h2>
+                        <p><strong>First Name:</strong> ${data.first_name || 'N/A'}</p>
+                        <p><strong>Last Name:</strong> ${data.last_name || 'N/A'}</p>
+                        <p><strong>Email:</strong> ${data.email || 'N/A'}</p>
+                        <p><strong>Phone:</strong> ${data.phone || 'N/A'}</p>
+                        <p><strong>Organization:</strong> ${data.organization || 'N/A'}</p>
+                        <p><strong>Specialty:</strong> ${data.specialty || 'N/A'}</p>
+                        <p><strong>Message/Queries:</strong> ${data.description || 'N/A'}</p>
+                        <p><strong>Type:</strong> ${data.type || 'N/A'}</p>
+                    `
+                };
+                
+                await transporter.sendMail(adminMailOptions);
+                console.log("Admin notification email sent successfully!");
             } catch (emailError: any) {
                 // Email fail hone par api crash na ho, kyunke data database mein save ho chuka hai
                 console.error("Nodemailer Error (Ignored):", emailError.message);
