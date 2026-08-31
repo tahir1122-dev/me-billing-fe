@@ -81,7 +81,7 @@ export default async function ResourcesPage() {
 
                     {/* 3 Video Thumbnail Cards Grid exactly matching screenshot 1 */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                        {featuredVideos.videos ? featuredVideos.videos.map((item: any, index: number) => (
+                        {featuredVideos.videos && featuredVideos.videos.length > 0 ? featuredVideos.videos.map((item: any, index: number) => (
                             <div
                                 key={index}
                                 className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 aspect-[16/10] cursor-pointer group bg-[#162018]"
@@ -102,11 +102,20 @@ export default async function ResourcesPage() {
                                     />
                                 )}
                             </div>
-                        )) : [1, 2, 3].map((item, index) => {
-                            const fallbackUrl = `https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video 0${4 + index}.mp4`;
+                        )) : [
+                            { video: "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video 04.mp4" },
+                            { video: "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video 05.mp4" },
+                            { video: "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video 06.mp4" },
+                            { video: "https://www.youtube.com/embed/IJm35UpHMiM?si=mRY-i7T591280J5g" },
+                            { video: "https://www.youtube.com/embed/lRrhmm-t4tE?si=GNxh9DJAPMsEoIpH" },
+                            { video: "https://www.youtube.com/embed/uxe6O71S-nQ?si=ZWY-wbf3fZ6tmwpk" },
+                            { video: "https://www.youtube.com/embed/UmwZoU3P82k?si=hL3-tfJFXpjKzvId" },
+                            { video: "https://www.youtube.com/embed/LM37E6z8Iro?si=wP2BZweM8DsDWX_k" }
+                        ].map((item, index) => {
+                            const fallbackUrl = item.video;
                             return (
                                 <div
-                                    key={item}
+                                    key={index}
                                     className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 aspect-[16/10] cursor-pointer group bg-[#162018]"
                                 >
                                     {isEmbeddedVideo(fallbackUrl) ? (
