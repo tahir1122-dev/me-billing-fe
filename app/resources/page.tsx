@@ -3,6 +3,7 @@ import ResourcesTabs from "@/components/sections/ResourcesTabs";
 import Image from "next/image";
 import { PageContentService } from "@/services/pageContent.service";
 import Link from "next/link";
+import { isEmbeddedVideo } from "@/utils/videoUtils";
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
@@ -85,26 +86,47 @@ export default async function ResourcesPage() {
                                 key={index}
                                 className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 aspect-[16/10] cursor-pointer group bg-[#162018]"
                             >
-                                <video
-                                    src={item.video}
-                                    poster=""
-                                    controls
-                                    className="w-full h-full object-cover"
-                                />
+                                {isEmbeddedVideo(item.video) ? (
+                                    <iframe 
+                                        src={item.video} 
+                                        className="w-full h-full"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowFullScreen 
+                                    />
+                                ) : (
+                                    <video
+                                        src={item.video}
+                                        poster=""
+                                        controls
+                                        className="w-full h-full object-cover"
+                                    />
+                                )}
                             </div>
-                        )) : [1, 2, 3].map((item, index) => (
-                            <div
-                                key={item}
-                                className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 aspect-[16/10] cursor-pointer group bg-[#162018]"
-                            >
-                                <video
-                                    src={`https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video 0${4 + index}.mp4`}
-                                    poster=""
-                                    controls
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
-                        ))}
+                        )) : [1, 2, 3].map((item, index) => {
+                            const fallbackUrl = `https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video 0${4 + index}.mp4`;
+                            return (
+                                <div
+                                    key={item}
+                                    className="relative rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 aspect-[16/10] cursor-pointer group bg-[#162018]"
+                                >
+                                    {isEmbeddedVideo(fallbackUrl) ? (
+                                        <iframe 
+                                            src={fallbackUrl} 
+                                            className="w-full h-full"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                            allowFullScreen 
+                                        />
+                                    ) : (
+                                        <video
+                                            src={fallbackUrl}
+                                            poster=""
+                                            controls
+                                            className="w-full h-full object-cover"
+                                        />
+                                    )}
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </section>

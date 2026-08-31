@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { PageContentService } from "@/services/pageContent.service";
+import { isEmbeddedVideo } from "@/utils/videoUtils";
 import { Metadata, ResolvingMetadata } from "next";
 
 export const dynamic = 'force-dynamic';
@@ -80,12 +81,21 @@ export default async function SolutionsPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
                         {/* Left Side: Video */}
                         <div className="relative w-full rounded-[24px] overflow-hidden shadow-xl aspect-[16/10] bg-[#162018]">
-                            <video
-                                src={walkthrough.video || walkthrough.image}
-                                poster=""
-                                controls
-                                className="w-full h-full object-cover"
-                            />
+                            {isEmbeddedVideo(walkthrough.video || walkthrough.image) ? (
+                                <iframe 
+                                    src={walkthrough.video || walkthrough.image} 
+                                    className="w-full h-full"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowFullScreen 
+                                />
+                            ) : (
+                                <video
+                                    src={walkthrough.video || walkthrough.image}
+                                    poster=""
+                                    controls
+                                    className="w-full h-full object-cover"
+                                />
+                            )}
                         </div>
 
                         {/* Right Side: Content */}

@@ -18,6 +18,9 @@ const cormorantGaramond = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Me Billing",
   description: "Smart, secure billing solutions built for doctors, clinics, and healthcare teams.",
+  icons: {
+    icon: "/images/favicon.ico",
+  },
 };
 
 import { PageContentService } from "@/services/pageContent.service";

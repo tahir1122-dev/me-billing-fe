@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { isEmbeddedVideo } from "@/utils/videoUtils";
 
 export default function InsightSection1({ data }: { data: any }) {
     if (!data) return null;
@@ -34,12 +35,21 @@ export default function InsightSection1({ data }: { data: any }) {
 
                     {/* Right: video */}
                     <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-video">
-                        <video
-                            src={data.video || data.image}
-                            poster={data.image}
-                            controls
-                            className="w-full h-full object-cover"
-                        />
+                        {isEmbeddedVideo(data.video || data.image) ? (
+                            <iframe 
+                                src={data.video || data.image} 
+                                className="w-full h-full"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowFullScreen 
+                            />
+                        ) : (
+                            <video
+                                src={data.video || data.image}
+                                poster={data.image}
+                                controls
+                                className="w-full h-full object-cover"
+                            />
+                        )}
                     </div>
                 </div>
             </div>
