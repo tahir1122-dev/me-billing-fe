@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { PageContentService } from "@/services/pageContent.service";
+import { isEmbeddedVideo } from "@/utils/videoUtils";
 import seoContent from "@/data/seo-content.json";
 
 export const metadata: Metadata = {
@@ -95,12 +96,21 @@ export default async function ServicesPage() {
                             </p>
                         </div>
                         <div className="relative w-full rounded-[24px] overflow-hidden shadow-xl aspect-[16/10] bg-[#162018]">
-                            <video
-                                src={process.video || "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2002.mp4"}
-                                poster={process.poster || "/images/service 2.jpg"}
-                                controls
-                                className="w-full h-full object-cover opacity-90"
-                            />
+                            {isEmbeddedVideo(process.video || "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2002.mp4") ? (
+                                <iframe 
+                                    src={process.video || "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2002.mp4"} 
+                                    className="w-full h-full opacity-90"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowFullScreen 
+                                />
+                            ) : (
+                                <video
+                                    src={process.video || "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2002.mp4"}
+                                    poster={process.poster || "/images/service 2.jpg"}
+                                    controls
+                                    className="w-full h-full object-cover opacity-90"
+                                />
+                            )}
                         </div>
                     </div>
                 </div>

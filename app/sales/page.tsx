@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import SalesContactForm from "@/components/forms/SalesContactForm";
 import SalesPillarsAccordion from "@/components/sections/SalesPillarsAccordion";
 import { PageContentService } from "@/services/pageContent.service";
+import { isEmbeddedVideo } from "@/utils/videoUtils";
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
@@ -234,12 +235,21 @@ export default async function SalesPage() {
                         {/* Right: video */}
                         <div className="w-full lg:w-1/2">
                             <div className="relative mx-auto h-[440px] w-full max-w-[700px] overflow-hidden rounded-2xl shadow-lg bg-[#FCFBF5]">
-                                <video
-                                    src={salesPillarsDataCMS.video || "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2008.mp4"}
-                                    controls
-                                    className="object-cover w-full h-full"
-                                    poster={salesPillarsDataCMS.poster || "/images/contact.jpg"}
-                                />
+                                {isEmbeddedVideo(salesPillarsDataCMS.video || "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2008.mp4") ? (
+                                    <iframe 
+                                        src={salesPillarsDataCMS.video || "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2008.mp4"} 
+                                        className="object-cover w-full h-full"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowFullScreen 
+                                    />
+                                ) : (
+                                    <video
+                                        src={salesPillarsDataCMS.video || "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2008.mp4"}
+                                        controls
+                                        className="object-cover w-full h-full"
+                                        poster={salesPillarsDataCMS.poster || "/images/contact.jpg"}
+                                    />
+                                )}
                             </div>
                         </div>
                     </div>

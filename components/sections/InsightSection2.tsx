@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
+import { isEmbeddedVideo } from "@/utils/videoUtils";
 
 export default function InsightSection2({ data }: { data: any }) {
     if (!data) return null;
@@ -12,12 +13,21 @@ export default function InsightSection2({ data }: { data: any }) {
                     {/* Left: image with badge */}
                     <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-video">
                         {data.video ? (
-                            <video
-                                src={data.video}
-                                poster={data.image}
-                                controls
-                                className="w-full h-full object-cover"
-                            />
+                            isEmbeddedVideo(data.video) ? (
+                                <iframe 
+                                    src={data.video} 
+                                    className="w-full h-full"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                    allowFullScreen 
+                                />
+                            ) : (
+                                <video
+                                    src={data.video}
+                                    poster={data.image}
+                                    controls
+                                    className="w-full h-full object-cover"
+                                />
+                            )
                         ) : (
                             <Image
                                 src={data.image}

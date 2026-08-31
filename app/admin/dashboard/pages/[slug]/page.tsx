@@ -4,6 +4,167 @@ import { use, useEffect, useState } from "react";
 import { PageData, SectionData } from "@/types/page-content";
 
 import MediaPickerModal from "@/components/admin/MediaPickerModal";
+import { isEmbeddedVideo, getEmbedUrl } from "@/utils/videoUtils";
+
+function StringFieldRenderer({ 
+    data, 
+    path, 
+    onChange,
+    onOpenMediaPicker
+}: { 
+    data: string; 
+    path: string[]; 
+    onChange: (path: string[], value: any) => void;
+    onOpenMediaPicker: (path: string[]) => void;
+}) {
+    const isEmbed = isEmbeddedVideo(data);
+    const hasVideoExt = !!data.match(/\.(mp4|webm|ogg)(\?.*)?\s*$/i) || isEmbed;
+    const hasImageExt = !!data.match(/\.(jpeg|jpg|gif|png|svg|webp)(\?.*)?\s*$/i);
+    
+    const inherentlyVideo = path.length > 0 && path[path.length - 1].toLowerCase().includes('video');
+    const inherentlyImage = path.length > 0 && (path[path.length - 1].toLowerCase().includes('image') || path[path.length - 1].toLowerCase().includes('poster') || path[path.length - 1].toLowerCase().includes('icon'));
+    
+    const [videoMode, setVideoMode] = useState<"upload" | "embed">("upload");
+    const [embedInput, setEmbedInput] = useState("");
+    const [hasBeenVideo, setHasBeenVideo] = useState(false);
+
+    useEffect(() => {
+        if (isEmbed) {
+            setVideoMode("embed");
+            setEmbedInput(data);
+        }
+    }, [data, isEmbed]);
+
+    useEffect(() => {
+        if (hasVideoExt || inherentlyVideo || videoMode === "embed") {
+            setHasBeenVideo(true);
+        }
+    }, [hasVideoExt, inherentlyVideo, videoMode]);
+
+    const isVideoUrl = hasBeenVideo || videoMode === "embed" || hasVideoExt || (!hasImageExt && inherentlyVideo);
+    const isImageUrl = hasImageExt || (!hasVideoExt && videoMode !== "embed" && inherentlyImage);
+
+    const handleEmbedChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const val = e.target.value;
+        setEmbedInput(val);
+        onChange(path, getEmbedUrl(val));
+    };
+
+    if (isImageUrl || isVideoUrl) {
+        return (
+            <div className="flex flex-col gap-3 bg-gray-50 p-4 rounded-lg border border-gray-100">
+                {isVideoUrl && (
+                    <div className="flex gap-4 mb-2">
+                        <label className="flex items-center gap-2 text-sm font-medium text-gray-700 cursor-pointer">
+                            <input 
+                                type="radio" 
+                                checked={videoMode === "upload"} 
+                                onChange={() => {
+                                    setVideoMode("upload");
+                                    if (isEmbed) onChange(path, "");
+                                }}
+                                className="text-blue-600 focus:ring-blue-500"
+                            />
+                            Upload Media
+                        </label>
+                        <label className="flex items-center gap-2 text-sm font-medium text-gray-700 cursor-pointer">
+                            <input 
+                                type="radio" 
+                                checked={videoMode === "embed"} 
+                                onChange={() => {
+                                    setVideoMode("embed");
+                                    onChange(path, "");
+                                    setEmbedInput("");
+                                }}
+                                className="text-blue-600 focus:ring-blue-500"
+                            />
+                            Embedded Video URL
+                        </label>
+                    </div>
+                )}
+                
+                {videoMode === "embed" && isVideoUrl ? (
+                    <div className="flex flex-col gap-3 w-full">
+                        <input 
+                            type="text"
+                            placeholder="Paste YouTube or Vimeo URL here..."
+                            value={embedInput}
+                            onChange={handleEmbedChange}
+                            className="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500 font-outfit text-sm"
+                        />
+                        {data && isEmbeddedVideo(data) && (
+                            <div className="w-full aspect-video rounded-md overflow-hidden bg-black border border-gray-200">
+                                <iframe src={data} className="w-full h-full" allowFullScreen />
+                            </div>
+                        )}
+                    </div>
+                ) : (
+                    <div className="flex gap-4 items-start">
+                        <div className="w-24 h-24 bg-white rounded-md border border-gray-200 overflow-hidden flex items-center justify-center shrink-0 relative group">
+                            {data ? (
+                                hasVideoExt ? (
+                                    <video src={data} className="w-full h-full object-cover" />
+                                ) : (
+                                    <img src={data} className="w-full h-full object-cover" alt="Preview" />
+                                )
+                            ) : (
+                                <span className="text-xs text-gray-400 font-medium">No Media</span>
+                            )}
+                        </div>
+                        <div className="flex-1 flex flex-col justify-center items-start space-y-3">
+                            <div className="flex items-center gap-3 w-full">
+                                <button
+                                    type="button"
+                                    onClick={() => onOpenMediaPicker(path)}
+                                    className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-colors flex items-center gap-2 shadow-sm"
+                                >
+                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                                    Browse Media
+                                </button>
+                                {data && (
+                                    <button
+                                        type="button"
+                                        onClick={() => onChange(path, "")}
+                                        className="text-red-600 hover:text-red-700 hover:bg-red-50 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                                    >
+                                        Remove
+                                    </button>
+                                )}
+                            </div>
+                            {data && (
+                                <p className="text-xs text-gray-500 break-all bg-white p-2 rounded border border-gray-200 w-full">
+                                    {data}
+                                </p>
+                            )}
+                        </div>
+                    </div>
+                )}
+            </div>
+        );
+    }
+
+    // If it's a long string, use a textarea, else an input
+    if (!isImageUrl && !isVideoUrl && (data.length > 80 || path.includes("description") || path.includes("content") || path.includes("body"))) {
+        return (
+            <textarea
+                className="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500 font-outfit text-sm"
+                rows={4}
+                value={data}
+                onChange={(e) => onChange(path, e.target.value)}
+            />
+        );
+    }
+    return (
+        <div className="space-y-2">
+            <input
+                type="text"
+                className="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500 font-outfit text-sm"
+                value={data}
+                onChange={(e) => onChange(path, e.target.value)}
+            />
+        </div>
+    );
+}
 
 // A recursive component to render JSON fields dynamically
 function DynamicFieldRenderer({ 
@@ -18,76 +179,13 @@ function DynamicFieldRenderer({
     onOpenMediaPicker: (path: string[]) => void;
 }) {
     if (typeof data === "string") {
-        const hasVideoExt = typeof data === 'string' && !!data.match(/\.(mp4|webm|ogg)(\?.*)?\s*$/i);
-        const hasImageExt = typeof data === 'string' && !!data.match(/\.(jpeg|jpg|gif|png|svg|webp)(\?.*)?\s*$/i);
-        
-        const isVideoUrl = hasVideoExt || (!hasImageExt && path.length > 0 && path[path.length - 1].toLowerCase().includes('video'));
-        const isImageUrl = hasImageExt || (!hasVideoExt && path.length > 0 && (path[path.length - 1].toLowerCase().includes('image') || path[path.length - 1].toLowerCase().includes('poster') || path[path.length - 1].toLowerCase().includes('icon')));
-
-        if (isImageUrl || isVideoUrl) {
-            return (
-                <div className="flex gap-4 items-start bg-gray-50 p-3 rounded-lg border border-gray-100">
-                    <div className="w-24 h-24 bg-white rounded-md border border-gray-200 overflow-hidden flex items-center justify-center shrink-0 relative group">
-                        {data ? (
-                            isVideoUrl || hasVideoExt ? (
-                                <video src={data} className="w-full h-full object-cover" />
-                            ) : (
-                                <img src={data} className="w-full h-full object-cover" alt="Preview" />
-                            )
-                        ) : (
-                            <span className="text-xs text-gray-400 font-medium">No Media</span>
-                        )}
-                    </div>
-                    <div className="flex-1 flex flex-col justify-center items-start space-y-3">
-                        <div className="flex items-center gap-3 w-full">
-                            <button
-                                type="button"
-                                onClick={() => onOpenMediaPicker(path)}
-                                className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-colors flex items-center gap-2 shadow-sm"
-                            >
-                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                                Browse Media
-                            </button>
-                            {data && (
-                                <button
-                                    type="button"
-                                    onClick={() => onChange(path, "")}
-                                    className="text-red-600 hover:text-red-700 hover:bg-red-50 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-                                >
-                                    Remove
-                                </button>
-                            )}
-                        </div>
-                        {data && (
-                            <p className="text-xs text-gray-500 break-all bg-white p-2 rounded border border-gray-200 w-full">
-                                {data}
-                            </p>
-                        )}
-                    </div>
-                </div>
-            );
-        }
-
-        // If it's a long string, use a textarea, else an input
-        if (!isImageUrl && !isVideoUrl && (data.length > 80 || path.includes("description") || path.includes("content") || path.includes("body"))) {
-            return (
-                <textarea
-                    className="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500 font-outfit text-sm"
-                    rows={4}
-                    value={data}
-                    onChange={(e) => onChange(path, e.target.value)}
-                />
-            );
-        }
         return (
-            <div className="space-y-2">
-                <input
-                    type="text"
-                    className="w-full border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500 font-outfit text-sm"
-                    value={data}
-                    onChange={(e) => onChange(path, e.target.value)}
-                />
-            </div>
+            <StringFieldRenderer 
+                data={data} 
+                path={path} 
+                onChange={onChange} 
+                onOpenMediaPicker={onOpenMediaPicker} 
+            />
         );
     }
     

@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { PageContentService } from "@/services/pageContent.service";
 import { Metadata, ResolvingMetadata } from "next";
+import { isEmbeddedVideo } from "@/utils/videoUtils";
 
 export const dynamic = 'force-dynamic';
 export async function generateMetadata(
@@ -206,12 +207,21 @@ export default async function SpecialtiesPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         {/* Video Thumbnail block perfectly modeled after Screenshot 1 */}
                         <div className="relative rounded-2xl overflow-hidden shadow-md max-w-xl mx-auto lg:mx-0 w-full aspect-[640/380] bg-[#162018]">
-                            <video
-                                src={walkthrough.video || "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2015.mp4"}
-                                poster=""
-                                controls
-                                className="!w-full !h-full object-cover specialties-tab"
-                            />
+                            {isEmbeddedVideo(walkthrough.video || "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2015.mp4") ? (
+                                <iframe
+                                    src={walkthrough.video || "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2015.mp4"}
+                                    className="!w-full !h-full object-cover specialties-tab"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                />
+                            ) : (
+                                <video
+                                    src={walkthrough.video || "https://ccbtiisgqfffxfkgpaon.supabase.co/storage/v1/object/public/assets/video%2015.mp4"}
+                                    poster=""
+                                    controls
+                                    className="!w-full !h-full object-cover specialties-tab"
+                                />
+                            )}
                         </div>
 
                         {/* Right Text Block matching hierarchy and spacing exactly */}
